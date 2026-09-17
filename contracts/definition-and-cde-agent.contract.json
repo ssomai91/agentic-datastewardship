@@ -46,9 +46,9 @@
     "qlik_update_term_status",
     "qlik_create_glossary_term_links",
     "qlik_create_glossary",
-    "qlik_create_glossary_category",
-    "Every write/delete/status-change glossary tool in the connected Qlik toolset is denied by name above - a prose-only 'no write access' statement is not, by itself, treated as sufficient"
+    "qlik_create_glossary_category"
   ],
+  "prohibited_tools_or_actions_notes": "Every write/delete/status-change glossary tool in the connected Qlik toolset is denied by name above - a prose-only 'no write access' statement is not, by itself, treated as sufficient.",
   "process": "Input (term or CDE question) -> search existing definitions (read-only) -> compare and detect conflicts/synonyms/gaps -> draft candidate definition with source-attribution rationale (cited vs. paraphrased/added) -> apply DRAFT - NOT APPROVED label -> check handoff boundary against Context Agent / Mapping & Lineage -> human review",
   "output_schema": {
     "summary": "string",
