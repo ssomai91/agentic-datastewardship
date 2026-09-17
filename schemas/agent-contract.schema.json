@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ninetyone.internal/schemas/agent-contract.schema.json",
+  "title": "Agent Contract",
+  "type": "object",
+  "required": [
+    "name", "version", "status", "purpose", "business_problem", "classification",
+    "responsible_for", "not_responsible_for", "authoritative_sources", "permitted_tools",
+    "prohibited_tools_or_actions", "process", "output_schema", "evidence_requirements",
+    "confidence_labels", "escalation_conditions", "human_approval_required_for",
+    "upstream_agents", "downstream_agents", "handoff_contract", "success_criteria",
+    "known_risks", "evaluation_scenarios", "change_log"
+  ],
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "status": { "type": "string", "enum": ["Draft", "Review", "Approved", "Deprecated"] },
+    "purpose": { "type": "string", "minLength": 1 },
+    "business_problem": { "type": "string", "minLength": 1 },
+    "classification": {
+      "type": "string",
+      "enum": ["Human responsibility", "Deterministic process", "AI-assisted workflow", "Specialised AI agent", "Multi-agent workflow"]
+    },
+    "responsible_for": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "not_responsible_for": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "required_inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["input", "description", "required_source"],
+        "properties": {
+          "input": { "type": "string" },
+          "description": { "type": "string" },
+          "required_source": { "type": "string" },
+          "validation": { "type": "string" }
+        }
+      }
+    },
+    "authoritative_sources": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "permitted_tools": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["tool", "purpose", "access_mode"],
+        "properties": {
+          "tool": { "type": "string" },
+          "purpose": { "type": "string" },
+          "access_mode": { "type": "string", "enum": ["read-only", "execute", "write"] }
+        }
+      }
+    },
+    "prohibited_tools_or_actions": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "process": { "type": "string", "minLength": 1 },
+    "output_schema": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "type": "string" }
+    },
+    "evidence_requirements": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "confidence_labels": {
+      "type": "array",
+      "const": ["Supported", "Partially supported", "Unsupported", "Contradictory", "Unable to determine"]
+    },
+    "escalation_conditions": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "human_approval_required_for": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "upstream_agents": { "type": "array", "items": { "type": "string" } },
+    "downstream_agents": { "type": "array", "items": { "type": "string" } },
+    "handoff_contract": {
+      "type": "object",
+      "required": ["receives", "returns"],
+      "properties": {
+        "receives": {
+          "type": "object",
+          "required": ["case_id"],
+          "additionalProperties": true
+        },
+        "returns": {
+          "type": "object",
+          "required": ["case_id", "agent", "status"],
+          "additionalProperties": true
+        }
+      }
+    },
+    "success_criteria": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "known_risks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["risk", "impact", "mitigation"],
+        "properties": {
+          "risk": { "type": "string" },
+          "impact": { "type": "string" },
+          "mitigation": { "type": "string" }
+        }
+      }
+    },
+    "evaluation_scenarios": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["name", "input", "expected_behavior"],
+        "properties": {
+          "name": { "type": "string" },
+          "input": { "type": "string" },
+          "expected_behavior": { "type": "string" }
+        }
+      }
+    },
+    "change_log": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["version", "change"],
+        "properties": {
+          "version": { "type": "string" },
+          "date": { "type": "string" },
+          "change": { "type": "string" },
+          "approved_by": { "type": "string" }
+        }
+      }
+    }
+  }
+}

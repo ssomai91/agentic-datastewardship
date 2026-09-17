@@ -1,0 +1,11 @@
+{
+  "source_id": "EV-0001",
+  "source_type": "internal_glossary",
+  "title": "Illustrative fixture only",
+  "location": "n/a",
+  "authority_level": "authoritative_internal",
+  "extracted_fact": "n/a",
+  "direct_or_inferred": "direct",
+  "timestamp": "2026-09-17T00:00:00Z",
+  "notes": "Fixture for schema testing."
+}

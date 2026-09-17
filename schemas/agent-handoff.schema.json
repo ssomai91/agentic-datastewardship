@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ninetyone.internal/schemas/agent-handoff.schema.json",
+  "title": "Agent Handoff",
+  "type": "object",
+  "required": ["case_id", "request", "agent", "status", "findings", "evidence", "assumptions", "open_questions", "human_action_required", "next_agent"],
+  "properties": {
+    "case_id": { "type": "string", "minLength": 1 },
+    "request": { "type": "string" },
+    "agent": { "type": "string" },
+    "status": { "type": "string", "enum": ["in_progress", "escalated", "completed", "blocked"] },
+    "findings": { "type": "array", "items": { "type": "string" } },
+    "evidence": { "type": "array", "items": { "type": "string" } },
+    "assumptions": { "type": "array", "items": { "type": "string" } },
+    "open_questions": { "type": "array", "items": { "type": "string" } },
+    "human_action_required": { "type": "array", "items": { "type": "string" } },
+    "next_agent": { "type": ["string", "null"] }
+  }
+}

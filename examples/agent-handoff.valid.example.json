@@ -1,0 +1,12 @@
+{
+  "case_id": "CASE-0001",
+  "request": "Illustrative fixture only.",
+  "agent": "example-agent",
+  "status": "completed",
+  "findings": ["n/a"],
+  "evidence": [],
+  "assumptions": [],
+  "open_questions": [],
+  "human_action_required": [],
+  "next_agent": null
+}

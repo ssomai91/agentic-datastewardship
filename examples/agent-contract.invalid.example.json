@@ -1,0 +1,32 @@
+{
+  "name": "Example Invalid Agent",
+  "version": "0.1.0",
+  "status": "Draft",
+  "purpose": "Illustrative fixture that must fail validation.",
+  "business_problem": "Demonstrates the schema catching the missing-mandatory-fields failure mode found across every first-pass contract in the review.",
+  "classification": "Specialised AI agent",
+  "responsible_for": ["Illustrating a failing fixture"],
+  "authoritative_sources": ["schemas/agent-contract.schema.json"],
+  "prohibited_tools_or_actions": ["n/a"],
+  "process": "n/a",
+  "output_schema": { "summary": "string" },
+  "evidence_requirements": ["n/a"],
+  "confidence_labels": ["Supported", "Partially supported", "Unsupported", "Contradictory", "Unable to determine"],
+  "escalation_conditions": ["n/a"],
+  "human_approval_required_for": ["n/a"],
+  "upstream_agents": [],
+  "downstream_agents": [],
+  "handoff_contract": {
+    "receives": { "case_id": "string" },
+    "returns": { "case_id": "string", "agent": "string", "status": "string" }
+  },
+  "success_criteria": ["n/a"],
+  "known_risks": [{ "risk": "n/a", "impact": "n/a", "mitigation": "n/a" }],
+  "evaluation_scenarios": [
+    { "name": "Happy path", "input": "n/a", "expected_behavior": "n/a" },
+    { "name": "Missing evidence", "input": "n/a", "expected_behavior": "n/a" },
+    { "name": "Conflicting evidence", "input": "n/a", "expected_behavior": "n/a" },
+    { "name": "Authority boundary", "input": "n/a", "expected_behavior": "n/a" }
+  ],
+  "change_log": [{ "version": "0.1.0", "date": "2026-09-17", "change": "Initial fixture", "approved_by": "n/a" }]
+}

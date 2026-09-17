@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ninetyone.internal/schemas/evidence.schema.json",
+  "title": "Evidence",
+  "type": "object",
+  "required": ["source_id", "source_type", "title", "location", "authority_level", "extracted_fact", "direct_or_inferred", "timestamp"],
+  "properties": {
+    "source_id": { "type": "string" },
+    "source_type": { "type": "string" },
+    "title": { "type": "string" },
+    "location": { "type": "string" },
+    "authority_level": { "type": "string", "enum": ["authoritative_internal", "general_industry", "inferred"] },
+    "extracted_fact": { "type": "string" },
+    "direct_or_inferred": { "type": "string", "enum": ["direct", "inferred"] },
+    "timestamp": { "type": "string" },
+    "notes": { "type": "string" }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Example Minimal Agent",
+  "version": "0.1.0",
+  "status": "Draft",
+  "purpose": "Illustrative fixture only — not a real agent.",
+  "business_problem": "Demonstrates a schema-conformant contract for test purposes.",
+  "classification": "Specialised AI agent",
+  "responsible_for": ["Illustrating a passing fixture"],
+  "not_responsible_for": ["Anything beyond illustrating this schema"],
+  "authoritative_sources": ["schemas/agent-contract.schema.json"],
+  "permitted_tools": [{ "tool": "none", "purpose": "n/a", "access_mode": "read-only" }],
+  "prohibited_tools_or_actions": ["Any production or live-system access"],
+  "process": "Input -> validate -> output.",
+  "output_schema": { "summary": "string", "status": "string" },
+  "evidence_requirements": ["None beyond this fixture file"],
+  "confidence_labels": ["Supported", "Partially supported", "Unsupported", "Contradictory", "Unable to determine"],
+  "escalation_conditions": ["Never — this is a fixture"],
+  "human_approval_required_for": ["Nothing — this is a fixture"],
+  "upstream_agents": [],
+  "downstream_agents": [],
+  "handoff_contract": {
+    "receives": { "case_id": "string" },
+    "returns": { "case_id": "string", "agent": "string", "status": "string" }
+  },
+  "success_criteria": ["Validates against schemas/agent-contract.schema.json"],
+  "known_risks": [{ "risk": "None — fixture only", "impact": "None", "mitigation": "None" }],
+  "evaluation_scenarios": [
+    { "name": "Happy path", "input": "n/a", "expected_behavior": "n/a" },
+    { "name": "Missing evidence", "input": "n/a", "expected_behavior": "n/a" },
+    { "name": "Conflicting evidence", "input": "n/a", "expected_behavior": "n/a" },
+    { "name": "Authority boundary", "input": "n/a", "expected_behavior": "n/a" }
+  ],
+  "change_log": [{ "version": "0.1.0", "date": "2026-09-17", "change": "Initial fixture", "approved_by": "n/a" }]
+}
