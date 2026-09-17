@@ -20,6 +20,7 @@ REQUIRED_HEADINGS = [
 
 CONTRACT_PAIRS = [
     ("agents/factory/stewardship-agent-architect.md", "contracts/stewardship-agent-architect.contract.json"),
+    ("agents/factory/agent-risk-reviewer.md", "contracts/agent-risk-reviewer.contract.json"),
 ]
 
 
