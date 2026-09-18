@@ -54,18 +54,27 @@ def test_json_contract_status_is_draft(md_path, json_path):
     assert instance["status"] == "Draft"
 
 
-def test_definition_cde_agent_denies_every_glossary_write_tool():
+def test_definition_cde_agent_denies_every_glossary_write_capability():
+    """This project has no connection to any specific third-party glossary/data-catalog
+    product - permissions are expressed at the capability level, not against a
+    named product's tool identifiers. Every permitted capability must be read-only,
+    and every create/update/delete/status-change action on a glossary system must be
+    explicitly denied by name, not left to a prose-only 'no write access' promise."""
     with open(ROOT / "contracts/definition-and-cde-agent.contract.json", encoding="utf-8") as f:
         instance = json.load(f)
-    denied = set(instance["prohibited_tools_or_actions"])
-    must_deny = {
-        "qlik_create_glossary_term", "qlik_update_glossary_term", "qlik_delete_glossary_term",
-        "qlik_update_term_status", "qlik_create_glossary_term_links",
-        "qlik_create_glossary", "qlik_create_glossary_category",
-    }
-    assert must_deny <= denied, f"missing denies: {must_deny - denied}"
-    permitted_tool_names = {t["tool"] for t in instance["permitted_tools"]}
-    assert permitted_tool_names.isdisjoint(must_deny), "a denied tool appears in permitted_tools"
+
+    for entry in instance["permitted_tools"]:
+        assert entry["access_mode"] == "read-only", f"permitted capability {entry['tool']!r} is not read-only"
+
+    denied_text = " ".join(instance["prohibited_tools_or_actions"]).lower()
+    must_deny_actions = ["creating a new glossary term", "updating an existing glossary term",
+                          "deleting a glossary term", "changing a glossary term's status",
+                          "creating term-to-term links", "creating a new glossary",
+                          "creating a new glossary category"]
+    for action in must_deny_actions:
+        assert action in denied_text, f"missing denied action: {action!r}"
+
+    assert FORBIDDEN_PRODUCT_NAME not in json.dumps(instance).lower(), "this project has no connection to any specific third-party glossary/data-catalog product"
 
 
 ASSUMPTIONS_HEADING = "## Assumptions Pending Human Confirmation"
@@ -100,6 +109,27 @@ def _all_contract_names():
 
 
 KNOWN_FORWARD_REFERENCES = {"Assurance Reviewer"}
+
+
+FORBIDDEN_PRODUCT_NAME = "qlik"
+
+
+def test_no_qlik_references_anywhere_in_deliverable_content():
+    """This project has no connection to any specific third-party glossary/data-catalog
+    product in any way whatsoever. Guard against that product's name creeping back into
+    any deliverable (contracts, agent markdown, schemas, eval scenarios, governance docs)."""
+    content_dirs = ["agents", "contracts", "evals", "schemas", "docs", "examples"]
+    content_files = ["README.md", "HANDOFF.md", "ARCHITECTURE.md", "BUILD-BACKLOG.md", "AGENT-CONTRACT-TEMPLATE.md"]
+    offenders = []
+    for d in content_dirs:
+        for path in (ROOT / d).rglob("*"):
+            if path.is_file() and FORBIDDEN_PRODUCT_NAME in path.read_text(encoding="utf-8", errors="ignore").lower():
+                offenders.append(str(path.relative_to(ROOT)))
+    for f in content_files:
+        path = ROOT / f
+        if path.is_file() and FORBIDDEN_PRODUCT_NAME in path.read_text(encoding="utf-8", errors="ignore").lower():
+            offenders.append(str(path.relative_to(ROOT)))
+    assert not offenders, f"found forbidden product-name references in: {offenders}"
 
 
 @pytest.mark.parametrize("md_path,json_path", CONTRACT_PAIRS)

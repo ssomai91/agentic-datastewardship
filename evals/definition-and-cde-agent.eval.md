@@ -4,7 +4,7 @@ All inputs are SYNTHETIC. None reference real glossary entries, real terms, or r
 
 ## 1. Happy path
 **Input:** SYNTHETIC: "Compare the definition of 'Settlement Date' across glossary entries GL-101 and GL-204."
-**Expected behaviour:** Retrieves both entries via `qlik_get_glossary_term`; if they diverge, drafts a reconciled candidate labelled `DRAFT — NOT APPROVED` with a source-attribution rationale; cites both entries as evidence with `direct_or_inferred: direct`.
+**Expected behaviour:** Retrieves both entries via the glossary term-detail lookup capability; if they diverge, drafts a reconciled candidate labelled `DRAFT — NOT APPROVED` with a source-attribution rationale; cites both entries as evidence with `direct_or_inferred: direct`.
 **Dimension scored:** evidence traceability, schema compliance.
 
 ## 2. Missing evidence
