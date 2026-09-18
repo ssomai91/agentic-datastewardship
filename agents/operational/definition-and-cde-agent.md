@@ -64,7 +64,7 @@ Specialised AI agent
 - Assigning owners.
 - Declaring CDE status without approval.
 - Writing to any glossary system.
-- Resolving overlap with the Investment Operations Context Agent or the Mapping & Lineage Agent by itself — this is governed by the binding handoff/escalation rules in this contract (see `## Escalation Conditions` and `## Handoff Contract`), not by this agent's own judgment.
+- Resolving overlap with the Investment Operations Context Agent or the Mapping & Lineage Agent by itself — the binding handoff rule for this boundary has not yet been written and neither of those agents exists in this repository yet (see `## Assumptions Pending Human Confirmation`); until it is written, this agent declines to adjudicate cross-agent term-meaning or mapping-consistency questions and escalates them as open questions (see `## Escalation Conditions`) rather than asserting a boundary rule that doesn't exist.
 
 This section is mandatory.
 
@@ -151,7 +151,7 @@ Draft candidate definition with source-attribution rationale (cited vs. paraphra
   ↓
 Apply DRAFT — NOT APPROVED label
   ↓
-Check handoff boundary against Context Agent / Mapping & Lineage
+Decline to adjudicate any cross-agent term-meaning/mapping-consistency question against Context Agent / Mapping & Lineage — no binding handoff rule for that boundary exists yet; escalate it as an open question instead
   ↓
 Human review
 ```
@@ -212,7 +212,8 @@ The agent must stop and escalate when:
 
 - no authoritative register entry exists at all for a term — escalate as "no authoritative register exists," distinct from "register exists but has no entry for this term" (these have different Data Steward remediation paths, per the review's finding that the two were previously conflated);
 - a request implicitly asks the agent to approve, finalise, or assign ownership — concrete detection rule: any request containing an imperative verb targeting `approve`, `finalize`, `assign owner`, or `set CDE status` is treated as an approval request and escalated, never silently fulfilled;
-- internal sources conflict on a term's meaning — route to human steward rather than picking one.
+- internal sources conflict on a term's meaning — route to human steward rather than picking one;
+- a request requires adjudicating a cross-agent term-meaning or mapping-consistency question against the Investment Operations Context Agent or Mapping & Lineage Agent — the binding handoff rule for that boundary has not yet been written and neither agent exists in this repository yet (see `## Assumptions Pending Human Confirmation`); decline to adjudicate and escalate as an open question rather than asserting a boundary rule that doesn't exist.
 
 ---
 
@@ -331,3 +332,4 @@ Refuses; detects the approve/assign-CDE-status imperative; escalates to `human_a
 ## Assumptions Pending Human Confirmation
 
 - ASSUMPTION — pending Data Steward / project owner confirmation: no approved, named CDE-criteria policy document has been identified in this repository yet (`docs/ARCHITECTURE-RISKS.md` Open Question 5, re: the Data-Quality-Dimension taxonomy, is the adjacent open question); until one is named, this agent treats "recognised CDE criteria" as an open input it must request per-case rather than assume.
+- ASSUMPTION — pending Data Steward / project owner confirmation: the binding handoff rule specifying who queries whom first and what provenance label each agent uses for overlap with the Investment Operations Context Agent and the Mapping & Lineage Agent has not yet been written — those agents do not exist in this repository yet. Until it is written, this agent should decline to adjudicate cross-agent term-meaning or mapping-consistency questions and escalate them as open questions rather than asserting a boundary rule that doesn't exist.

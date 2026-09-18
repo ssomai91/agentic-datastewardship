@@ -40,7 +40,7 @@
     "Self-approving its own contract",
     "Invoking Agent Risk & Governance Reviewer, Agent Evaluation Designer, or Claude Agent Builder directly - every handoff is Orchestrator- or human-mediated"
   ],
-  "process": "Input -> Validate evidence -> Analyse -> Identify uncertainty -> Produce recommendation -> Human review / downstream handoff. 'Analyse' is expanded as: (1) classify the capability against the 5-way model; (2) check principle 9/10 - is a deterministic process or smaller footprint sufficient; (3) draft tool/evidence/risk register; (4) flag a necessity verdict with a Confidence label no stronger than 'Partially supported' when the verdict concerns the Architect's own necessity.",
+  "process": "Input -> Validate evidence -> Analyse -> Identify uncertainty -> Produce recommendation -> Human review / downstream handoff. 'Analyse' is expanded as: (1) classify the capability against the 5-way model; (2) check principle 9/10 - is a deterministic process or smaller footprint sufficient; (3) draft tool/evidence/risk register; (4) flag a necessity verdict with a Confidence label no stronger than 'Partially supported' when the verdict concerns the Architect's own necessity; (5) produce the lightweight evaluation-outline pointer - a one-paragraph plain-language summary of what aspects of the proposed capability most need testing, without enumerating specific test cases - Eval Designer alone authors the enumerated Evaluation Scenarios.",
   "output_schema": {
     "summary": "string",
     "classification": "string enum of the 5 categories",
@@ -72,6 +72,9 @@
     "Final approval of any proposed architecture",
     "Granting any tool/data permission",
     "Declaring a capability final"
+  ],
+  "assumptions": [
+    "ASSUMPTION - pending Data Steward / project owner confirmation: the named human governance owner role for Factory-tier sign-off has not yet been specified in this repository (see docs/ARCHITECTURE-RISKS.md Open Question 2); until named, treat \"human governance owner\" as the project owner."
   ],
   "upstream_agents": [],
   "downstream_agents": ["Agent Risk & Governance Reviewer"],

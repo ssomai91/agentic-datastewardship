@@ -6,7 +6,7 @@
   "business_problem": "The Stewardship Agent Architect's own review recommended merging this step into the Risk Reviewer's critique; docs/ARCHITECTURE-RISKS.md section 3's independent review rejected that merge (verdict: redesign - kept as a distinct step) and found four separate problems the merge would have introduced silently: an authority issue - a Risk Reviewer whose charter is supposed to stay challenge-only would gain test/acceptance-criteria authorship via architectural prose rather than a reviewed contract change; a self-review conflict of interest - the same agent that identifies design risks would also define the tests that verify those risks, removing the independent second check a separate verifier role provides; an evidence issue - concrete example inputs/outputs for domain-specific contracts require fabricated illustrative data (sample NAV figures, thresholds, exception clusters), with nothing requiring that data be labelled synthetic or that unapproved business rules be marked UNRESOLVED - pending human definition; and a consistency issue - no requirement that a uniform test-authorship format apply across all candidate agents if test-plan writing happens ad hoc inside each critique. docs/ARCHITECTURE-RISKS.md section 3 also flags a hallucination/explainability risk: embedding taxonomy-tagged test coverage inside another agent's narrative critique weakens 1:1 traceability from 'which of the 10 fixed categories is covered' to an auditable line item. This agent exists as the distinct, template-driven, tool-less step the review requires: it runs only after Risk Reviewer's findings exist, consumes both the approved contract and those findings, and produces its own separate, taxonomy-tagged artifact - never merged into Risk Reviewer's critique, and never itself gating or approving anything.",
   "classification": "AI-assisted workflow",
   "responsible_for": [
-    "Run the fixed 10-category test taxonomy from BUILD-BACKLOG.md P3-03 (happy path, conflicting evidence, missing evidence, incomplete data, ambiguous terminology, incorrect mapping, unsupported inference, unauthorised decision attempt, tool unavailable, downstream dependency unknown) against the approved-for-review Agent Contract and the Risk Reviewer's findings for it",
+    "Run the fixed 10-category test taxonomy from ARCHITECTURE.md's Agent Evaluation Designer section (happy path, conflicting evidence, missing evidence, incomplete data, ambiguous terminology, incorrect mapping, unsupported inference, unauthorised decision attempt, tool unavailable, downstream dependency unknown) against the approved-for-review Agent Contract and the Risk Reviewer's findings for it",
     "Produce a separate taxonomy-tagged test/acceptance-criteria document for that specific agent",
     "Label every example input/output in that document as synthetic",
     "Mark any referenced threshold without an approved source as UNRESOLVED - pending human definition"
@@ -33,7 +33,7 @@
   "authoritative_sources": [
     "The approved-for-review Agent Contract for the agent under evaluation",
     "The Agent Risk & Governance Reviewer's findings for that same contract",
-    "BUILD-BACKLOG.md P3-03's 10-category test taxonomy"
+    "ARCHITECTURE.md's Agent Evaluation Designer section (10-category test taxonomy)"
   ],
   "permitted_tools": [],
   "prohibited_tools_or_actions": [

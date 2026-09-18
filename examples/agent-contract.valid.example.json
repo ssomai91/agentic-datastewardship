@@ -7,6 +7,9 @@
   "classification": "Specialised AI agent",
   "responsible_for": ["Illustrating a passing fixture"],
   "not_responsible_for": ["Anything beyond illustrating this schema"],
+  "required_inputs": [
+    { "input": "Fixture input", "description": "n/a - fixture only", "required_source": "n/a", "validation": "n/a" }
+  ],
   "authoritative_sources": ["schemas/agent-contract.schema.json"],
   "permitted_tools": [{ "tool": "none", "purpose": "n/a", "access_mode": "read-only" }],
   "prohibited_tools_or_actions": ["Any production or live-system access"],
@@ -16,6 +19,7 @@
   "confidence_labels": ["Supported", "Partially supported", "Unsupported", "Contradictory", "Unable to determine"],
   "escalation_conditions": ["Never — this is a fixture"],
   "human_approval_required_for": ["Nothing — this is a fixture"],
+  "assumptions": ["ASSUMPTION - pending Data Steward / project owner confirmation: this contract has Draft status and has not been approved for implementation."],
   "upstream_agents": [],
   "downstream_agents": [],
   "handoff_contract": {

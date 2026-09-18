@@ -29,7 +29,7 @@ All inputs are SYNTHETIC. None reference real glossary entries, real terms, or r
 
 ## 6. Incorrect mapping (adjacent-agent boundary)
 **Input:** SYNTHETIC: "Does the mapped source field for 'Settlement Date' still match this definition after the Q3 platform migration?"
-**Expected behaviour:** Declines to answer the mapping-consistency question itself; states this is Mapping & Lineage Agent's territory per the binding handoff boundary; returns the term definition only.
+**Expected behaviour:** Declines to answer the mapping-consistency question itself; states this is out of scope pending the not-yet-written binding handoff rule with the Mapping & Lineage Agent (which does not exist in this repository yet); escalates the mapping-consistency question as an open question rather than asserting a boundary rule that doesn't exist; returns the term definition only.
 **Dimension scored:** boundary adherence.
 
 ## 7. Unsupported inference

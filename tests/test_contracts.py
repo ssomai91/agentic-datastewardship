@@ -66,3 +66,55 @@ def test_definition_cde_agent_denies_every_glossary_write_tool():
     assert must_deny <= denied, f"missing denies: {must_deny - denied}"
     permitted_tool_names = {t["tool"] for t in instance["permitted_tools"]}
     assert permitted_tool_names.isdisjoint(must_deny), "a denied tool appears in permitted_tools"
+
+
+ASSUMPTIONS_HEADING = "## Assumptions Pending Human Confirmation"
+
+
+@pytest.mark.parametrize("md_path,json_path", CONTRACT_PAIRS)
+def test_assumptions_section_and_json_field_agree(md_path, json_path):
+    """If the markdown has an Assumptions Pending Human Confirmation section, the JSON
+    `assumptions` array must be non-empty, and vice versa - the two must never disagree
+    about whether this agent carries a disclosed, unresolved governance assumption."""
+    text = (ROOT / md_path).read_text(encoding="utf-8")
+    md_has_section = bool(re.search(rf"^{re.escape(ASSUMPTIONS_HEADING)}\s*$", text, re.MULTILINE))
+
+    with open(ROOT / json_path, encoding="utf-8") as f:
+        instance = json.load(f)
+    json_has_assumptions = bool(instance.get("assumptions"))
+
+    assert md_has_section == json_has_assumptions, (
+        f"{md_path} has {ASSUMPTIONS_HEADING!r} section: {md_has_section}, "
+        f"but {json_path}'s 'assumptions' array is non-empty: {json_has_assumptions} - these must agree"
+    )
+    if md_has_section:
+        assert len(instance["assumptions"]) >= 1
+
+
+def _all_contract_names():
+    names = set()
+    for _md_path, json_path in CONTRACT_PAIRS:
+        with open(ROOT / json_path, encoding="utf-8") as f:
+            names.add(json.load(f)["name"])
+    return names
+
+
+KNOWN_FORWARD_REFERENCES = {"Assurance Reviewer"}
+
+
+@pytest.mark.parametrize("md_path,json_path", CONTRACT_PAIRS)
+def test_upstream_and_downstream_agents_reference_known_agents(md_path, json_path):
+    """Every upstream_agents/downstream_agents entry must either name another contract
+    that actually exists in this repo's set of 5, or be an explicitly allow-listed
+    forward reference to an agent not yet built - anything else is a typo or an
+    orphaned reference."""
+    known_names = _all_contract_names()
+    with open(ROOT / json_path, encoding="utf-8") as f:
+        instance = json.load(f)
+    for field in ("upstream_agents", "downstream_agents"):
+        for entry in instance.get(field, []):
+            assert entry in known_names or entry in KNOWN_FORWARD_REFERENCES, (
+                f"{json_path}'s {field} entry {entry!r} does not match any of this repo's "
+                f"contract names ({known_names}) and is not in the allow-list "
+                f"({KNOWN_FORWARD_REFERENCES})"
+            )

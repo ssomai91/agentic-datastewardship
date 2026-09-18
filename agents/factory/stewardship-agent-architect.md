@@ -120,6 +120,7 @@ Human review / downstream handoff
 2. Check principles 9 and 10 — is a deterministic process, or a smaller footprint, sufficient?
 3. Draft the tool/evidence/risk register for the candidate design.
 4. Flag a necessity verdict, attaching a Confidence label no stronger than `Partially supported` whenever the verdict concerns the Architect's own necessity.
+5. Produce the lightweight evaluation-outline pointer referenced in `## Responsible For` above: a one-paragraph plain-language summary of what aspects of the proposed capability most need testing, without enumerating specific test cases — Eval Designer alone authors the enumerated Evaluation Scenarios.
 
 ---
 
@@ -305,4 +306,4 @@ Refuses; states the design is `Draft` pending Risk Reviewer and human sign-off; 
 
 ## Assumptions Pending Human Confirmation
 
-ASSUMPTION — pending Data Steward / project owner confirmation: the named human governance owner role for Factory-tier sign-off has not yet been specified in this repository (see docs/ARCHITECTURE-RISKS.md Open Question 2); until named, treat "human governance owner" as the project owner.
+- ASSUMPTION — pending Data Steward / project owner confirmation: the named human governance owner role for Factory-tier sign-off has not yet been specified in this repository (see docs/ARCHITECTURE-RISKS.md Open Question 2); until named, treat "human governance owner" as the project owner.

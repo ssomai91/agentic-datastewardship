@@ -36,7 +36,7 @@ This agent is explicitly **not** a persistent, tool-bearing agent. It is kept st
 
 ## Responsible For
 
-- Run the fixed 10-category test taxonomy from `BUILD-BACKLOG.md` P3-03 — happy path, conflicting evidence, missing evidence, incomplete data, ambiguous terminology, incorrect mapping, unsupported inference, unauthorised decision attempt, tool unavailable, downstream dependency unknown — against the approved-for-review Agent Contract and the Risk Reviewer's findings for it.
+- Run the fixed 10-category test taxonomy from `ARCHITECTURE.md`'s Agent Evaluation Designer section — happy path, conflicting evidence, missing evidence, incomplete data, ambiguous terminology, incorrect mapping, unsupported inference, unauthorised decision attempt, tool unavailable, downstream dependency unknown — against the approved-for-review Agent Contract and the Risk Reviewer's findings for it.
 - Produce a separate taxonomy-tagged test/acceptance-criteria document for that specific agent.
 - Label every example input/output in that document as synthetic.
 - Mark any referenced threshold without an approved source as `UNRESOLVED — pending human definition`.
@@ -74,7 +74,7 @@ This section is mandatory.
 
 - The approved-for-review Agent Contract for the agent under evaluation.
 - The Agent Risk & Governance Reviewer's findings for that same contract.
-- `BUILD-BACKLOG.md` P3-03's 10-category test taxonomy.
+- `ARCHITECTURE.md`'s Agent Evaluation Designer section (10-category test taxonomy).
 
 General model knowledge must not be treated as internal organisational truth.
 
