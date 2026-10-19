@@ -1,0 +1,229 @@
+{
+  "unit": 7,
+  "citations": [
+    {"id": "DMBOK2-C15-01", "chapter": 15, "section": "1 Introduction", "pdf_page": 876, "quote": "it can be used to focus on a single Knowledge Area or even a single process"},
+    {"id": "DMBOK2-C15-02", "chapter": 15, "section": "1 Introduction", "pdf_page": 877, "quote": "A certain level of organizational maturity is required to conduct the assessment in the first place"},
+    {"id": "DMBOK2-C15-03", "chapter": 15, "section": "1.1 Business Drivers", "pdf_page": 877, "quote": "The data governance function requires a maturity assessment for planning and compliance purposes."},
+    {"id": "DMBOK2-C15-04", "chapter": 15, "section": "1.3.1 Assessment Levels and Characteristics", "pdf_page": 881, "quote": "CMMs usually define five or six levels of maturity, each with its own characteristics"},
+    {"id": "DMBOK2-C15-05", "chapter": 15, "section": "1.3.2 Assessment Criteria", "pdf_page": 885, "quote": "criteria could be formulated based on the categories in the Context Diagram"},
+    {"id": "DMBOK2-C15-06", "chapter": 15, "section": "1.3.2 Assessment Criteria", "pdf_page": 886, "quote": "People and resources : To what degree is the organization staffed to carry out the activity?"},
+    {"id": "DMBOK2-C15-07", "chapter": 15, "section": "1.3.3 Existing DMMA Frameworks", "pdf_page": 888, "quote": "Organizations should evaluate several models before choosing a vendor or before developing their own framework."},
+    {"id": "DMBOK2-C15-08", "chapter": 15, "section": "1.3.3.1 CMMI Data Management Maturity Model (DMM)", "pdf_page": 888, "quote": "The CMMI (Capability Maturity Model Institute) has developed the CMMI-DMM (Data Management Maturity Model)"},
+    {"id": "DMBOK2-C15-09", "chapter": 15, "section": "1.3.3.2 EDM Council DCAM", "pdf_page": 888, "quote": "The Enterprise Data Management Council, an industry advocacy organization for financial services headquartered in the United States"},
+    {"id": "DMBOK2-C15-10", "chapter": 15, "section": "2 Activities", "pdf_page": 890, "quote": "The goal is to reach a consensus view of current state capabilities, supported by evidence."},
+    {"id": "DMBOK2-C15-11", "chapter": 15, "section": "2 Activities", "pdf_page": 890, "quote": "Models may lose rigor or traceability to original intent if shortened or edited."},
+    {"id": "DMBOK2-C15-12", "chapter": 15, "section": "2.1.3 Define Organizational Scope", "pdf_page": 891, "quote": "For a first assessment, it is usually best to define a manageable scope"},
+    {"id": "DMBOK2-C15-13", "chapter": 15, "section": "2.3.1 Report Assessment Results", "pdf_page": 896, "quote": "Governance and metrics to measure progress"},
+    {"id": "DMBOK2-C15-14", "chapter": 15, "section": "2.4.1 Identify Actions and Create a Roadmap", "pdf_page": 897, "quote": "ratings can be quickly operationalized into ongoing measures, especially for activities where change is desired"},
+    {"id": "DMBOK2-C15-15", "chapter": 15, "section": "2.5 Re-assess Maturity", "pdf_page": 898, "quote": "Re-assessments should be conducted at regular intervals. They are part of the cycle of continuous improvement"},
+    {"id": "DMBOK2-C15-16", "chapter": 15, "section": "2.5 Re-assess Maturity", "pdf_page": 898, "quote": "Repeat DMM assessment as necessary on a published schedule"},
+    {"id": "DMBOK2-C15-17", "chapter": 15, "section": "4.2 DAMA-DMBOK Framework Use", "pdf_page": 901, "quote": "The DAMA-DMBOK can be used to prepare for or establish criteria for a DMMA."},
+    {"id": "DMBOK2-C15-18", "chapter": 15, "section": "4.2 DAMA-DMBOK Framework Use", "pdf_page": 901, "quote": "This fast, checklist approach can be used to determine areas that need deeper analysis, represent gaps, or point to hot spots for remediation."},
+    {"id": "DMBOK2-C15-19", "chapter": 15, "section": "6.1 DMMA Process Oversight", "pdf_page": 903, "quote": "If formal Data Governance is not in place, then oversight defaults to the steering committee or management layer that initiated the DMMA."},
+    {"id": "DMBOK2-C15-20", "chapter": 15, "section": "6.1 DMMA Process Oversight", "pdf_page": 903, "quote": "The process should have an executive sponsor, ideally the CDO, to ensure improvements in data management activities map directly to business objectives."},
+    {"id": "DMBOK2-C15-21", "chapter": 15, "section": "6.2 Metrics", "pdf_page": 903, "quote": "In addition to being a core component of any improvement strategy, metrics are a key communications tool."},
+    {"id": "DMBOK2-C15-22", "chapter": 15, "section": "6.2 Metrics", "pdf_page": 904, "quote": "Each organization should develop metrics tailored to its target state roadmap."},
+    {"id": "DMBOK2-C15-23", "chapter": 15, "section": "6.2 Metrics", "pdf_page": 905, "quote": "The rate at which an organization is improving its capability. A baseline is established through the DMMA. Periodic reassessment is used to trend improvement."},
+    {"id": "DMBOK2-C16-01", "chapter": 16, "section": "1 Introduction", "pdf_page": 908, "quote": "To do so, they need to clarify basic questions about ownership, collaboration, accountability, and decision-making."},
+    {"id": "DMBOK2-C16-02", "chapter": 16, "section": "1 Introduction", "pdf_page": 908, "quote": "There is no perfect organizational structure for either."},
+    {"id": "DMBOK2-C16-03", "chapter": 16, "section": "3 Data Management Organizational Constructs", "pdf_page": 912, "quote": "The operating model is a framework articulating roles, responsibilities, and decision-making processes."},
+    {"id": "DMBOK2-C16-04", "chapter": 16, "section": "3 Data Management Organizational Constructs", "pdf_page": 912, "quote": "the operating model is not an org chart"},
+    {"id": "DMBOK2-C16-05", "chapter": 16, "section": "3 Data Management Organizational Constructs", "pdf_page": 912, "quote": "It facilitates communication and provides a process to resolve issues."},
+    {"id": "DMBOK2-C16-06", "chapter": 16, "section": "3 Data Management Organizational Constructs", "pdf_page": 912, "quote": "overview of the pros and cons of decentralized, network, hybrid, federated, and centralized operating models"},
+    {"id": "DMBOK2-C16-07", "chapter": 16, "section": "3.1 Decentralized Operating Model", "pdf_page": 913, "quote": "It is also often difficult to define data ownership with a decentralized model."},
+    {"id": "DMBOK2-C16-08", "chapter": 16, "section": "3.2 Network Operating Model", "pdf_page": 914, "quote": "a documented series of connections and accountabilities via a RACI (Responsible, Accountable, Consulted, and Informed) matrix"},
+    {"id": "DMBOK2-C16-09", "chapter": 16, "section": "3.2 Network Operating Model", "pdf_page": 915, "quote": "The addition of a RACI helps create accountability without impacting the organizational charts."},
+    {"id": "DMBOK2-C16-10", "chapter": 16, "section": "3.3 Centralized Operating Model", "pdf_page": 917, "quote": "There is one person at the top. Decision-making is easier because accountability is clear."},
+    {"id": "DMBOK2-C16-11", "chapter": 16, "section": "3.4 Hybrid Operating Model", "pdf_page": 918, "quote": "a centralized data management Center of Excellence works with decentralized business unit groups, usually through both an executive steering committee"},
+    {"id": "DMBOK2-C16-12", "chapter": 16, "section": "3.7 DMO Alternatives and Design Considerations", "pdf_page": 922, "quote": "Most organizations start with a decentralized model before they move toward a formal Data Management Organization (DMO)."},
+    {"id": "DMBOK2-C16-13", "chapter": 16, "section": "3.7 DMO Alternatives and Design Considerations", "pdf_page": 923, "quote": "Ensure that any leadership forum (steering committee, advisory council, board) is a decision-making body"},
+    {"id": "DMBOK2-C16-14", "chapter": 16, "section": "3.7 DMO Alternatives and Design Considerations", "pdf_page": 923, "quote": "Consider pilot programs and waves of implementation"},
+    {"id": "DMBOK2-C16-15", "chapter": 16, "section": "4 Critical Success Factors", "pdf_page": 924, "quote": "success of effective Data Management Organizations, regardless of their structure: 1. Executive sponsorship 2. Clear vision 3. Proactive change management 4. Leadership alignment"},
+    {"id": "DMBOK2-C16-16", "chapter": 16, "section": "4.7 Orientation and Training", "pdf_page": 926, "quote": "Data stewards, owners, and custodians (i.e., those on the frontlines of change) will require indepth understanding of the data management initiative."},
+    {"id": "DMBOK2-C16-17", "chapter": 16, "section": "4.7 Orientation and Training", "pdf_page": 926, "quote": "This means training on new policies, processes, techniques, procedures, and even tools."},
+    {"id": "DMBOK2-C16-18", "chapter": 16, "section": "4.8 Adoption Measurement", "pdf_page": 926, "quote": "It is important to build metrics around the progress and adoption of the data management guidelines"},
+    {"id": "DMBOK2-C16-19", "chapter": 16, "section": "4.9 Adherence to Guiding Principles", "pdf_page": 927, "quote": "A guiding principle is a statement that articulates shared organizational values, underlies strategic vision and mission, and serves as a basis for integrated decision-making."},
+    {"id": "DMBOK2-C16-20", "chapter": 16, "section": "4.10 Evolution Not Revolution", "pdf_page": 928, "quote": "Incrementally improving the way that data is managed and prioritized by business objectives will ensure that new policies and processes are adopted"},
+    {"id": "DMBOK2-C16-21", "chapter": 16, "section": "5.1 Identify Current Data Management Participants", "pdf_page": 928, "quote": "Ensure that the roles are assigned to the right people at the right level within the organization"},
+    {"id": "DMBOK2-C16-22", "chapter": 16, "section": "5.2 Identify Committee Participants", "pdf_page": 929, "quote": "some governance work will need to be done by a Data Governance Steering Committee and by working groups"},
+    {"id": "DMBOK2-C16-23", "chapter": 16, "section": "5.2 Identify Committee Participants", "pdf_page": 929, "quote": "It is often easier to take advantage of existing committees to advance data management topics than it is to start a new one."},
+    {"id": "DMBOK2-C16-24", "chapter": 16, "section": "5.3 Identify and Analyze Stakeholders", "pdf_page": 929, "quote": "They include individual SMEs, senior leaders, teams of employees, committees, customers, government or regulatory agencies, brokers, agents, vendors, etc."},
+    {"id": "DMBOK2-C16-25", "chapter": 16, "section": "5.3 Identify and Analyze Stakeholders", "pdf_page": 929, "quote": "Internal stakeholders can come from IT, operations, compliance, legal, HR, finance or other lines of business."},
+    {"id": "DMBOK2-C16-26", "chapter": 16, "section": "5.3 Identify and Analyze Stakeholders", "pdf_page": 929, "quote": "A stakeholder analysis can help the organization determine the best approach to engaging participants in the data management process"},
+    {"id": "DMBOK2-C16-27", "chapter": 16, "section": "5.4 Involve the Stakeholders", "pdf_page": 930, "quote": "it is important to clearly articulate why each of the stakeholders should be involved"},
+    {"id": "DMBOK2-C16-28", "chapter": 16, "section": "6.3 Data Quality", "pdf_page": 936, "quote": "align the Data Quality operating model to that of the overall Data Management Organization"},
+    {"id": "DMBOK2-C16-29", "chapter": 16, "section": "7.2.2 Business Roles", "pdf_page": 939, "quote": "Business roles focus largely on data governance functions, especially stewardship."},
+    {"id": "DMBOK2-C16-30", "chapter": 16, "section": "7.2.2 Business Roles", "pdf_page": 939, "quote": "Data Stewards are usually recognized subject matter experts who are assigned accountability for Metadata and data quality"},
+    {"id": "DMBOK2-C16-31", "chapter": 16, "section": "7.2.2 Business Roles", "pdf_page": 940, "quote": "Stewards play different roles, depending on organizational priorities. The initial focus of stewardship is often on defining business terms and valid values"},
+    {"id": "DMBOK2-C16-32", "chapter": 16, "section": "7.2.2 Business Roles", "pdf_page": 940, "quote": "Stewards also define and maintain data quality requirements and business rules for assigned data attributes, help identify and resolve data issues"},
+    {"id": "DMBOK2-C16-33", "chapter": 16, "section": "7.2.2 Business Roles", "pdf_page": 940, "quote": "Stewards may function at the enterprise, business unit, or functional level."},
+    {"id": "DMBOK2-C16-34", "chapter": 16, "section": "7.2.3 IT Roles", "pdf_page": 941, "quote": "Help Desk Administrator : Responsible for handling, tracking, and resolving issues related to use of information, information systems, or the IT infrastructure."},
+    {"id": "DMBOK2-C16-35", "chapter": 16, "section": "7.2.4 Hybrid Roles", "pdf_page": 942, "quote": "determining the fitness of data for use and monitoring the ongoing condition of the data; contributes to root cause analysis of data issues"}
+  ],
+  "rows": [
+    {
+      "concept_id": "A-02",
+      "dmbok_terms": ["Data Steward", "business roles", "stewardship", "Data Quality Analyst (hybrid role)", "Help Desk Administrator (IT role)"],
+      "citation_ids": ["DMBOK2-C16-29", "DMBOK2-C16-30", "DMBOK2-C16-31", "DMBOK2-C16-32", "DMBOK2-C16-34", "DMBOK2-C16-35"],
+      "dmbok_position": "Chapter 16 treats the Data Steward as a business role centred on data governance: a recognised subject matter expert accountable for metadata and data quality of business entities, subject areas or databases, who typically defines business terms, quality requirements and business rules and helps identify and resolve data issues, with emphasis varying by organisation. It assigns handling of information-system problems to a separate IT help-desk role and shows fitness-for-use monitoring and root-cause contribution under a hybrid Data Quality Analyst role.",
+      "caveats": [
+        "Reading limited to Chapters 15-16: steward types, the full catalogue of steward responsibilities and the Data Owner role sit in the data governance chapter, which this reader did not cover.",
+        "Linking 'operational incident-resolution' to the Help Desk Administrator role is this reader's analogy; the DMBOK2 does not say stewards exclude incident handling.",
+        "Mapping, lineage, data-contract and upstream-dependency duties resemble the IT and hybrid roles in 7.2.3 and 7.2.4; the DMBOK2 says stewards play different roles by organisational priority and does not forbid a broader scope."
+      ],
+      "proposed_status": "Aligned",
+      "status_rationale": "Compared README.md (Business context: the scope list and the statement that the role is 'a data governance role rather than an operational incident-resolution role') and HANDOFF.md (non-goal: resolving operational incidents on behalf of operations teams). The governance framing and the scope (quality, definitions, critical data elements, dictionaries, documentation, rules and controls, root cause) match the Chapter 16 steward and hybrid role descriptions, and keeping incident handling out of the role matches Chapter 16's separate IT issue-handling role. The only friction is vocabulary: the DMBOK2 says stewards help identify and resolve data issues, so a short clarifying phrase avoids an apparent conflict. Suggested wording: 'a data governance role that analyses data issues and root causes and recommends action, rather than an operational incident-resolution role'.",
+      "proposed_action": "wording",
+      "proposal_options": []
+    },
+    {
+      "concept_id": "A-03",
+      "dmbok_terms": ["ownership", "accountability", "data owners", "stewards, owners and custodians"],
+      "citation_ids": ["DMBOK2-C16-01", "DMBOK2-C16-07", "DMBOK2-C16-16", "DMBOK2-C16-21"],
+      "dmbok_position": "Within Chapters 15-16 the DMBOK2 names ownership and accountability as basic questions an organisation must clarify, warns that data ownership is hard to define under a decentralised model, lists owners alongside stewards and custodians as frontline roles, and expects roles to be given to people at a suitable level. It does not, in this range, define the Data Owner role, say who approves an ownership assignment, or describe detecting ownership gaps.",
+      "caveats": [
+        "Chapters 15-16 contain no Data Owner definition and no guidance on ownership-gap detection or on who approves an ownership assignment; the main Data Owner treatment lies outside the assigned range and was not read.",
+        "The status therefore rests on general statements about ownership and accountability, not on a role definition to compare against."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared HANDOFF.md ('Human approval required' lists ownership assignment) and contracts/definition-and-cde-agent.contract.json (the agent identifies 'ownership gaps' and is not responsible for 'Assigning owners'). Keeping assignment with humans and only surfacing gaps fits the DMBOK2 emphasis on clarifying ownership and accountability. However 'Data Owner' and 'appropriate human owner' are not defined or named anywhere in the repository, and Phase 0b of docs/IMPLEMENTATION-SEQUENCE.md plans to name only the governance sign-off and override roles, not Data Owners for data domains, so no named role is yet accountable for approving an assignment. Suggested wording: define 'Data Owner' and 'ownership gap' in the project's own terms, state which named role approves assignments once Phase 0b names it, and keep any DMBOK2 usage labelled general industry context; the structural choices for naming roles are set out under A-04.",
+      "proposed_action": "wording",
+      "proposal_options": []
+    },
+    {
+      "concept_id": "A-04",
+      "dmbok_terms": ["Data Governance Steering Committee", "working groups", "Data Governance Council", "executive sponsor", "Chief Data Officer", "decision-making body", "RACI"],
+      "citation_ids": ["DMBOK2-C16-05", "DMBOK2-C16-08", "DMBOK2-C16-09", "DMBOK2-C16-10", "DMBOK2-C16-13", "DMBOK2-C16-22", "DMBOK2-C16-23", "DMBOK2-C15-19", "DMBOK2-C15-20"],
+      "dmbok_position": "The DMBOK2 expects governance work to be done by a Data Governance Steering Committee and working groups under any operating model, wants such leadership forums to be genuine decision-making bodies, and looks for an executive sponsor (ideally the CDO), while offering a single accountable leader or a RACI matrix as ways to make accountability explicit and noting that an operating model supplies a process for resolving issues. For a maturity assessment it adds that, absent formal governance, oversight falls to the steering committee or management layer that started the work.",
+      "caveats": [
+        "The Chapter 15 fallback concerns oversight of a maturity assessment, so likening it to the project's 'defaults to the project owner' arrangement is an analogy, not DMBOK2 guidance on escalation paths.",
+        "The assigned chapters do not describe an escalation path in those terms; the nearest statement is that an operating model provides a process to resolve issues."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared agents/factory/agent-risk-reviewer.md (approval and contested-finding escalations go to a 'named human governance owner'; an assumption records that the role is unspecified and escalations route to the project owner until named) and docs/IMPLEMENTATION-SEQUENCE.md Phase 0b (name who holds Factory-tier sign-off, operational-tier sign-off and override authority). A human decision-maker and an escalation route match the DMBOK2 intent, but no governance forum, sponsor or accountability map exists yet, so the owner is a placeholder rather than a role within a stated governance structure. All three options below are proposals for the project owner; the DMBOK2 is general industry context and internal policy outranks it.",
+      "proposed_action": "structural-proposal",
+      "proposal_options": [
+        "Option A - single accountable executive: name one senior executive as governance owner and escalation point, acting as sponsor for the capability. The DMBOK2 describes a single top accountable leader as making decisions easier and accountability clear, and names an executive sponsor (ideally the CDO) for oversight. Backed by DMBOK2-C16-10 and DMBOK2-C15-20.",
+        "Option B - decision-making governance forum: route escalations to a Data Governance Steering Committee with working groups, either newly created or an existing committee used cautiously, and require that it is a decision-making body. Backed by DMBOK2-C16-22, DMBOK2-C16-13 and DMBOK2-C16-23.",
+        "Option C - documented accountability map: keep the current structure and record Responsible, Accountable, Consulted and Informed roles for Factory sign-off, operational sign-off and override authority in a RACI matrix, which the DMBOK2 presents as adding accountability without changing organisation charts. Backed by DMBOK2-C16-08 and DMBOK2-C16-09."
+      ]
+    },
+    {
+      "concept_id": "A-06",
+      "dmbok_terms": ["metrics", "DMMA ratings", "adoption measurement", "assessment report", "rate of change"],
+      "citation_ids": ["DMBOK2-C15-13", "DMBOK2-C15-21", "DMBOK2-C15-22", "DMBOK2-C16-18"],
+      "dmbok_position": "The DMBOK2 treats metrics as a core part of improvement and as a communications tool, expects each organisation to tailor them to its target-state roadmap, lists governance and metrics to measure progress among the contents of an assessment report, and asks that adoption of data management guidelines be measured. In these chapters the metrics are framed around maturity assessment and programme adoption, and no fixed format for a stewardship governance report is given.",
+      "caveats": [
+        "Chapters 15-16 frame metrics around maturity assessment and programme adoption; metrics specific to data governance or data quality are probably covered in chapters outside this range."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared README.md (Business context lists 'governance reporting' as a stewardship responsibility) and HANDOFF.md ('Success criteria'). No document defines the content, audience, cadence or measures of governance reporting, and the ten Success criteria are qualitative conditions (for example 'claims are traceable') rather than measures that can be reported and trended. The DMBOK2 pairs reporting with tailored metrics and progress measurement, which the project does not yet describe. Suggested wording: say what governance reporting covers, that its metrics are to be defined by the organisation (DMBOK2 sample metrics as general industry context only), and that the Success criteria are acceptance conditions for the system, not reporting metrics.",
+      "proposed_action": "wording",
+      "proposal_options": []
+    },
+    {
+      "concept_id": "A-07",
+      "dmbok_terms": ["continuous improvement", "re-assessment", "baseline", "rate of change", "evolution not revolution"],
+      "citation_ids": ["DMBOK2-C15-15", "DMBOK2-C15-16", "DMBOK2-C15-23", "DMBOK2-C16-20"],
+      "dmbok_position": "The DMBOK2 ties continuous improvement to a repeating cycle of baseline, scheduled re-assessment and trend tracking, and advises improving data management incrementally in line with business objectives. The term itself matches the project's usage; the chapters give no stewardship-specific improvement process.",
+      "caveats": [
+        "The DMBOK2 anchors continuous improvement in maturity re-assessment, so any improvement cycle proposed depends on the maturity-measure decision recorded under A-32."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared README.md (Business context lists 'continuous improvement' as a stewardship responsibility) and HANDOFF.md (suggested sequence step 11, 'Iterate'). Nothing in the repository says how stewardship practice is reviewed or improved over time; step 11 concerns building the agents, not the stewardship practice. The term matches the DMBOK2, which however attaches it to a baseline and scheduled re-assessment that the project does not describe. Suggested wording: describe continuous improvement as periodic review of stewardship outcomes against a stated baseline, leaving the cycle options under A-32 for human decision.",
+      "proposed_action": "wording",
+      "proposal_options": []
+    },
+    {
+      "concept_id": "A-08",
+      "dmbok_terms": ["stakeholders", "SMEs", "stakeholder analysis", "stakeholder engagement", "operations"],
+      "citation_ids": ["DMBOK2-C16-16", "DMBOK2-C16-24", "DMBOK2-C16-25", "DMBOK2-C16-26", "DMBOK2-C16-27", "DMBOK2-C16-30"],
+      "dmbok_position": "The DMBOK2 defines stakeholders broadly, naming individual SMEs and internal groups such as operations, recommends analysing them early to decide how to engage them, and stresses explaining why each stakeholder's involvement matters; it names stewards, owners and custodians as the frontline roles needing deeper understanding of the initiative. It does not discuss routing unresolved questions to stakeholders.",
+      "caveats": [
+        "In the DMBOK2 a Data Steward is usually itself a recognised subject matter expert (7.2.2), whereas the project treats SMEs as a separate source of input to the steward; the text does not contradict this but is less distinct.",
+        "The assigned chapters do not discuss routing unresolved questions to stakeholders, so the match is at the level of stakeholder engagement, not of the project's specific agent behaviour."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared HANDOFF.md (objective list: agents 'identify unresolved questions requiring SME or Data Owner input') and README.md (the system is not intended to replace the Data Steward, Data Owner, SMEs, operational teams or governance forums). This fits the DMBOK2 emphasis on engaging stakeholders. However no stakeholders are identified: SMEs and Data Owners are unnamed, Phase 0b of docs/IMPLEMENTATION-SEQUENCE.md names only governance sign-off roles, and the Orchestrator's routing table is deferred, so agents have no stated destination for these questions and there is no analysis of whose input matters most. Suggested wording: state that questions go to named SMEs and Data Owners per domain once identified, and add them to the Phase 0b role-naming list; a stakeholder register is a possible later step.",
+      "proposed_action": "wording",
+      "proposal_options": []
+    },
+    {
+      "concept_id": "A-31",
+      "dmbok_terms": ["operating model", "Data Management Organization (DMO)", "decentralized model", "network model", "centralized model", "hybrid model", "federated model", "Center of Excellence", "RACI"],
+      "citation_ids": ["DMBOK2-C16-02", "DMBOK2-C16-03", "DMBOK2-C16-04", "DMBOK2-C16-06", "DMBOK2-C16-07", "DMBOK2-C16-08", "DMBOK2-C16-09", "DMBOK2-C16-11", "DMBOK2-C16-12", "DMBOK2-C16-33"],
+      "dmbok_position": "The DMBOK2 defines an operating model as a framework of roles, responsibilities and decision-making processes rather than an org chart, describes decentralized, network, centralized, hybrid and federated patterns, and says no structure is perfect and most organisations begin decentralized. Stewards may sit at enterprise, business-unit or functional level; the network pattern adds a RACI matrix and the hybrid pattern pairs a central Center of Excellence with business-unit groups.",
+      "caveats": [
+        "The Agent Factory and the Operational Stewardship Team are AI-system constructs with no DMBOK2 counterpart; only the human operating model is compared here.",
+        "Business-versus-technical steward types are not defined in Chapters 15-16 (Chapter 16 groups roles as business, IT and hybrid); the steward-type taxonomy lies in a chapter outside this range.",
+        "Operating-model diagrams (Figures 106-111) are missing from the conversion; this row uses the prose descriptions only, and the diagrams themselves are unverifiable from text."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared docs/PROPOSED-ARCHITECTURE.md (Layer 2, the Operational Stewardship Team, with the human Data Steward at both ends of the flow and a human governance sign-off for Layer 1) and README.md (Operational Stewardship Team). They describe AI agents working under one human Data Steward, with decision rights set by the 'AI proposes, evidence supports, the Data Steward evaluates, the appropriate human owner approves' principle and an unnamed governance owner. That documents decision rights for the agents, but no human operating model in DMBOK2 terms is given: no chosen pattern, accountability map, committee or forum, or statement of the steward's organisational level. If the owner prefers to keep the single-steward structure without adopting a DMBOK2 pattern, a record-deviation is the alternative to the options below, which are proposals only.",
+      "proposed_action": "structural-proposal",
+      "proposal_options": [
+        "Option A - decentralized, functional-level steward (the current de facto position): record that the Investment Operations Data Steward works at functional level in a decentralized model and name the forum used for collaboration; the DMBOK2 notes most organisations start here but that data ownership is harder to define. Backed by DMBOK2-C16-12, DMBOK2-C16-33 and DMBOK2-C16-07.",
+        "Option B - network model: keep the single steward and add a RACI matrix linking the steward, Data Owners, SMEs, operations teams and the governance owner, which the DMBOK2 says adds accountability without changing organisation charts. Backed by DMBOK2-C16-08 and DMBOK2-C16-09.",
+        "Option C - hybrid model: pair the business-unit steward with a central Center of Excellence and an executive steering committee, as in the DMBOK2 hybrid pattern. Backed by DMBOK2-C16-11."
+      ]
+    },
+    {
+      "concept_id": "A-32",
+      "dmbok_terms": ["Data Management Maturity Assessment (DMMA)", "Capability Maturity Assessment (CMA)", "maturity levels", "assessment criteria", "re-assessment", "CMMI-DMM", "DCAM"],
+      "citation_ids": ["DMBOK2-C15-01", "DMBOK2-C15-02", "DMBOK2-C15-03", "DMBOK2-C15-04", "DMBOK2-C15-05", "DMBOK2-C15-06", "DMBOK2-C15-07", "DMBOK2-C15-08", "DMBOK2-C15-09", "DMBOK2-C15-10", "DMBOK2-C15-11", "DMBOK2-C15-12", "DMBOK2-C15-14", "DMBOK2-C15-16", "DMBOK2-C15-17", "DMBOK2-C15-18", "DMBOK2-C15-23"],
+      "dmbok_position": "Chapter 15 describes a maturity assessment as rating data management capability against a framework of five or six levels using evidence-supported criteria (grouped, for example, by activity, tools, standards, and people and resources), scoped if needed to one knowledge area, run against a baseline and repeated on a published schedule, and it ties the practice to the governance function. It names published frameworks such as CMMI-DMM and the financial-services DCAM and says the DMBOK2 itself can serve as a checklist for such an assessment.",
+      "caveats": [
+        "Figures 103-105 (context diagram, example maturity model, example visualisation) and Table 33 (risks and mitigations for an assessment) are not available in the conversion; their content is unverifiable from text and was not used.",
+        "The DMBOK2 says a baseline understanding and some organisational maturity are needed before an assessment can be run, so readiness for this project was not assumed.",
+        "The ten Success criteria also include AI-specific conditions (agents can be evaluated independently, governance can be applied to the agents themselves) on which the DMBOK2 is silent."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared HANDOFF.md ('Success criteria'): ten qualitative conditions for a governed, traceable capability (for example 'agents know their boundaries', 'claims are traceable') with no scale, baseline, evidence-rating method or review cadence; no maturity measure exists anywhere in the repository. The criteria work as a target-state description, which is one element of the DMBOK2 assessment cycle, but not as an assessment of capability against levels and criteria. If the owner decides a maturity measure is out of scope for this project, a record-deviation can replace the options below, which are proposals only; the DMBOK2 is general industry context and internal policy outranks it.",
+      "proposed_action": "structural-proposal",
+      "proposal_options": [
+        "Option A - scoped assessment with a published framework: choose a published data management maturity framework (the DMBOK2 names CMMI-DMM, the financial-services DCAM and others), evaluate several before choosing, and limit the first assessment to Investment Operations data stewardship; the DMBOK2 cautions that a baseline understanding and some organisational maturity are needed first. Backed by DMBOK2-C15-07, DMBOK2-C15-08, DMBOK2-C15-09, DMBOK2-C15-01, DMBOK2-C15-12 and DMBOK2-C15-02.",
+        "Option B - DMBOK2-based checklist self-assessment: use the DMBOK2 knowledge areas, activities and deliverables as a fast checklist, with criteria grouped by activity, tools, standards, and people and resources and scored against generic maturity levels, keeping the model intact when tailoring. Backed by DMBOK2-C15-17, DMBOK2-C15-18, DMBOK2-C15-05, DMBOK2-C15-06, DMBOK2-C15-04 and DMBOK2-C15-11.",
+        "Option C - turn the Success criteria into ongoing measures: keep them as the target state and rate each one against a stated baseline on a published review schedule, without adopting a formal maturity scale. Backed by DMBOK2-C15-14, DMBOK2-C15-23 and DMBOK2-C15-16."
+      ]
+    }
+  ],
+  "additional_content": [
+    {
+      "topic": "Guiding principles as the basis for decisions",
+      "citation_ids": ["DMBOK2-C16-19"],
+      "why_relevant": "The project's ten design principles and its 'AI proposes' authority model play the role the DMBOK2 gives to guiding principles that make decisions consistent."
+    },
+    {
+      "topic": "Evidence-supported consensus on current state",
+      "citation_ids": ["DMBOK2-C15-10"],
+      "why_relevant": "Rating current-state capability from proof of practice mirrors the project's rule that every material conclusion is traceable to evidence."
+    },
+    {
+      "topic": "Training stewards, owners and custodians, including on new tools",
+      "citation_ids": ["DMBOK2-C16-16", "DMBOK2-C16-17"],
+      "why_relevant": "The humans who evaluate and approve AI proposals will need focused training, and a search of the main project documents found no training or onboarding plan."
+    },
+    {
+      "topic": "Critical success factors for a Data Management Organization",
+      "citation_ids": ["DMBOK2-C16-15"],
+      "why_relevant": "Executive sponsorship, clear vision, change management and leadership alignment give the owner a ready checklist for sustaining the capability once it is built."
+    },
+    {
+      "topic": "Phased introduction through pilots and waves",
+      "citation_ids": ["DMBOK2-C16-14"],
+      "why_relevant": "Piloting in waves matches the project's incremental build sequence and could frame how the capability is rolled out beyond a first pilot."
+    },
+    {
+      "topic": "Aligning the data quality group with the data management operating model",
+      "citation_ids": ["DMBOK2-C16-28"],
+      "why_relevant": "The Data Quality Agent's outputs will meet an organisation's data quality group, whose operating model the DMBOK2 says should align with the wider data management organisation."
+    }
+  ],
+  "source_caveats": [
+    "Figures 103-112 and Table 33 are missing from the conversion (their image links are dead): the maturity assessment context diagram, the example maturity model, the example assessment visualisation, the risks-and-mitigations table, the operating-model diagrams and the stakeholder interest map cannot be checked from the text, so no conclusion here depends on them.",
+    "PDF page markers fall mid-sentence and mid-list, so several sentences span two pages (for example the scope sentence in 2.1.3 across pages 891-892 and the role-assignment sentence in 5.1 across pages 928-929); quotes were limited to the part lying within one page.",
+    "Conversion artefacts: bullets merged (Levels 4 and 5 run together on page 876), list items rendered as headings (for example 'Business drivers for the assessment' on page 895), section numbers 1.3.1 to 1.3.3.5 appearing as italic or plain text rather than headings, and footnote digits attached to headings and words (for example 'DCAM100').",
+    "Nested bullets in 6.2 Metrics lose their indentation and run together across pages 904-905, so the grouping of sub-points under 'Spend management' cannot be read reliably.",
+    "Chapters 15-16 do not define the Data Owner role or Data Steward subtypes; conclusions on A-02 and A-03 therefore rest on the general role descriptions in section 7 and should be reconciled with the reader covering the data governance chapter."
+  ]
+}

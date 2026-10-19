@@ -1,0 +1,257 @@
+{
+  "unit": 6,
+  "citations": [
+    {"id": "DMBOK2-C13-01", "chapter": 13, "section": "1 Introduction", "pdf_page": 739, "quote": "Many organizations fail to define what makes data fit for purpose."},
+    {"id": "DMBOK2-C13-02", "chapter": 13, "section": "1.3.1 Data Quality", "pdf_page": 745, "quote": "the expectations and needs of data consumers. That is, if the data is fit for the purposes to which they want to apply it."},
+    {"id": "DMBOK2-C13-03", "chapter": 13, "section": "1.3.1 Data Quality", "pdf_page": 745, "quote": "One of the challenges in managing the quality of data is that expectations related to quality are not always known."},
+    {"id": "DMBOK2-C13-04", "chapter": 13, "section": "1.3.2 Critical Data", "pdf_page": 746, "quote": "While specific drivers for criticality will differ by industry, there are common characteristics across organizations."},
+    {"id": "DMBOK2-C13-05", "chapter": 13, "section": "1.3.2 Critical Data", "pdf_page": 746, "quote": "required by: - Regulatory reporting - Financial reporting - Business policy - Ongoing operations - Business strategy"},
+    {"id": "DMBOK2-C13-06", "chapter": 13, "section": "1.3.2 Critical Data", "pdf_page": 746, "quote": "Master Data is critical by definition. Data sets or individual data elements can be assessed for criticality based on the processes that consume them"},
+    {"id": "DMBOK2-C13-07", "chapter": 13, "section": "1.3.2 Critical Data", "pdf_page": 746, "quote": "the nature of the reports they appear in, or the financial, regulatory, or reputational risk to the organization"},
+    {"id": "DMBOK2-C13-08", "chapter": 13, "section": "1.3.3 Data Quality Dimensions", "pdf_page": 747, "quote": "Data quality dimensions provide a vocabulary for defining data quality requirements."},
+    {"id": "DMBOK2-C13-09", "chapter": 13, "section": "1.3.3 Data Quality Dimensions", "pdf_page": 747, "quote": "The Strong-Wang framework (1996) focuses on data consumers' perceptions of data. It describes 15 dimensions across four general categories of data quality:"},
+    {"id": "DMBOK2-C13-10", "chapter": 13, "section": "1.3.3 Data Quality Dimensions", "pdf_page": 748, "quote": "Thomas Redman formulated a set of data quality dimension rooted in data structure"},
+    {"id": "DMBOK2-C13-11", "chapter": 13, "section": "1.3.3 Data Quality Dimensions", "pdf_page": 750, "quote": "Larry English presents a comprehensive set of dimensions divided into two broad categories: inherent and pragmatic"},
+    {"id": "DMBOK2-C13-12", "chapter": 13, "section": "1.3.3 Data Quality Dimensions", "pdf_page": 751, "quote": "In 2013, DAMA UK produced a white paper describing six core dimensions of data quality:"},
+    {"id": "DMBOK2-C13-13", "chapter": 13, "section": "1.3.3 Data Quality Dimensions", "pdf_page": 752, "quote": "The DAMA UK white paper also describes other characteristics that have an impact on quality."},
+    {"id": "DMBOK2-C13-14", "chapter": 13, "section": "1.3.3 Data Quality Dimensions", "pdf_page": 753, "quote": "While there is not a single, agreed-to set of data quality dimensions, these formulations contain common ideas."},
+    {"id": "DMBOK2-C13-15", "chapter": 13, "section": "1.3.3 Data Quality Dimensions", "pdf_page": 753, "quote": "some characteristics that can be measured objectively (completeness, validity, format conformity) and others that depend heavily context or on subjective interpretation (usability, reliability, reputation)."},
+    {"id": "DMBOK2-C13-16", "chapter": 13, "section": "1.3.4 Data Quality and Metadata", "pdf_page": 758, "quote": "A Metadata repository can house results of data quality measurements so that these are shared across the organization"},
+    {"id": "DMBOK2-C13-17", "chapter": 13, "section": "1.3.6 Data Quality Improvement Lifecycle", "pdf_page": 760, "quote": "the Shewhart / Deming cycle is a problem-solving model known as 'plan-do-check-act'"},
+    {"id": "DMBOK2-C13-18", "chapter": 13, "section": "1.3.7 Data Quality Business Rule Types", "pdf_page": 763, "quote": "describe how data should exist in order to be useful and usable within an organization. These rules can be aligned with dimensions of quality"},
+    {"id": "DMBOK2-C13-19", "chapter": 13, "section": "1.3.7 Data Quality Business Rule Types", "pdf_page": 763, "quote": "Definitional conformance : Confirm that the same understanding of data definitions is implemented and used properly in processes across the organization."},
+    {"id": "DMBOK2-C13-20", "chapter": 13, "section": "1.3.8 Common Causes of Data Quality Issues", "pdf_page": 765, "quote": "Many issues will have multiple causes and contributing factors"},
+    {"id": "DMBOK2-C13-21", "chapter": 13, "section": "1.3.8.3 Issues Caused by Data Processing Functions", "pdf_page": 770, "quote": "Source systems may change structures without informing downstream consumers (both human and system) or without providing sufficient time to account for the changes."},
+    {"id": "DMBOK2-C13-22", "chapter": 13, "section": "1.3.9 Data Profiling", "pdf_page": 774, "quote": "Results from the profiling engine must be assessed by an analyst to determine whether data conforms to rules and other requirements."},
+    {"id": "DMBOK2-C13-23", "chapter": 13, "section": "2.3 Identify Critical Data and Business Rules", "pdf_page": 781, "quote": "Data can be prioritized based on factors such as regulatory requirements, financial value, and direct impact on customers."},
+    {"id": "DMBOK2-C13-24", "chapter": 13, "section": "2.3 Identify Critical Data and Business Rules", "pdf_page": 781, "quote": "The result of the importance analysis is a ranked list of data, which the Data Quality team can use to focus their work efforts."},
+    {"id": "DMBOK2-C13-25", "chapter": 13, "section": "2.3 Identify Critical Data and Business Rules", "pdf_page": 781, "quote": "Often rules themselves are not explicitly documented."},
+    {"id": "DMBOK2-C13-26", "chapter": 13, "section": "2.3 Identify Critical Data and Business Rules", "pdf_page": 782, "quote": "Measurements that describe whether data is fit for use should be developed in relation to known uses and measurable rules"},
+    {"id": "DMBOK2-C13-27", "chapter": 13, "section": "2.4 Perform an Initial Data Quality Assessment", "pdf_page": 783, "quote": "Develop hypotheses about root causes of data issues - Meet with Data Stewards, SMEs, and data consumers to confirm issues and priorities"},
+    {"id": "DMBOK2-C13-28", "chapter": 13, "section": "2.5 Identify and Prioritize Potential Improvements", "pdf_page": 784, "quote": "It helps identify issues, but does not identify root causes, nor does it determine the impact of issues to business processes."},
+    {"id": "DMBOK2-C13-29", "chapter": 13, "section": "2.6 Define Goals for Data Quality Improvement", "pdf_page": 785, "quote": "determine ROI of fixes based on: The criticality (importance ranking) of the data affected Amount of data affected The age of the data"},
+    {"id": "DMBOK2-C13-30", "chapter": 13, "section": "2.7.1 Manage Data Quality Rules", "pdf_page": 787, "quote": "Dimensions of quality help people understand what is being measured. Consistent application of dimensions will help with the measurement and issue management processes."},
+    {"id": "DMBOK2-C13-31", "chapter": 13, "section": "2.7.1 Manage Data Quality Rules", "pdf_page": 787, "quote": "Data Quality Analysts should not guess at rules. Rules should be tested against actual data."},
+    {"id": "DMBOK2-C13-32", "chapter": 13, "section": "2.7.1 Manage Data Quality Rules", "pdf_page": 787, "quote": "Confirmed by SMEs : The goal of the rules is to describe how the data should look."},
+    {"id": "DMBOK2-C13-33", "chapter": 13, "section": "2.7.2 Measure and Monitor Data Quality", "pdf_page": 788, "quote": "Measurements intended to inform data consumers will focus on critical data elements and relationships"},
+    {"id": "DMBOK2-C13-34", "chapter": 13, "section": "2.7.2 Measure and Monitor Data Quality", "pdf_page": 789, "quote": "In most cases, it is worthwhile to put in place measurements that monitor functions similar to those that have had problems."},
+    {"id": "DMBOK2-C13-35", "chapter": 13, "section": "2.7.2 Measure and Monitor Data Quality", "pdf_page": 792, "quote": "Provide continuous monitoring by incorporating control and measurement processes into the information processing flow."},
+    {"id": "DMBOK2-C13-36", "chapter": 13, "section": "2.7.2 Measure and Monitor Data Quality", "pdf_page": 792, "quote": "Measurements can be taken at three levels of granularity: the data element value, data instance or record, or the data set."},
+    {"id": "DMBOK2-C13-37", "chapter": 13, "section": "2.7.3 Develop Operational Procedures for Managing Data Issues", "pdf_page": 793, "quote": "review the symptoms of the data quality incident, trace the lineage of the data in question, identify the problem and where it originated"},
+    {"id": "DMBOK2-C13-38", "chapter": 13, "section": "2.7.3 Develop Operational Procedures for Managing Data Issues", "pdf_page": 794, "quote": "The work of root cause analysis requires input from technical and business SMEs."},
+    {"id": "DMBOK2-C13-39", "chapter": 13, "section": "2.7.3 Develop Operational Procedures for Managing Data Issues", "pdf_page": 794, "quote": "Taking no action based on the cost and impact of correction versus the value of the data correction"},
+    {"id": "DMBOK2-C13-40", "chapter": 13, "section": "2.7.3 Develop Operational Procedures for Managing Data Issues", "pdf_page": 795, "quote": "the Data Quality team must confer with the business data owners to determine the best way to resolve the issue"},
+    {"id": "DMBOK2-C13-41", "chapter": 13, "section": "2.7.3 Develop Operational Procedures for Managing Data Issues", "pdf_page": 795, "quote": "Include a description of the issue and the root causes, options for remediation, and the decision on how to resolve the issue."},
+    {"id": "DMBOK2-C13-42", "chapter": 13, "section": "2.7.3 Develop Operational Procedures for Managing Data Issues", "pdf_page": 796, "quote": "it is valuable to define a standard vocabulary for the concepts used. Doing so will simplify classification and reporting."},
+    {"id": "DMBOK2-C13-43", "chapter": 13, "section": "2.7.3 Develop Operational Procedures for Managing Data Issues", "pdf_page": 796, "quote": "Standardization also makes it easier to measure the volume of issues and activities, identify patterns and interdependencies between systems and participants"},
+    {"id": "DMBOK2-C13-44", "chapter": 13, "section": "2.7.3 Develop Operational Procedures for Managing Data Issues", "pdf_page": 796, "quote": "Data quality issue handling requires a well-defined system of escalation based on the impact, duration, or urgency of an issue."},
+    {"id": "DMBOK2-C13-45", "chapter": 13, "section": "2.7.4 Establish Data Quality Service Level Agreements", "pdf_page": 797, "quote": "A data quality Service Level Agreement (SLA) specifies an organization's expectations for response and remediation for data quality issues in each system."},
+    {"id": "DMBOK2-C13-46", "chapter": 13, "section": "2.7.4 Establish Data Quality Service Level Agreements", "pdf_page": 797, "quote": "Expectations for quality for each data element for each of the identified dimensions in each application or system in the data value chain"},
+    {"id": "DMBOK2-C13-47", "chapter": 13, "section": "2.7.4 Establish Data Quality Service Level Agreements", "pdf_page": 798, "quote": "the acceptability thresholds defined by the business clients"},
+    {"id": "DMBOK2-C13-48", "chapter": 13, "section": "2.7.5 Develop Data Quality Reporting", "pdf_page": 798, "quote": "Data quality scorecard, which provides a high-level view of the scores associated with various metrics"},
+    {"id": "DMBOK2-C13-49", "chapter": 13, "section": "3.4 Data Quality Rule Templates", "pdf_page": 800, "quote": "Consistent formulation of rules makes it easier to translate business needs into code"},
+    {"id": "DMBOK2-C13-50", "chapter": 13, "section": "4.1 Preventive Actions", "pdf_page": 801, "quote": "Ensure staff in upstream systems understand the impact of their data on downstream users."},
+    {"id": "DMBOK2-C13-51", "chapter": 13, "section": "4.2 Corrective Actions", "pdf_page": 803, "quote": "corrections with scores below the level of confidence are presented to the data steward for review and approval"},
+    {"id": "DMBOK2-C13-52", "chapter": 13, "section": "4.2 Corrective Actions", "pdf_page": 803, "quote": "The alternative of making corrections and committing the updated records directly in production environments is extremely risky."},
+    {"id": "DMBOK2-C13-53", "chapter": 13, "section": "4.4 Effective Data Quality Metrics", "pdf_page": 804, "quote": "Metrics should be understood and approved by key stakeholders (e.g., business owners and Data Stewards)."},
+    {"id": "DMBOK2-C13-54", "chapter": 13, "section": "4.4 Effective Data Quality Metrics", "pdf_page": 804, "quote": "The business data owner is accountable"},
+    {"id": "DMBOK2-C13-55", "chapter": 13, "section": "4.4 Effective Data Quality Metrics", "pdf_page": 805, "quote": "Tracking helps Data Quality team members monitor activities within the scope of a data quality SLA and data sharing agreement"},
+    {"id": "DMBOK2-C13-56", "chapter": 13, "section": "4.5 Statistical Process Control", "pdf_page": 805, "quote": "Statistical Process Control (SPC) is a method to manage processes by analyzing measurements of variation in process inputs, outputs, or steps."},
+    {"id": "DMBOK2-C13-57", "chapter": 13, "section": "4.6 Root Cause Analysis", "pdf_page": 807, "quote": "A root cause of a problem is a factor that, if eliminated, would remove the problem itself."},
+    {"id": "DMBOK2-C13-58", "chapter": 13, "section": "4.6 Root Cause Analysis", "pdf_page": 808, "quote": "Common techniques for root cause analysis include Pareto analysis (the 80/20 rule), fishbone diagram analysis, track and trace, process analysis, and the Five Whys"},
+    {"id": "DMBOK2-C13-59", "chapter": 13, "section": "6 Data Quality and Data Governance", "pdf_page": 813, "quote": "Business and operational data stewards, and data owners who can identify critical data, define standards and quality expectations, and prioritize remediation of data issues"},
+    {"id": "DMBOK2-C13-60", "chapter": 13, "section": "6.1 Data Quality Policy", "pdf_page": 814, "quote": "Each policy should include: - Purpose, scope and applicability of the policy - Definitions of terms"},
+    {"id": "DMBOK2-C13-61", "chapter": 13, "section": "6.2 Metrics", "pdf_page": 815, "quote": "Counts of issues by dimensions of data quality - Issues per business function and their statuses (resolved, outstanding, escalated)"}
+  ],
+  "rows": [
+    {
+      "concept_id": "A-12",
+      "dmbok_terms": ["Critical Data", "criticality", "critical data elements", "importance analysis (ranked list of data)"],
+      "citation_ids": ["DMBOK2-C13-04", "DMBOK2-C13-05", "DMBOK2-C13-06", "DMBOK2-C13-07", "DMBOK2-C13-23", "DMBOK2-C13-24", "DMBOK2-C13-33", "DMBOK2-C13-59", "DMBOK2-C13-60"],
+      "dmbok_position": "DMBOK2 uses criticality to focus data quality work: data is judged against common drivers (regulatory reporting, financial reporting, business policy, ongoing operations, business strategy), Master Data counts as critical by definition, and data sets or elements are assessed through the processes and reports that consume them and the financial, regulatory or reputational risk if they fail, producing a ranked list for the Data Quality team. It says the drivers vary by industry, names data stewards and data owners as the people who identify critical data, and describes no formal designation or approval step in Chapter 13.",
+      "caveats": [
+        "DMBOK2 says criticality drivers differ by industry, so its list is a common starting set and not a standard (DMBOK2-C13-04).",
+        "Chapter 13 gives no designation or approval procedure for critical data and names no approving role; the project's human-designation rule is consistent with, but not stated in, the chapter.",
+        "Terminology: Chapter 13 defines 'Critical Data'; the phrase 'critical data elements' occurs once, in the discussion of what measurements should cover (DMBOK2-C13-33).",
+        "Footnote 73, collected with the other footnotes at the end of the chapter (matched by footnote order), cites Jugulum (2014), chapters 6 and 7, for rationalising critical data; that source is not in the supplied text."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared HANDOFF.md ('Human approval required' includes CDE designation), contracts/definition-and-cde-agent.contract.json (the agent only gathers CDE evidence and lists an approved CDE-criteria policy as a required input) and docs/ARCHITECTURE-RISKS.md section 6 (CDE criteria must be a named source, not agent knowledge). Human designation with agent-gathered evidence is consistent with DMBOK2, where stewards and owners identify critical data. The gap is the criteria themselves: DMBOK2 treats a criticality assessment and ranked list as the basis for focusing quality work, but the project has no criteria document, and the contract's placeholder 'pending Phase 0b' has no matching item in docs/IMPLEMENTATION-SEQUENCE.md Phase 0b, which lists only accountable roles and the Data-Quality-Dimension taxonomy. Every option below is a proposal for the project owner to approve; internal policy outranks DMBOK2.",
+      "proposed_action": "structural-proposal",
+      "proposal_options": [
+        "Criticality drivers as the starting checklist: draft the CDE-criteria policy around the DMBOK2 common drivers (data required for regulatory reporting, financial reporting, business policy, ongoing operations or business strategy; Master Data critical by definition), assessed through consuming processes, the reports the data appears in, and financial, regulatory or reputational risk. Backed by DMBOK2-C13-05, DMBOK2-C13-06 and DMBOK2-C13-07; DMBOK2-C13-04 notes the drivers vary by industry, so the organisation would tailor the list.",
+        "Leaner prioritisation factors: start with the three factors DMBOK2 uses for ranking (regulatory requirements, financial value, direct impact on customers) and make a ranked list of data the policy's output. Backed by DMBOK2-C13-23 and DMBOK2-C13-24. Simpler to approve first time, but it omits the business-policy, ongoing-operations and strategy drivers in the first option.",
+        "Policy form: whichever criteria set is chosen, record it in a governed Data Quality policy using the DMBOK2 policy outline (purpose, scope and applicability; definitions; responsibilities; reporting; implementation) rather than leaving the criteria inside the agent contract. Backed by DMBOK2-C13-60, with DMBOK2-C13-59 for who identifies critical data."
+      ]
+    },
+    {
+      "concept_id": "A-17",
+      "dmbok_terms": ["data quality Service Level Agreement (SLA)", "data sharing agreement", "changed data structures (source-system change)", "upstream systems and downstream users"],
+      "citation_ids": ["DMBOK2-C13-21", "DMBOK2-C13-45", "DMBOK2-C13-50", "DMBOK2-C13-55"],
+      "dmbok_position": "Chapter 13 does not use the term data contract; its nearest constructs are the data quality Service Level Agreement, which records an organisation's expectations for response and remediation per system, and a passing reference to a data sharing agreement. Upstream dependency appears as a recognised cause of quality issues (source systems changing structure without telling downstream consumers) and as a practice (making staff in upstream systems aware of their impact on downstream users).",
+      "caveats": [
+        "'Data contract' is not a Chapter 13 term; relating it to the data quality SLA or the data sharing agreement is by analogy and is a reviewer judgement.",
+        "Chapter 13 mentions 'data sharing agreement' once, in the discussion of metric trending, and does not define it (DMBOK2-C13-55)."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared README.md (lists 'data contracts' and 'upstream dependency management' as stewardship responsibilities), ARCHITECTURE.md (a possible data-contracts/ folder under 'Stewardship as Code'), BUILD-BACKLOG.md ('data contract generation' in the future backlog) and AGENT-CONTRACT-TEMPLATE.md ('approved data contract' as an example authoritative source). The concept is present but only as a named responsibility and in a term Chapter 13 does not use, and the reviewed passages do not say what a contract contains, who agrees it or how upstream change reaches the steward; DMBOK2's SLA contents and upstream-awareness practices cover those elements. Suggested wording change: where README.md and BUILD-BACKLOG.md name data contracts, add a note that the nearest DMBOK2 Chapter 13 constructs are the data quality SLA and the data sharing agreement, labelled as general industry context.",
+      "proposed_action": "wording",
+      "proposal_options": []
+    },
+    {
+      "concept_id": "A-18",
+      "dmbok_terms": ["Data Quality dimension", "Strong-Wang framework", "Redman's data-structure dimensions", "English's inherent and pragmatic characteristics", "DAMA UK six core dimensions"],
+      "citation_ids": ["DMBOK2-C13-08", "DMBOK2-C13-09", "DMBOK2-C13-10", "DMBOK2-C13-11", "DMBOK2-C13-12", "DMBOK2-C13-13", "DMBOK2-C13-14", "DMBOK2-C13-15", "DMBOK2-C13-30"],
+      "dmbok_position": "DMBOK2 defines a Data Quality dimension as a measurable feature of data that provides the vocabulary for stating requirements and measuring results, and presents four published sets (Strong-Wang's 15 dimensions in four categories, Redman's groups for data model, data values and representation, English's inherent versus pragmatic split, and DAMA UK's six core dimensions) while stating that no single set is agreed. It advises expressing rules in terms of dimensions applied consistently, and notes that some dimensions are objectively measurable while others rest on context or subjective interpretation.",
+      "caveats": [
+        "unverifiable from text: Table 29 (Common Dimensions of Data Quality, with definitions and measurement approaches, PDF pages 754-756) and Figure 92 (relationships between dimensions, pages 757-758) are images that did not convert, so DMBOK2's consolidated definitions cannot be checked here.",
+        "DMBOK2 states there is no single agreed set of dimensions, so any choice is a judgement for the organisation (DMBOK2-C13-14).",
+        "DMBOK2 says some dimensions can be measured objectively while others depend on context or subjective interpretation (DMBOK2-C13-15)."
+      ],
+      "proposed_status": "Missing",
+      "status_rationale": "Compared docs/ARCHITECTURE-RISKS.md (Data Quality Agent section 8 and Open Question 5) and docs/IMPLEMENTATION-SEQUENCE.md (Phase 0b item 2), which both state that no approved, versioned Data-Quality-Dimension taxonomy exists and make it a blocking prerequisite, and ARCHITECTURE.md, which has the Data Quality Agent 'identify relevant quality dimension'. DMBOK2 treats dimensions as the core vocabulary for rules and measurement, so the absent artefact is a gap. The project's direction matches DMBOK2: the organisation approves its own set and industry dimensions are not presented as internal policy, and the six names in Phase 0b equal the DAMA UK six. Every option below is a proposal for the project owner to approve; internal policy outranks DMBOK2.",
+      "proposed_action": "structural-proposal",
+      "proposal_options": [
+        "DAMA UK core six: use completeness, uniqueness, timeliness, validity, accuracy and consistency as the starting set for the organisation's own versioned taxonomy; these are the examples docs/IMPLEMENTATION-SEQUENCE.md Phase 0b item 2 already names. Backed by DMBOK2-C13-12; DMBOK2-C13-13 shows DAMA UK keeps other quality characteristics outside the six, so the taxonomy would need to say where those sit.",
+        "English inherent/pragmatic split: organise the taxonomy in two tiers, inherent characteristics versus pragmatic ones, so dimensions that do not depend on data use are kept apart from those that do, which fits the project's fitness-for-purpose principle. Backed by DMBOK2-C13-11.",
+        "Strong-Wang consumer-perception set: adopt the 15 dimensions in four categories if the organisation wants dimensions framed around how data consumers perceive quality; it is a larger set, and DMBOK2-C13-15 warns that some dimensions rest on context or subjective interpretation. Backed by DMBOK2-C13-09.",
+        "Redman data-structure set: adopt Redman's grouping (data model, data values, representation) only if the taxonomy must also cover the quality of the model and of how data is recorded, not just stored values. Backed by DMBOK2-C13-10.",
+        "Own set with mapping: define an organisation-specific set and record a mapping to the published sets, relying on DMBOK2's statement that no single set is agreed and applying the chosen dimensions consistently in rules. Backed by DMBOK2-C13-14 and DMBOK2-C13-30."
+      ]
+    },
+    {
+      "concept_id": "A-19",
+      "dmbok_terms": ["Data Quality Business Rules", "business rule types (for example definitional conformance)", "Data Quality rule templates"],
+      "citation_ids": ["DMBOK2-C13-18", "DMBOK2-C13-19", "DMBOK2-C13-25", "DMBOK2-C13-30", "DMBOK2-C13-31", "DMBOK2-C13-32", "DMBOK2-C13-49"],
+      "dmbok_position": "DMBOK2 describes data quality business rules as statements of how data should exist to be usable, alignable with quality dimensions, and lists simple rule types (definitional conformance, value presence and completeness, format, value domain, range, mapping, consistency, accuracy, uniqueness and timeliness) plus aggregate checks. It says rules should be formulated consistently from templates, defined through dimensions, tested against actual data and confirmed by subject-matter experts, and that undocumented rules often have to be discovered.",
+      "caveats": [
+        "unverifiable from text: Table 30 (DQ Metric Examples, which shows example rules written in the chapter's pattern) is an image that did not convert, and the text gives no template layout.",
+        "DMBOK2 notes that rules are often undocumented and must be discovered (DMBOK2-C13-25), whereas the project's Data Quality Agent starts only from approved expectations; this is a difference of starting point, not a conflict."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared ARCHITECTURE.md (Data Quality Agent: identify the quality dimension, propose a rule and a deterministic test, draft candidate SQL, flag the required threshold, link the test to the business definition) and HANDOFF.md (candidates only; approved requirements are the input; no business thresholds). That matches the DMBOK2 flow from business expectation to rule and keeps SME confirmation with humans. Missing against DMBOK2 sections 1.3.7, 2.7.1 and 3.4: no rule-type vocabulary, no standard template for documenting rules, no stated step in the passages reviewed where a candidate rule is tested against actual data before approval (docs/ARCHITECTURE-RISKS.md describes the SQL as draft and unexecuted), and no path for discovering rules that are not documented. The dimension link also depends on the unapproved taxonomy (A-18). Every option below is a proposal for the project owner to approve; internal policy outranks DMBOK2.",
+      "proposed_action": "structural-proposal",
+      "proposal_options": [
+        "Rule-type field: add a rule_type vocabulary taken from DMBOK2's simple business rule types (definitional conformance, value presence and record completeness, format compliance, value domain membership, range conformance, mapping conformance, consistency, accuracy verification, uniqueness verification, timeliness validation) so every candidate rule is classified, with definitional conformance tying a test back to the business definition. Backed by DMBOK2-C13-18 and DMBOK2-C13-19.",
+        "Pre-approval checklist: have each candidate rule carry the DMBOK2 rule-management attributes the project does not yet require (consistent documentation from a template, expressed through an approved dimension, tested against actual data, confirmed by subject-matter experts) before it reaches the Data Steward. Backed by DMBOK2-C13-30, DMBOK2-C13-31, DMBOK2-C13-32 and DMBOK2-C13-49.",
+        "Rule-discovery intake (optional): add a separately labelled path for rules inferred from processes or data rather than taken from an approved expectation, always tagged as agent inference needing SME confirmation, instead of leaving undocumented rules unaddressed. Backed by DMBOK2-C13-25 and DMBOK2-C13-32."
+      ]
+    },
+    {
+      "concept_id": "A-20",
+      "dmbok_terms": ["acceptability threshold", "Accountability / Stewardship (metric characteristic)", "business data owner", "taking no action (remediation option)"],
+      "citation_ids": ["DMBOK2-C13-39", "DMBOK2-C13-40", "DMBOK2-C13-47", "DMBOK2-C13-53", "DMBOK2-C13-54"],
+      "dmbok_position": "DMBOK2 places threshold-setting with the business: acceptability thresholds are defined by business clients, metrics are approved by key stakeholders such as business owners and Data Stewards, and the business data owner is accountable. When an issue is found the Data Quality team confers with business data owners on how to resolve it, and taking no action because correction costs more than it is worth is a recognised option.",
+      "caveats": [
+        "DMBOK2 does not use the phrase 'acceptance of data-quality risk'; the nearest text is the 'taking no action' remediation option decided with business data owners (DMBOK2-C13-39, DMBOK2-C13-40), so the mapping is an inference.",
+        "Chapter 13 names business clients, key stakeholders and the accountable business data owner but gives no sign-off procedure for a threshold."
+      ],
+      "proposed_status": "Aligned",
+      "status_rationale": "Compared HANDOFF.md ('Human approval required' lists quality thresholds and acceptance of data-quality risk) and ARCHITECTURE.md (the Data Quality Agent is prohibited from setting business thresholds or approving controls). Keeping both decisions with humans matches DMBOK2, where the business defines thresholds and the business data owner is accountable. The project does not yet name which human role approves (docs/IMPLEMENTATION-SEQUENCE.md Phase 0b item 1 addresses roles), which belongs to the roles concepts rather than this one. Suggested citation: cite DMBOK2 Chapter 13 (acceptability thresholds, accountable business data owner) as general industry context where HANDOFF.md states these decisions.",
+      "proposed_action": "citation",
+      "proposal_options": []
+    },
+    {
+      "concept_id": "A-21",
+      "dmbok_terms": ["measure and monitor data quality", "continuous monitoring (in-stream or batch)", "data quality Service Level Agreement", "data quality scorecard"],
+      "citation_ids": ["DMBOK2-C13-33", "DMBOK2-C13-34", "DMBOK2-C13-35", "DMBOK2-C13-36", "DMBOK2-C13-46", "DMBOK2-C13-48"],
+      "dmbok_position": "DMBOK2 treats measurement and monitoring as core Data Quality operations: measurements inform data consumers (focused on critical data elements and relationships) and manage risk (relationships that failed before and similar functions), are built into the processing flow at element, record or data-set level, and are reported through scorecards and trends. SLAs state which data elements are covered and the expected quality per element, dimension and system; the chapter does not use the term control coverage or describe a coverage analysis.",
+      "caveats": [
+        "unverifiable from text: Table 31 (Data Quality Monitoring Techniques, PDF page 793) and Table 30 (DQ Metric Examples, pages 791-792) are images that did not convert, so the specific monitoring techniques and metric layouts cannot be assessed.",
+        "'Control coverage' is not a DMBOK2 term; the coverage ideas in the options are inferred from the SLA scoping list and the guidance on where to place measurements."
+      ],
+      "proposed_status": "Missing",
+      "status_rationale": "Compared BUILD-BACKLOG.md, where 'control coverage analysis' appears only in the future backlog ('Each item must pass through the Agent Factory before implementation'), and docs/ARCHITECTURE-RISKS.md section 9, which notes that no production pipeline is named to run approved quality tests and persist exception records. The documents reviewed do not describe how quality is measured, monitored or reported, or what coverage would mean, while DMBOK2 treats measuring, monitoring and reporting as core Data Quality operations. The deferral is deliberate and visible in the backlog, so this is a known gap rather than an oversight. Every option below is a proposal for the project owner to approve; internal policy outranks DMBOK2.",
+      "proposed_action": "structural-proposal",
+      "proposal_options": [
+        "Coverage matrix from the SLA scoping list: define coverage as, for each critical data element, which dimensions have an approved rule and threshold in which systems of the data value chain, mirroring the DMBOK2 SLA list of covered elements and per-element, per-dimension, per-system expectations. Backed by DMBOK2-C13-46 and DMBOK2-C13-33.",
+        "Risk-led coverage: prioritise gaps where relationships have failed before and where similar functions exist, following DMBOK2's guidance on where to place measurements. Backed by DMBOK2-C13-34 and DMBOK2-C13-33.",
+        "Measurement-level attribute: record for each control whether it measures at data element, record or data-set level, so coverage reports can show gaps by measurement level. Backed by DMBOK2-C13-36 (the technique table behind this, Table 31, is not in the text)."
+      ]
+    },
+    {
+      "concept_id": "A-22",
+      "dmbok_terms": ["data quality issue management", "incident tracking system", "diagnosing issues, formulating options for remediation, resolving issues", "standard vocabulary for data quality issues", "escalation procedures"],
+      "citation_ids": ["DMBOK2-C13-37", "DMBOK2-C13-40", "DMBOK2-C13-41", "DMBOK2-C13-42", "DMBOK2-C13-43", "DMBOK2-C13-44", "DMBOK2-C13-61"],
+      "dmbok_position": "DMBOK2 expects operational procedures to diagnose each issue (symptoms, lineage, origin), formulate remediation options and resolve them in consultation with business data owners, with decisions kept in an incident tracking system (issue description, root causes, options, decision) and a standard issue vocabulary that also makes patterns and interdependencies across systems visible. It adds escalation based on impact, duration or urgency and issue metrics counted by dimension, business function and status.",
+      "caveats": [
+        "The DMBOK2 procedures are written for a Data Quality team that also implements resolutions; the project deliberately keeps operational incident resolution with operations teams, so that part is a role difference rather than a conflict.",
+        "Chapter 13 does not describe automated clustering of exceptions; it relies on a standard classification vocabulary, so the project's clustering step is an extension rather than a DMBOK2 practice."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared ARCHITECTURE.md (Exception & Root-Cause Agent: cluster exceptions, identify recurring characteristics, correlate failures with source or process changes, propose hypotheses; barred from declaring root cause without sufficient evidence or resolving incidents directly) and HANDOFF.md (AI may cluster recurring exceptions; resolving operational incidents is a non-goal). Diagnosing and routing for a human decision fits DMBOK2, and the 'route for human decision' step corresponds to confirming with business data owners. The project does not yet define an issue record, an issue classification vocabulary, assignment, escalation or status tracking; docs/ARCHITECTURE-RISKS.md Open Question 6 (structure of exception records) is the closest open item. Every option below is a proposal for the project owner to approve; internal policy outranks DMBOK2.",
+      "proposed_action": "structural-proposal",
+      "proposal_options": [
+        "Minimum issue record: give the packet routed to a human the fields DMBOK2 lists for tracked issues (issue description, root causes, remediation options, decision), with the decision owner being a business data owner. Backed by DMBOK2-C13-41 and DMBOK2-C13-40.",
+        "Standard vocabulary and clustering keys: adopt a controlled issue classification (related to docs/ARCHITECTURE-RISKS.md Open Question 6 on exception structure) and use DMBOK2's issue metrics as clustering and reporting keys: dimension, business function, status, priority and severity, time to resolve. Backed by DMBOK2-C13-42, DMBOK2-C13-43 and DMBOK2-C13-61.",
+        "Escalation rule: define routing urgency by the impact, duration and urgency of an issue rather than by agent judgement. Backed by DMBOK2-C13-44."
+      ]
+    },
+    {
+      "concept_id": "A-23",
+      "dmbok_terms": ["root cause", "root cause analysis", "hypotheses about root causes of data issues", "Pareto analysis", "fishbone diagram analysis", "track and trace", "process analysis", "Five Whys"],
+      "citation_ids": ["DMBOK2-C13-20", "DMBOK2-C13-27", "DMBOK2-C13-38", "DMBOK2-C13-43", "DMBOK2-C13-57", "DMBOK2-C13-58"],
+      "dmbok_position": "DMBOK2 defines a root cause as a factor whose removal would remove the problem, notes that issues often have several causes, and treats root-cause hypotheses as an assessment step to be confirmed with Data Stewards, SMEs and data consumers, stating that root-cause analysis needs technical and business SME input with the Data Quality team leading or facilitating. It lists Pareto analysis, fishbone diagrams, track and trace, process analysis and the Five Whys as common techniques and links pattern recognition to a standardised issue vocabulary.",
+      "caveats": [
+        "DMBOK2 defines a root cause but gives no test for when evidence is sufficient; the project's sufficient-evidence standard remains its own.",
+        "DMBOK2 expects SME input and confirmation throughout root-cause analysis, whereas HANDOFF.md reserves final human determination for cases where evidence is incomplete; the two are compatible but the project wording is narrower."
+      ],
+      "proposed_status": "Aligned",
+      "status_rationale": "Compared README.md (lists root-cause analysis and recurring quality-pattern identification as stewardship responsibilities), HANDOFF.md (AI may produce root-cause hypotheses; final root-cause determination where evidence is incomplete needs human approval), ARCHITECTURE.md (the Exception & Root-Cause Agent proposes hypotheses and the evidence needed to confirm them, and may not declare a root cause without sufficient evidence) and docs/ARCHITECTURE-RISKS.md section 9 (every hypothesis must cite its evidence). This matches DMBOK2, which treats root causes as hypotheses confirmed with stewards and SMEs. The project's qualifier 'where evidence is incomplete' is narrower than DMBOK2's expectation of SME input throughout, so reviewers may wish to confirm the intent. Suggested citation: cite DMBOK2 sections 2.4, 2.7.3 and 4.6 as general industry context for the hypothesis-and-confirmation approach.",
+      "proposed_action": "citation",
+      "proposal_options": []
+    },
+    {
+      "concept_id": "A-24",
+      "dmbok_terms": ["fit for purpose", "fit for use", "meets the expectations and needs of data consumers"],
+      "citation_ids": ["DMBOK2-C13-01", "DMBOK2-C13-02", "DMBOK2-C13-03", "DMBOK2-C13-26"],
+      "dmbok_position": "DMBOK2 defines data quality as the degree to which data meets the expectations and needs of its consumers, that is, whether it is fit for the purposes they apply it to, so quality depends on context and measurement should be developed against known uses and measurable rules. It warns that many organisations never define what makes data fit for purpose and that consumers' quality expectations are often not known.",
+      "caveats": [
+        "DMBOK2 says expectations related to quality are not always known (DMBOK2-C13-03), so purposes have to be elicited from consumers rather than assumed.",
+        "DMBOK2 gives no test of 'fit' beyond requirement-based measurement through dimensions and rules."
+      ],
+      "proposed_status": "Aligned",
+      "status_rationale": "Compared README.md, which lists 'data quality and fitness-for-purpose' among the stewardship responsibilities. The project's stance that quality is judged against purpose matches the DMBOK2 definition. The README passage does not say how purposes and consumer expectations are captured; DMBOK2 flags that as the usual weak point, which is useful context rather than a divergence. Suggested citation: cite DMBOK2 section 1.3.1 as general industry context where README.md names fitness-for-purpose.",
+      "proposed_action": "citation",
+      "proposal_options": []
+    }
+  ],
+  "additional_content": [
+    {
+      "topic": "Manually-directed correction and the risk of direct production fixes",
+      "citation_ids": ["DMBOK2-C13-51", "DMBOK2-C13-52"],
+      "why_relevant": "DMBOK2's pattern of tool-proposed corrections that the data steward reviews and approves, and its warning against committing fixes directly in production, parallel the project's propose-then-approve principle and its non-goal of changing production data."
+    },
+    {
+      "topic": "Data profiling output as assessed evidence, not conclusion",
+      "citation_ids": ["DMBOK2-C13-22", "DMBOK2-C13-28"],
+      "why_relevant": "Profiling results would feed the Data Quality and Exception agents as evidence, and DMBOK2 says they need analyst assessment and do not by themselves identify root causes or business impact."
+    },
+    {
+      "topic": "Plan-do-check-act improvement cycle",
+      "citation_ids": ["DMBOK2-C13-17"],
+      "why_relevant": "Offers an industry lifecycle for the continuous-improvement responsibility listed in README.md."
+    },
+    {
+      "topic": "Statistical process control",
+      "citation_ids": ["DMBOK2-C13-56"],
+      "why_relevant": "Control limits and the split between common and special causes could give a statistical basis for spotting recurring exception patterns and informing, but not setting, human-approved thresholds."
+    },
+    {
+      "topic": "Data quality measurement results held in a Metadata repository",
+      "citation_ids": ["DMBOK2-C13-16"],
+      "why_relevant": "Supports the 'Stewardship as Code' idea in ARCHITECTURE.md of keeping quality rules, exceptions and evidence in shared, version-controlled stores."
+    },
+    {
+      "topic": "Prioritising issues by business impact and cost",
+      "citation_ids": ["DMBOK2-C13-29"],
+      "why_relevant": "Gives factors a steward could use to rank recurring exception clusters before routing them for human decision."
+    }
+  ],
+  "source_caveats": [
+    "Figures and tables did not convert (image links are dead): Figure 91 context diagram (PDF pages 741-742), Table 29 Common Dimensions of Data Quality (754-756), Figure 92 relationships between dimensions (757-758), Figure 93 Shewhart chart (761), Figure 94 barriers to managing information as an asset (768-769), the formula image for rule results on page 789, Table 30 DQ metric examples (791-792), Table 31 data quality monitoring techniques (793) and Figure 95 control chart (806). Nothing is concluded from their content.",
+    "Section headings are inconsistent in the conversion: 2.7.3 appears as an italic line, 4 Techniques as bold text, 1 Introduction only as picture text on page 738, and a stray heading ('message?') interrupts the DAMA UK list on page 753. Citation section labels follow the book's numbering, with '1 Introduction' used for the unnumbered opening text on page 739.",
+    "Bullet lists are sometimes merged into running text or lose their markers (for example the remediation options in 2.7.3 and the assessment steps in 2.4), footnote numbers and strike-through marks are embedded in sentences (for example 'dimensions.74'), and a sentence can run across a page marker; quotes were taken only where the wording is intact on one page.",
+    "Footnotes and the Works Cited are collected at the end of the chapter (PDF pages 815-818) without anchors to the citing sentences, so a footnote can be matched to its sentence only by order (for example footnote 73 on critical data)."
+  ]
+}

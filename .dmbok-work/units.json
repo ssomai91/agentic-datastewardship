@@ -1,0 +1,12 @@
+{
+  "dmbok_file": "DAMA-DMBOK-2nd-Edition.md",
+  "units": [
+    {"unit": 1, "title": "Ethics and security", "chapters": [2, 7], "line_ranges": [[1875, 2324], [6533, 7946]]},
+    {"unit": 2, "title": "Data governance, roles and operating models", "chapters": [3], "line_ranges": [[2325, 3213]]},
+    {"unit": 3, "title": "Architecture and integration (lineage and mapping)", "chapters": [4, 8], "line_ranges": [[3214, 3877], [7947, 8826]]},
+    {"unit": 4, "title": "Reference and master data", "chapters": [10], "line_ranges": [[10008, 10944]]},
+    {"unit": 5, "title": "Metadata management (glossary, dictionary, lineage)", "chapters": [12], "line_ranges": [[11867, 12845]]},
+    {"unit": 6, "title": "Data quality", "chapters": [13], "line_ranges": [[12846, 14254]]},
+    {"unit": 7, "title": "Maturity assessment and organisation roles", "chapters": [15, 16], "line_ranges": [[15147, 16358]]}
+  ]
+}

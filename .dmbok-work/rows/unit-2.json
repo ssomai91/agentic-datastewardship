@@ -1,0 +1,243 @@
+{
+  "unit": 2,
+  "citations": [
+    {"id": "DMBOK2-C03-01", "chapter": 3, "section": "1 Introduction", "pdf_page": 136, "quote": "Setting and enforcing Data Quality and Data Architecture standards"},
+    {"id": "DMBOK2-C03-02", "chapter": 3, "section": "1 Introduction", "pdf_page": 137, "quote": "sponsorship from a C-level executive, such as Chief Risk Officer, Chief Financial Officer, or Chief Data Officer"},
+    {"id": "DMBOK2-C03-03", "chapter": 3, "section": "1.1 Business Drivers", "pdf_page": 140, "quote": "The most common driver for data governance is often regulatory compliance, especially for heavily regulated industries, such as financial services and healthcare."},
+    {"id": "DMBOK2-C03-04", "chapter": 3, "section": "1.1 Business Drivers", "pdf_page": 142, "quote": "A Data Governance team can be a virtual organization or a line organization with specific accountabilities."},
+    {"id": "DMBOK2-C03-05", "chapter": 3, "section": "1.2 Goals and Principles", "pdf_page": 143, "quote": "DG is not a project with a defined end; it is an ongoing process that requires organizational commitment."},
+    {"id": "DMBOK2-C03-06", "chapter": 3, "section": "1.2 Goals and Principles", "pdf_page": 144, "quote": "Guiding principles are the foundation of DG activities, and especially of DG policy."},
+    {"id": "DMBOK2-C03-07", "chapter": 3, "section": "1.3 Essential Concepts", "pdf_page": 145, "quote": "data governance ensures data is properly managed without directly executing data management"},
+    {"id": "DMBOK2-C03-08", "chapter": 3, "section": "1.3.1 Data-centric Organization", "pdf_page": 146, "quote": "Data management processes should be continuously improved"},
+    {"id": "DMBOK2-C03-09", "chapter": 3, "section": "1.3.2 Data Governance Organization", "pdf_page": 146, "quote": "judicial-like functions (issue management and escalation)"},
+    {"id": "DMBOK2-C03-10", "chapter": 3, "section": "1.3.2 Data Governance Organization", "pdf_page": 147, "quote": "Each organization should adopt a governance model that supports its business strategy and is likely to succeed within its own cultural context."},
+    {"id": "DMBOK2-C03-11", "chapter": 3, "section": "1.3.2 Data Governance Organization", "pdf_page": 147, "quote": "organizations adopt a representative form of data governance, so that all stakeholders can be heard."},
+    {"id": "DMBOK2-C03-12", "chapter": 3, "section": "1.3.2 Data Governance Organization", "pdf_page": 147, "quote": "The work of governance is often divided among multiple committees, each with a purpose and level of oversight different from the others."},
+    {"id": "DMBOK2-C03-13", "chapter": 3, "section": "1.3.2 Data Governance Organization", "pdf_page": 147, "quote": "Table 4 describes the typical committees that might be established within a data governance operating framework."},
+    {"id": "DMBOK2-C03-14", "chapter": 3, "section": "1.3.4 Data Stewardship", "pdf_page": 151, "quote": "accountability and responsibility for data and processes that ensure effective control and use of data assets"},
+    {"id": "DMBOK2-C03-15", "chapter": 3, "section": "1.3.4 Data Stewardship", "pdf_page": 151, "quote": "Often terms like custodian or trustee are synonyms for those who carry out steward-like functions."},
+    {"id": "DMBOK2-C03-16", "chapter": 3, "section": "1.3.4 Data Stewardship", "pdf_page": 151, "quote": "Stewards are often responsible for an organization's Business Glossary, which becomes the system of record for business terms related to data."},
+    {"id": "DMBOK2-C03-17", "chapter": 3, "section": "1.3.4 Data Stewardship", "pdf_page": 151, "quote": "Stewards help surface these rules in order to ensure that there is consensus about them within the organization"},
+    {"id": "DMBOK2-C03-18", "chapter": 3, "section": "1.3.4 Data Stewardship", "pdf_page": 151, "quote": "Stewards are often involved with the identification and resolution of data related issues or in facilitating the process of resolution."},
+    {"id": "DMBOK2-C03-19", "chapter": 3, "section": "1.3.4 Data Stewardship", "pdf_page": 152, "quote": "Stewards are responsible for ensuring that, day-to-day and project-by-project, data governance policies and initiatives are adhered to."},
+    {"id": "DMBOK2-C03-20", "chapter": 3, "section": "1.3.5 Types of Data Stewards", "pdf_page": 152, "quote": "formally appointed Data Stewards may be differentiated by their place within an organization, by the focus of their work, or by both"},
+    {"id": "DMBOK2-C03-21", "chapter": 3, "section": "1.3.5 Types of Data Stewards", "pdf_page": 152, "quote": "Chief Data Stewards may chair data governance bodies in lieu of the CDO"},
+    {"id": "DMBOK2-C03-22", "chapter": 3, "section": "1.3.5 Types of Data Stewards", "pdf_page": 152, "quote": "Enterprise Data Stewards have oversight of a data domain across business functions."},
+    {"id": "DMBOK2-C03-23", "chapter": 3, "section": "1.3.5 Types of Data Stewards", "pdf_page": 152, "quote": "Business Data Stewards are business professionals, most often recognized subject matter experts, accountable for a subset of data."},
+    {"id": "DMBOK2-C03-24", "chapter": 3, "section": "1.3.5 Types of Data Stewards", "pdf_page": 152, "quote": "They work with stakeholders to define and control data."},
+    {"id": "DMBOK2-C03-25", "chapter": 3, "section": "1.3.5 Types of Data Stewards", "pdf_page": 153, "quote": "A Data Owner is a business Data Steward, who has approval authority for decisions about data within their domain."},
+    {"id": "DMBOK2-C03-26", "chapter": 3, "section": "1.3.6 Data Policies", "pdf_page": 153, "quote": "Data policies are directives that codify principles and management intent into fundamental rules"},
+    {"id": "DMBOK2-C03-27", "chapter": 3, "section": "1.3.6 Data Policies", "pdf_page": 154, "quote": "describe the 'what' of data governances (what to do and what not to do), while standards and procedures describe 'how' to do data governance."},
+    {"id": "DMBOK2-C03-28", "chapter": 3, "section": "2.1 Define Data Governance for the Organization", "pdf_page": 157, "quote": "requires a clear understanding of what is being governed and who is being governed, as well as who is governing"},
+    {"id": "DMBOK2-C03-29", "chapter": 3, "section": "2.2 Perform Readiness Assessment", "pdf_page": 157, "quote": "Assessments that describe the current state of an organization's information management capabilities, maturity, and effectiveness are crucial to planning a DG program."},
+    {"id": "DMBOK2-C03-30", "chapter": 3, "section": "2.2 Perform Readiness Assessment", "pdf_page": 158, "quote": "Since stewardship by definition crosses functional areas, it is collaborative in nature."},
+    {"id": "DMBOK2-C03-31", "chapter": 3, "section": "2.4 Develop Organizational Touch Points", "pdf_page": 160, "quote": "identifies control points where enterprise policies, processes, and standards can be developed in the system or application development lifecycles"},
+    {"id": "DMBOK2-C03-32", "chapter": 3, "section": "2.5 Develop Data Governance Strategy", "pdf_page": 162, "quote": "Defines structure and responsibility for data governance activities"},
+    {"id": "DMBOK2-C03-33", "chapter": 3, "section": "2.6 Define the DG Operating Framework", "pdf_page": 163, "quote": "determining where accountability should reside for stewardship activities, who owns the data, etc."},
+    {"id": "DMBOK2-C03-34", "chapter": 3, "section": "2.7 Develop Goals, Principles, and Policies", "pdf_page": 165, "quote": "Goals, principles, and policies are typically drafted by either by data management professionals, business policy staff, or a combination"},
+    {"id": "DMBOK2-C03-35", "chapter": 3, "section": "2.7 Develop Goals, Principles, and Policies", "pdf_page": 165, "quote": "Next, Data Stewards and management review and refine them. Then, the Data Governance Council (or similar body) conducts the final review, revision, and adoption."},
+    {"id": "DMBOK2-C03-36", "chapter": 3, "section": "2.7 Develop Goals, Principles, and Policies", "pdf_page": 165, "quote": "Business owners will be approved by the Data Governance Office."},
+    {"id": "DMBOK2-C03-37", "chapter": 3, "section": "2.7 Develop Goals, Principles, and Policies", "pdf_page": 165, "quote": "The Data Governance Office (DGO) will certify data for use by the organization."},
+    {"id": "DMBOK2-C03-38", "chapter": 3, "section": "2.7 Develop Goals, Principles, and Policies", "pdf_page": 165, "quote": "All certified data will be evaluated on a regular basis to assess its accuracy, completeness, consistency, accessibility, uniqueness, compliance, and efficiency."},
+    {"id": "DMBOK2-C03-39", "chapter": 3, "section": "2.7 Develop Goals, Principles, and Policies", "pdf_page": 166, "quote": "Data policies must be effectively communicated, monitored, enforced, and periodically re-evaluated."},
+    {"id": "DMBOK2-C03-40", "chapter": 3, "section": "2.7 Develop Goals, Principles, and Policies", "pdf_page": 166, "quote": "The Data Governance Council may delegate this authority to the Data Stewardship Steering Committee."},
+    {"id": "DMBOK2-C03-41", "chapter": 3, "section": "2.9 Engage Change Management", "pdf_page": 168, "quote": "Actively seeking and using input from stakeholders can build commitment to the program's goals, while also identifying successes and opportunities for improvement."},
+    {"id": "DMBOK2-C03-42", "chapter": 3, "section": "2.10 Engage in Issue Management", "pdf_page": 169, "quote": "Questions regarding decision rights and procedures"},
+    {"id": "DMBOK2-C03-43", "chapter": 3, "section": "2.10 Engage in Issue Management", "pdf_page": 169, "quote": "Conflicting policies, procedures, business rules, names, definitions, standards, architecture, data ownerships and conflicting stakeholder interests in data and information"},
+    {"id": "DMBOK2-C03-44", "chapter": 3, "section": "2.10 Engage in Issue Management", "pdf_page": 169, "quote": "Many issues can be resolved locally in Data Stewardship teams. Issues requiring communication and / or escalation must be logged"},
+    {"id": "DMBOK2-C03-45", "chapter": 3, "section": "2.10 Engage in Issue Management", "pdf_page": 170, "quote": "used to identify trends related to issues, such as where within the organization they occur, what their root causes are, etc."},
+    {"id": "DMBOK2-C03-46", "chapter": 3, "section": "2.10 Engage in Issue Management", "pdf_page": 170, "quote": "Issues that cannot be resolved by the DGC should be escalated to corporate governance and / or management."},
+    {"id": "DMBOK2-C03-47", "chapter": 3, "section": "2.10 Engage in Issue Management", "pdf_page": 170, "quote": "Identifying, capturing, logging, tracking, and updating issues"},
+    {"id": "DMBOK2-C03-48", "chapter": 3, "section": "2.10 Engage in Issue Management", "pdf_page": 170, "quote": "Documenting stakeholder viewpoints and resolution alternatives"},
+    {"id": "DMBOK2-C03-49", "chapter": 3, "section": "2.10 Engage in Issue Management", "pdf_page": 171, "quote": "relieves the burden on production support teams"},
+    {"id": "DMBOK2-C03-50", "chapter": 3, "section": "2.11 Assess Regulatory Compliance Requirements", "pdf_page": 171, "quote": "Part of the data governance function is to monitor and ensure regulatory compliance."},
+    {"id": "DMBOK2-C03-51", "chapter": 3, "section": "2.13 Sponsor Data Standards and Procedures", "pdf_page": 174, "quote": "DG standards should be mandatory."},
+    {"id": "DMBOK2-C03-52", "chapter": 3, "section": "2.13 Sponsor Data Standards and Procedures", "pdf_page": 174, "quote": "Data standards should be reviewed, approved and adopted by the DGC, or a delegated workgroup, such as a Data Standards Steering Committee."},
+    {"id": "DMBOK2-C03-53", "chapter": 3, "section": "2.13 Sponsor Data Standards and Procedures", "pdf_page": 176, "quote": "Data quality rules, standard measurement methodologies, data remediation standards and procedures"},
+    {"id": "DMBOK2-C03-54", "chapter": 3, "section": "2.14 Develop a Business Glossary", "pdf_page": 176, "quote": "Data Stewards are generally responsible for business glossary content."},
+    {"id": "DMBOK2-C03-55", "chapter": 3, "section": "2.14 Develop a Business Glossary", "pdf_page": 176, "quote": "Definitions must be clear, rigorous in wording, and explain any exceptions, synonyms or variants."},
+    {"id": "DMBOK2-C03-56", "chapter": 3, "section": "2.14 Develop a Business Glossary", "pdf_page": 176, "quote": "Approvers of terminology should include representatives from core user groups."},
+    {"id": "DMBOK2-C03-57", "chapter": 3, "section": "2.14 Develop a Business Glossary", "pdf_page": 176, "quote": "Data Architecture often can supply draft definitions and type breakouts from subject area models."},
+    {"id": "DMBOK2-C03-58", "chapter": 3, "section": "2.14 Develop a Business Glossary", "pdf_page": 177, "quote": "Each term will also be associated with other valuable Metadata: synonyms, metrics, lineage, business rules, the steward responsible for the term, etc."},
+    {"id": "DMBOK2-C03-59", "chapter": 3, "section": "2.17 Embed Data Governance", "pdf_page": 178, "quote": "and to learn from each other, create a Data Governance Community of Interest"},
+    {"id": "DMBOK2-C03-60", "chapter": 3, "section": "3.1 Online Presence / Websites", "pdf_page": 179, "quote": "Reports on Data Quality measurements"},
+    {"id": "DMBOK2-C03-61", "chapter": 3, "section": "3.1 Online Presence / Websites", "pdf_page": 179, "quote": "Procedures for issue identification and escalation"},
+    {"id": "DMBOK2-C03-62", "chapter": 3, "section": "3.2 Business Glossary", "pdf_page": 180, "quote": "It houses agreed-upon definitions of business terms and relates these to data."},
+    {"id": "DMBOK2-C03-63", "chapter": 3, "section": "3.5 Data Governance Scorecards", "pdf_page": 180, "quote": "can be reported up to the Data Governance Council and Data Governance Steering Committees on an automated scorecard"},
+    {"id": "DMBOK2-C03-64", "chapter": 3, "section": "4.2 Adjustment and Communication", "pdf_page": 182, "quote": "Metrics will need to grow and change as the DG program matures."},
+    {"id": "DMBOK2-C03-65", "chapter": 3, "section": "5 Metrics", "pdf_page": 182, "quote": "measure progress and success through metrics that demonstrate how DG participants have added business value and attained objectives"},
+    {"id": "DMBOK2-C03-66", "chapter": 3, "section": "5 Metrics", "pdf_page": 182, "quote": "Contributions to business objectives Reduction of risk Improved efficiency in operations"},
+    {"id": "DMBOK2-C03-67", "chapter": 3, "section": "5 Metrics", "pdf_page": 183, "quote": "Extent stewards are using the relevant tools Effectiveness of communication Effectiveness of education/training Speed of change adoption"},
+    {"id": "DMBOK2-C03-68", "chapter": 3, "section": "5 Metrics", "pdf_page": 183, "quote": "Performance of policies and processes (i.e., are they working appropriately?) Conformance to standards and procedures"}
+  ],
+  "rows": [
+    {
+      "concept_id": "A-01",
+      "dmbok_terms": ["decision rights", "separation of duty between oversight and execution", "Data Owner (approval authority)", "Data Governance Council (final review and adoption)", "operating framework and accountabilities"],
+      "citation_ids": ["DMBOK2-C03-07", "DMBOK2-C03-25", "DMBOK2-C03-28", "DMBOK2-C03-32", "DMBOK2-C03-35", "DMBOK2-C03-42"],
+      "dmbok_position": "General industry context: the DMBOK2 keeps governance as oversight separate from execution and gives approval to defined roles, so that a Data Owner holds approval authority over decisions about data in a domain and, once stewards and management have refined a draft, the Data Governance Council (or similar body) makes the final review and adoption. It names decision rights as a governance issue type and expects the strategy to define an operating framework that settles who governs; it says nothing about AI agents, so the AI-may versus human-approves split is project-specific.",
+      "caveats": [
+        "Chapter 3 does not mention AI or automated agents, so the list of what AI may do has no DMBOK2 passage behind it.",
+        "The DMBOK2 text gives no decision-rights matrix; the Data Owner and council roles are described in general terms, and the sample policies in section 2.7 are illustrations of possible policy shapes, not requirements."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared README.md (principle: AI proposes, evidence supports, the Data Steward evaluates, the appropriate human owner approves; 'Human accountability remains explicit') and the HANDOFF.md decision model (the 'AI may' list and the 'Human approval required' list). The principle matches the DMBOK2 pattern of drafting, steward review and owner or council approval, with oversight kept apart from execution. Rated Partial because the approving party is only 'the appropriate human owner', whereas the DMBOK2 expects accountabilities and the identity of the governing body to be explicit; naming a holder is handled under A-04. Suggested wording: define 'the appropriate human owner' in DMBOK2 role terms (Data Owner for decisions on data within a domain; the governing council or its delegate for policy and standards), labelled general industry context and subject to human approval.",
+      "proposed_action": "wording",
+      "proposal_options": []
+    },
+    {
+      "concept_id": "A-02",
+      "dmbok_terms": ["Data Stewardship", "Data Steward", "types of Data Stewards (Business, Enterprise, Technical, Coordinating, Executive, Chief)", "stewardship activities", "issue management"],
+      "citation_ids": ["DMBOK2-C03-14", "DMBOK2-C03-15", "DMBOK2-C03-16", "DMBOK2-C03-17", "DMBOK2-C03-18", "DMBOK2-C03-19", "DMBOK2-C03-20", "DMBOK2-C03-22", "DMBOK2-C03-23", "DMBOK2-C03-24", "DMBOK2-C03-49"],
+      "dmbok_position": "General industry context: the DMBOK2 defines stewardship as accountability and responsibility for the processes that ensure effective control and use of data assets, with steward work typically covering core Metadata and the business glossary, documented rules and standards, identifying and resolving data quality issues (or facilitating their resolution) and day-to-day adherence to governance policies, and it lets stewards be differentiated by organisational place and focus, for example Business or Enterprise Data Stewards. It presents governance-level issue management as relieving production support teams, which implies governance work is distinct from production support without taking issue resolution out of steward scope.",
+      "caveats": [
+        "The DMBOK2 steward types are given as examples and the book says steward focus differs between organisations, so the absence of a DMBOK2 activity from the README list is not necessarily a gap.",
+        "The DMBOK2 passages describe stewardship in organisations generally; none addresses stewards working with AI agents."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared README.md (the target role is 'a data governance role rather than an operational incident-resolution role', with a responsibility list running from data quality and business definitions through lineage, governance reporting and continuous improvement) and the HANDOFF.md non-goal of resolving operational incidents on behalf of operations teams. The list covers most DMBOK2 steward focus areas, but the row is Partial because (1) the role is not mapped to any DMBOK2 steward type; (2) the DMBOK2 counts identifying and resolving data issues, or facilitating resolution, as steward work, so the exclusion should be worded as excluding production-support incident handling and not data issue management (not rated Divergent because the DMBOK2 itself separates governance issue management from production support); (3) business rules, data standards and policy adherence are not named in the README list, which is a point to confirm because the DMBOK2 says steward focus varies. Adopting any option is a human decision and internal role definitions outrank the DMBOK2.",
+      "proposed_action": "structural-proposal",
+      "proposal_options": [
+        "Option 1 - Business Data Steward: adopt this DMBOK2 steward type as the label for the target role (business professionals, most often subject matter experts, accountable for a subset of data and working with stakeholders to define and control it) [DMBOK2-C03-23, DMBOK2-C03-24]. Fits a steward who works with SMEs and Data Owners on Investment Operations definitions and quality; implies business-side accountability for a data subset.",
+        "Option 2 - Enterprise Data Steward: adopt this type instead, because it describes oversight of a data domain across business functions [DMBOK2-C03-22]. Fits a steward who spans definitions, mappings, lineage and quality across the whole Investment Operations data domain; implies a wider remit than a single subset.",
+        "Option 3 - keep the neutral title 'Data Steward' and add only a one-line note that the DMBOK2 stewardship definition and focus areas are general industry context [DMBOK2-C03-14]; the DMBOK2 says stewards may be differentiated by place or focus and that terms such as custodian or trustee are used for steward-like functions, so no single label is required [DMBOK2-C03-20, DMBOK2-C03-15]."
+      ]
+    },
+    {
+      "concept_id": "A-03",
+      "dmbok_terms": ["Data Owner", "Business Data Steward", "business owners", "steward responsible for the term", "data ownership issues"],
+      "citation_ids": ["DMBOK2-C03-25", "DMBOK2-C03-33", "DMBOK2-C03-36", "DMBOK2-C03-43", "DMBOK2-C03-58"],
+      "dmbok_position": "General industry context: the DMBOK2 defines a Data Owner as a business Data Steward with approval authority over decisions about data within a domain, has the operating model settle where accountability and ownership reside, records the steward responsible for each glossary term as term metadata, and lists conflicts over data ownership among governance issues. A sample policy in section 2.7 has business owners approved by the Data Governance Office, which illustrates owner designation as a governed approval.",
+      "caveats": [
+        "The business-owner approval example is one of several illustrative policy shapes in section 2.7, not a requirement.",
+        "The DMBOK2 makes a Data Owner a type of business Data Steward, whereas the project separates the evaluating Data Steward from the approving Data Owner; the book lets stewards differ by place and focus, so this is a terminology note, not a conflict.",
+        "The range read does not use the phrase 'ownership gap'; linking it to a missing owner or missing responsible steward on a glossary term is an inference."
+      ],
+      "proposed_status": "Aligned",
+      "status_rationale": "Compared HANDOFF.md ('ownership assignment' under 'Human approval required'; acting as the Data Owner is a non-goal) and contracts/definition-and-cde-agent.contract.json (ownership gaps are among the things the agent identifies; 'Assigning owners' is under not_responsible_for; 'Any ownership assignment' is under human_approval_required_for). Using 'Data Owner' for the approving human, requiring human approval for assignment and surfacing missing owners all match the DMBOK2. The project does not name the body that approves an assignment (the DMBOK2 sample names the Data Governance Office); that is carried under A-04. Suggested citation: reference the DMBOK2 Data Owner definition as general industry context where the project's roles are described.",
+      "proposed_action": "citation",
+      "proposal_options": []
+    },
+    {
+      "concept_id": "A-04",
+      "dmbok_terms": ["Data Governance Council (DGC)", "Data Governance Office (DGO)", "Data Stewardship Steering Committee", "Chief Data Steward", "operating framework and accountabilities", "data issue escalation path", "judicial-like functions (issue management and escalation)"],
+      "citation_ids": ["DMBOK2-C03-02", "DMBOK2-C03-04", "DMBOK2-C03-09", "DMBOK2-C03-10", "DMBOK2-C03-12", "DMBOK2-C03-13", "DMBOK2-C03-21", "DMBOK2-C03-32", "DMBOK2-C03-40", "DMBOK2-C03-44", "DMBOK2-C03-46", "DMBOK2-C03-61"],
+      "dmbok_position": "General industry context: the DMBOK2 gives governance a judicial-like function of issue management and escalation, usually carried out through several committees of differing purpose and oversight, lets each organisation choose a model that fits its culture (including a virtual team with specific accountabilities), expects C-level sponsorship for a formal programme, and has the strategy define an operating framework with accountabilities. Its escalation path has stewardship teams resolve many issues locally, requires issues needing escalation to be logged and allows them to go up to the Data Governance Council, and sends issues the council cannot resolve to corporate governance or management.",
+      "caveats": [
+        "unverifiable from text: Table 4 (typical governance committees and bodies), Figure 16 (governance organization parts), Figure 19 (example operating framework) and Figure 20 (data issue escalation path) are images with dead links, so committee names, memberships and the exact escalation levels cannot be confirmed; the position rests on the surrounding prose only.",
+        "The DMBOK2 leaves the choice of governance model to each organisation; any body named in the options is a proposal for human decision, and internal governance arrangements outrank the DMBOK2."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared agents/factory/agent-risk-reviewer.md (only a 'named human governance owner' may approve; contested cut/redesign findings route to that owner with the override logged; the role is not yet named and escalations default to the project owner) and docs/IMPLEMENTATION-SEQUENCE.md Phase 0b (name the accountable human roles, including who holds override authority). A single accountable human escalation point is compatible with the DMBOK2's allowance for a virtual governance team, but the project defines no governance bodies or levels, no escalation path beyond the override log, and no named holder. Rated Partial: the principle of a named human owner is present, while defined accountabilities, bodies and a logged multi-step escalation path, which the DMBOK2 describes as parts of a working operating framework, are not yet. Adopting any option is a human decision and internal governance arrangements outrank the DMBOK2.",
+      "proposed_action": "structural-proposal",
+      "proposal_options": [
+        "Option 1 - single accountable owner (virtual model): name one human governance owner and a deputy as the escalation and approval endpoint, optionally titled Chief Data Steward since the DMBOK2 lets such a steward chair governance bodies in lieu of a CDO [DMBOK2-C03-21], within a governance team that may be virtual with specific accountabilities [DMBOK2-C03-04]; record the role in a short operating framework and accountabilities statement [DMBOK2-C03-32] and identify the executive sponsor the DMBOK2 expects [DMBOK2-C03-02]. Lowest overhead; no layered escalation.",
+        "Option 2 - council-based escalation ladder: adopt the DMBOK2 pattern in which stewardship teams settle what they can, escalations are logged, and unresolved issues go up to a Data Governance Council and then to corporate governance or management [DMBOK2-C03-44, DMBOK2-C03-46], with the escalation procedure published [DMBOK2-C03-61]. Needs a council to exist; level names and members are shown in Table 4 and Figure 20, which are unverifiable from text.",
+        "Option 3 - council with delegated steering committee: as Option 2, but the council delegates enforcement of policies to a Data Stewardship Steering Committee [DMBOK2-C03-40], reflecting the DMBOK2 view that governance work is often divided among several committees with different purposes and levels of oversight [DMBOK2-C03-12]. Suits a larger programme than the project currently describes."
+      ]
+    },
+    {
+      "concept_id": "A-05",
+      "dmbok_terms": ["data policy", "data standard", "data procedure", "policy adoption by the Data Governance Council", "mandatory standards"],
+      "citation_ids": ["DMBOK2-C03-26", "DMBOK2-C03-27", "DMBOK2-C03-34", "DMBOK2-C03-35", "DMBOK2-C03-39", "DMBOK2-C03-51", "DMBOK2-C03-52"],
+      "dmbok_position": "General industry context: the DMBOK2 defines data policies as directives that turn principles and management intent into fundamental rules about what to do and not do, with standards and procedures describing how; policies are drafted by data management or policy staff, refined by stewards and management and adopted by the Data Governance Council, and must be communicated, monitored, enforced and re-evaluated, while data standards should be mandatory and reviewed, approved and adopted by the council or a delegated workgroup. It does not discuss who may interpret a policy or the risk of presenting an inferred rule as policy, which is a project-specific control.",
+      "caveats": [
+        "Chapter 3 is silent on interpretation of policy and on automated agents inferring policy, so the 'policy interpretation where material' gate and the inferred-policy ban have no DMBOK2 passage behind them.",
+        "The DMBOK2 notes that policies and standards vary widely between organisations; the adoption route it describes is a general pattern, and the organisation's own approval route takes precedence."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared HANDOFF.md (non-goal of presenting inferred organisational policy as fact; 'policy interpretation where material' under human approval), README.md principle 2 (agents must not invent business definitions or policy) and the Definition & CDE contract (authoritative sources limited to named policy repositories; an 'approved' CDE-criteria document is required input). The stance that only governed documents carry policy authority agrees with the DMBOK2 adoption route. Rated Partial because the compared files use 'policy' as one undifferentiated term (no policy, standard and procedure distinction, and standards adoption is not in the human-approval list) and do not define 'authoritative' policy by its approval route beyond the contract's mention of an 'approved' document. Suggested wording: where policy is named, say 'policy and data standards adopted through the organisation's approval route', and keep the inferred-policy prohibition as a project-specific rule.",
+      "proposed_action": "wording",
+      "proposal_options": []
+    },
+    {
+      "concept_id": "A-06",
+      "dmbok_terms": ["DG metrics", "Data Governance Scorecard", "value, effectiveness and sustainability metrics", "reports on Data Quality measurements"],
+      "citation_ids": ["DMBOK2-C03-45", "DMBOK2-C03-60", "DMBOK2-C03-63", "DMBOK2-C03-64", "DMBOK2-C03-65", "DMBOK2-C03-66", "DMBOK2-C03-67", "DMBOK2-C03-68"],
+      "dmbok_position": "General industry context: the DMBOK2 says a governance programme must measure progress and success through metrics that show the business value delivered, and its sample metrics cover value (business objectives, risk reduction, operational efficiency), effectiveness (goals achieved, steward use of tools, communication and training, speed of adoption) and sustainability (performance of policies and processes, conformance to standards). An automated scorecard can report these to the council and steering committees and expose trends in issues by location and root cause, data quality measurement reports are among the content a programme publishes, and metrics are expected to change as the programme matures.",
+      "caveats": [
+        "The conversion flattens the sample-metrics list (bullet levels are lost and 'Sustainability' appears as a stray heading), so the grouping into value, effectiveness and sustainability is read from layout.",
+        "Chapter 3 gives sample metrics only; it prescribes no particular KPIs, targets or reporting cadence."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared README.md ('governance reporting' is listed among steward responsibilities with no content, audience or cadence), HANDOFF.md 'Success criteria' (agents know their boundaries; humans know where accountability sits; claims traceable; assumptions visible; controls, mappings and lineage linked to meaning and impact; exceptions analysed as patterns; agents evaluated independently; governance applied to the agents) and docs/IMPLEMENTATION-SEQUENCE.md Phase 5 (agent behaviour scored on seven evaluation dimensions). These criteria test the AI-augmented system, not the value, effectiveness or sustainability of stewardship that DMBOK2 metrics address, and the compared files define no scorecard or metric set for governance reporting. Rated Partial rather than Missing because measurement artefacts exist but target a different object. Adopting any option is a human decision and the organisation's own governance metrics outrank the DMBOK2.",
+      "proposed_action": "structural-proposal",
+      "proposal_options": [
+        "Option 1 - adopt the DMBOK2 metric groups: structure governance reporting under value, effectiveness and sustainability headings, map the HANDOFF.md success criteria into effectiveness and sustainability, and add value measures (business objectives, risk reduction, operational efficiency) [DMBOK2-C03-65, DMBOK2-C03-66, DMBOK2-C03-67, DMBOK2-C03-68].",
+        "Option 2 - governance scorecard: define a periodic scorecard of governance activity and policy compliance, with issue trends by location and root cause, reported to the accountable governance body, and include data quality measurement reports [DMBOK2-C03-63, DMBOK2-C03-45, DMBOK2-C03-60].",
+        "Option 3 - defer and record: keep the HANDOFF.md success criteria as system-level criteria only, record that programme-level stewardship metrics are deferred to the organisation's own governance metrics, and revisit as the programme matures, since the DMBOK2 expects metrics to change with maturity [DMBOK2-C03-64]."
+      ]
+    },
+    {
+      "concept_id": "A-07",
+      "dmbok_terms": ["continuous improvement", "ongoing process", "stakeholder feedback", "Data Governance Community of Interest"],
+      "citation_ids": ["DMBOK2-C03-05", "DMBOK2-C03-08", "DMBOK2-C03-39", "DMBOK2-C03-41", "DMBOK2-C03-59"],
+      "dmbok_position": "General industry context: the DMBOK2 lists continuous improvement of data management processes among the principles of a data-centric organisation and describes governance as an ongoing process with no end date; it feeds improvement through stakeholder feedback, periodic re-evaluation of policies, and a community of interest in which practitioners learn from each other.",
+      "caveats": [
+        "The improvement principle is a single bullet in section 1.3.1 and the supporting mechanisms are spread across sections 2.7, 2.9 and 2.17; Chapter 3 describes no dedicated improvement process."
+      ],
+      "proposed_status": "Aligned",
+      "status_rationale": "Compared README.md, which lists 'continuous improvement' among the stewardship responsibilities. The statement and its wording match the DMBOK2 principle. No improvement mechanism (feedback loop, review cadence) is specified, but the README entry is a scope statement and does not claim one; the metrics proposal under A-06 would be the natural place to add it. Suggested citation: reference the DMBOK2 principle as general industry context where the responsibility is listed.",
+      "proposed_action": "citation",
+      "proposal_options": []
+    },
+    {
+      "concept_id": "A-08",
+      "dmbok_terms": ["stakeholders", "Business Data Steward (subject matter expert)", "representative form of data governance", "collaborative stewardship", "documenting stakeholder viewpoints"],
+      "citation_ids": ["DMBOK2-C03-11", "DMBOK2-C03-17", "DMBOK2-C03-23", "DMBOK2-C03-24", "DMBOK2-C03-30", "DMBOK2-C03-41", "DMBOK2-C03-48", "DMBOK2-C03-56"],
+      "dmbok_position": "General industry context: the DMBOK2 treats stakeholder involvement as part of stewardship: stewards surface rules until there is consensus, business stewards are typically recognised subject matter experts who work with stakeholders to define and control data, governance is made representative so all stakeholders can be heard, stewardship is described as collaborative, terminology approvers should include core user groups, and issue management documents stakeholder viewpoints and resolution alternatives.",
+      "caveats": [
+        "The DMBOK2 speaks of stakeholders and business Data Stewards rather than 'SMEs' and 'operations teams'; its only reference close to operations teams is production support teams in the issue-management section.",
+        "The DMBOK2 passages describe human stakeholder processes; none addresses an automated agent raising questions for them."
+      ],
+      "proposed_status": "Aligned",
+      "status_rationale": "Compared HANDOFF.md (objective: 'identify unresolved questions requiring SME or Data Owner input') and the Definition & CDE contract (conflicting internal sources are routed to the human steward rather than resolved; outputs include open_questions and human_action_required; no definition is invented from general knowledge). Seeking input from the people who hold the knowledge, and recording the open point instead of answering it, matches the DMBOK2 consensus-and-documentation view of rules and definitions. Suggested citation: reference the DMBOK2 stakeholder passages as general industry context where the SME and Data Owner question step is described.",
+      "proposed_action": "citation",
+      "proposal_options": []
+    },
+    {
+      "concept_id": "A-09",
+      "dmbok_terms": ["Business Glossary", "business glossary content", "definition standards", "approvers of terminology", "draft definitions"],
+      "citation_ids": ["DMBOK2-C03-16", "DMBOK2-C03-54", "DMBOK2-C03-55", "DMBOK2-C03-56", "DMBOK2-C03-57", "DMBOK2-C03-58", "DMBOK2-C03-62"],
+      "dmbok_position": "General industry context: the DMBOK2 makes Data Stewards generally responsible for business glossary content, expects definitions to be clear and to explain exceptions, synonyms and variants, and says terminology approvers should include representatives of core user groups; it notes that drafts can come from another function such as Data Architecture and that each glossary term carries further metadata including the responsible steward. The glossary holds agreed-upon definitions, but this range prescribes no status model (such as draft, approved, retired) or approval workflow for definitions.",
+      "caveats": [
+        "Chapter 3 gives no lifecycle states or formal approval workflow for definitions; any such detail would be in chapters outside this reading unit.",
+        "The contract's candidate_definitions fields (term, draft_text, cited and paraphrased clauses, status) have no separate slots for synonyms, exceptions or variants, or for the responsible steward, which the DMBOK2 says definitions and glossary terms carry; these may sit in draft_text or in other output fields, so the point is noted but not scored."
+      ],
+      "proposed_status": "Aligned",
+      "status_rationale": "Compared HANDOFF.md ('business definition approval' under human approval; autonomous approval of definitions is a non-goal) and contracts/definition-and-cde-agent.contract.json (candidate definitions carry status DRAFT-NOT-APPROVED and a source-attribution rationale; 'Any candidate definition becoming final' needs human approval). Drafting by a supporting source and approval by a group that includes core user representatives is the pattern the DMBOK2 describes, and the project's draft-by-agent, approve-by-human split follows it. The project does not name who approves (the DMBOK2 asks for core user-group representatives among approvers); that gap sits under A-04. Suggested citation: reference the DMBOK2 glossary section as general industry context where the draft-and-approve rule is stated.",
+      "proposed_action": "citation",
+      "proposal_options": []
+    },
+    {
+      "concept_id": "A-20",
+      "dmbok_terms": ["Data Quality standards", "data quality rules", "certified data", "adoption of standards by the Data Governance Council"],
+      "citation_ids": ["DMBOK2-C03-01", "DMBOK2-C03-17", "DMBOK2-C03-37", "DMBOK2-C03-52", "DMBOK2-C03-53"],
+      "dmbok_position": "General industry context: in Chapter 3 data quality standards are part of what governance sets and enforces, stewards help surface data quality rules until there is consensus about them, standards are reviewed, approved and adopted by the Data Governance Council or a delegated workgroup, rules, measurement methodologies and remediation standards are among the things to standardise, and a sample policy has a governance office certify data for use. The chapter does not use the term 'threshold' and does not discuss accepting data-quality risk.",
+      "caveats": [
+        "Chapter 3 contains no passage on thresholds or on accepting data-quality risk; treating a threshold as part of a data quality rule or standard is an inference, and detailed guidance, if any, would be in chapters not read for this unit.",
+        "The sample policies in section 2.7, including the certification example, illustrate possible policy shapes and are not requirements."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared HANDOFF.md (human approval for 'quality thresholds' and 'acceptance of data-quality risk'; non-goal of changing production quality thresholds; the Data Quality Agent 'must not set business thresholds') and docs/IMPLEMENTATION-SEQUENCE.md Phase 0b (an approved Data-Quality-Dimension taxonomy before the Data Quality Agent). The direction agrees with the DMBOK2: quality rules and standards are agreed with stakeholders and adopted by a governing body, and certification of data for use is a governance-office act. Rated Partial because the two decision types use terms that Chapter 3 does not name (threshold, risk acceptance), so alignment rests on mapping them to rules, standards and certification. Suggested wording: state that thresholds are parameters of data quality rules or standards adopted through the organisation's approval route, and keep 'acceptance of data-quality risk' as a project term.",
+      "proposed_action": "wording",
+      "proposal_options": []
+    }
+  ],
+  "additional_content": [
+    {"topic": "Issue management: logging, tracking and documenting resolutions", "citation_ids": ["DMBOK2-C03-47", "DMBOK2-C03-48"], "why_relevant": "Exception and root-cause work and any escalation need an issue record with assigned actions and documented resolutions, a control set the DMBOK2 describes in section 2.10 and that no assigned concept covers."},
+    {"topic": "Regulatory compliance as a governance driver and duty", "citation_ids": ["DMBOK2-C03-03", "DMBOK2-C03-50"], "why_relevant": "Investment Operations is a regulated financial-services setting, and the project files compared do not name regulatory compliance as a driver of stewardship work."},
+    {"topic": "Data quality evaluation dimensions in a sample certified-data policy", "citation_ids": ["DMBOK2-C03-38"], "why_relevant": "The sample names accuracy, completeness, consistency, accessibility, uniqueness, compliance and efficiency, which bears on the Data-Quality-Dimension taxonomy that Phase 0b of docs/IMPLEMENTATION-SEQUENCE.md requires, though it is only an illustration."},
+    {"topic": "Governance control points embedded in the development lifecycle", "citation_ids": ["DMBOK2-C03-31"], "why_relevant": "The Agent Factory's staged review gates are lifecycle control points of the kind the DMBOK2 asks governance to build into system and application development."},
+    {"topic": "Governance as an ongoing, principle-based programme", "citation_ids": ["DMBOK2-C03-05", "DMBOK2-C03-06"], "why_relevant": "README.md's ten design principles could be cross-referenced to the DMBOK2 view that governance is ongoing and that policy rests on stated guiding principles."},
+    {"topic": "Readiness assessment before building governance capability", "citation_ids": ["DMBOK2-C03-29"], "why_relevant": "A baseline assessment of capability, maturity and effectiveness underpins both planning and later measurement, which bears on the Phase 0 and 0b sequencing and on the metrics proposed under A-06."}
+  ],
+  "source_caveats": [
+    "Figures and tables in Chapter 3 are missing from the conversion (dead image links): Figure 14 (context diagram), Figure 15, Figure 16 (governance organization parts), Table 4 (typical governance committees and bodies), Figure 17, Figure 18, Figure 19 (example operating framework), Figure 20 (data issue escalation path) and Table 5. Committee names, memberships, escalation levels and any role list in the context diagram cannot be confirmed from the text.",
+    "Some headings in the conversion are not true headings: the 1.3.1 label appears as an italic line rather than a markdown heading, several sentence fragments are marked as '#####' headings (for example before the 'Reducing Risk' list and at the start of the 1.2 principles), and 'Sustainability' appears as a stray heading in section 5. Section names in the citations are the nearest numbered heading or label above each quote.",
+    "Line breaks have joined some words (for example 'datarelated', 'legislativelike', 'decisionmaking', 'wellpracticed') and footnote numbers appear as stray digits or strikethrough marks; quotes were taken from clean runs of text.",
+    "Several sentences are split across PDF pages (the opening definition of Data Governance around the page 136 marker, the 'Measured' principle across pages 143 and 144, the Data Governance Scorecard sentence across pages 169 and 170), so quotes were taken from one side of each break.",
+    "The sample-metrics list in section 5 is flattened (bullet levels are lost), so its grouping into value, effectiveness and sustainability is read from layout.",
+    "Chapter 3 does not mention artificial intelligence or automated agents, thresholds, or acceptance of data-quality risk; positions on those parts rest on the surrounding governance text and on the inferences stated in each row."
+  ]
+}

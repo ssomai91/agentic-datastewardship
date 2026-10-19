@@ -1,0 +1,215 @@
+{
+  "unit": 4,
+  "citations": [
+    {"id": "DMBOK2-C10-01", "chapter": 10, "section": "1.1 Business Drivers", "pdf_page": 578, "quote": "the ability to leverage such transactional data is highly dependent on the availability and quality of Reference and Master Data."},
+    {"id": "DMBOK2-C10-02", "chapter": 10, "section": "1.2 Goals and Principles", "pdf_page": 579, "quote": "Reference and Master Data belong to the organization, not to a particular application or department."},
+    {"id": "DMBOK2-C10-03", "chapter": 10, "section": "1.2 Goals and Principles", "pdf_page": 579, "quote": "Business Data Stewards are accountable for controlling and ensuring the quality of Reference Data."},
+    {"id": "DMBOK2-C10-04", "chapter": 10, "section": "1.2 Goals and Principles", "pdf_page": 579, "quote": "Changes to Reference Data values should follow a defined process; changes should be approved and communicated before they are implemented."},
+    {"id": "DMBOK2-C10-05", "chapter": 10, "section": "1.2 Goals and Principles", "pdf_page": 579, "quote": "Master Data values should be replicated only from the system of record."},
+    {"id": "DMBOK2-C10-06", "chapter": 10, "section": "1.3.1 Differences Between Master and Reference Data", "pdf_page": 582, "quote": "One challenge of Reference Data Management is that of ownership or responsibility for definition and maintenance."},
+    {"id": "DMBOK2-C10-07", "chapter": 10, "section": "1.3.1 Differences Between Master and Reference Data", "pdf_page": 583, "quote": "Determining responsibility for obtaining data and managing updates is part of RDM. Lack of accountability introduces risk"},
+    {"id": "DMBOK2-C10-08", "chapter": 10, "section": "1.3.1 Differences Between Master and Reference Data", "pdf_page": 583, "quote": "Because Master and Reference Data provide context for transactions, they shape the Transaction data entering an organization during operations"},
+    {"id": "DMBOK2-C10-09", "chapter": 10, "section": "1.3.2 Reference Data", "pdf_page": 583, "quote": "or other application functionality (e.g., synonym rings to enable search and discovery)."},
+    {"id": "DMBOK2-C10-10", "chapter": 10, "section": "1.3.2.1.1 Lists", "pdf_page": 585, "quote": "Definitions provide information that the label alone does not provide."},
+    {"id": "DMBOK2-C10-11", "chapter": 10, "section": "1.3.2.1.2 Cross-Reference Lists", "pdf_page": 586, "quote": "These code sets may be at different granularities or the same granularity with different values. Cross-reference data sets translate between codes values."},
+    {"id": "DMBOK2-C10-12", "chapter": 10, "section": "1.3.2.2 Proprietary or Internal Reference Data", "pdf_page": 589, "quote": "if different business units use different terms to describe the status of an account, then it is difficult for anyone in the organization"},
+    {"id": "DMBOK2-C10-13", "chapter": 10, "section": "1.3.2.2 Proprietary or Internal Reference Data", "pdf_page": 589, "quote": "Data Stewards must balance between the need to have common words for the same information and the need for flexibility"},
+    {"id": "DMBOK2-C10-14", "chapter": 10, "section": "1.3.2.3 Industry Reference Data", "pdf_page": 589, "quote": "Industry Reference Data is produced and maintained external to the organizations that use it, but it is required to understand transactions within those organizations."},
+    {"id": "DMBOK2-C10-15", "chapter": 10, "section": "1.3.2.5 Computational Reference Data", "pdf_page": 590, "quote": "foreign exchange calculations rely on managed, time stamped exchange value tables."},
+    {"id": "DMBOK2-C10-16", "chapter": 10, "section": "1.3.2.6 Standard Reference Data Set Metadata", "pdf_page": 590, "quote": "it is important to maintain key Metadata about Reference Data sets to ensure their lineage and currency are understood and maintained."},
+    {"id": "DMBOK2-C10-17", "chapter": 10, "section": "1.3.3.1 System of Record, System of Reference", "pdf_page": 592, "quote": "A System of Record is an authoritative system where data is created/captured, and/or maintained through a defined set of rules and expectations"},
+    {"id": "DMBOK2-C10-18", "chapter": 10, "section": "1.3.3.1 System of Record, System of Reference", "pdf_page": 592, "quote": "A System of Reference is an authoritative system where data consumers can obtain reliable data to support transactions and analysis"},
+    {"id": "DMBOK2-C10-19", "chapter": 10, "section": "1.3.3.2 Trusted Source, Golden Record", "pdf_page": 592, "quote": "Trusted Source is recognized as the 'best version of the truth' based on a combination of automated rules and manual stewardship of data content."},
+    {"id": "DMBOK2-C10-20", "chapter": 10, "section": "1.3.3.2 Trusted Source, Golden Record", "pdf_page": 593, "quote": "Promising that data is 'Golden' when it is not can undermine the confidence of data consumers."},
+    {"id": "DMBOK2-C10-21", "chapter": 10, "section": "1.3.3.3 Master Data Management", "pdf_page": 595, "quote": "it is best to approach Master Data Management one data domain at a time. Start small, with a handful of attributes,"},
+    {"id": "DMBOK2-C10-22", "chapter": 10, "section": "1.3.3.3 Master Data Management", "pdf_page": 596, "quote": "Reconciling and consolidating data across sources to provide a master record or the best version of the truth."},
+    {"id": "DMBOK2-C10-23", "chapter": 10, "section": "1.3.3.4.1 Data Model Management", "pdf_page": 597, "quote": "Source systems may present the identical attribute name but the data values are in completely different contexts"},
+    {"id": "DMBOK2-C10-24", "chapter": 10, "section": "1.3.3.4.1 Data Model Management", "pdf_page": 598, "quote": "source systems may present differently named attributes that at the enterprise level coalesce to a single attribute"},
+    {"id": "DMBOK2-C10-25", "chapter": 10, "section": "1.3.3.10 Industry Master Data – Reference Directories", "pdf_page": 611, "quote": "the trusted record will deviate from the reference directory with traceability to other source records, contributing attributes, and transformation rules."},
+    {"id": "DMBOK2-C10-26", "chapter": 10, "section": "1.3.4 Data Sharing Architecture", "pdf_page": 611, "quote": "Each Master Data subject area will likely have its own system of record."},
+    {"id": "DMBOK2-C10-27", "chapter": 10, "section": "2.1.2 Evaluate and Assess Data Sources", "pdf_page": 615, "quote": "The Data Stewards will need to collaborate with the business areas on reconciliation and agreement on attribute naming and enterprise level definitions."},
+    {"id": "DMBOK2-C10-28", "chapter": 10, "section": "2.1.3 Define Architectural Approach", "pdf_page": 616, "quote": "The data sharing hub architecture is particularly useful when there is no clear system of record for Master Data."},
+    {"id": "DMBOK2-C10-29", "chapter": 10, "section": "2.1.5 Define Stewardship and Maintenance Processes", "pdf_page": 617, "quote": "Technical solutions can do remarkable work matching, merging, and managing identifiers for master records. However, the process also requires stewardship"},
+    {"id": "DMBOK2-C10-30", "chapter": 10, "section": "2.2.1 Define Drivers and Requirements", "pdf_page": 617, "quote": "The most important Reference Data sets should drive requirements for a Reference Data Management system."},
+    {"id": "DMBOK2-C10-31", "chapter": 10, "section": "2.2.2 Assess Data Sources", "pdf_page": 618, "quote": "internal sources for Reference Data must be identified, compared, and assessed"},
+    {"id": "DMBOK2-C10-32", "chapter": 10, "section": "2.2.5 Define Stewardship and Maintenance Processes", "pdf_page": 619, "quote": "Reference Data requires stewardship to ensure that values are complete and current and that definitions are clear and understandable."},
+    {"id": "DMBOK2-C10-33", "chapter": 10, "section": "2.2.5 Define Stewardship and Maintenance Processes", "pdf_page": 619, "quote": "In some cases, stewards will be directly responsible for hands-on maintenance of Reference Data; in other cases, they may facilitate the process."},
+    {"id": "DMBOK2-C10-34", "chapter": 10, "section": "2.2.5 Define Stewardship and Maintenance Processes", "pdf_page": 619, "quote": "This could include: steward name, originating organization, expected frequency of updates, schedule for updates, processes using the Reference Data,"},
+    {"id": "DMBOK2-C10-35", "chapter": 10, "section": "2.2.5 Define Stewardship and Maintenance Processes", "pdf_page": 620, "quote": "These workflows themselves depend on identifying who within an organization is responsible for Reference Data content."},
+    {"id": "DMBOK2-C10-36", "chapter": 10, "section": "4.2 Monitor Data Movement", "pdf_page": 621, "quote": "Identify data lineage from / to administrative systems and applications"},
+    {"id": "DMBOK2-C10-37", "chapter": 10, "section": "4.4 Data Sharing Agreements", "pdf_page": 624, "quote": "establish sharing agreements that stipulate what data can be shared and under what conditions"},
+    {"id": "DMBOK2-C10-38", "chapter": 10, "section": "5 Organization and Cultural Change", "pdf_page": 625, "quote": "Perhaps the most challenging cultural change is central to governance: Determining which individuals are accountable for which decisions"},
+    {"id": "DMBOK2-C10-39", "chapter": 10, "section": "6 Reference and Master Data Governance", "pdf_page": 625, "quote": "Because they are shared resources, Reference and Master Data require governance and stewardship."},
+    {"id": "DMBOK2-C10-40", "chapter": 10, "section": "6.1 Metrics", "pdf_page": 626, "quote": "DQ dashboards can describe the quality of Reference and Master Data."},
+    {"id": "DMBOK2-C10-41", "chapter": 10, "section": "6.1 Metrics", "pdf_page": 627, "quote": "name or group responsible for data content, and how often the coverage is evaluated. They can be used to identify gaps in support."}
+  ],
+  "rows": [
+    {
+      "concept_id": "A-03",
+      "dmbok_terms": [
+        "Ownership (guiding principle)",
+        "Business Data Steward accountability",
+        "Responsibility for definition and maintenance",
+        "Steward name (Reference Data set metadata)",
+        "Data Steward coverage (metric)"
+      ],
+      "citation_ids": [
+        "DMBOK2-C10-02",
+        "DMBOK2-C10-03",
+        "DMBOK2-C10-06",
+        "DMBOK2-C10-07",
+        "DMBOK2-C10-34",
+        "DMBOK2-C10-35",
+        "DMBOK2-C10-38",
+        "DMBOK2-C10-41"
+      ],
+      "dmbok_position": "GENERAL INDUSTRY CONTEXT: Chapter 10 says shared Reference and Master Data belong to the organisation rather than to one application or department, makes Business Data Stewards accountable for Reference Data quality, and counts finding out who is responsible for definition and maintenance as part of Reference Data Management because missing accountability is a risk. It suggests recording the steward's name as metadata for each Reference Data set, notes that change-approval workflows rely on knowing who is responsible, offers a steward-coverage metric for spotting gaps in support, and treats deciding who is accountable for which decisions as a governance and cultural question for stewards, architects, managers, executives and bodies such as the Data Governance Council.",
+      "caveats": [
+        "Chapter 10 does not define a 'Data Owner' role; it speaks of organisational ownership and accountable Business Data Stewards, so the Data Owner versus Data Steward vocabulary has to be settled from the governance and organisation chapters, which are outside this unit's range.",
+        "Watch point: because Chapter 10 places shared data with the organisation, naming a single department or application team as Data Owner of shared reference or master data would need to be reconciled with that principle; the files compared make no such assignment.",
+        "The label 'Data Steward coverage' sits at the end of PDF page 626 and the cited sentence continues on page 627. Table 23 (Critical Reference Data Metadata Attributes) is a missing figure, so whether it lists an owner or steward attribute is unverifiable from text; only the steward-name item in the section 2.2.5 text is relied on."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared HANDOFF.md ('ownership assignment' under Human approval required; 'acts as the Data Owner' among the non-goals), ARCHITECTURE.md (Definition & CDE Agent: 'identify ownership gaps'; prohibited: 'assigning owners') and contracts/definition-and-cde-agent.contract.json (responsible_for 'ownership gaps'; not_responsible_for 'Assigning owners'; human_approval_required_for 'Any ownership assignment'; output field ownership_gaps typed as an array of strings). The decision rights agree in substance with Chapter 10, which also leaves accountability decisions to people and governance bodies and treats missing accountability as a risk to be detected. The status is Partial rather than Aligned because the repository uses 'Data Owner' and 'ownership gap' without defining either, names no field or measure for recording or checking who is responsible, and does not use Chapter 10's terms (steward accountability, steward name, steward coverage). Proposed wording change, for human approval: define 'ownership gap' once (a term, element or data set with no named accountable party), note its correspondence to the Chapter 10 steward-coverage gap as GENERAL INDUSTRY CONTEXT, and keep 'Data Owner' as the internal term until the owner settles the role vocabulary, which belongs to chapters outside this unit.",
+      "proposed_action": "wording",
+      "proposal_options": []
+    },
+    {
+      "concept_id": "A-10",
+      "dmbok_terms": [
+        "Definition (of a Reference Data value)",
+        "Cross-reference list",
+        "Synonym ring",
+        "Enterprise level definition",
+        "Attribute naming"
+      ],
+      "citation_ids": [
+        "DMBOK2-C10-09",
+        "DMBOK2-C10-10",
+        "DMBOK2-C10-11",
+        "DMBOK2-C10-12",
+        "DMBOK2-C10-13",
+        "DMBOK2-C10-23",
+        "DMBOK2-C10-24",
+        "DMBOK2-C10-27"
+      ],
+      "dmbok_position": "GENERAL INDUSTRY CONTEXT: Within reference and master data, Chapter 10 treats a definition as giving information that a code label cannot, and it shows both naming problems the project cares about: business units using different terms for one thing, and source systems using one attribute name for different things or several names for one enterprise attribute. It expects Data Stewards to work with the business to reconcile these and agree attribute naming and enterprise level definitions, balancing common wording against local flexibility and relating differing representations through cross-reference lists; 'synonym' appears only as synonym rings for search, and nothing in this range describes a business glossary as such.",
+      "caveats": [
+        "Chapter 10 does not describe a business glossary as an artefact; that treatment sits in a chapter outside this unit, so this grade reflects only the reference and master data view and is provisional for the glossary itself.",
+        "The chapter's one literal use of 'synonym' is 'synonym rings' as a search-and-discovery feature of Reference Data storage, and 'terminology conflict' is not its term; it speaks of different terms and attribute naming."
+      ],
+      "proposed_status": "Aligned",
+      "status_rationale": "Compared ARCHITECTURE.md (Definition & CDE Agent: 'locate existing definitions', 'compare definitions', 'identify conflicts', 'identify synonyms', 'identify missing definitions'), HANDOFF.md ('business definitions, synonyms, terminology conflicts, ownership gaps') and contracts/definition-and-cde-agent.contract.json (responsible_for; the 'Get glossary term links' tool for term relationships and synonyms; the escalation rule that conflicting internal sources go to a human steward rather than being resolved by the agent). This matches the Chapter 10 practice, in which differences in terms and attribute names are surfaced and reconciled by Data Stewards working with the business; the agent only supports that work and its candidate definitions stay unapproved until a human decides. No essential Chapter 10 element is missing from the concept as stated, so the status is Aligned and the only action is a citation; 'synonyms' and 'terminology conflicts' are the project's own words and no wording change is proposed because the chapter's near-equivalents describe the same activity. The grade is provisional for the glossary as an artefact, which this chapter does not cover.",
+      "proposed_action": "citation",
+      "proposal_options": []
+    },
+    {
+      "concept_id": "A-25",
+      "dmbok_terms": [
+        "Reference Data Management (RDM)",
+        "Master Data Management (MDM)",
+        "Reference Data stewardship",
+        "Reference and Master Data governance",
+        "Data domain"
+      ],
+      "citation_ids": [
+        "DMBOK2-C10-01",
+        "DMBOK2-C10-08",
+        "DMBOK2-C10-21",
+        "DMBOK2-C10-22",
+        "DMBOK2-C10-29",
+        "DMBOK2-C10-30",
+        "DMBOK2-C10-32",
+        "DMBOK2-C10-33",
+        "DMBOK2-C10-34",
+        "DMBOK2-C10-39"
+      ],
+      "dmbok_position": "GENERAL INDUSTRY CONTEXT: Chapter 10 presents Reference and Master Data as shared resources that need both governance and stewardship: stewards keep reference values complete and current and their definitions clear, either maintaining them directly or facilitating, and matching and merging tools still rely on stewards for exceptions and process improvement. It says use of transactional data depends on the quality of this data, that this data supplies the context in which transactions arrive, and that Master Data programmes should begin with one data domain and a handful of attributes.",
+      "caveats": [
+        "In Chapter 10 'reconciliation' means reconciling and consolidating data across sources into a master record; ARCHITECTURE.md lists 'reconciliation' as a possible Context-agent content area without defining it, so the two uses should not be assumed to be the same activity.",
+        "Table 23 (Critical Reference Data Metadata Attributes) is a missing figure, so its full attribute list is unverifiable from text; option 1 relies on the text list in section 2.2.5.",
+        "The chapter describes organisation-wide MDM and RDM programmes and tooling; it does not say how much applies to a stewardship function supported by AI agents, so the options are proposals for human decision, not DMBOK2 requirements."
+      ],
+      "proposed_status": "Missing",
+      "status_rationale": "Compared ARCHITECTURE.md, where 'reconciliation' appears once, as a possible content area of the Investment Operations Context Agent next to transactions, positions, valuation and NAV, and ran a keyword search of the repository's Markdown, contracts, schemas and agent files for reference data, master data and related terms, which found no reference or master data stewardship artefact (no register, role, contract section, schema field or backlog item). Chapter 10 treats stewardship of Reference and Master Data as part of data stewardship, so this is a coverage gap rather than a difference in wording; in my reading, Context-agent domain content does not stand in for the steward-held metadata, change control and coverage checks the chapter describes. The owner could instead record a deliberate exclusion from the initial scope (record-deviation); a structural proposal is offered because the chapter ties transaction-data quality to this data and gives scoping alternatives the owner can choose between.",
+      "proposed_action": "structural-proposal",
+      "proposal_options": [
+        "Reference Data first: add a small versioned register of the Reference Data sets that matter to Investment Operations, recording for each the steward name, originating organisation, update frequency and schedule, and the processes that use it, starting with the most important sets and leaving the owner to choose whether the steward maintains values directly or facilitates others (backed by DMBOK2-C10-34, DMBOK2-C10-30, DMBOK2-C10-32 and DMBOK2-C10-33); this is a governance document rather than a new agent, and its cost is a human-maintained register.",
+        "One Master Data domain first: choose a single Investment Operations master data domain, begin with a handful of attributes, and define who reviews match-and-merge exceptions as a steward task before any tooling is considered (backed by DMBOK2-C10-21 and DMBOK2-C10-29); the cost is a deeper stewardship commitment for one domain, with matching, merging and the choice of system of record staying with the Data Steward and the appropriate human owner.",
+        "Context-agent scope only: name reference data and master data as content areas of the Investment Operations Context Agent in ARCHITECTURE.md, keep the INTERNAL DOCUMENTED POSITION and GENERAL INDUSTRY CONTEXT distinction, and define the project's use of 'reconciliation' so it is not confused with consolidating source records (backed by DMBOK2-C10-08, DMBOK2-C10-01 and DMBOK2-C10-22); this is the cheapest change but defines no stewardship duties, register or coverage check, so the gap stays partly open."
+      ]
+    },
+    {
+      "concept_id": "A-26",
+      "dmbok_terms": [
+        "System of Record",
+        "System of Reference",
+        "Trusted Source",
+        "Authority (guiding principle)",
+        "Golden Record",
+        "Reference directory"
+      ],
+      "citation_ids": [
+        "DMBOK2-C10-05",
+        "DMBOK2-C10-14",
+        "DMBOK2-C10-17",
+        "DMBOK2-C10-18",
+        "DMBOK2-C10-19",
+        "DMBOK2-C10-20",
+        "DMBOK2-C10-25",
+        "DMBOK2-C10-26",
+        "DMBOK2-C10-28",
+        "DMBOK2-C10-31"
+      ],
+      "dmbok_position": "GENERAL INDUSTRY CONTEXT: Chapter 10 separates a System of Record (where data is created or maintained under defined rules) from a System of Reference (where consumers obtain reliable data even if it originated elsewhere), says each Master Data subject area will likely have its own system of record and that values should be replicated only from it, and describes a Trusted Source as the best version available, built from rules plus manual stewardship, while warning against overclaiming that data is 'golden'. It treats industry reference data as produced outside the organisation yet needed to understand its transactions, notes that the organisation's reconciled record can depart from an external directory while staying traceable to the contributing sources, asks that internal sources be identified, compared and assessed, and suggests a data sharing hub where no clear system of record exists.",
+      "caveats": [
+        "The chapter's 'authority' concerns data values and the systems that hold or serve them; the project's 'authoritative sources' are the evidence sources an agent may rely on, plus a rule that INTERNAL DOCUMENTED POSITION outranks GENERAL INDUSTRY CONTEXT. The DMBOK2 does not address that AI-specific precedence rule, which should stay as a project control.",
+        "The DMBOK2 does not rank internal documentation above external industry sources; for externally governed reference data it says only that the organisation's reconciled version may differ from the external directory if the differences stay traceable.",
+        "The contract states that the glossary or catalog product has not yet been identified, so no concrete system can be designated yet; the gap concerns vocabulary and future designation."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared ARCHITECTURE.md (Investment Operations Context Agent 'Required distinction': INTERNAL DOCUMENTED POSITION, GENERAL INDUSTRY CONTEXT, INFERENCE, OPEN QUESTION), contracts/definition-and-cde-agent.contract.json ('authoritative_sources': a named internal glossary or catalog system, named policy repositories holding CDE criteria, and an exclusion of unstructured email, Teams and chat unless promoted into a named register), AGENT-CONTRACT-TEMPLATE.md ('Authoritative Sources') and schemas/evidence.schema.json (authority_level). The purpose matches Chapter 10: designate which sources count as authoritative, exclude informal ones unless promoted into a named register, and keep claims traceable. The status is Partial because the repository has no counterpart to the chapter's distinction between a system of record and a system of reference, nor to naming a system of record per subject area, and it says 'authoritative source' where the chapter says system of record, system of reference and trusted source. The precedence of internal documented position over general knowledge is a project control the DMBOK2 does not address and should be kept (a candidate for the deviations register). Proposed wording change, for human approval: add a short terminology note that 'authoritative source' in the contracts means an approved evidence source, distinct from a data-level system of record or system of reference, and suggest that future Context and Mapping & Lineage contracts say, for each source platform they name, which of the two it is.",
+      "proposed_action": "wording",
+      "proposal_options": []
+    }
+  ],
+  "additional_content": [
+    {
+      "topic": "Monitoring shared-data movement for lineage, root-cause analysis and latency",
+      "citation_ids": ["DMBOK2-C10-36"],
+      "why_relevant": "Section 4.2 lists lineage identification and root-cause support among the reasons to monitor how shared data flows, which bears on the Mapping & Lineage and Exception & Root-Cause agents."
+    },
+    {
+      "topic": "Controlled, approved and communicated change to Reference Data values",
+      "citation_ids": ["DMBOK2-C10-04"],
+      "why_relevant": "It parallels the project's human-approval gate for production changes and could inform how change approvals are recorded."
+    },
+    {
+      "topic": "Reference Data set metadata (steward, source, update schedule, consuming processes)",
+      "citation_ids": ["DMBOK2-C10-16", "DMBOK2-C10-34"],
+      "why_relevant": "The listed attributes are a candidate checklist for the project's metadata and data dictionary artefacts, although Table 23 that illustrates them is a missing figure."
+    },
+    {
+      "topic": "Data sharing agreements and service levels for shared data",
+      "citation_ids": ["DMBOK2-C10-37"],
+      "why_relevant": "Agreements that state what data is shared and on what conditions, backed by service levels and metrics in the same section, relate to the project's data contract and upstream dependency responsibilities."
+    },
+    {
+      "topic": "Governance metrics for Reference and Master Data",
+      "citation_ids": ["DMBOK2-C10-40", "DMBOK2-C10-41"],
+      "why_relevant": "Section 6.1 lists quality, change-activity, service-level and steward-coverage metrics that could seed the project's governance reporting."
+    },
+    {
+      "topic": "Computational and industry Reference Data such as exchange-rate tables",
+      "citation_ids": ["DMBOK2-C10-14", "DMBOK2-C10-15"],
+      "why_relevant": "Managed exchange-rate style data is the kind of shared reference data that valuation and NAV depend on, which the Context agent lists as content areas (our inference, not a DMBOK2 statement)."
+    }
+  ],
+  "source_caveats": [
+    "Unit 4 covers Chapter 10 only (PDF pages 575 to 630). Every DMBOK2 statement reported here is GENERAL INDUSTRY CONTEXT; adopting any element is a proposal for human approval and internal policy outranks it. The chapter says nothing about AI agents or AI-augmented stewardship.",
+    "Missing figures: Figure 75 (context diagram), Figure 76 (key processing steps for MDM), Figure 77 (Master Data sharing architecture example), Figure 78 (Reference Data change request process) and Tables 17 to 26 (including Table 23, Critical Reference Data Metadata Attributes) are image links to files that do not exist, so anything they would show, including any deliverable or role summary in the context diagram, is unverifiable from text.",
+    "Conversion noise in Chapter 10: page markers fall mid-sentence and mid-list; several bullet lists are merged into single lines or lose their bullets (sections 4.2, 4.3 and 6.1); a bullet at PDF page 584 is rendered as an unnumbered heading; some sub-headings run into the paragraph that follows (1.3.3.4.3, 1.3.3.4.4.3, 1.3.3.7) and the section 2 heading is written as '2. Activities'; inline footnote numbers appear in the text (56 to 62). Nearest-heading choices for citations are therefore partly inferred.",
+    "Some cited sentences begin or end mid-sentence because a page marker splits them; for example the label 'Data Steward coverage' is on PDF page 626 while the cited sentence continues on page 627.",
+    "Chapter 10 does not treat the business glossary or a Data Owner role directly; those topics, and the DMBOK2's role and organisation guidance, sit in chapters outside this unit's range, so rows A-03 and A-10 reflect only the reference and master data view."
+  ]
+}

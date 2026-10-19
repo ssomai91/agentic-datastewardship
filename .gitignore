@@ -2,7 +2,3 @@ __pycache__/
 *.pyc
 .pytest_cache/
 .worktrees/
-.claude/settings.local.json
-DAMA-DMBOK-2nd-Edition.md
-DAMA-DMBOK-2nd-Edition-assets/
-.dmbok-work/
