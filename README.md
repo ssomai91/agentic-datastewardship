@@ -1,1 +1,1 @@
-# agentic-datastewardhip
+# agentic-datastewardship
