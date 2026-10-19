@@ -1,0 +1,313 @@
+{
+  "unit": 1,
+  "citations": [
+    {
+      "id": "DMBOK2-C02-01",
+      "chapter": 2,
+      "section": "3.2 Principles Behind Data Privacy Law",
+      "pdf_page": 117,
+      "quote": "organizations have policies and guidelines that enable staff to follow legal requirements as well as use data within the risk appetite of the organization"
+    },
+    {
+      "id": "DMBOK2-C02-02",
+      "chapter": 2,
+      "section": "3.4 Risks of Unethical Data Handling Practices",
+      "pdf_page": 118,
+      "quote": "not using data to lie or mislead, and being transparent regarding the sources, uses, and intent behind an organization's data handling"
+    },
+    {
+      "id": "DMBOK2-C02-03",
+      "chapter": 2,
+      "section": "3.4.3 Unclear Definitions or Invalid Comparisons",
+      "pdf_page": 119,
+      "quote": "When required context is left out, the surface of the presentation may imply meaning that the data does not support."
+    },
+    {
+      "id": "DMBOK2-C02-04",
+      "chapter": 2,
+      "section": "3.4.4 Bias",
+      "pdf_page": 121,
+      "quote": "The analyst has a hunch and wants to satisfy that hunch, but uses only the data that confirms the hunch"
+    },
+    {
+      "id": "DMBOK2-C02-05",
+      "chapter": 2,
+      "section": "3.5 Establishing an Ethical Data Culture",
+      "pdf_page": 124,
+      "quote": "codifying these in policies and a code of ethics, and providing training and oversight to enforce expected behaviors"
+    },
+    {
+      "id": "DMBOK2-C02-06",
+      "chapter": 2,
+      "section": "3.5.4 Adopt a Socially Responsible Ethical Risk Model",
+      "pdf_page": 129,
+      "quote": "Automated monitoring is not sufficient protection from unethical activities. People – the analysts themselves – need to reflect on possible bias."
+    },
+    {
+      "id": "DMBOK2-C02-07",
+      "chapter": 2,
+      "section": "4 Works Cited / Recommended",
+      "pdf_page": 134,
+      "quote": "As predictive algorithms of learning machines become more complex, it is difficult to track the logic and lineage of their decisions."
+    },
+    {
+      "id": "DMBOK2-C07-01",
+      "chapter": 7,
+      "section": "1.1.1 Risk Reduction",
+      "pdf_page": 386,
+      "quote": "Information security begins by classifying an organization's data in order to identify which data requires protection."
+    },
+    {
+      "id": "DMBOK2-C07-02",
+      "chapter": 7,
+      "section": "1.3.1 Vulnerability",
+      "pdf_page": 390,
+      "quote": "Thus, it is critical to keep production data out of non-production environments."
+    },
+    {
+      "id": "DMBOK2-C07-03",
+      "chapter": 7,
+      "section": "1.3.4 Risk Classifications",
+      "pdf_page": 391,
+      "quote": "Risk classifications describe the sensitivity of the data and the likelihood that it might be sought after for malicious purposes."
+    },
+    {
+      "id": "DMBOK2-C07-04",
+      "chapter": 7,
+      "section": "1.3.11 Types of Data Security",
+      "pdf_page": 403,
+      "quote": "A user, process, or program should be allowed to access only the information allowed by its legitimate purpose."
+    },
+    {
+      "id": "DMBOK2-C07-05",
+      "chapter": 7,
+      "section": "1.3.12 Types of Data Security Restrictions",
+      "pdf_page": 406,
+      "quote": "Two concepts drive security restrictions: the level of confidentiality of data and regulation related to data."
+    },
+    {
+      "id": "DMBOK2-C07-06",
+      "chapter": 7,
+      "section": "1.3.12.1 Confidential Data",
+      "pdf_page": 407,
+      "quote": "A typical classification schema might include two or more of the five confidentiality classification levels listed here"
+    },
+    {
+      "id": "DMBOK2-C07-07",
+      "chapter": 7,
+      "section": "1.3.12.2.2 Industry or Contract-based Regulation",
+      "pdf_page": 411,
+      "quote": "In its contracts with vendors and partners, an organization may stipulate how specific pieces of information may or may not be used"
+    },
+    {
+      "id": "DMBOK2-C07-08",
+      "chapter": 7,
+      "section": "2.1.2 Regulatory Requirements",
+      "pdf_page": 423,
+      "quote": "subject area affected by each regulation. Add links to the corresponding security policies developed for compliance to these regulations"
+    },
+    {
+      "id": "DMBOK2-C07-09",
+      "chapter": 7,
+      "section": "2.3.1 Define Data Confidentiality Levels",
+      "pdf_page": 427,
+      "quote": "Each organization should create or adopt a classification scheme that meets its business requirements."
+    },
+    {
+      "id": "DMBOK2-C07-10",
+      "chapter": 7,
+      "section": "2.3.5.1 Assign Confidentiality Levels",
+      "pdf_page": 433,
+      "quote": "Data Stewards are responsible for evaluating and determining the appropriate confidentiality level for data based on the organization's classification scheme."
+    },
+    {
+      "id": "DMBOK2-C07-11",
+      "chapter": 7,
+      "section": "2.3.5.2 Assign Regulatory Categories",
+      "pdf_page": 433,
+      "quote": "This classification scheme provides a foundation for responding to internal and external audits."
+    },
+    {
+      "id": "DMBOK2-C07-12",
+      "chapter": 7,
+      "section": "2.3.5.4 Manage Security Policy Compliance",
+      "pdf_page": 437,
+      "quote": "Data Stewards will act in conjunction with Information Security and Corporate Counsel so that operational policies and technical controls are aligned."
+    },
+    {
+      "id": "DMBOK2-C07-13",
+      "chapter": 7,
+      "section": "2.3.5.4.1 Manage Regulatory Compliance",
+      "pdf_page": 437,
+      "quote": "Ensuring that all data requirements are measurable and therefore auditable (i.e., assertions like \"be careful\" are not measurable)"
+    },
+    {
+      "id": "DMBOK2-C07-14",
+      "chapter": 7,
+      "section": "2.3.5.4.1 Manage Regulatory Compliance",
+      "pdf_page": 438,
+      "quote": "Without an audit trail, there is no evidence of compliance. Controls should be designed to ensure they are auditable."
+    },
+    {
+      "id": "DMBOK2-C07-15",
+      "chapter": 7,
+      "section": "2.3.5.4.2 Audit Data Security and Compliance Activities",
+      "pdf_page": 438,
+      "quote": "auditors must be independent of the data and / or process involved in the audit to avoid any conflict of interest"
+    },
+    {
+      "id": "DMBOK2-C07-16",
+      "chapter": 7,
+      "section": "4.3 Data Security Attributes in Metadata",
+      "pdf_page": 442,
+      "quote": "category information should be documented in the Metadata repository and, if technology allows, tagged to the data"
+    },
+    {
+      "id": "DMBOK2-C07-17",
+      "chapter": 7,
+      "section": "4.4.5 Confidential Data Proliferation",
+      "pdf_page": 446,
+      "quote": "The more places confidential data is stored, the higher the risk of a breach."
+    },
+    {
+      "id": "DMBOK2-C07-18",
+      "chapter": 7,
+      "section": "5.3 Visibility into User Data Entitlement",
+      "pdf_page": 449,
+      "quote": "Classification of regulatory sensitivity should be a standard part of the data definition process."
+    },
+    {
+      "id": "DMBOK2-C07-19",
+      "chapter": 7,
+      "section": "5.5 Data Security in Cloud Environments",
+      "pdf_page": 452,
+      "quote": "Data security policies need to account for the distribution of data across the different service models."
+    }
+  ],
+  "rows": [
+    {
+      "concept_id": "A-28",
+      "dmbok_terms": [
+        "Security classification",
+        "Confidentiality levels",
+        "Regulatory categories",
+        "Contractual restrictions",
+        "Data security policy"
+      ],
+      "citation_ids": [
+        "DMBOK2-C07-01",
+        "DMBOK2-C07-02",
+        "DMBOK2-C07-06",
+        "DMBOK2-C07-07",
+        "DMBOK2-C07-09",
+        "DMBOK2-C07-10",
+        "DMBOK2-C07-19",
+        "DMBOK2-C02-01"
+      ],
+      "dmbok_position": "DMBOK2 makes classification the starting point of data security: each organisation creates or adopts its own scheme (the text gives a five-level confidentiality scale as an example), Data Stewards decide the level for each data set, and contracts can add their own limits on how information may be used. It also says to keep production data out of non-production environments, that organisations need policies for using data within their risk appetite, and that data security policies must account for data spread across cloud service models; the 2017 text gives no guidance on AI processing, so the service-model passage is only the nearest analogue.",
+      "caveats": [
+        "Chapters 2 and 7 contain no guidance on generative-AI or LLM processing of organisational data (machine learning appears only in the bias and opacity passages), so the AI-processing half of the concept has no direct DMBOK2 counterpart; the cloud service-model passage is an analogy.",
+        "The repo comparison used docs/REPO-CONVENTIONS.md, BUILD-BACKLOG.md, docs/ARCHITECTURE-RISKS.md, docs/IMPLEMENTATION-SEQUENCE.md and schemas/evidence.schema.json, found by keyword search; a classification scheme or data-handling policy may exist elsewhere in the repo or the organisation."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared docs/REPO-CONVENTIONS.md ('No production connectivity': nothing connects to production systems, data or credentials; examples/ and evals/ use synthetic data only) with the open data-handling questions in docs/ARCHITECTURE-RISKS.md (open question 3 and the evidence-preservation risk) and docs/IMPLEMENTATION-SEQUENCE.md (risk 6), and checked schemas/evidence.schema.json, which has no confidentiality or regulatory attribute. The exposure boundary matches DMBOK2 and the policy gap is recorded openly. It is Partial, not Aligned, because the project has no confidentiality or regulatory classification, no statement of who assigns levels, and no permitted-use rule for what may be sent to AI processing or stored in case logs and evidence packs, which DMBOK2 treats as the core of data security. It is not Missing because the boundary rule and the open question both exist. DMBOK2 is general industry context only and internal policy outranks it, so any scheme adopted is provisional until the organisation's own data-handling policy is found.",
+      "proposed_action": "structural-proposal",
+      "proposal_options": [
+        "Adopt a confidentiality scale only, taking two or more of the DMBOK2 example levels (DMBOK2-C07-06) as a provisional label, to be replaced by the organisation's own scheme once found (DMBOK2-C07-09), that agents may propose and the Data Steward assigns (DMBOK2-C07-10) and records as metadata (DMBOK2-C07-16); the cost is one optional field named differently from the capability 'classification' already used in schemas/agent-contract.schema.json, plus labelling rules, with schema, contract and test changes made together.",
+        "Adopt the DMBOK2 risk classification of critical, high and moderate risk data (DMBOK2-C07-03) as the label instead of confidentiality levels; the cost is the same single field plus class definitions the organisation would have to write for its own Investment Operations content.",
+        "Adopt two separate labels, a confidentiality level plus regulatory categories (DMBOK2-C07-05 and DMBOK2-C07-06), because DMBOK2 treats confidentiality and regulation as distinct drivers of restriction; the cost is two fields and a category list that must be written and kept current."
+      ]
+    },
+    {
+      "concept_id": "A-29",
+      "dmbok_terms": [
+        "Data handling ethics",
+        "Truthfulness and transparency",
+        "Code of ethics",
+        "Opaqueness"
+      ],
+      "citation_ids": [
+        "DMBOK2-C02-02",
+        "DMBOK2-C02-03",
+        "DMBOK2-C02-05",
+        "DMBOK2-C02-06",
+        "DMBOK2-C02-07"
+      ],
+      "dmbok_position": "DMBOK2 counts truthfulness and transparency about the sources, uses and intent of data handling as part of ethical handling, says that leaving out required context lets a presentation imply meaning the data does not support, and notes that the logic and lineage of predictive algorithms become hard to track as they grow more complex. It expects ethics to be set out in policy and a code of ethics backed by training and oversight, and says automated monitoring alone is not enough because people must reflect on possible bias.",
+      "caveats": [
+        "The opacity passage (DMBOK2-C02-07) is an end-note about predictive algorithms in the 2017 text; it is the nearest statement to AI transparency in Chapters 2 and 7 and is not guidance on generative AI.",
+        "The people-impact, privacy-law and ethical-principles material in Chapter 2 concerns analytics on personal data and was not mapped to repo artefacts; the gap noted here is about wording and scope, not evidence that the project mishandles personal data."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared HANDOFF.md (Important non-goals 'hides uncertainty' and 'presents inferred organisational policy as fact'; Evidence policy; Confidence policy), README.md (purpose line favouring 'trustworthy, auditable, explainable stewardship'; principle 4), schemas/agent-contract.schema.json (fixed confidence_labels) and schemas/evidence.schema.json (authority_level separates authoritative_internal, general_industry and inferred). The core matches DMBOK2: both treat misleading by omission as unethical, the project turns the duty into mandatory labels, and its Data Steward evaluation step agrees with the DMBOK2 view that automated checks alone are not enough. It is Partial rather than Aligned because the project states this only as a rule for AI output, in its own terms (uncertainty, inference, confidence) rather than DMBOK2's truthfulness and transparency, and nothing in the files read says where the wider elements DMBOK2 treats as essential sit: an ethics policy or code with training and oversight, and attention to bias in analysis. Those are mostly organisation-level, so the gap is one of wording and scoping, not new structure.",
+      "proposed_action": "wording",
+      "proposal_options": []
+    },
+    {
+      "concept_id": "A-30",
+      "dmbok_terms": [
+        "Audit trail",
+        "Auditable controls",
+        "Manage Regulatory Compliance",
+        "Regulation inventory",
+        "Regulatory categories"
+      ],
+      "citation_ids": [
+        "DMBOK2-C07-08",
+        "DMBOK2-C07-11",
+        "DMBOK2-C07-13",
+        "DMBOK2-C07-14",
+        "DMBOK2-C02-07"
+      ],
+      "dmbok_position": "DMBOK2 expects regulatory compliance to be demonstrable: data requirements and controls must be measurable and auditable, controls need an audit trail because without one there is no evidence of compliance, and a central inventory should link each regulation to the data subject areas it affects and to the policies written to comply, with the regulatory classification serving as the foundation for answering audits. It also observes that the logic and lineage of learning-machine decisions become harder to follow as models grow more complex.",
+      "caveats": [
+        "The sample regulation inventory (Table 13) is an image missing from the conversion; its layout is unverifiable from text and was not relied on.",
+        "DMBOK2 audit and compliance guidance addresses controls operated by people over data systems; applying it to AI-generated conclusions is an analogy, and the opacity end-note (DMBOK2-C02-07) predates generative AI."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared ARCHITECTURE.md (the Investment Operations Context Agent lists 'regulatory reporting' as a content area and must distinguish internal documented position, general industry context, inference and open question), README.md (purpose line 'trustworthy, auditable, explainable stewardship'; principle 5, every material conclusion traceable to evidence) and schemas/evidence.schema.json (each evidence item carries source_id, location, authority_level, direct_or_inferred and timestamp). Claim-level traceability matches DMBOK2's demand for auditable evidence of compliance and is more demanding for AI conclusions. It is Partial because the traceability is defined for AI claims rather than as an audit trail over stored case evidence, whose retention and access rules docs/ARCHITECTURE-RISKS.md and docs/IMPLEMENTATION-SEQUENCE.md record as an open question; because the repo has no inventory of the regulations that bind the data in scope (outside the DMBOK review materials, that one ARCHITECTURE.md bullet is the only place the word 'regulatory' or 'regulation' appears); and because 'regulatory reporting' is a business topic whereas DMBOK2's regulatory compliance concerns legal limits on handling data. The inventory is an organisation-level artefact, so the repo change is wording that states which sense of 'regulatory' is meant and names the organisation's regulation inventory and case audit trail as items still to be located or defined.",
+      "proposed_action": "wording",
+      "proposal_options": []
+    }
+  ],
+  "additional_content": [
+    {
+      "topic": "Bias in analysis: hunch and search",
+      "citation_ids": ["DMBOK2-C02-04"],
+      "why_relevant": "The Exception and Root-Cause agent synthesises hypotheses from a curated evidence packet, and DMBOK2 names using only the data that confirms a hunch as an analysis bias that the Data Steward's evaluation should look for."
+    },
+    {
+      "topic": "Least privilege applies to processes and programs",
+      "citation_ids": ["DMBOK2-C07-04"],
+      "why_relevant": "DMBOK2 applies least privilege to processes and programs as well as people, which is the nearest industry hook for the permitted-tool and minimum-permission limits in the agent contracts."
+    },
+    {
+      "topic": "Confidential data proliferation",
+      "citation_ids": ["DMBOK2-C07-17"],
+      "why_relevant": "The project's own risk notes say case logs and stewardship packs will hold copies of sensitive Investment Operations content, and DMBOK2 frames the number of copies of confidential data as a measurable breach risk."
+    },
+    {
+      "topic": "Data Stewards work with Information Security and Corporate Counsel",
+      "citation_ids": ["DMBOK2-C07-12"],
+      "why_relevant": "It names the functions a Data Steward coordinates with on policy compliance, which may help identify the currently unnamed human owner for classification and regulatory questions."
+    },
+    {
+      "topic": "Independence of auditors",
+      "citation_ids": ["DMBOK2-C07-15"],
+      "why_relevant": "DMBOK2 requires auditors to be independent of the data or process they audit, which matches the project's concern that the producer of a conclusion must not also certify it."
+    },
+    {
+      "topic": "Sensitivity classification belongs in the data definition process",
+      "citation_ids": ["DMBOK2-C07-18"],
+      "why_relevant": "It places sensitivity classification inside the step where data is defined, which bears on the Definition and CDE agent and on any definition template."
+    }
+  ],
+  "source_caveats": [
+    "Figures and tables are missing from the conversion (their image links point at a folder that is not present). In Chapters 2 and 7 this affects Figure 12, Tables 1 to 3, Figure 13, Figures 62 to 65 and Tables 13 and 14; only the prose was relied on, and anything that depended on those items would be unverifiable from text.",
+    "Heading levels in the conversion are inconsistent: some numbered headings in Chapters 2 and 7 are plain or italic text, and sentence fragments such as 'lifecycle', 'project.' and 'implement.' appear as stray headings. Section numbers in citations follow the nearest numbered heading shown in the text.",
+    "Several sentences are split by PDF page markers mid-sentence, so quotes were taken from within a single page and a few begin or end mid-sentence.",
+    "Chapter 2 text carries embedded footnote numbers and strike-through marks, and its end-notes appear unnumbered after the Works Cited list; the opacity note is cited under heading 4 Works Cited / Recommended.",
+    "The DMBOK2 text is the 2017 edition; Chapters 2 and 7 contain no guidance on generative-AI or LLM processing of organisational data, so AI-specific points in this unit are analogies only.",
+    "Some in-text cross-references in Chapter 7 (for example Section 3.3 and Sections 3.3.1 and 3.3.2) do not match the section numbers in the conversion; by context they appear to mean 2.3, 2.3.1 and 2.3.2 (inference), and citations use the conversion's numbering."
+  ]
+}

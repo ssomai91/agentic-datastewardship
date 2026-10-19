@@ -1,0 +1,249 @@
+{
+  "unit": 5,
+  "citations": [
+    {"id": "DMBOK2-C12-01", "chapter": 12, "section": "1.1 Business Drivers", "pdf_page": 692, "quote": "Replicated and redundant dictionaries, repositories, and other Metadata storage"},
+    {"id": "DMBOK2-C12-02", "chapter": 12, "section": "1.1 Business Drivers", "pdf_page": 692, "quote": "Inconsistent definitions of data elements and risks associated with data misuse"},
+    {"id": "DMBOK2-C12-03", "chapter": 12, "section": "1.2 Goals and Principles", "pdf_page": 693, "quote": "The strategy should drive requirements, which should be defined before evaluating, purchasing, and installing Metadata management products."},
+    {"id": "DMBOK2-C12-04", "chapter": 12, "section": "1.2 Goals and Principles", "pdf_page": 694, "quote": "Create a feedback mechanism so that consumers can inform the Metadata Management team of Metadata that is incorrect or out-of-date"},
+    {"id": "DMBOK2-C12-05", "chapter": 12, "section": "1.3.1 Metadata vs. Data", "pdf_page": 694, "quote": "Metadata is a kind of data, and it should be managed as such."},
+    {"id": "DMBOK2-C12-06", "chapter": 12, "section": "1.3.2 Types of Metadata", "pdf_page": 695, "quote": "Metadata is often categorized into three types: business, technical, and operational."},
+    {"id": "DMBOK2-C12-07", "chapter": 12, "section": "1.3.2.1 Business Metadata", "pdf_page": 696, "quote": "Business rules, transformation rules, calculations, and derivations"},
+    {"id": "DMBOK2-C12-08", "chapter": 12, "section": "1.3.2.1 Business Metadata", "pdf_page": 696, "quote": "Data provenance and data lineage"},
+    {"id": "DMBOK2-C12-09", "chapter": 12, "section": "1.3.2.1 Business Metadata", "pdf_page": 696, "quote": "Designations of the system of record for data elements"},
+    {"id": "DMBOK2-C12-10", "chapter": 12, "section": "1.3.2.2 Technical Metadata", "pdf_page": 697, "quote": "Physical database table and column names"},
+    {"id": "DMBOK2-C12-11", "chapter": 12, "section": "1.3.2.2 Technical Metadata", "pdf_page": 697, "quote": "Source-to-target mapping documentation"},
+    {"id": "DMBOK2-C12-12", "chapter": 12, "section": "1.3.2.2 Technical Metadata", "pdf_page": 697, "quote": "Data lineage documentation, including upstream and downstream change impact information"},
+    {"id": "DMBOK2-C12-13", "chapter": 12, "section": "1.3.2.3 Operational Metadata", "pdf_page": 697, "quote": "Operational Metadata describes details of the processing and accessing of data."},
+    {"id": "DMBOK2-C12-14", "chapter": 12, "section": "1.3.2.3 Operational Metadata", "pdf_page": 698, "quote": "Results of audit, balance, control measurements"},
+    {"id": "DMBOK2-C12-15", "chapter": 12, "section": "1.3.3 ISO / IEC 11179 Metadata Registry Standard", "pdf_page": 698, "quote": "Part 4: Rules and Guidelines for the Formulation of Data Definitions"},
+    {"id": "DMBOK2-C12-16", "chapter": 12, "section": "1.3.5 Sources of Metadata", "pdf_page": 700, "quote": "The biggest risk is not knowing how much care was taken to develop and refine the definitions in the first place."},
+    {"id": "DMBOK2-C12-17", "chapter": 12, "section": "1.3.5 Sources of Metadata", "pdf_page": 700, "quote": "It is better to be intentional about developing definitions than to simply accept existing ones."},
+    {"id": "DMBOK2-C12-18", "chapter": 12, "section": "1.3.5 Sources of Metadata", "pdf_page": 700, "quote": "This is why the development of business Metadata requires stewardship."},
+    {"id": "DMBOK2-C12-19", "chapter": 12, "section": "1.3.5 Sources of Metadata", "pdf_page": 701, "quote": "Creating Metadata for its own sake rarely works well."},
+    {"id": "DMBOK2-C12-20", "chapter": 12, "section": "1.3.5 Sources of Metadata", "pdf_page": 701, "quote": "Stewards and other data management professionals should ensure that there are processes in place to maintain Metadata related to these processes."},
+    {"id": "DMBOK2-C12-21", "chapter": 12, "section": "1.3.5.2 Business Glossary", "pdf_page": 701, "quote": "document and store an organization's business concepts and terminology, definitions, and the relationships between those terms"},
+    {"id": "DMBOK2-C12-22", "chapter": 12, "section": "1.3.5.2 Business Glossary", "pdf_page": 702, "quote": "Data Steward use the business glossary to manage the lifecycle of terms and definitions"},
+    {"id": "DMBOK2-C12-23", "chapter": 12, "section": "1.3.5.2 Business Glossary", "pdf_page": 702, "quote": "Data stewards raise terminology and usage issues and help resolve differences across the organization."},
+    {"id": "DMBOK2-C12-24", "chapter": 12, "section": "1.3.5.2 Business Glossary", "pdf_page": 702, "quote": "Term name, definition, acronym or abbreviation, and any synonyms"},
+    {"id": "DMBOK2-C12-25", "chapter": 12, "section": "1.3.5.2 Business Glossary", "pdf_page": 702, "quote": "Business unit and or application responsible for managing the data associated with the terminology"},
+    {"id": "DMBOK2-C12-26", "chapter": 12, "section": "1.3.5.2 Business Glossary", "pdf_page": 703, "quote": "Conflicting definitions that need resolution, nature of the problem, action timeline"},
+    {"id": "DMBOK2-C12-27", "chapter": 12, "section": "1.3.5.2 Business Glossary", "pdf_page": 703, "quote": "Algorithms supporting definitions"},
+    {"id": "DMBOK2-C12-28", "chapter": 12, "section": "1.3.5.2 Business Glossary", "pdf_page": 703, "quote": "Official or authoritative source for the data supporting the term"},
+    {"id": "DMBOK2-C12-29", "chapter": 12, "section": "1.3.5.2 Business Glossary", "pdf_page": 703, "quote": "those in a pending status, and those that are missing definitions or other attributes"},
+    {"id": "DMBOK2-C12-30", "chapter": 12, "section": "1.3.5.5 Data Dictionaries", "pdf_page": 704, "quote": "A data dictionary defines the structure and contents of data sets, often for a single database, application, or warehouse."},
+    {"id": "DMBOK2-C12-31", "chapter": 12, "section": "1.3.5.5 Data Dictionaries", "pdf_page": 704, "quote": "This information, captured in the logical data model, is often lost when physical structures are deployed to production."},
+    {"id": "DMBOK2-C12-32", "chapter": 12, "section": "1.3.5.5 Data Dictionaries", "pdf_page": 704, "quote": "A data dictionary can help ensure that this information is not lost entirely to the organization"},
+    {"id": "DMBOK2-C12-33", "chapter": 12, "section": "1.3.5.8 Data Mapping Management Tools", "pdf_page": 706, "quote": "Vendors are now considering centralized repositories for the mapping specifications with capabilities to perform version control and change analysis between versions."},
+    {"id": "DMBOK2-C12-34", "chapter": 12, "section": "1.3.5.10 Directories and Catalogs", "pdf_page": 706, "quote": "a directory or catalog contains information about systems, sources, and locations of data within an organization"},
+    {"id": "DMBOK2-C12-35", "chapter": 12, "section": "1.3.5.12 Modeling Tools and Repositories", "pdf_page": 707, "quote": "Modeling tools are often the source of data dictionary content."},
+    {"id": "DMBOK2-C12-36", "chapter": 12, "section": "1.3.6.1 Centralized Metadata Architecture", "pdf_page": 708, "quote": "A centralized architecture consists of a single Metadata repository that contains copies of Metadata from the various sources."},
+    {"id": "DMBOK2-C12-37", "chapter": 12, "section": "1.3.6.1 Centralized Metadata Architecture", "pdf_page": 708, "quote": "Organizations with limited IT resources, or those seeking to automate as much as possible, may choose to avoid this architecture option."},
+    {"id": "DMBOK2-C12-38", "chapter": 12, "section": "1.3.6.1 Centralized Metadata Architecture", "pdf_page": 709, "quote": "Complex processes are necessary to ensure that changes in source Metadata are quickly replicated into the repository"},
+    {"id": "DMBOK2-C12-39", "chapter": 12, "section": "1.3.6.2 Distributed Metadata Architecture", "pdf_page": 710, "quote": "The Metadata retrieval engine responds to user requests by retrieving data from source systems in real time; there is no persistent repository."},
+    {"id": "DMBOK2-C12-40", "chapter": 12, "section": "1.3.6.2 Distributed Metadata Architecture", "pdf_page": 711, "quote": "No ability to support user-defined or manually inserted Metadata entries since there is no repository in which to place these additions"},
+    {"id": "DMBOK2-C12-41", "chapter": 12, "section": "1.3.6.3 Hybrid Metadata Architecture", "pdf_page": 712, "quote": "the repository design only accounts for the user-added Metadata, the critical standardized items, and the additions from manual sources"},
+    {"id": "DMBOK2-C12-42", "chapter": 12, "section": "1.3.6.3 Hybrid Metadata Architecture", "pdf_page": 713, "quote": "Additional overhead is required to link those initial results with the Metadata augmentation in the central repository"},
+    {"id": "DMBOK2-C12-43", "chapter": 12, "section": "2.2 Understand Metadata Requirements", "pdf_page": 717, "quote": "Processes and rules for updating Metadata (logging and referring for approval)"},
+    {"id": "DMBOK2-C12-44", "chapter": 12, "section": "2.2 Understand Metadata Requirements", "pdf_page": 717, "quote": "Some Metadata cannot be exposed because it will reveal the existence of highly protected data"},
+    {"id": "DMBOK2-C12-45", "chapter": 12, "section": "2.3 Define Metadata Architecture", "pdf_page": 717, "quote": "Design of the architecture depends on the specific requirements of the organization."},
+    {"id": "DMBOK2-C12-46", "chapter": 12, "section": "2.3.1 Create MetaModel", "pdf_page": 718, "quote": "Create a data model for the Metadata repository, or metamodel, as one of the first design steps after the Metadata strategy is complete"},
+    {"id": "DMBOK2-C12-47", "chapter": 12, "section": "2.4.1 Integrate Metadata", "pdf_page": 723, "quote": "provides an interim audit trail to assist repository managers when investigating Metadata source or quality issues"},
+    {"id": "DMBOK2-C12-48", "chapter": 12, "section": "4.1 Data Lineage and Impact Analysis", "pdf_page": 725, "quote": "The current version of the lineage based on programming code is referred to as 'As Implemented Lineage'"},
+    {"id": "DMBOK2-C12-49", "chapter": 12, "section": "4.1 Data Lineage and Impact Analysis", "pdf_page": 725, "quote": "lineage describe in mapping specification documents is referred to as 'As Designed Lineage'"},
+    {"id": "DMBOK2-C12-50", "chapter": 12, "section": "4.1 Data Lineage and Impact Analysis", "pdf_page": 725, "quote": "The limitations of a lineage build are based on the coverage of the Metadata management system."},
+    {"id": "DMBOK2-C12-51", "chapter": 12, "section": "4.1 Data Lineage and Impact Analysis", "pdf_page": 726, "quote": "The process of connecting the pieces of the data lineage referred to as stitching."},
+    {"id": "DMBOK2-C12-52", "chapter": 12, "section": "4.1 Data Lineage and Impact Analysis", "pdf_page": 726, "quote": "from its original locations (official source or system of record) until it lands in its final destination"},
+    {"id": "DMBOK2-C12-53", "chapter": 12, "section": "4.1 Data Lineage and Impact Analysis", "pdf_page": 728, "quote": "Limit the lineage discovery to data elements prioritized by the business"},
+    {"id": "DMBOK2-C12-54", "chapter": 12, "section": "4.1 Data Lineage and Impact Analysis", "pdf_page": 729, "quote": "Start at the source systems and identify all the immediate consumers"},
+    {"id": "DMBOK2-C12-55", "chapter": 12, "section": "4.1 Data Lineage and Impact Analysis", "pdf_page": 729, "quote": "What systems are impacted if the width of a specific column is changed?"},
+    {"id": "DMBOK2-C12-56", "chapter": 12, "section": "5 Implementation Guidelines", "pdf_page": 730, "quote": "Implement Metadata repositories using an open relational database platform."},
+    {"id": "DMBOK2-C12-57", "chapter": 12, "section": "5 Implementation Guidelines", "pdf_page": 731, "quote": "It should house current, planned, and historical versions of the Metadata."},
+    {"id": "DMBOK2-C12-58", "chapter": 12, "section": "5.1 Readiness Assessment / Risk Assessment", "pdf_page": 731, "quote": "Risk that the small set of SMEs who know the data will leave and take their knowledge with them"},
+    {"id": "DMBOK2-C12-59", "chapter": 12, "section": "5.1 Readiness Assessment / Risk Assessment", "pdf_page": 731, "quote": "The assessment should include the critical business data elements, available Metadata glossaries, lineage, data profiling and data quality processes"},
+    {"id": "DMBOK2-C12-60", "chapter": 12, "section": "6 Metadata Governance", "pdf_page": 733, "quote": "It is recommended that formal roles and responsibilities be assigned to dedicated resources, especially in large or business critical areas."},
+    {"id": "DMBOK2-C12-61", "chapter": 12, "section": "6.1 Process Controls", "pdf_page": 733, "quote": "The data governance team should be responsible for defining the standards and managing status changes for Metadata"},
+    {"id": "DMBOK2-C12-62", "chapter": 12, "section": "6.1 Process Controls", "pdf_page": 733, "quote": "More mature Metadata governance will require business terms and definitions to progress through varying status changes or governance gates"},
+    {"id": "DMBOK2-C12-63", "chapter": 12, "section": "6.1 Process Controls", "pdf_page": 733, "quote": "from a candidate term, to approved, to published, and to a final point in the lifecycle of replaced or retired"},
+    {"id": "DMBOK2-C12-64", "chapter": 12, "section": "6.2 Documentation of Metadata Solutions", "pdf_page": 733, "quote": "A master catalog of Metadata will include the sources and targets currently in scope."},
+    {"id": "DMBOK2-C12-65", "chapter": 12, "section": "6.3 Metadata Standards and Guidelines", "pdf_page": 735, "quote": "such rules as 'do not define a term by using the term' and completeness statements"},
+    {"id": "DMBOK2-C12-66", "chapter": 12, "section": "6.4 Metrics", "pdf_page": 735, "quote": "Compare ideal coverage of the enterprise Metadata (all artifacts and all instances within scope) to actual coverage."},
+    {"id": "DMBOK2-C12-67", "chapter": 12, "section": "6.4 Metrics", "pdf_page": 736, "quote": "Another metric would measure the percentage of attributes that have definitions, trending over time."}
+  ],
+  "rows": [
+    {
+      "concept_id": "A-09",
+      "dmbok_terms": ["business glossary", "business terms and definitions", "status changes / governance gates", "candidate term", "approved", "published", "replaced or retired"],
+      "citation_ids": ["DMBOK2-C12-18", "DMBOK2-C12-22", "DMBOK2-C12-61", "DMBOK2-C12-62", "DMBOK2-C12-63"],
+      "dmbok_position": "GENERAL INDUSTRY CONTEXT: The chapter says more mature metadata governance moves business terms and definitions through governed status changes, giving an example path from candidate term to approved, published, and finally replaced or retired; the data governance team manages the status changes and data stewards manage term lifecycles in the business glossary. It adds that developing business metadata requires stewardship, but it names no separate approving role.",
+      "caveats": [
+        "The DMBOK2 gives the candidate, approved, published, replaced or retired path as an example and as a feature of more mature governance, not as a required set of states.",
+        "The chapter assigns status changes to the data governance team and names no separate approving role; approver roles are a Chapter 3 matter outside this unit.",
+        "AI agents drafting definitions is outside the 2017 text."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared HANDOFF.md ('business definition approval' under Human approval required) and contracts/definition-and-cde-agent.contract.json (candidate_definitions carry status DRAFT-NOT-APPROVED; human_approval_required_for lists 'Any candidate definition becoming final'). The project already uses the DMBOK2's 'candidate' term and a human gate before a definition becomes final, but it specifies only that first gate: nothing names the approved, published or replaced/retired stages, so the approval lifecycle is only partly covered. The agent-drafts, human-approves split itself is an AI-specific control the DMBOK2 does not address.",
+      "proposed_action": "structural-proposal",
+      "proposal_options": [
+        "Adopt the DMBOK2 example status path (candidate, approved, published, replaced or retired) as the definition-status vocabulary in the Definition & CDE contract and any future definitions/ records, with a human approval gate on each change; costs a schema, contract and test update and a decision on who approves each transition (DMBOK2-C12-63, DMBOK2-C12-61).",
+        "Keep the single DRAFT-NOT-APPROVED gate in this repository and leave published and replaced or retired states to the status model of the glossary system once it is chosen, treating the DMBOK2 path as an example of more mature governance; costs nothing now but leaves later lifecycle stages undefined here (DMBOK2-C12-62, DMBOK2-C12-22)."
+      ]
+    },
+    {
+      "concept_id": "A-10",
+      "dmbok_terms": ["business glossary", "business term attributes", "synonyms", "conflicting definitions", "missing definitions"],
+      "citation_ids": ["DMBOK2-C12-02", "DMBOK2-C12-17", "DMBOK2-C12-21", "DMBOK2-C12-23", "DMBOK2-C12-24", "DMBOK2-C12-25", "DMBOK2-C12-26", "DMBOK2-C12-29"],
+      "dmbok_position": "GENERAL INDUSTRY CONTEXT: The business glossary stores business concepts, terminology, definitions and the relationships between terms, and its recommended attributes include synonyms, the unit responsible for the data, and conflicting definitions awaiting resolution, with reporting on pending and missing-definition items. Data stewards raise terminology issues and help resolve differences across the organisation, and the chapter prefers deliberately developed definitions to simply accepting existing ones because inconsistent definitions carry misuse risk.",
+      "caveats": [
+        "The chapter lists attributes a glossary should carry (acronym, categorisation, responsible unit, conflict nature and timeline, algorithms, lineage, authoritative source); the contract does not define the glossary's attribute set because no glossary system is selected, so attribute-level alignment cannot yet be judged.",
+        "The DMBOK2 does not discuss automated comparison or drafting of definitions."
+      ],
+      "proposed_status": "Aligned",
+      "status_rationale": "Compared ARCHITECTURE.md (Definition & CDE Agent responsibilities: identify conflicts, synonyms, ownership gaps and missing definitions, and prepare candidate definitions for human review) and contracts/definition-and-cde-agent.contract.json (same duties; internal sources that conflict are routed to the human steward). Each duty has a direct DMBOK2 counterpart (synonym attribute, conflicting-definition attribute, responsible-unit attribute, pending and missing-definition reporting) and resolution stays with a human steward as in the DMBOK2, so concept and wording align and a citation is the only change needed.",
+      "proposed_action": "citation",
+      "proposal_options": []
+    },
+    {
+      "concept_id": "A-11",
+      "dmbok_terms": ["data dictionary", "technical Metadata", "directory or catalog", "Documentation of Metadata Solutions (master catalog)"],
+      "citation_ids": ["DMBOK2-C12-06", "DMBOK2-C12-10", "DMBOK2-C12-20", "DMBOK2-C12-21", "DMBOK2-C12-30", "DMBOK2-C12-31", "DMBOK2-C12-32", "DMBOK2-C12-34", "DMBOK2-C12-35", "DMBOK2-C12-64"],
+      "dmbok_position": "GENERAL INDUSTRY CONTEXT: The chapter separates the business glossary from the data dictionary (the structure and contents of the data sets in a database, application or warehouse, often fed by modelling tools) and from the directory or catalog (systems, sources and locations of data), and counts items such as physical table and column names as technical metadata, one of three metadata types. It says a dictionary helps stop meaning captured in logical models from being lost once physical structures go live, and that documentation of the metadata solution should include a master catalog of the sources and targets in scope.",
+      "caveats": [
+        "The chapter attributes dictionary content mainly to database and modelling tools and asks stewards and other data management professionals to ensure maintenance processes exist; it names no role that writes or approves dictionary text.",
+        "In the chapter, documentation means documentation of the metadata solution (sources and targets in scope); README.md does not say which documentation it means."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared README.md ('data dictionaries' and 'documentation' in the stewardship scope list) and AGENT-CONTRACT-TEMPLATE.md (an 'approved internal data dictionary' and an 'approved metadata catalogue' as example authoritative sources). The responsibility is named and the dictionary is already treated as an authoritative input, but no file says what a data dictionary or documentation covers, how it differs from the business glossary and from a catalog, or which technical metadata the agents rely on; ARCHITECTURE.md gives no agent a dictionary duty and its Stewardship as Code artefact list has no dictionary or documentation class. This is a gap in terms and definitions rather than a conflict, so wording is the proportionate action.",
+      "proposed_action": "wording",
+      "proposal_options": []
+    },
+    {
+      "concept_id": "A-12",
+      "dmbok_terms": ["critical business data elements"],
+      "citation_ids": ["DMBOK2-C12-59"],
+      "dmbok_position": "GENERAL INDUSTRY CONTEXT: The only related wording found in this chapter says a formal assessment of metadata maturity should include the critical business data elements alongside glossaries, lineage, profiling and data quality processes. The chapter does not define critical data elements, set criteria or a designation process, name who designates them, or describe the evidence needed.",
+      "caveats": [
+        "Status reflects Chapter 12 only: criteria and designation may be treated in chapters outside this unit, and a real status from those units should take precedence.",
+        "The only related wording found in this chapter is 'critical business data elements' in the readiness-assessment section."
+      ],
+      "proposed_status": "Out of DMBOK scope",
+      "status_rationale": "Compared HANDOFF.md ('CDE designation' under Human approval required) and contracts/definition-and-cde-agent.contract.json (identifies CDE evidence; human approval for any CDE status designation; assumption that no approved CDE-criteria policy document is named yet). Chapter 12 gives nothing to test the designation gate, the evidence duty or the missing criteria document against, so on this chapter's text the DMBOK2 is silent; closing the criteria gap is a matter for internal policy, which outranks the DMBOK2, and criteria guidance may sit in chapters outside this unit.",
+      "proposed_action": "none",
+      "proposal_options": []
+    },
+    {
+      "concept_id": "A-13",
+      "dmbok_terms": ["Metadata repository", "Metadata strategy", "metamodel", "centralized / distributed / hybrid Metadata architecture", "Metadata governance", "versioning"],
+      "citation_ids": ["DMBOK2-C12-01", "DMBOK2-C12-03", "DMBOK2-C12-05", "DMBOK2-C12-19", "DMBOK2-C12-20", "DMBOK2-C12-36", "DMBOK2-C12-37", "DMBOK2-C12-38", "DMBOK2-C12-39", "DMBOK2-C12-40", "DMBOK2-C12-41", "DMBOK2-C12-42", "DMBOK2-C12-45", "DMBOK2-C12-46", "DMBOK2-C12-56", "DMBOK2-C12-57", "DMBOK2-C12-60"],
+      "dmbok_position": "GENERAL INDUSTRY CONTEXT: The chapter treats metadata as data that must itself be managed: start from a strategy and requirements before choosing products, then build a metamodel, keep current, planned and historical versions, assign formal metadata roles with stewards making sure maintenance processes exist, and avoid creating metadata for its own sake. It describes centralized, distributed and hybrid repository architectures with different trade-offs, says the choice depends on organisational requirements, and warns about duplicated repositories.",
+      "caveats": [
+        "Stewardship as Code is a project term with no DMBOK2 equivalent; mapping it to a metadata repository with versioning is by analogy.",
+        "The DMBOK2 says the architecture choice depends on organisational requirements and does not rank centralized, distributed and hybrid.",
+        "The chapter recommends open relational database platforms for repositories, whereas the project's examples are folders of version-controlled files; this is an implementation difference the owner may wish to note rather than a conflict."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared ARCHITECTURE.md ('Long-term concept: Stewardship as Code': structured, version-controlled governance artefacts where that improves traceability, testing or change-impact analysis, explicitly not every document) and contracts/definition-and-cde-agent.contract.json (read-only access to an external glossary/catalog system that is not yet selected). The intent matches the DMBOK2 (metadata managed as versioned data and not created for its own sake), but the project uses its own term, states no metadata strategy or metamodel, and does not say which store is authoritative for each artefact class, so a repository-held definitions/ folder and an external glossary could become the duplicate stores the DMBOK2 warns about.",
+      "proposed_action": "structural-proposal",
+      "proposal_options": [
+        "Hybrid: keep the version-controlled repository for steward-added governance metadata only (candidate and approved definitions, CDE evidence, decisions, links) and point to the glossary, catalog and source systems for everything else; costs a link convention and the effort of joining repository entries with source results at query time (DMBOK2-C12-41, DMBOK2-C12-42).",
+        "Centralized: treat the repository as the single store holding copies of governance metadata taken from the source systems, giving one searchable store; costs the replication processes needed to keep copies current, and the DMBOK2 notes that teams with limited IT resources or seeking maximum automation may avoid it (DMBOK2-C12-36, DMBOK2-C12-37, DMBOK2-C12-38).",
+        "Distributed: hold no copies in the repository and have agents read the authoritative systems on demand, recording only references; metadata is retrieved from its source at the time of use, but there is no place for steward-added or manual entries (DMBOK2-C12-39, DMBOK2-C12-40)."
+      ]
+    },
+    {
+      "concept_id": "A-14",
+      "dmbok_terms": ["data provenance", "official or authoritative source", "audit trail", "data lineage"],
+      "citation_ids": ["DMBOK2-C12-08", "DMBOK2-C12-16", "DMBOK2-C12-28", "DMBOK2-C12-43", "DMBOK2-C12-47"],
+      "dmbok_position": "GENERAL INDUSTRY CONTEXT: The chapter treats provenance as metadata about data: provenance and lineage are business metadata, a glossary term can record the official or authoritative source behind its data, maintenance requirements include logging updates and referring them for approval, and a staging area gives an interim audit trail for investigating source or quality issues. It also warns that reusing existing definitions is risky when the care behind them is unknown, but it does not classify claims by kind of evidence or address machine-generated claims.",
+      "caveats": [
+        "The project's categories apply to agent claims, whereas DMBOK2 provenance applies to data and metadata, so the mapping is by analogy.",
+        "The DMBOK2 (2017) is silent on confidence labelling and evidence classification of machine-generated output.",
+        "evidence.schema.json authority_level has three values; the other two HANDOFF.md categories (open question, human decision required) are carried in separate output fields of the contract, which is a project matter rather than a DMBOK2 one."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared HANDOFF.md (Evidence policy: authoritative internal evidence, general industry context, agent inference, open question, human decision required) and schemas/evidence.schema.json (authority_level: authoritative_internal, general_industry, inferred; direct_or_inferred; source_id, location and timestamp). The underlying idea of traceable provenance matches the DMBOK2 but under different terms, while the five-way separation of claims is an AI-specific control with no DMBOK2 counterpart, so it should be recorded as a deliberate deviation rather than changed.",
+      "proposed_action": "record-deviation",
+      "proposal_options": []
+    },
+    {
+      "concept_id": "A-15",
+      "dmbok_terms": ["data lineage", "impact analysis", "As Implemented Lineage", "As Designed Lineage", "stitching"],
+      "citation_ids": ["DMBOK2-C12-12", "DMBOK2-C12-48", "DMBOK2-C12-49", "DMBOK2-C12-50", "DMBOK2-C12-51", "DMBOK2-C12-52", "DMBOK2-C12-53", "DMBOK2-C12-54", "DMBOK2-C12-55"],
+      "dmbok_position": "GENERAL INDUSTRY CONTEXT: The chapter classes lineage documentation, including upstream and downstream change impact, as technical metadata and presents lineage and impact analysis as a technique for showing how data is transformed between systems: lineage read from code ('as implemented') and lineage read from mapping specifications ('as designed') are connected by 'stitching', ideally from the official source or system of record to the final destination, and any lineage is limited by the coverage of the metadata system. It offers a business-focused discovery strategy that limits scope to business-prioritised data elements and a technical-focused one that starts at source systems and repeatedly identifies consumers, the latter suited to impact questions such as which systems a column change affects.",
+      "caveats": [
+        "The chapter assumes tool-extracted lineage and does not discuss AI-assisted lineage analysis.",
+        "The two lineage diagrams (Figures 89 and 90) are missing from the text; the claims here rest on the surrounding prose only."
+      ],
+      "proposed_status": "Aligned",
+      "status_rationale": "Compared ARCHITECTURE.md (Mapping & Lineage Agent: lineage completeness, dependency mapping, downstream impact) and HANDOFF.md (AI may identify missing lineage). The concept matches the DMBOK2 lineage and impact-analysis technique; only the vocabulary differs (completeness and downstream impact versus coverage, stitching, as-implemented and as-designed lineage, and impact analysis). Defining 'lineage completeness' with the DMBOK2 coverage limit and the as-implemented/as-designed distinction would make it testable. No Mapping & Lineage contract exists yet, so the comparison is at architecture-description level.",
+      "proposed_action": "wording",
+      "proposal_options": []
+    },
+    {
+      "concept_id": "A-16",
+      "dmbok_terms": ["source-to-target mapping documentation", "transformation rules", "mapping specification", "Data Mapping Management Tools", "As Designed Lineage"],
+      "citation_ids": ["DMBOK2-C12-07", "DMBOK2-C12-11", "DMBOK2-C12-27", "DMBOK2-C12-31", "DMBOK2-C12-33", "DMBOK2-C12-48", "DMBOK2-C12-49"],
+      "dmbok_position": "GENERAL INDUSTRY CONTEXT: Source-to-target mapping documentation is classed as technical metadata and transformation rules, calculations and derivations as business metadata; mapping repositories are described as adding version control and change analysis, and lineage read from mapping specifications is the 'as designed' view, distinct from the 'as implemented' view in code. The chapter also notes that meaning captured in logical models is often lost when physical structures go live and lists the algorithms behind a definition as a glossary attribute, but it states no test that meaning survives a transformation.",
+      "caveats": [
+        "No Chapter 12 passage states a meaning-preservation test; the DMBOK2 supplies ingredients only (mapping specifications, transformation rules, algorithms attached to definitions, designed versus implemented lineage).",
+        "Statements about mapping tools reflect 2017 vendor capabilities."
+      ],
+      "proposed_status": "Aligned",
+      "status_rationale": "Compared ARCHITECTURE.md (Mapping & Lineage Agent: source-target mapping analysis, transformation identification, mapping-definition consistency; key question 'Did the meaning survive the transformation?') and AGENT-CONTRACT-TEMPLATE.md ('approved mapping specification' as an example authoritative source). Treating mappings and transformation rules as governed metadata and checking them against definitions is consistent with the DMBOK2 treatment of mapping documentation, transformation rules and algorithm-linked definitions. The key question is a project framing the chapter does not state, so alignment is at concept level and a citation is enough; the as-designed versus as-implemented point that could sharpen the question is carried on A-15.",
+      "proposed_action": "citation",
+      "proposal_options": []
+    },
+    {
+      "concept_id": "A-26",
+      "dmbok_terms": ["system of record", "official or authoritative source"],
+      "citation_ids": ["DMBOK2-C12-09", "DMBOK2-C12-16", "DMBOK2-C12-28", "DMBOK2-C12-52"],
+      "dmbok_position": "GENERAL INDUSTRY CONTEXT: Authority appears on the data side: the system of record for each data element is designated as business metadata, a glossary term can carry the official or authoritative source for the data behind it, and lineage is traced from the official source or system of record to the final destination. The chapter warns that reusing existing definitions is risky when the care behind them is unknown, but it neither ranks internal positions above industry guidance nor discusses naming authoritative evidence sources for AI agents.",
+      "caveats": [
+        "Other units cover reference and master data and integration, where system-of-record guidance may be fuller; this row reflects Chapter 12 usage only.",
+        "Where the repository files mention 'system of record' (docs/), it refers to the Orchestrator's case-state store, not to data elements."
+      ],
+      "proposed_status": "Partial",
+      "status_rationale": "Compared ARCHITECTURE.md (Context Agent: INTERNAL DOCUMENTED POSITION versus GENERAL INDUSTRY CONTEXT), AGENT-CONTRACT-TEMPLATE.md (Authoritative Sources section: approved internal data dictionary, approved mapping specification, approved policy, named repository, approved metadata catalogue) and contracts/definition-and-cde-agent.contract.json (authoritative_sources: named glossary/catalog system and named CDE-criteria policy repositories, with email, Teams and chat excluded). The project's 'authoritative source' names where an agent may take evidence from, whereas the DMBOK2's 'authoritative source' and 'system of record' name where a data element's values originate. The words overlap but the senses differ, and none of the files compared designates a system of record for any data element, so the concept is only partly covered; the precedence of internal over industry knowledge is organisational policy, not DMBOK2 guidance. When definitions and lineage artefacts are specified, a system-of-record designation is worth considering as a field.",
+      "proposed_action": "wording",
+      "proposal_options": []
+    }
+  ],
+  "additional_content": [
+    {
+      "topic": "Operational metadata as evidence for exception and root-cause work",
+      "citation_ids": ["DMBOK2-C12-13", "DMBOK2-C12-14"],
+      "why_relevant": "Operational metadata, which the chapter says covers details of processing and accessing data, includes audit, balance and control results that the Data Quality and Exception & Root-Cause agents could use as evidence."
+    },
+    {
+      "topic": "Definition-writing guidelines and templates",
+      "citation_ids": ["DMBOK2-C12-65", "DMBOK2-C12-15"],
+      "why_relevant": "The chapter gives concrete drafting checks (no circular definitions, completeness statements) and names an ISO formulation standard for data definitions, which could back the checks applied to candidate definitions."
+    },
+    {
+      "topic": "Metadata quality metrics and coverage",
+      "citation_ids": ["DMBOK2-C12-66", "DMBOK2-C12-67"],
+      "why_relevant": "Repository completeness and the percentage of attributes with definitions are suggested measures that could ground governance reporting and the missing-definition findings."
+    },
+    {
+      "topic": "Sensitivity of metadata itself",
+      "citation_ids": ["DMBOK2-C12-44"],
+      "why_relevant": "Some metadata would reveal the existence of highly protected data, which bears on what agents with read access to glossary and catalog content may surface in their outputs."
+    },
+    {
+      "topic": "Consumer feedback route for incorrect or out-of-date metadata",
+      "citation_ids": ["DMBOK2-C12-04"],
+      "why_relevant": "A defined feedback mechanism fits the continuous-improvement scope and gives stewards a way to learn of stale definitions."
+    },
+    {
+      "topic": "Risk of SME knowledge loss",
+      "citation_ids": ["DMBOK2-C12-58"],
+      "why_relevant": "The chapter names dependence on a few subject-matter experts as a metadata risk, matching the project's need to flag questions that require SME or Data Owner input."
+    }
+  ],
+  "source_caveats": [
+    "GENERAL INDUSTRY CONTEXT: every DMBOK2 statement here is industry reference only; adopting any element is a proposal needing human approval, and internal policy outranks it.",
+    "Figures 84 to 90 are missing (their image links are dead): the metadata context diagram (84), the centralized, distributed and hybrid architecture diagrams (85 to 87), the example metamodel (88) and the two lineage flow diagrams (89 and 90). Any deliverables, participants or tools shown in the context diagram, and any other figure content, are unverifiable from text; no row here depends on a figure.",
+    "The conversion drops some hyphens (for example 'datarelated' and 'crossorganizational') and runs some bullet items together; quotes were taken from clean passages.",
+    "Chapter 12 is 2017 text: it says nothing about AI-drafted definitions, evidence classification or agent permissions, so those project controls are judged only against the human-stewardship material.",
+    "The chapter points to Chapter 3 for stewardship, Chapter 13 for data quality and Chapter 15 for maturity assessment; stewardship role vocabulary and CDE criteria cannot be assessed from this unit."
+  ]
+}

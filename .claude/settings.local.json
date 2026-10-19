@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git check-ignore *)",
+      "Bash(echo \"ignored_exit=$?\")",
+      "Bash(git worktree *)",
+      "Bash(bash \"C:\\\\Users\\\\ssomai\\\\.claude\\\\plugins\\\\cache\\\\claude-plugins-official\\\\superpowers\\\\6.3.0\\\\skills\\\\subagent-driven-development\\\\scripts\\\\sdd-workspace\" \"docs/superpowers/plans/2026-09-17-agent-factory-build.md\")",
+      "Bash(bash \"C:\\\\Users\\\\ssomai\\\\.claude\\\\plugins\\\\cache\\\\claude-plugins-official\\\\superpowers\\\\6.3.0\\\\skills\\\\subagent-driven-development\\\\scripts\\\\task-brief\" \"docs/superpowers/plans/2026-09-17-agent-factory-build.md\" 1)",
+      "Bash(bash \"C:\\\\Users\\\\ssomai\\\\.claude\\\\plugins\\\\cache\\\\claude-plugins-official\\\\superpowers\\\\6.3.0\\\\skills\\\\subagent-driven-development\\\\scripts\\\\review-package\" \"docs/superpowers/plans/2026-09-17-agent-factory-build.md\" 6ccd083 d961c10)",
+      "Bash(bash \"C:\\\\Users\\\\ssomai\\\\.claude\\\\plugins\\\\cache\\\\claude-plugins-official\\\\superpowers\\\\6.3.0\\\\skills\\\\subagent-driven-development\\\\scripts\\\\task-brief\" \"docs/superpowers/plans/2026-09-17-agent-factory-build.md\" 2)",
+      "Bash(python -c \"import jsonschema, pytest; print\\(jsonschema.__version__, pytest.__version__\\)\")",
+      "Bash(python -c ' *)",
+      "Bash(python -m pytest tests/test_contracts.py -v)",
+      "Bash(python -m pytest -v)",
+      "Bash(bash \"C:\\\\Users\\\\ssomai\\\\.claude\\\\plugins\\\\cache\\\\claude-plugins-official\\\\superpowers\\\\6.3.0\\\\skills\\\\subagent-driven-development\\\\scripts\\\\review-package\" \"docs/superpowers/plans/2026-09-17-agent-factory-build.md\" d961c10 a7fd42b)",
+      "Bash(bash \"C:\\\\Users\\\\ssomai\\\\.claude\\\\plugins\\\\cache\\\\claude-plugins-official\\\\superpowers\\\\6.3.0\\\\skills\\\\subagent-driven-development\\\\scripts\\\\task-brief\" \"docs/superpowers/plans/2026-09-17-agent-factory-build.md\" 3)",
+      "Bash(python -c \"import json,jsonschema; jsonschema.Draft202012Validator\\(json.load\\(open\\('schemas/agent-contract.schema.json'\\)\\)\\).validate\\(json.load\\(open\\('contracts/agent-risk-reviewer.contract.json'\\)\\)\\); print\\('VALID'\\)\")",
+      "Bash(bash \"C:\\\\Users\\\\ssomai\\\\.claude\\\\plugins\\\\cache\\\\claude-plugins-official\\\\superpowers\\\\6.3.0\\\\skills\\\\subagent-driven-development\\\\scripts\\\\review-package\" \"docs/superpowers/plans/2026-09-17-agent-factory-build.md\" a7fd42b 0e7fd20)",
+      "Bash(awk '/^## 2\\\\./{flag=1} flag{print} /^## 3\\\\./{if\\(flag\\)exit}' docs/ARCHITECTURE-RISKS.md)"
+    ]
+  }
+}
