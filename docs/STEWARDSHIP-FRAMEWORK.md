@@ -42,3 +42,11 @@ The version-controlled repository holds **steward-added governance metadata only
 Reference data and master data are named as explicit content areas of the Investment Operations Context Agent in `ARCHITECTURE.md`. No new agent and no new artefact type is created. This is in line with the DMBOK2 view that architecture typically starts with master data areas [DMBOK2-C04-17] and that integration is critical to reference and master data management [DMBOK2-C08-02].
 
 **What this gives and does not give.** It gives stewards context about reference and master data. It does not give stewardship *of* that data: there is no register of hubs or match and merge rules, and nothing here consolidates source records.
+
+## 7. Operating model (P-13, option A)
+
+The Investment Operations Data Steward works at **functional level in a decentralised model**. This is the current position, and the DMBOK2 notes that most organisations start with a decentralised model [DMBOK2-C16-12], while data ownership is harder to define in it [DMBOK2-C16-33, DMBOK2-C16-07]. That is why the accountabilities in section 2 and the human-owner approvals elsewhere are written out explicitly.
+
+**Collaboration forum.** _To be named by the Project Owner._ This is where the Data Steward, Data Owners, subject-matter experts and operations teams meet to settle questions the steward cannot. Until it is named, such questions go to the Project Owner under the escalation path in section 2.
+
+**Revisit** if the programme grows beyond one functional area; the DMBOK2 describes network and hybrid models as the next steps.

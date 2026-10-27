@@ -26,6 +26,7 @@ APPLIED = [
     ('P-11', 'docs/STEWARDSHIP-FRAMEWORK.md', ['## 6. Reference and master data (P-11', 'No new agent and no new artefact type', 'does not give stewardship']),
     ('P-11-arch', 'ARCHITECTURE.md', ['- reference data;', '- master data;']),
     ('P-12', 'docs/DATA-CLASSIFICATION.md', ['## 1. Provisional scale', '`restricted_confidential`', 'Agents may propose', 'provisional']),
+    ('P-13', 'docs/STEWARDSHIP-FRAMEWORK.md', ['## 7. Operating model (P-13', 'decentralised model', 'Collaboration forum']),
 ]
 
 
