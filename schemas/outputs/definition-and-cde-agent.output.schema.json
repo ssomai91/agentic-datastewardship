@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ninetyone.internal/schemas/outputs/definition-and-cde-agent.output.schema.json",
+  "title": "Definition & CDE Agent output",
+  "type": "object",
+  "required": ["summary", "candidate_definitions", "conflicts_identified", "cde_evidence", "ownership_gaps", "assumptions", "open_questions", "human_action_required", "handoff"],
+  "additionalProperties": false,
+  "properties": {
+    "summary": { "type": "string", "minLength": 1 },
+    "candidate_definitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["term", "draft_text", "cited_clauses", "paraphrased_or_added_clauses", "status"],
+        "additionalProperties": false,
+        "properties": {
+          "term": { "type": "string", "minLength": 1 },
+          "draft_text": { "type": "string", "minLength": 1 },
+          "cited_clauses": { "type": "array", "items": { "type": "string" } },
+          "paraphrased_or_added_clauses": { "type": "array", "items": { "type": "string" } },
+          "status": { "const": "DRAFT-NOT-APPROVED" }
+        }
+      }
+    },
+    "conflicts_identified": { "type": "array", "items": { "type": "string" } },
+    "cde_evidence": { "type": "array", "items": { "$ref": "../evidence.schema.json" } },
+    "ownership_gaps": { "type": "array", "items": { "type": "string" } },
+    "assumptions": { "type": "array", "items": { "type": "string" } },
+    "open_questions": { "type": "array", "items": { "type": "string" } },
+    "human_action_required": { "type": "array", "items": { "type": "string" } },
+    "handoff": { "$ref": "../agent-handoff.schema.json" }
+  }
+}

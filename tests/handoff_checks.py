@@ -1,18 +1,7 @@
-"""Cross-reference checks that JSON Schema cannot express."""
+"""Test-side access to tools/handoff_checks.py."""
+import sys
+from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 
-def handoff_reference_problems(handoff):
-    """Return a list of problems: duplicate ids and claims that cite evidence not in the handoff."""
-    problems = []
-    source_ids = [e["source_id"] for e in handoff.get("evidence", [])]
-    if len(source_ids) != len(set(source_ids)):
-        problems.append("duplicate evidence source_id")
-    claim_ids = [c["claim_id"] for c in handoff.get("claims", [])]
-    if len(claim_ids) != len(set(claim_ids)):
-        problems.append("duplicate claim_id")
-    known = set(source_ids)
-    for claim in handoff.get("claims", []):
-        for evidence_id in claim["evidence_ids"]:
-            if evidence_id not in known:
-                problems.append(f"{claim['claim_id']} cites unknown evidence {evidence_id}")
-    return problems
+from handoff_checks import handoff_reference_problems  # noqa: E402,F401

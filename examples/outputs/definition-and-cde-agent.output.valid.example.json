@@ -1,0 +1,91 @@
+{
+  "summary": "The entries differ in wording; a reconciled candidate is drafted from both, for steward review.",
+  "candidate_definitions": [
+    {
+      "term": "Settlement Date",
+      "draft_text": "[GL-101] The date on which cash and securities are exchanged to complete a trade. [GL-204] The contractual date by which payment and delivery of a trade must complete, as agreed at execution.",
+      "cited_clauses": [
+        "The date on which cash and securities are exchanged to complete a trade.",
+        "The contractual date by which payment and delivery of a trade must complete, as agreed at execution."
+      ],
+      "paraphrased_or_added_clauses": [],
+      "status": "DRAFT-NOT-APPROVED"
+    }
+  ],
+  "conflicts_identified": [
+    "GL-101 and GL-204 word the definition differently."
+  ],
+  "cde_evidence": [
+    {
+      "source_id": "GL-101",
+      "source_type": "glossary_term",
+      "title": "Settlement Date",
+      "location": "SYNTH-GLOSSARY/GL-101",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "The date on which cash and securities are exchanged to complete a trade.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "GL-204",
+      "source_type": "glossary_term",
+      "title": "Settlement Date",
+      "location": "SYNTH-GLOSSARY/GL-204",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "The contractual date by which payment and delivery of a trade must complete, as agreed at execution.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    }
+  ],
+  "ownership_gaps": [],
+  "assumptions": [],
+  "open_questions": [],
+  "human_action_required": [],
+  "handoff": {
+    "case_id": "REF-0001",
+    "request": "synthetic",
+    "agent": "Definition & CDE Agent",
+    "status": "completed",
+    "findings": [
+      "The entries differ in wording; a reconciled candidate is drafted from both, for steward review."
+    ],
+    "evidence": [
+      {
+        "source_id": "GL-101",
+        "source_type": "glossary_term",
+        "title": "Settlement Date",
+        "location": "SYNTH-GLOSSARY/GL-101",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "The date on which cash and securities are exchanged to complete a trade.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "GL-204",
+        "source_type": "glossary_term",
+        "title": "Settlement Date",
+        "location": "SYNTH-GLOSSARY/GL-204",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "The contractual date by which payment and delivery of a trade must complete, as agreed at execution.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "CL-0001",
+        "statement": "Both register entries were read directly.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": [
+          "GL-101",
+          "GL-204"
+        ]
+      }
+    ],
+    "assumptions": [],
+    "open_questions": [],
+    "human_action_required": [],
+    "next_agent": null
+  }
+}

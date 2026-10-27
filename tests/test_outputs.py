@@ -11,6 +11,7 @@ AGENTS = [
     "agent-risk-reviewer",
     "agent-evaluation-designer",
     "claude-agent-builder",
+    "definition-and-cde-agent",
 ]
 
 

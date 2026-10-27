@@ -1,4 +1,4 @@
-﻿# Governance Decisions
+# Governance Decisions
 
 Register of project-level decisions that the Agent Contracts and Factory agents depend on. Each decision names who owns it, what was decided, and what it changes.
 
@@ -12,6 +12,7 @@ Register of project-level decisions that the Agent Contracts and Factory agents 
 | GD-02 | Evidence retention and redaction | Decided | 2026-10-27 |
 | GD-03 | DMBOK alignment scope | Decided | 2026-10-27 |
 | GD-04 | Data-quality taxonomy | Decided (proposal; owner to confirm in org policy) | 2026-10-27 |
+| GD-05 | Glossary / catalogue system for the Definition & CDE Agent | **Open** | - |
 
 ---
 
@@ -61,3 +62,13 @@ Register of project-level decisions that the Agent Contracts and Factory agents 
 **Status.** `Proposed` taxonomy, accepted by the project owner as the working default. It is a general industry reference, not an organisation-approved standard. If the organisation has its own taxonomy, that one replaces this and this entry is marked `Superseded`.
 
 **Source.** DMBOK2 Chapter 13, section 1.3.3, in `DAMA-DMBOK-Summary.md` (search "six core dimensions").
+
+## GD-05 Glossary / catalogue system (P4-04)
+
+**Question.** Which glossary or catalogue system will the Definition & CDE Agent read from?
+
+**Status.** **Open.** Not decided, and not Claude's to decide.
+
+**What exists meanwhile.** A mocked read-only glossary over synthetic data (`tools/mock_glossary.py`) and the capability-level mapping in `docs/GLOSSARY-TOOL-MAPPING.md`, with the real-tool column empty. Until this is decided the agent can reason only over glossary content given to it, and must answer `Unable to determine` otherwise.
+
+**Needed from the owner.** The system, a read-only access route, and who may approve connecting it. See `docs/GLOSSARY-TOOL-MAPPING.md` section 4 for the steps that follow.

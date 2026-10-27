@@ -1,34 +1,15 @@
-"""Load every schema under schemas/ into one registry so $ref between schemas resolves offline."""
-import json
+"""Test-side access to the shared schema registry in tools/schema_support.py."""
+import sys
 from pathlib import Path
 
-from jsonschema import Draft202012Validator
-from referencing import Registry, Resource
-from referencing.jsonschema import DRAFT202012
-
 ROOT = Path(__file__).resolve().parents[1]
-SCHEMAS = ROOT / "schemas"
+sys.path.insert(0, str(ROOT / "tools"))
 
-
-def load(path):
-    with open(path, encoding="utf-8") as f:
-        return json.load(f)
-
-
-def all_schema_paths():
-    return sorted(SCHEMAS.rglob("*.schema.json"))
-
-
-def build_registry():
-    resources = []
-    for path in all_schema_paths():
-        schema = load(path)
-        resources.append((schema["$id"], Resource.from_contents(schema, default_specification=DRAFT202012)))
-    return Registry().with_resources(resources)
-
-
-REGISTRY = build_registry()
-
-
-def validator_for(path):
-    return Draft202012Validator(load(path), registry=REGISTRY)
+from schema_support import (  # noqa: E402,F401
+    REGISTRY,
+    SCHEMAS,
+    all_schema_paths,
+    build_registry,
+    load,
+    validator_for,
+)

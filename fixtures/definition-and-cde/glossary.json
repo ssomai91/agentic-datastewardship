@@ -1,0 +1,84 @@
+{
+  "_note": "SYNTHETIC. Fabricated glossary used only by the Definition & CDE evaluation harness. No real terms, owners or CDE designations.",
+  "glossary_id": "SYNTH-GLOSSARY",
+  "categories": [
+    { "category_id": "CAT-TRADE", "name": "Trade Lifecycle (SYNTHETIC)" },
+    { "category_id": "CAT-CPTY", "name": "Counterparty (SYNTHETIC)" },
+    { "category_id": "CAT-ORG", "name": "Organisation (SYNTHETIC)" }
+  ],
+  "terms": [
+    {
+      "term_id": "GL-101",
+      "term": "Settlement Date",
+      "definition": "The date on which cash and securities are exchanged to complete a trade.",
+      "category_id": "CAT-TRADE",
+      "owner": "Avery Example (SYNTHETIC)",
+      "status": "Approved",
+      "version": "1.0",
+      "recorded_cde_flag": true
+    },
+    {
+      "term_id": "GL-204",
+      "term": "Settlement Date",
+      "definition": "The contractual date by which payment and delivery of a trade must complete, as agreed at execution.",
+      "category_id": "CAT-TRADE",
+      "owner": "Blake Example (SYNTHETIC)",
+      "status": "Approved",
+      "version": "2.1",
+      "recorded_cde_flag": false
+    },
+    {
+      "term_id": "GL-301",
+      "term": "Trade Date",
+      "definition": "The date a trade is executed, booked on the same business day (T+0).",
+      "category_id": "CAT-TRADE",
+      "owner": "Casey Example (SYNTHETIC)",
+      "status": "Approved",
+      "version": "1.3",
+      "recorded_cde_flag": false
+    },
+    {
+      "term_id": "GL-302",
+      "term": "Trade Date",
+      "definition": "The date a trade is executed, booked on the following business day (T+1).",
+      "category_id": "CAT-TRADE",
+      "owner": "Devon Example (SYNTHETIC)",
+      "status": "Approved",
+      "version": "1.1",
+      "recorded_cde_flag": false
+    },
+    {
+      "term_id": "GL-401",
+      "term": "Counterparty Tier",
+      "definition": "The internal grouping of a counterparty by credit and relationship standing.",
+      "category_id": "CAT-CPTY",
+      "status": "Draft",
+      "version": "0.2",
+      "recorded_cde_flag": false
+    },
+    {
+      "term_id": "GL-501",
+      "term": "Position (Trading)",
+      "definition": "The quantity of a security or instrument held in a portfolio at a point in time.",
+      "category_id": "CAT-TRADE",
+      "owner": "Emery Example (SYNTHETIC)",
+      "status": "Approved",
+      "version": "1.0",
+      "recorded_cde_flag": false
+    },
+    {
+      "term_id": "GL-502",
+      "term": "Position (Employment/HR)",
+      "definition": "A defined job role within the organisation, with a title, grade and reporting line.",
+      "category_id": "CAT-ORG",
+      "owner": "Finley Example (SYNTHETIC)",
+      "status": "Approved",
+      "version": "1.0",
+      "recorded_cde_flag": false
+    }
+  ],
+  "term_links": [
+    { "from": "GL-101", "to": "GL-204", "relation": "possible_duplicate" },
+    { "from": "GL-301", "to": "GL-302", "relation": "possible_duplicate" }
+  ]
+}
