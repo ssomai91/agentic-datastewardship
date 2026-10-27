@@ -1,5 +1,5 @@
 {
-  "dmbok_file": "DAMA-DMBOK-2nd-Edition.md",
+  "dmbok_file": "DAMA-DMBOK-Summary.md",
   "units": [
     {"unit": 1, "title": "Ethics and security", "chapters": [2, 7], "line_ranges": [[1875, 2324], [6533, 7946]]},
     {"unit": 2, "title": "Data governance, roles and operating models", "chapters": [3], "line_ranges": [[2325, 3213]]},

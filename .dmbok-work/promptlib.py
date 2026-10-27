@@ -5,7 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 WORK = ROOT / ".dmbok-work"
-DMBOK = Path(os.environ.get("DMBOK_MD", ROOT / "DAMA-DMBOK-SUMMARY.md"))
+DMBOK = Path(os.environ.get("DMBOK_MD", ROOT / "DAMA-DMBOK-Summary.md"))
 
 
 def load_concepts():

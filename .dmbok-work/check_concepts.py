@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 WORK = ROOT / ".dmbok-work"
-DMBOK = Path(os.environ.get("DMBOK_MD", ROOT / "DAMA-DMBOK-SUMMARY.md"))
+DMBOK = Path(os.environ.get("DMBOK_MD", ROOT / "DAMA-DMBOK-Summary.md"))
 
 concepts = json.loads((WORK / "concepts.json").read_text(encoding="utf-8"))
 units = json.loads((WORK / "units.json").read_text(encoding="utf-8"))["units"]
