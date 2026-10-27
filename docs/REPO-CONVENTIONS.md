@@ -28,3 +28,8 @@ Nothing in this repository connects to production systems, production data, or p
 
 Markdown contract, JSON contract and Claude prompt form a fixed chain of authority; see [AUTHORITY-CHAIN.md](AUTHORITY-CHAIN.md).
 
+
+## Governance decisions
+
+Project-level decisions (approval roles, evidence retention, DMBOK scope, data-quality taxonomy) are recorded in [GOVERNANCE-DECISIONS.md](../GOVERNANCE-DECISIONS.md).
+
