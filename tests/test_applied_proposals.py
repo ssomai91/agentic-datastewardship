@@ -16,6 +16,7 @@ APPLIED = [
     ('P-01-readme', 'README.md', ['neutral title', 'docs/STEWARDSHIP-FRAMEWORK.md']),
     ('P-02', 'docs/STEWARDSHIP-FRAMEWORK.md', ['## 2. Governance owner and escalation (P-02', 'Deputy', 'Executive sponsor', 'no layered escalation']),
     ('P-03', 'docs/STEWARDSHIP-FRAMEWORK.md', ['## 3. Governance metrics (P-03', 'Deferred.', 'system-level criteria only']),
+    ('P-04', 'docs/STEWARDSHIP-FRAMEWORK.md', ['## 4. Definition approval lifecycle (P-04', 'DRAFT-NOT-APPROVED', 'GD-05']),
 ]
 
 

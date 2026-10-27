@@ -24,3 +24,7 @@ One accountable owner is the approval and escalation endpoint, with a deputy. Th
 ## 3. Governance metrics (P-03, option 3)
 
 **Deferred.** The success criteria in `HANDOFF.md` remain system-level criteria only. Programme-level stewardship metrics are deferred to the organisation's own governance metrics, and are revisited as the programme matures, since the DMBOK2 expects metrics to change with maturity [DMBOK2-C03-64]. See `docs/SUCCESS-MEASURES.md` for how the system-level criteria are measured.
+
+## 4. Definition approval lifecycle (P-04, option 2)
+
+This repository keeps a single gate: every candidate definition is `DRAFT-NOT-APPROVED` until a human owner approves it elsewhere. Later states (published, replaced, retired) belong to the status model of the glossary system once it is chosen (`GOVERNANCE-DECISIONS.md`, GD-05). The DMBOK2 status path is an example of more mature governance, not a requirement here [DMBOK2-C12-62, DMBOK2-C12-22]. Cost: the lifecycle after approval is undefined in this repository until GD-05 is decided.
