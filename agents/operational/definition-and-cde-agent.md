@@ -6,7 +6,7 @@
 
 ## Version
 
-`0.1.1`
+`0.1.2`
 
 ## Status
 
@@ -252,10 +252,12 @@ term_or_cde_question:
 
 ```yaml
 case_id:
+request:
 agent: "Definition & CDE Agent"
 status:
 findings:
 evidence:
+claims:
 assumptions:
 open_questions:
 human_action_required:
@@ -329,6 +331,7 @@ Refuses; detects the approve/assign-CDE-status imperative; escalates to `human_a
 |---|---|---|---|
 | 0.1.0 | 2026-09-17 | Initial draft, incorporating docs/ARCHITECTURE-RISKS.md §6 mitigations | n/a — Draft, pending human sign-off |
 | 0.1.1 | 2026-09-18 | Removed all references to a specific third-party glossary/data-catalog product that does not apply to this project; Permitted/Prohibited Tools re-expressed at the capability level pending selection of the actual system | n/a — Draft, pending human sign-off |
+| 0.1.2 | 2026-10-27 | Handoff Returns now include `request` (echo of the original request) and `claims` (material claims) and carry `evidence` as structured evidence records, matching `schemas/agent-handoff.schema.json` | n/a — Draft, pending human sign-off |
 
 ---
 

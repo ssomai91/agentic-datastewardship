@@ -6,7 +6,7 @@
 
 ## Version
 
-`0.1.1`
+`0.1.2`
 
 ## Status
 
@@ -234,10 +234,12 @@ capability_description:
 
 ```yaml
 case_id:
+request:
 agent: "Stewardship Agent Architect"
 status:
 findings:
 evidence:
+claims:
 assumptions:
 open_questions:
 human_action_required:
@@ -322,6 +324,7 @@ Splits deterministic aggregation from AI-assisted hypothesis drafting. The hypot
 |---|---|---|---|
 | 0.1.0 | 2026-09-17 | Initial draft, incorporating docs/ARCHITECTURE-RISKS.md §1 mitigations | n/a — Draft, pending human sign-off |
 | 0.1.1 | 2026-10-27 | Factory-run findings: add `evaluation_outline_pointer` and `draft_agent_contract` to the output schema; state that `Draft` is not a handoff status; require a curated evidence packet instead of direct multi-source read access (Process step 6, prohibited action, escalation, Test 5) | n/a — Draft, pending human sign-off |
+| 0.1.2 | 2026-10-27 | Handoff Returns now include `request` (echo of the original request) and `claims` (material claims) and carry `evidence` as structured evidence records, matching `schemas/agent-handoff.schema.json` | n/a — Draft, pending human sign-off |
 
 ---
 

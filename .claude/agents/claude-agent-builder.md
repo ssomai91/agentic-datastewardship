@@ -42,3 +42,7 @@ Supported | Partially supported | Unsupported | Contradictory | Unable to determ
 ## Output
 
 Return: summary, generated_files (prompts/ paths only), coverage_trace (contract_field → prompt_passage), uncovered_fields.
+
+## Handoff
+
+Your `handoff` object must echo the original `request` and carry `evidence` as evidence records and `claims` as material claims (`schemas/material-claim.schema.json`): each claim states its type, one of the five confidence labels and the ids of the evidence it rests on. A claim typed `authoritative_internal` or `general_industry`, or labelled `Supported`, `Partially supported` or `Contradictory`, must cite at least one evidence id that exists in the handoff.

@@ -117,13 +117,30 @@ def test_json_contract_confidence_labels_match_the_claim_schema(agent):
     assert json_contract(agent)["confidence_labels"] == labels
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason="Known gap: contracts' handoff_contract.returns lacks 'claims' (added to the handoff schema in P2-02). "
-    "Fix by amending each Markdown contract first, with Project Owner sign-off (GD-01), then the JSON.",
-)
 @pytest.mark.parametrize("agent", AGENTS)
-def test_contract_handoff_returns_cover_every_handoff_schema_field(agent):
+def test_json_contract_handoff_returns_cover_every_handoff_schema_field(agent):
     required = set(load(SCHEMAS / "agent-handoff.schema.json")["required"])
     returns = set(json_contract(agent)["handoff_contract"]["returns"])
     assert required <= returns, f"{agent}: handoff returns missing {sorted(required - returns)}"
+
+
+@pytest.mark.parametrize("agent", AGENTS)
+def test_markdown_contract_handoff_returns_cover_every_handoff_schema_field(agent):
+    text = read(ROOT / "agents" / TIERS[agent] / f"{agent}.md")
+    block = re.search(r"### Returns\s+```yaml\n(.*?)```", text, re.S).group(1)
+    keys = set(re.findall(r"^(\w+):", block, re.M))
+    required = set(load(SCHEMAS / "agent-handoff.schema.json")["required"])
+    assert required <= keys, f"{agent}: Markdown Returns block missing {sorted(required - keys)}"
+
+
+@pytest.mark.parametrize("agent", AGENTS)
+def test_json_and_markdown_returns_agree_on_fields(agent):
+    text = read(ROOT / "agents" / TIERS[agent] / f"{agent}.md")
+    block = re.search(r"### Returns\s+```yaml\n(.*?)```", text, re.S).group(1)
+    assert set(re.findall(r"^(\w+):", block, re.M)) == set(json_contract(agent)["handoff_contract"]["returns"])
+
+
+@pytest.mark.parametrize("agent", AGENTS)
+def test_prompt_tells_the_agent_to_return_claims_with_evidence(agent):
+    body = prompt(agent)["body"]
+    assert "`claims`" in body and "material-claim.schema.json" in body, f"{agent}: prompt must instruct claims in the handoff"

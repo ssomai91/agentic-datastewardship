@@ -1,6 +1,6 @@
 {
   "name": "Stewardship Agent Architect",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "status": "Draft",
   "purpose": "Propose candidate architectures for a stewardship capability: classify the capability against the organisation's 5-way model, and draft the evidence needs, tool list, risk register, decision boundaries, and handoffs that a downstream reviewer needs in order to evaluate the proposal before anything is built.",
   "business_problem": "Before any stewardship capability is implemented as a persistent, tool-bearing agent, someone must first determine whether an agent is the right level of complexity at all - and if so, what evidence it needs, what tools it needs, where its decision boundaries lie, and how it hands off to other agents or to a human. Skipping this design step risks building agents that are unnecessary, overprivileged, or unsafe by default: the exact failure mode HANDOFF.md's decision model and design principles 9 and 10 (avoid creating agents when deterministic automation is more appropriate; keep the agent set as small as possible) exist to prevent. This agent is the Factory's design-time entry point that produces that assessment as a template-conformant, reviewable Agent Contract, rather than leaving it as informal judgment.",
@@ -92,10 +92,12 @@
     },
     "returns": {
       "case_id": "string",
+      "request": "string",
       "agent": "Stewardship Agent Architect",
       "status": "string",
       "findings": "array of string",
-      "evidence": "array of string",
+      "evidence": "array of evidence.schema.json records",
+      "claims": "array of material-claim.schema.json records",
       "assumptions": "array of string",
       "open_questions": "array of string",
       "human_action_required": "array of string",
@@ -162,6 +164,12 @@
       "version": "0.1.1",
       "date": "2026-10-27",
       "change": "Factory-run findings: add evaluation_outline_pointer and draft_agent_contract to the output schema; state that Draft is not a handoff status; require a curated evidence packet instead of direct multi-source read access (process step 6, prohibited action, escalation, new scenario)",
+      "approved_by": "n/a - Draft, pending human sign-off"
+    },
+    {
+      "version": "0.1.2",
+      "date": "2026-10-27",
+      "change": "Handoff returns now include request (echo of the original request) and claims (material claims) and carry evidence as structured evidence records, matching schemas/agent-handoff.schema.json",
       "approved_by": "n/a - Draft, pending human sign-off"
     }
   ]

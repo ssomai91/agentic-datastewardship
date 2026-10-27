@@ -6,7 +6,7 @@
 
 ## Version
 
-`0.1.0`
+`0.1.1`
 
 ## Status
 
@@ -226,10 +226,12 @@ eval_designer_test_spec:
 
 ```yaml
 case_id:
+request:
 agent: "Claude Agent Builder"
 status:
 findings:
 evidence:
+claims:
 assumptions:
 open_questions:
 human_action_required:
@@ -302,6 +304,7 @@ Refuses; writes to `prompts/` only and states promotion requires human/engineeri
 | Version | Date | Change | Approved by |
 |---|---|---|---|
 | 0.1.0 | 2026-09-17 | Initial draft, incorporating docs/ARCHITECTURE-RISKS.md §4 mitigations | n/a — Draft, pending human sign-off |
+| 0.1.1 | 2026-10-27 | Handoff Returns now include `request` (echo of the original request) and `claims` (material claims) and carry `evidence` as structured evidence records, matching `schemas/agent-handoff.schema.json` | n/a — Draft, pending human sign-off |
 
 ---
 

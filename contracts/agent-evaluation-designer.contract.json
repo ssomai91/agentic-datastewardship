@@ -1,6 +1,6 @@
 {
   "name": "Agent Evaluation Designer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "Draft",
   "purpose": "Produce a separate, taxonomy-tagged test/acceptance-criteria document for a specific candidate agent, mapping the fixed 10-category test taxonomy against that agent's approved-for-review Agent Contract and the Agent Risk & Governance Reviewer's findings for it - a distinct, template-driven workflow step, not a persistent, tool-bearing agent, that never itself declares an agent 'ready,' 'safe,' 'tested,' or 'passing.'",
   "business_problem": "The Stewardship Agent Architect's own review recommended merging this step into the Risk Reviewer's critique; docs/ARCHITECTURE-RISKS.md section 3's independent review rejected that merge (verdict: redesign - kept as a distinct step) and found four separate problems the merge would have introduced silently: an authority issue - a Risk Reviewer whose charter is supposed to stay challenge-only would gain test/acceptance-criteria authorship via architectural prose rather than a reviewed contract change; a self-review conflict of interest - the same agent that identifies design risks would also define the tests that verify those risks, removing the independent second check a separate verifier role provides; an evidence issue - concrete example inputs/outputs for domain-specific contracts require fabricated illustrative data (sample NAV figures, thresholds, exception clusters), with nothing requiring that data be labelled synthetic or that unapproved business rules be marked UNRESOLVED - pending human definition; and a consistency issue - no requirement that a uniform test-authorship format apply across all candidate agents if test-plan writing happens ad hoc inside each critique. docs/ARCHITECTURE-RISKS.md section 3 also flags a hallucination/explainability risk: embedding taxonomy-tagged test coverage inside another agent's narrative critique weakens 1:1 traceability from 'which of the 10 fixed categories is covered' to an auditable line item. This agent exists as the distinct, template-driven, tool-less step the review requires: it runs only after Risk Reviewer's findings exist, consumes both the approved contract and those findings, and produces its own separate, taxonomy-tagged artifact - never merged into Risk Reviewer's critique, and never itself gating or approving anything.",
@@ -75,10 +75,12 @@
     },
     "returns": {
       "case_id": "string",
+      "request": "string",
       "agent": "Agent Evaluation Designer",
       "status": "string",
       "findings": "array of string",
-      "evidence": "array of string",
+      "evidence": "array of evidence.schema.json records",
+      "claims": "array of material-claim.schema.json records",
       "assumptions": "array of string",
       "open_questions": "array of string",
       "human_action_required": "array of string",
@@ -128,6 +130,12 @@
       "version": "0.1.0",
       "date": "2026-09-17",
       "change": "Initial draft, incorporating docs/ARCHITECTURE-RISKS.md §3 mitigations",
+      "approved_by": "n/a - Draft, pending human sign-off"
+    },
+    {
+      "version": "0.1.1",
+      "date": "2026-10-27",
+      "change": "Handoff returns now include request (echo of the original request) and claims (material claims) and carry evidence as structured evidence records, matching schemas/agent-handoff.schema.json",
       "approved_by": "n/a - Draft, pending human sign-off"
     }
   ]

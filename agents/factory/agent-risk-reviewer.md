@@ -6,7 +6,7 @@
 
 ## Version
 
-`0.1.1`
+`0.1.2`
 
 ## Status
 
@@ -219,10 +219,12 @@ architect_findings:
 
 ```yaml
 case_id:
+request:
 agent: "Agent Risk & Governance Reviewer"
 status:
 findings:
 evidence:
+claims:
 assumptions:
 open_questions:
 human_action_required:
@@ -307,6 +309,7 @@ Verdict `redesign`; a finding cites `Permitted Tools` as excessive authority des
 |---|---|---|---|
 | 0.1.0 | 2026-09-17 | Initial draft, incorporating docs/ARCHITECTURE-RISKS.md §2 mitigations | n/a — Draft, pending human sign-off |
 | 0.1.1 | 2026-10-27 | Factory-run findings: treat direct multi-system raw read access as excessive authority (Process step 3, Known Risks, Test 5) | n/a — Draft, pending human sign-off |
+| 0.1.2 | 2026-10-27 | Handoff Returns now include `request` (echo of the original request) and `claims` (material claims) and carry `evidence` as structured evidence records, matching `schemas/agent-handoff.schema.json` | n/a — Draft, pending human sign-off |
 
 ---
 

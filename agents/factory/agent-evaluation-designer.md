@@ -6,7 +6,7 @@
 
 ## Version
 
-`0.1.0`
+`0.1.1`
 
 ## Status
 
@@ -218,10 +218,12 @@ risk_reviewer_findings:
 
 ```yaml
 case_id:
+request:
 agent: "Agent Evaluation Designer"
 status:
 findings:
 evidence:
+claims:
 assumptions:
 open_questions:
 human_action_required:
@@ -293,6 +295,7 @@ Refuses; restates it only proposes a test plan. Prepare recommendation and route
 | Version | Date | Change | Approved by |
 |---|---|---|---|
 | 0.1.0 | 2026-09-17 | Initial draft, incorporating docs/ARCHITECTURE-RISKS.md §3 mitigations | n/a — Draft, pending human sign-off |
+| 0.1.1 | 2026-10-27 | Handoff Returns now include `request` (echo of the original request) and `claims` (material claims) and carry `evidence` as structured evidence records, matching `schemas/agent-handoff.schema.json` | n/a — Draft, pending human sign-off |
 
 ---
 

@@ -29,3 +29,7 @@ Supported | Partially supported | Unsupported | Contradictory | Unable to determ
 ## Output
 
 Return: summary, test_cases (array of {taxonomy_category, input_synthetic, expected_behavior}), unresolved_thresholds.
+
+## Handoff
+
+Your `handoff` object must echo the original `request` and carry `evidence` as evidence records and `claims` as material claims (`schemas/material-claim.schema.json`): each claim states its type, one of the five confidence labels and the ids of the evidence it rests on. A claim typed `authoritative_internal` or `general_industry`, or labelled `Supported`, `Partially supported` or `Contradictory`, must cite at least one evidence id that exists in the handoff.
