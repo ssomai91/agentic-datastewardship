@@ -21,7 +21,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DMBOK_PATH = Path(os.environ.get("DMBOK_MD", ROOT / "DAMA-DMBOK-2nd-Edition.md"))
+DMBOK_PATH = Path(os.environ.get("DMBOK_MD", ROOT / "DAMA-DMBOK-SUMMARY.md"))
 INDEX_PATH = ROOT / "docs" / "dmbok2-citations.json"
 
 PAGE_MARKER = re.compile(r"<!--\s*PDF page (\d+)\s*-->")
