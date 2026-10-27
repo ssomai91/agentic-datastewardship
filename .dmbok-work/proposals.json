@@ -31,7 +31,7 @@
     ],
     "recommendation": "Option 3 - least change; the DMBOK2 allows steward-like titles, so keep 'Data Steward' with a one-line note and adopt a steward type later if the organisation does.",
     "decision_owner": "Data Steward / project owner",
-    "decision": "Pending"
+    "decision": "Accepted 2026-10-27 by the project owner as recommended: Option 3 - least change; the DMBOK2 allows steward-like titles, so keep 'Data Steward' with a one-line note and adopt a steward type later if the organisation does."
   },
   {
     "id": "P-02",
@@ -93,7 +93,7 @@
     ],
     "recommendation": "Option 1 - matches governance decision GD-01 (one accountable Project Owner, Data Steward as reviewer) and adds a deputy for escalation.",
     "decision_owner": "Data Steward / project owner",
-    "decision": "Pending"
+    "decision": "Accepted 2026-10-27 by the project owner as recommended: Option 1 - matches governance decision GD-01 (one accountable Project Owner, Data Steward as reviewer) and adds a deputy for escalation."
   },
   {
     "id": "P-03",
@@ -129,7 +129,7 @@
     ],
     "recommendation": "Option 3 - defer programme-level metrics until operational agents exist; keep HANDOFF.md success criteria as system-level criteria and record the deferral.",
     "decision_owner": "Data Steward / project owner",
-    "decision": "Pending"
+    "decision": "Accepted 2026-10-27 by the project owner as recommended: Option 3 - defer programme-level metrics until operational agents exist; keep HANDOFF.md success criteria as system-level criteria and record the deferral."
   },
   {
     "id": "P-04",
@@ -155,7 +155,7 @@
     ],
     "recommendation": "Option 2 - keep the single DRAFT-NOT-APPROVED gate until a glossary system is chosen (backlog P4-04), then adopt its status model.",
     "decision_owner": "Data Steward / project owner",
-    "decision": "Pending"
+    "decision": "Accepted 2026-10-27 by the project owner as recommended: Option 2 - keep the single DRAFT-NOT-APPROVED gate until a glossary system is chosen (backlog P4-04), then adopt its status model."
   },
   {
     "id": "P-05",
@@ -191,7 +191,7 @@
     ],
     "recommendation": "Option 1 - use the DMBOK2 criticality drivers as the starting CDE checklist, and record the result in a governed policy as in Option 3.",
     "decision_owner": "Data Steward / project owner",
-    "decision": "Pending"
+    "decision": "Accepted 2026-10-27 by the project owner as recommended: Option 1 - use the DMBOK2 criticality drivers as the starting CDE checklist, and record the result in a governed policy as in Option 3."
   },
   {
     "id": "P-06",
@@ -226,7 +226,7 @@
     ],
     "recommendation": "Option 1 - hybrid: keep the repository for steward-added governance metadata only and link to source systems for the rest.",
     "decision_owner": "Data Steward / project owner",
-    "decision": "Pending"
+    "decision": "Accepted 2026-10-27 by the project owner as recommended: Option 1 - hybrid: keep the repository for steward-added governance metadata only and link to source systems for the rest."
   },
   {
     "id": "P-07",
@@ -274,7 +274,7 @@
     ],
     "recommendation": "Option 1 - DAMA UK core six, as already accepted in governance decision GD-04 (a proposal until the organisation confirms or replaces it).",
     "decision_owner": "Data Steward / project owner",
-    "decision": "Pending"
+    "decision": "Accepted 2026-10-27 by the project owner as recommended: Option 1 - DAMA UK core six, as already accepted in governance decision GD-04 (a proposal until the organisation confirms or replaces it)."
   },
   {
     "id": "P-08",
@@ -310,7 +310,7 @@
     ],
     "recommendation": "Option 2 - a pre-approval checklist on each candidate rule is the smallest change that raises rule quality before it reaches the Data Steward.",
     "decision_owner": "Data Steward / project owner",
-    "decision": "Pending"
+    "decision": "Accepted 2026-10-27 by the project owner as recommended: Option 2 - a pre-approval checklist on each candidate rule is the smallest change that raises rule quality before it reaches the Data Steward."
   },
   {
     "id": "P-09",
@@ -343,7 +343,7 @@
     ],
     "recommendation": "Option 1 - coverage matrix of critical data element by dimension by system gives a testable definition of coverage.",
     "decision_owner": "Data Steward / project owner",
-    "decision": "Pending"
+    "decision": "Accepted 2026-10-27 by the project owner as recommended: Option 1 - coverage matrix of critical data element by dimension by system gives a testable definition of coverage."
   },
   {
     "id": "P-10",
@@ -377,7 +377,7 @@
     ],
     "recommendation": "Option 1 - a minimum issue record (description, root causes, remediation options, decision) is the smallest useful change.",
     "decision_owner": "Data Steward / project owner",
-    "decision": "Pending"
+    "decision": "Accepted 2026-10-27 by the project owner as recommended: Option 1 - a minimum issue record (description, root causes, remediation options, decision) is the smallest useful change."
   },
   {
     "id": "P-11",
@@ -430,7 +430,7 @@
     ],
     "recommendation": "Option 1 - name reference and master data as content areas of the Investment Operations Context Agent with no new agent or artefact type.",
     "decision_owner": "Data Steward / project owner",
-    "decision": "Pending"
+    "decision": "Accepted 2026-10-27 by the project owner as recommended: Option 1 - name reference and master data as content areas of the Investment Operations Context Agent with no new agent or artefact type."
   },
   {
     "id": "P-12",
@@ -465,7 +465,7 @@
     ],
     "recommendation": "Option 1 - a provisional confidentiality scale that agents may propose and the Data Steward assigns, replaced by the organisation's scheme once found.",
     "decision_owner": "Data Steward / project owner",
-    "decision": "Pending"
+    "decision": "Accepted 2026-10-27 by the project owner as recommended: Option 1 - a provisional confidentiality scale that agents may propose and the Data Steward assigns, replaced by the organisation's scheme once found."
   },
   {
     "id": "P-13",
@@ -499,7 +499,7 @@
     ],
     "recommendation": "Option 1 - record the current decentralized, functional-level steward position and name the collaboration forum; revisit if the programme grows.",
     "decision_owner": "Data Steward / project owner",
-    "decision": "Pending"
+    "decision": "Accepted 2026-10-27 by the project owner as recommended: Option 1 - record the current decentralized, functional-level steward position and name the collaboration forum; revisit if the programme grows."
   },
   {
     "id": "P-14",
@@ -542,6 +542,6 @@
     ],
     "recommendation": "Option 3 - turn the HANDOFF.md success criteria into ongoing measures against a stated baseline, without adopting a formal maturity scale yet.",
     "decision_owner": "Data Steward / project owner",
-    "decision": "Pending"
+    "decision": "Accepted 2026-10-27 by the project owner as recommended: Option 3 - turn the HANDOFF.md success criteria into ongoing measures against a stated baseline, without adopting a formal maturity scale yet."
   }
 ]

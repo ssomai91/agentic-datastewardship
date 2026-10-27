@@ -13,6 +13,7 @@ Register of project-level decisions that the Agent Contracts and Factory agents 
 | GD-03 | DMBOK alignment scope | Decided | 2026-10-27 |
 | GD-04 | Data-quality taxonomy | Decided (proposal; owner to confirm in org policy) | 2026-10-27 |
 | GD-05 | Glossary / catalogue system for the Definition & CDE Agent | **Open** | - |
+| GD-06 | DMBOK alignment proposals P-01 to P-14 | Decided (not yet applied) | 2026-10-27 |
 
 ---
 
@@ -72,3 +73,13 @@ Register of project-level decisions that the Agent Contracts and Factory agents 
 **What exists meanwhile.** A mocked read-only glossary over synthetic data (`tools/mock_glossary.py`) and the capability-level mapping in `docs/GLOSSARY-TOOL-MAPPING.md`, with the real-tool column empty. Until this is decided the agent can reason only over glossary content given to it, and must answer `Unable to determine` otherwise.
 
 **Needed from the owner.** The system, a read-only access route, and who may approve connecting it. See `docs/GLOSSARY-TOOL-MAPPING.md` section 4 for the steps that follow.
+
+## GD-06 DMBOK alignment proposals (P-01 to P-14)
+
+**Question.** Which option does the project adopt for each of the 14 proposals in section 4 of `docs/DMBOK-ALIGNMENT.md`?
+
+**Decision.** The project owner accepted **all 14 recommendations as written** on 2026-10-27. Each proposal's Decision column in the alignment doc now records the accepted option.
+
+**Where this connects to earlier decisions.** P-02 (single accountable owner) matches GD-01, P-07 (DAMA UK six dimensions) matches GD-04, and P-04 (keep the single draft gate until a glossary system is chosen) waits on GD-05.
+
+**Not yet applied.** This records the decisions only. Applying them means edits to the handoff files and contracts, for example the one-line DMBOK note for the steward title (P-01), naming a deputy for escalation (P-02), recording the deferral of programme metrics (P-03), and the new fields and checklists in P-05 to P-12. Each change follows the authority chain (Markdown contract first, then JSON, then prompt) and is a separate piece of work. The alignment doc itself stays a draft for review.
