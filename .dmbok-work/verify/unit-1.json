@@ -1,0 +1,44 @@
+{
+  "unit": 1,
+  "citation_verdicts": [
+    {"id": "DMBOK2-C02-01", "supports_claim": "yes", "note": "Sentence sits in the privacy-law passage and says organisations need policies to follow legal requirements and stay within risk appetite. Supports the use made of it."},
+    {"id": "DMBOK2-C02-02", "supports_claim": "yes", "note": "Section 3.4 states truthfulness and transparency about sources, uses and intent as a base level of ethical handling."},
+    {"id": "DMBOK2-C02-03", "supports_claim": "yes", "note": "Welfare example; the ethical duty is to supply context, and leaving it out implies unsupported meaning, whether intentional or clumsy."},
+    {"id": "DMBOK2-C02-04", "supports_claim": "yes", "note": "Hunch-and-search is one of the listed bias types in 3.4.4; the quote is accurate in context."},
+    {"id": "DMBOK2-C02-05", "supports_claim": "yes", "note": "First sentence of 3.5; context adds leadership, escalation paths and a formal OCM process."},
+    {"id": "DMBOK2-C02-06", "supports_claim": "yes", "note": "Quote is in the 3.5.4 body text (heading falls at the bottom of p127); context is analysts reflecting on bias plus whistleblower protection."},
+    {"id": "DMBOK2-C02-07", "supports_claim": "yes", "note": "Accurate end-note quote about opaqueness of learning machines. It is a passing note on predictive algorithms, so weak support for anything beyond the narrow opacity point; the reader says so."},
+    {"id": "DMBOK2-C07-01", "supports_claim": "yes", "note": "Classification is the stated start of information security in 1.1.1."},
+    {"id": "DMBOK2-C07-02", "supports_claim": "yes", "note": "Because non-production environments are more vulnerable, production data should be kept out of them."},
+    {"id": "DMBOK2-C07-03", "supports_claim": "yes", "note": "Risk classifications CRD/HRD/MRD follow on pp391-392 as examples; supports the reader's option 2."},
+    {"id": "DMBOK2-C07-04", "supports_claim": "yes", "note": "Least privilege is stated as applying to user, process or program."},
+    {"id": "DMBOK2-C07-05", "supports_claim": "yes", "note": "Confidentiality (internal origin) and regulation (external origin) are presented as two distinct drivers; supports separate labels option."},
+    {"id": "DMBOK2-C07-06", "supports_claim": "yes", "note": "Lists five example levels; the reader correctly treats the scheme as an example."},
+    {"id": "DMBOK2-C07-07", "supports_claim": "yes", "note": "Contractual restrictions paragraph on p411 says contracts may stipulate permitted use and sharing."},
+    {"id": "DMBOK2-C07-08", "supports_claim": "yes", "note": "Central inventory of regulations linked to data subject areas, policies and controls. The sentence is split across the p422/p423 marker; Table 13 is an image."},
+    {"id": "DMBOK2-C07-09", "supports_claim": "yes", "note": "Each organisation creates or adopts its own scheme."},
+    {"id": "DMBOK2-C07-10", "supports_claim": "partly", "note": "Quote is accurate, but the next paragraph also makes document authors and information product designers responsible for classifying and labelling, and Information Security takes enforcement. Stewards are not the only assigner."},
+    {"id": "DMBOK2-C07-11", "supports_claim": "yes", "note": "Regulatory classification scheme is the foundation for responding to audits. The Section 3.3 cross-reference in the text is wrong, as the reader notes."},
+    {"id": "DMBOK2-C07-12", "supports_claim": "yes", "note": "Stewards act with Information Security and Corporate Counsel to align policies and controls."},
+    {"id": "DMBOK2-C07-13", "supports_claim": "yes", "note": "Measurable and therefore auditable requirements; the 'be careful' example is in the text."},
+    {"id": "DMBOK2-C07-14", "supports_claim": "yes", "note": "Compliance controls require audit trails; the training example makes the point concrete."},
+    {"id": "DMBOK2-C07-15", "supports_claim": "yes", "note": "Auditors must be independent of the data or process audited."},
+    {"id": "DMBOK2-C07-16", "supports_claim": "yes", "note": "Stewards document confidentiality and regulatory categories in the Metadata repository and tag data where technology allows."},
+    {"id": "DMBOK2-C07-17", "supports_claim": "yes", "note": "Measure number of copies of confidential data; more places means more breach risk."},
+    {"id": "DMBOK2-C07-18", "supports_claim": "yes", "note": "Regulatory sensitivity classification should be a standard part of the data definition process."},
+    {"id": "DMBOK2-C07-19", "supports_claim": "yes", "note": "Policies must account for data across cloud service models. It is cloud, not AI, guidance, so only an analogue for AI processing, as the reader caveats."}
+  ],
+  "row_verdicts": [
+    {"concept_id": "A-28", "status_fair": "agree", "suggested_status": null, "suggested_action": null, "note": "Partial with structural-proposal holds: the no-production-data boundary matches DMBOK2 p389/p390, but there is no confidentiality or regulatory classification or permitted-use rule. The reader did not cite GOVERNANCE-DECISIONS.md GD-02 (decided 2026-10-27): real-data retention and redaction rules must be decided by the Project Owner with the Data Owner before any agent touches real data, and a real-data request is an escalation. That strengthens the open-policy point and the rationale should mention it, but it supplies no classification scheme, so the grade stands."},
+    {"concept_id": "A-29", "status_fair": "agree", "suggested_status": null, "suggested_action": null, "note": "Defensible. HANDOFF non-goals, the four-way INTERNAL/INDUSTRY/INFERENCE/OPEN QUESTION distinction and evidence authority_level match DMBOK2 p118-119 closely; the remaining gap is the code-of-ethics, training and bias material, which is organisational. Near the Aligned boundary, but nothing on bias or ethics policy exists in the repo, so Partial/wording is not too harsh."},
+    {"concept_id": "A-30", "status_fair": "agree", "suggested_status": null, "suggested_action": null, "note": "Partial/wording is fair: claim-level traceability and the evidence schema fit DMBOK2 p438, but there is no regulation inventory (p423) and 'regulatory reporting' is a business topic, not a handling constraint. Rationale should also note GD-02 (evidence kept in git as project record) and GD-01 (override log with finding ID, reason, date, name) as existing audit-trail elements."}
+  ],
+  "missing_findings": [
+    {"concept_id": "A-28", "pdf_page": 389, "note": "Principle 'Reduce risk by reducing exposure: minimize sensitive/confidential data proliferation, especially to nonproduction environments' is the direct DMBOK2 counterpart of the no-production-data rule; also the 'Clear accountability / chain of custody' and 'Metadata-driven' principles. Better primary citation than p386/p390 alone."},
+    {"concept_id": "A-28", "pdf_page": 428, "note": "Aggregation principle: aggregated data takes the highest classification, and the expected result is a formally approved classification set with a central repository process. Relevant to case logs and evidence packs that aggregate sensitive content."},
+    {"concept_id": "A-28", "pdf_page": 425, "note": "Section 2.2: data security policy is reviewed by the Data Governance Council and owned by the Data Management Executive; policies must be auditable. Relevant to the open question of who owns the organisation's data-handling policy."},
+    {"concept_id": "A-30", "pdf_page": 123, "note": "Section 3.4.5: organisations should hold auditable information on how data has been changed, with remediation under formal auditable change control; p122 adds that without lineage an organisation cannot prove data represents what it claims. Closest Chapter 2 support for evidence traceability; unused."},
+    {"concept_id": "A-30", "pdf_page": 435, "note": "Section 2.3.5.3.2 and p436: automated recording of sensitive transactions, audit data as last line of defence, and separation of audit duties from administrators. Relevant to the evidence trail and the project's self-grading concern."},
+    {"concept_id": "A-30", "pdf_page": 451, "note": "Section 5.4: tracking lineage and chain of custody across systems and roles, and RACI matrices for accountability, bear on traceability of conclusions to evidence."}
+  ]
+}

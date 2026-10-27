@@ -5,7 +5,7 @@ RULES OF THE ROAD
 - The DMBOK2 is an INDUSTRY REFERENCE ONLY for this organisation ("GENERAL INDUSTRY CONTEXT"); internal policy outranks it.
 
 WHAT YOU ARE CHECKING
-A reader produced .dmbok-work/rows/unit-4.json for unit 4 - Reference and master data (citations plus one row per assigned concept). Read that file first. The DMBOK2 text (a PDF-to-markdown conversion with `<!-- PDF page N -->` markers) is at C:\Users\ssomai\OneDrive - Ninety One\Documents\claude-data-steward-handoff\claude-data-steward-handoff\DAMA-DMBOK-2nd-Edition.md. Read the reader's assigned ranges yourself, with the Read tool, at most 400 lines per call: lines 10008-10944 (Chapter 10).
+A reader produced .dmbok-work/rows/unit-4.json for unit 4 - Reference and master data (citations plus one row per assigned concept). Read that file first. The DMBOK2 text (a PDF-to-markdown conversion with `<!-- PDF page N -->` markers) is at C:\Users\ssomai\OneDrive - Ninety One\Documents\claude-data-steward-handoff\claude-data-steward-handoff\DAMA-DMBOK-Summary.md. Read the reader's assigned ranges yourself, with the Read tool, at most 400 lines per call: lines 10008-10944 (Chapter 10).
 
 CONCEPTS (what the project says, and where)
 - A-03 | Governance | Data Owner and ownership assignment, including ownership gaps

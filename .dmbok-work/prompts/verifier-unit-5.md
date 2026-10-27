@@ -5,7 +5,7 @@ RULES OF THE ROAD
 - The DMBOK2 is an INDUSTRY REFERENCE ONLY for this organisation ("GENERAL INDUSTRY CONTEXT"); internal policy outranks it.
 
 WHAT YOU ARE CHECKING
-A reader produced .dmbok-work/rows/unit-5.json for unit 5 - Metadata management (glossary, dictionary, lineage) (citations plus one row per assigned concept). Read that file first. The DMBOK2 text (a PDF-to-markdown conversion with `<!-- PDF page N -->` markers) is at C:\Users\ssomai\OneDrive - Ninety One\Documents\claude-data-steward-handoff\claude-data-steward-handoff\DAMA-DMBOK-2nd-Edition.md. Read the reader's assigned ranges yourself, with the Read tool, at most 400 lines per call: lines 11867-12845 (Chapter 12).
+A reader produced .dmbok-work/rows/unit-5.json for unit 5 - Metadata management (glossary, dictionary, lineage) (citations plus one row per assigned concept). Read that file first. The DMBOK2 text (a PDF-to-markdown conversion with `<!-- PDF page N -->` markers) is at C:\Users\ssomai\OneDrive - Ninety One\Documents\claude-data-steward-handoff\claude-data-steward-handoff\DAMA-DMBOK-Summary.md. Read the reader's assigned ranges yourself, with the Read tool, at most 400 lines per call: lines 11867-12845 (Chapter 12).
 
 CONCEPTS (what the project says, and where)
 - A-09 | Definitions | Business definitions and their approval lifecycle

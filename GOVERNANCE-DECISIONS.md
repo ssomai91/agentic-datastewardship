@@ -1,4 +1,4 @@
-# Governance Decisions
+﻿# Governance Decisions
 
 Register of project-level decisions that the Agent Contracts and Factory agents depend on. Each decision names who owns it, what was decided, and what it changes.
 
@@ -46,12 +46,9 @@ Register of project-level decisions that the Agent Contracts and Factory agents 
 
 **Decision.** **In scope: finish it.** The DMBOK is an industry reference only; the project is aligned to it, not the reverse (`docs/superpowers/specs/2026-10-01-dmbok-alignment-design.md`).
 
-**Current state (2026-10-27).**
-- `docs/DMBOK-ALIGNMENT.md` has not been generated. The pipeline in `.dmbok-work/` stopped before the merge step (`merged.json` does not exist).
-- `docs/dmbok2-citations.json` is empty, so the citation tests verify nothing.
-- Four related tests are skipped, with the reason shown in the test output.
+**Current state (2026-10-27).** Pipeline complete. `docs/DMBOK-ALIGNMENT.md` exists as a **draft pending owner review** (32 concepts, 5 deviations, 14 proposals all Pending). `docs/dmbok2-citations.json` holds 374 citations, each checked against its PDF page marker. All concepts were graded by a reader and checked by an independent verifier. The previously skipped tests now run.
 
-**Done when.** The pipeline has been run to completion, `docs/DMBOK-ALIGNMENT.md` exists as a draft pending owner review, the citation index is populated and verified against `DAMA-DMBOK-Summary.md`, and the four skipped tests run and pass.
+**Next.** The owner reviews the proposals in section 4 of the alignment doc and records a decision on each. Nothing in the doc is applied until then.
 
 **Note.** The book text is a full copy of copyrighted material, kept in this private repository at the owner's request. Do not make the repository public or share it without removing it first.
 

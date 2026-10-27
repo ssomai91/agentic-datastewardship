@@ -1,1 +1,2620 @@
-[]
+[
+  {
+    "id": "DMBOK2-C02-01",
+    "chapter": 2,
+    "section": "3.2 Principles Behind Data Privacy Law",
+    "pdf_page": 117,
+    "quote": "organizations have policies and guidelines that enable staff to follow legal requirements as well as use data within the risk appetite of the organization"
+  },
+  {
+    "id": "DMBOK2-C02-02",
+    "chapter": 2,
+    "section": "3.4 Risks of Unethical Data Handling Practices",
+    "pdf_page": 118,
+    "quote": "not using data to lie or mislead, and being transparent regarding the sources, uses, and intent behind an organization's data handling"
+  },
+  {
+    "id": "DMBOK2-C02-03",
+    "chapter": 2,
+    "section": "3.4.3 Unclear Definitions or Invalid Comparisons",
+    "pdf_page": 119,
+    "quote": "When required context is left out, the surface of the presentation may imply meaning that the data does not support."
+  },
+  {
+    "id": "DMBOK2-C02-04",
+    "chapter": 2,
+    "section": "3.4.4 Bias",
+    "pdf_page": 121,
+    "quote": "The analyst has a hunch and wants to satisfy that hunch, but uses only the data that confirms the hunch"
+  },
+  {
+    "id": "DMBOK2-C02-05",
+    "chapter": 2,
+    "section": "3.5 Establishing an Ethical Data Culture",
+    "pdf_page": 124,
+    "quote": "codifying these in policies and a code of ethics, and providing training and oversight to enforce expected behaviors"
+  },
+  {
+    "id": "DMBOK2-C02-06",
+    "chapter": 2,
+    "section": "3.5.4 Adopt a Socially Responsible Ethical Risk Model",
+    "pdf_page": 129,
+    "quote": "Automated monitoring is not sufficient protection from unethical activities. People – the analysts themselves – need to reflect on possible bias."
+  },
+  {
+    "id": "DMBOK2-C02-07",
+    "chapter": 2,
+    "section": "4 Works Cited / Recommended",
+    "pdf_page": 134,
+    "quote": "As predictive algorithms of learning machines become more complex, it is difficult to track the logic and lineage of their decisions."
+  },
+  {
+    "id": "DMBOK2-C03-01",
+    "chapter": 3,
+    "section": "1 Introduction",
+    "pdf_page": 136,
+    "quote": "Setting and enforcing Data Quality and Data Architecture standards"
+  },
+  {
+    "id": "DMBOK2-C03-02",
+    "chapter": 3,
+    "section": "1 Introduction",
+    "pdf_page": 137,
+    "quote": "sponsorship from a C-level executive, such as Chief Risk Officer, Chief Financial Officer, or Chief Data Officer"
+  },
+  {
+    "id": "DMBOK2-C03-03",
+    "chapter": 3,
+    "section": "1.1 Business Drivers",
+    "pdf_page": 140,
+    "quote": "The most common driver for data governance is often regulatory compliance, especially for heavily regulated industries, such as financial services and healthcare."
+  },
+  {
+    "id": "DMBOK2-C03-04",
+    "chapter": 3,
+    "section": "1.1 Business Drivers",
+    "pdf_page": 142,
+    "quote": "A Data Governance team can be a virtual organization or a line organization with specific accountabilities."
+  },
+  {
+    "id": "DMBOK2-C03-05",
+    "chapter": 3,
+    "section": "1.2 Goals and Principles",
+    "pdf_page": 143,
+    "quote": "DG is not a project with a defined end; it is an ongoing process that requires organizational commitment."
+  },
+  {
+    "id": "DMBOK2-C03-06",
+    "chapter": 3,
+    "section": "1.2 Goals and Principles",
+    "pdf_page": 144,
+    "quote": "Guiding principles are the foundation of DG activities, and especially of DG policy."
+  },
+  {
+    "id": "DMBOK2-C03-07",
+    "chapter": 3,
+    "section": "1.3 Essential Concepts",
+    "pdf_page": 145,
+    "quote": "data governance ensures data is properly managed without directly executing data management"
+  },
+  {
+    "id": "DMBOK2-C03-08",
+    "chapter": 3,
+    "section": "1.3.1 Data-centric Organization",
+    "pdf_page": 146,
+    "quote": "Data management processes should be continuously improved"
+  },
+  {
+    "id": "DMBOK2-C03-09",
+    "chapter": 3,
+    "section": "1.3.2 Data Governance Organization",
+    "pdf_page": 146,
+    "quote": "judicial-like functions (issue management and escalation)"
+  },
+  {
+    "id": "DMBOK2-C03-10",
+    "chapter": 3,
+    "section": "1.3.2 Data Governance Organization",
+    "pdf_page": 147,
+    "quote": "Each organization should adopt a governance model that supports its business strategy and is likely to succeed within its own cultural context."
+  },
+  {
+    "id": "DMBOK2-C03-11",
+    "chapter": 3,
+    "section": "1.3.2 Data Governance Organization",
+    "pdf_page": 147,
+    "quote": "organizations adopt a representative form of data governance, so that all stakeholders can be heard."
+  },
+  {
+    "id": "DMBOK2-C03-12",
+    "chapter": 3,
+    "section": "1.3.2 Data Governance Organization",
+    "pdf_page": 147,
+    "quote": "The work of governance is often divided among multiple committees, each with a purpose and level of oversight different from the others."
+  },
+  {
+    "id": "DMBOK2-C03-13",
+    "chapter": 3,
+    "section": "1.3.2 Data Governance Organization",
+    "pdf_page": 147,
+    "quote": "Table 4 describes the typical committees that might be established within a data governance operating framework."
+  },
+  {
+    "id": "DMBOK2-C03-14",
+    "chapter": 3,
+    "section": "1.3.4 Data Stewardship",
+    "pdf_page": 151,
+    "quote": "accountability and responsibility for data and processes that ensure effective control and use of data assets"
+  },
+  {
+    "id": "DMBOK2-C03-15",
+    "chapter": 3,
+    "section": "1.3.4 Data Stewardship",
+    "pdf_page": 151,
+    "quote": "Often terms like custodian or trustee are synonyms for those who carry out steward-like functions."
+  },
+  {
+    "id": "DMBOK2-C03-16",
+    "chapter": 3,
+    "section": "1.3.4 Data Stewardship",
+    "pdf_page": 151,
+    "quote": "Stewards are often responsible for an organization's Business Glossary, which becomes the system of record for business terms related to data."
+  },
+  {
+    "id": "DMBOK2-C03-17",
+    "chapter": 3,
+    "section": "1.3.4 Data Stewardship",
+    "pdf_page": 151,
+    "quote": "Stewards help surface these rules in order to ensure that there is consensus about them within the organization"
+  },
+  {
+    "id": "DMBOK2-C03-18",
+    "chapter": 3,
+    "section": "1.3.4 Data Stewardship",
+    "pdf_page": 151,
+    "quote": "Stewards are often involved with the identification and resolution of data related issues or in facilitating the process of resolution."
+  },
+  {
+    "id": "DMBOK2-C03-19",
+    "chapter": 3,
+    "section": "1.3.4 Data Stewardship",
+    "pdf_page": 152,
+    "quote": "Stewards are responsible for ensuring that, day-to-day and project-by-project, data governance policies and initiatives are adhered to."
+  },
+  {
+    "id": "DMBOK2-C03-20",
+    "chapter": 3,
+    "section": "1.3.5 Types of Data Stewards",
+    "pdf_page": 152,
+    "quote": "formally appointed Data Stewards may be differentiated by their place within an organization, by the focus of their work, or by both"
+  },
+  {
+    "id": "DMBOK2-C03-21",
+    "chapter": 3,
+    "section": "1.3.5 Types of Data Stewards",
+    "pdf_page": 152,
+    "quote": "Chief Data Stewards may chair data governance bodies in lieu of the CDO"
+  },
+  {
+    "id": "DMBOK2-C03-22",
+    "chapter": 3,
+    "section": "1.3.5 Types of Data Stewards",
+    "pdf_page": 152,
+    "quote": "Enterprise Data Stewards have oversight of a data domain across business functions."
+  },
+  {
+    "id": "DMBOK2-C03-23",
+    "chapter": 3,
+    "section": "1.3.5 Types of Data Stewards",
+    "pdf_page": 152,
+    "quote": "Business Data Stewards are business professionals, most often recognized subject matter experts, accountable for a subset of data."
+  },
+  {
+    "id": "DMBOK2-C03-24",
+    "chapter": 3,
+    "section": "1.3.5 Types of Data Stewards",
+    "pdf_page": 152,
+    "quote": "They work with stakeholders to define and control data."
+  },
+  {
+    "id": "DMBOK2-C03-25",
+    "chapter": 3,
+    "section": "1.3.5 Types of Data Stewards",
+    "pdf_page": 153,
+    "quote": "A Data Owner is a business Data Steward, who has approval authority for decisions about data within their domain."
+  },
+  {
+    "id": "DMBOK2-C03-26",
+    "chapter": 3,
+    "section": "1.3.6 Data Policies",
+    "pdf_page": 153,
+    "quote": "Data policies are directives that codify principles and management intent into fundamental rules"
+  },
+  {
+    "id": "DMBOK2-C03-27",
+    "chapter": 3,
+    "section": "1.3.6 Data Policies",
+    "pdf_page": 154,
+    "quote": "describe the 'what' of data governances (what to do and what not to do), while standards and procedures describe 'how' to do data governance."
+  },
+  {
+    "id": "DMBOK2-C03-28",
+    "chapter": 3,
+    "section": "2.1 Define Data Governance for the Organization",
+    "pdf_page": 157,
+    "quote": "requires a clear understanding of what is being governed and who is being governed, as well as who is governing"
+  },
+  {
+    "id": "DMBOK2-C03-29",
+    "chapter": 3,
+    "section": "2.2 Perform Readiness Assessment",
+    "pdf_page": 157,
+    "quote": "Assessments that describe the current state of an organization's information management capabilities, maturity, and effectiveness are crucial to planning a DG program."
+  },
+  {
+    "id": "DMBOK2-C03-30",
+    "chapter": 3,
+    "section": "2.2 Perform Readiness Assessment",
+    "pdf_page": 158,
+    "quote": "Since stewardship by definition crosses functional areas, it is collaborative in nature."
+  },
+  {
+    "id": "DMBOK2-C03-31",
+    "chapter": 3,
+    "section": "2.4 Develop Organizational Touch Points",
+    "pdf_page": 160,
+    "quote": "identifies control points where enterprise policies, processes, and standards can be developed in the system or application development lifecycles"
+  },
+  {
+    "id": "DMBOK2-C03-32",
+    "chapter": 3,
+    "section": "2.5 Develop Data Governance Strategy",
+    "pdf_page": 162,
+    "quote": "Defines structure and responsibility for data governance activities"
+  },
+  {
+    "id": "DMBOK2-C03-33",
+    "chapter": 3,
+    "section": "2.6 Define the DG Operating Framework",
+    "pdf_page": 163,
+    "quote": "determining where accountability should reside for stewardship activities, who owns the data, etc."
+  },
+  {
+    "id": "DMBOK2-C03-34",
+    "chapter": 3,
+    "section": "2.7 Develop Goals, Principles, and Policies",
+    "pdf_page": 165,
+    "quote": "Goals, principles, and policies are typically drafted by either by data management professionals, business policy staff, or a combination"
+  },
+  {
+    "id": "DMBOK2-C03-35",
+    "chapter": 3,
+    "section": "2.7 Develop Goals, Principles, and Policies",
+    "pdf_page": 165,
+    "quote": "Next, Data Stewards and management review and refine them. Then, the Data Governance Council (or similar body) conducts the final review, revision, and adoption."
+  },
+  {
+    "id": "DMBOK2-C03-36",
+    "chapter": 3,
+    "section": "2.7 Develop Goals, Principles, and Policies",
+    "pdf_page": 165,
+    "quote": "Business owners will be approved by the Data Governance Office."
+  },
+  {
+    "id": "DMBOK2-C03-37",
+    "chapter": 3,
+    "section": "2.7 Develop Goals, Principles, and Policies",
+    "pdf_page": 165,
+    "quote": "The Data Governance Office (DGO) will certify data for use by the organization."
+  },
+  {
+    "id": "DMBOK2-C03-38",
+    "chapter": 3,
+    "section": "2.7 Develop Goals, Principles, and Policies",
+    "pdf_page": 165,
+    "quote": "All certified data will be evaluated on a regular basis to assess its accuracy, completeness, consistency, accessibility, uniqueness, compliance, and efficiency."
+  },
+  {
+    "id": "DMBOK2-C03-39",
+    "chapter": 3,
+    "section": "2.7 Develop Goals, Principles, and Policies",
+    "pdf_page": 166,
+    "quote": "Data policies must be effectively communicated, monitored, enforced, and periodically re-evaluated."
+  },
+  {
+    "id": "DMBOK2-C03-40",
+    "chapter": 3,
+    "section": "2.7 Develop Goals, Principles, and Policies",
+    "pdf_page": 166,
+    "quote": "The Data Governance Council may delegate this authority to the Data Stewardship Steering Committee."
+  },
+  {
+    "id": "DMBOK2-C03-41",
+    "chapter": 3,
+    "section": "2.9 Engage Change Management",
+    "pdf_page": 168,
+    "quote": "Actively seeking and using input from stakeholders can build commitment to the program's goals, while also identifying successes and opportunities for improvement."
+  },
+  {
+    "id": "DMBOK2-C03-42",
+    "chapter": 3,
+    "section": "2.10 Engage in Issue Management",
+    "pdf_page": 169,
+    "quote": "Questions regarding decision rights and procedures"
+  },
+  {
+    "id": "DMBOK2-C03-43",
+    "chapter": 3,
+    "section": "2.10 Engage in Issue Management",
+    "pdf_page": 169,
+    "quote": "Conflicting policies, procedures, business rules, names, definitions, standards, architecture, data ownerships and conflicting stakeholder interests in data and information"
+  },
+  {
+    "id": "DMBOK2-C03-44",
+    "chapter": 3,
+    "section": "2.10 Engage in Issue Management",
+    "pdf_page": 169,
+    "quote": "Many issues can be resolved locally in Data Stewardship teams. Issues requiring communication and / or escalation must be logged"
+  },
+  {
+    "id": "DMBOK2-C03-45",
+    "chapter": 3,
+    "section": "2.10 Engage in Issue Management",
+    "pdf_page": 170,
+    "quote": "used to identify trends related to issues, such as where within the organization they occur, what their root causes are, etc."
+  },
+  {
+    "id": "DMBOK2-C03-46",
+    "chapter": 3,
+    "section": "2.10 Engage in Issue Management",
+    "pdf_page": 170,
+    "quote": "Issues that cannot be resolved by the DGC should be escalated to corporate governance and / or management."
+  },
+  {
+    "id": "DMBOK2-C03-47",
+    "chapter": 3,
+    "section": "2.10 Engage in Issue Management",
+    "pdf_page": 170,
+    "quote": "Identifying, capturing, logging, tracking, and updating issues"
+  },
+  {
+    "id": "DMBOK2-C03-48",
+    "chapter": 3,
+    "section": "2.10 Engage in Issue Management",
+    "pdf_page": 170,
+    "quote": "Documenting stakeholder viewpoints and resolution alternatives"
+  },
+  {
+    "id": "DMBOK2-C03-49",
+    "chapter": 3,
+    "section": "2.10 Engage in Issue Management",
+    "pdf_page": 171,
+    "quote": "relieves the burden on production support teams"
+  },
+  {
+    "id": "DMBOK2-C03-50",
+    "chapter": 3,
+    "section": "2.11 Assess Regulatory Compliance Requirements",
+    "pdf_page": 171,
+    "quote": "Part of the data governance function is to monitor and ensure regulatory compliance."
+  },
+  {
+    "id": "DMBOK2-C03-51",
+    "chapter": 3,
+    "section": "2.13 Sponsor Data Standards and Procedures",
+    "pdf_page": 174,
+    "quote": "DG standards should be mandatory."
+  },
+  {
+    "id": "DMBOK2-C03-52",
+    "chapter": 3,
+    "section": "2.13 Sponsor Data Standards and Procedures",
+    "pdf_page": 174,
+    "quote": "Data standards should be reviewed, approved and adopted by the DGC, or a delegated workgroup, such as a Data Standards Steering Committee."
+  },
+  {
+    "id": "DMBOK2-C03-53",
+    "chapter": 3,
+    "section": "2.13 Sponsor Data Standards and Procedures",
+    "pdf_page": 176,
+    "quote": "Data quality rules, standard measurement methodologies, data remediation standards and procedures"
+  },
+  {
+    "id": "DMBOK2-C03-54",
+    "chapter": 3,
+    "section": "2.14 Develop a Business Glossary",
+    "pdf_page": 176,
+    "quote": "Data Stewards are generally responsible for business glossary content."
+  },
+  {
+    "id": "DMBOK2-C03-55",
+    "chapter": 3,
+    "section": "2.14 Develop a Business Glossary",
+    "pdf_page": 176,
+    "quote": "Definitions must be clear, rigorous in wording, and explain any exceptions, synonyms or variants."
+  },
+  {
+    "id": "DMBOK2-C03-56",
+    "chapter": 3,
+    "section": "2.14 Develop a Business Glossary",
+    "pdf_page": 176,
+    "quote": "Approvers of terminology should include representatives from core user groups."
+  },
+  {
+    "id": "DMBOK2-C03-57",
+    "chapter": 3,
+    "section": "2.14 Develop a Business Glossary",
+    "pdf_page": 176,
+    "quote": "Data Architecture often can supply draft definitions and type breakouts from subject area models."
+  },
+  {
+    "id": "DMBOK2-C03-58",
+    "chapter": 3,
+    "section": "2.14 Develop a Business Glossary",
+    "pdf_page": 177,
+    "quote": "Each term will also be associated with other valuable Metadata: synonyms, metrics, lineage, business rules, the steward responsible for the term, etc."
+  },
+  {
+    "id": "DMBOK2-C03-59",
+    "chapter": 3,
+    "section": "2.17 Embed Data Governance",
+    "pdf_page": 178,
+    "quote": "and to learn from each other, create a Data Governance Community of Interest"
+  },
+  {
+    "id": "DMBOK2-C03-60",
+    "chapter": 3,
+    "section": "3.1 Online Presence / Websites",
+    "pdf_page": 179,
+    "quote": "Reports on Data Quality measurements"
+  },
+  {
+    "id": "DMBOK2-C03-61",
+    "chapter": 3,
+    "section": "3.1 Online Presence / Websites",
+    "pdf_page": 179,
+    "quote": "Procedures for issue identification and escalation"
+  },
+  {
+    "id": "DMBOK2-C03-62",
+    "chapter": 3,
+    "section": "3.2 Business Glossary",
+    "pdf_page": 180,
+    "quote": "It houses agreed-upon definitions of business terms and relates these to data."
+  },
+  {
+    "id": "DMBOK2-C03-63",
+    "chapter": 3,
+    "section": "3.5 Data Governance Scorecards",
+    "pdf_page": 180,
+    "quote": "can be reported up to the Data Governance Council and Data Governance Steering Committees on an automated scorecard"
+  },
+  {
+    "id": "DMBOK2-C03-64",
+    "chapter": 3,
+    "section": "4.2 Adjustment and Communication",
+    "pdf_page": 182,
+    "quote": "Metrics will need to grow and change as the DG program matures."
+  },
+  {
+    "id": "DMBOK2-C03-65",
+    "chapter": 3,
+    "section": "5 Metrics",
+    "pdf_page": 182,
+    "quote": "measure progress and success through metrics that demonstrate how DG participants have added business value and attained objectives"
+  },
+  {
+    "id": "DMBOK2-C03-66",
+    "chapter": 3,
+    "section": "5 Metrics",
+    "pdf_page": 182,
+    "quote": "Contributions to business objectives Reduction of risk Improved efficiency in operations"
+  },
+  {
+    "id": "DMBOK2-C03-67",
+    "chapter": 3,
+    "section": "5 Metrics",
+    "pdf_page": 183,
+    "quote": "Extent stewards are using the relevant tools Effectiveness of communication Effectiveness of education/training Speed of change adoption"
+  },
+  {
+    "id": "DMBOK2-C03-68",
+    "chapter": 3,
+    "section": "5 Metrics",
+    "pdf_page": 183,
+    "quote": "Performance of policies and processes (i.e., are they working appropriately?) Conformance to standards and procedures"
+  },
+  {
+    "id": "DMBOK2-C04-01",
+    "chapter": 4,
+    "section": "1.1 Business Drivers",
+    "pdf_page": 191,
+    "quote": "Data architects create and maintain organizational knowledge about data and the systems through which it moves."
+  },
+  {
+    "id": "DMBOK2-C04-02",
+    "chapter": 4,
+    "section": "1.3.3 Enterprise Data Architecture",
+    "pdf_page": 200,
+    "quote": "These data flows map the movement of data to business processes, locations, business roles, and to technical components."
+  },
+  {
+    "id": "DMBOK2-C04-03",
+    "chapter": 4,
+    "section": "1.3.3 Enterprise Data Architecture",
+    "pdf_page": 200,
+    "quote": "both need to be reflected in current state and target state (architecture perspective), and also in transition state (project perspective)"
+  },
+  {
+    "id": "DMBOK2-C04-04",
+    "chapter": 4,
+    "section": "1.3.3.1 Enterprise Data Model",
+    "pdf_page": 201,
+    "quote": "Models in each level map to models in other levels. Model lineage is created using these maps."
+  },
+  {
+    "id": "DMBOK2-C04-05",
+    "chapter": 4,
+    "section": "1.3.3.2 Data Flow Design",
+    "pdf_page": 206,
+    "quote": "Data flows are a type of data lineage documentation that depicts how data moves through business processes and systems."
+  },
+  {
+    "id": "DMBOK2-C04-06",
+    "chapter": 4,
+    "section": "2 Activities",
+    "pdf_page": 210,
+    "quote": "Uncontrolled data delivery, data copies, and interface 'spaghetti' relationships make organizations less efficient and reduce trust in the data."
+  },
+  {
+    "id": "DMBOK2-C04-07",
+    "chapter": 4,
+    "section": "2.1 Establish Data Architecture Practice",
+    "pdf_page": 212,
+    "quote": "Determining data lineage impact : Ensures that business rules in the applications along the data flow are consistent and traceable."
+  },
+  {
+    "id": "DMBOK2-C04-08",
+    "chapter": 4,
+    "section": "2.1 Establish Data Architecture Practice",
+    "pdf_page": 212,
+    "quote": "Replication is a common way to improve application performance and make data more readily available, but it can also create inconsistencies in the data."
+  },
+  {
+    "id": "DMBOK2-C04-09",
+    "chapter": 4,
+    "section": "2.1.1 Evaluate Existing Data Architecture Specifications",
+    "pdf_page": 212,
+    "quote": "Identify these documents and evaluate them for accuracy, completeness, and level of detail."
+  },
+  {
+    "id": "DMBOK2-C04-10",
+    "chapter": 4,
+    "section": "2.1.2 Develop a Roadmap",
+    "pdf_page": 213,
+    "quote": "Most business capabilities require data as an input; others also produce data on which other business capabilities are dependent."
+  },
+  {
+    "id": "DMBOK2-C04-11",
+    "chapter": 4,
+    "section": "2.1.2 Develop a Roadmap",
+    "pdf_page": 213,
+    "quote": "Product Management and Customer Management do not depend on anything else and thus constitute Master Data."
+  },
+  {
+    "id": "DMBOK2-C04-12",
+    "chapter": 4,
+    "section": "2.1.3 Manage Enterprise Requirements within Projects",
+    "pdf_page": 218,
+    "quote": "Enforce the use of system of record or other authoritative data."
+  },
+  {
+    "id": "DMBOK2-C04-13",
+    "chapter": 4,
+    "section": "3.2 Asset Management Software",
+    "pdf_page": 220,
+    "quote": "Because they compile an inventory of IT assets, such tools collect and contain valuable Metadata about systems and the data they contain."
+  },
+  {
+    "id": "DMBOK2-C04-14",
+    "chapter": 4,
+    "section": "4.1 Lifecycle Projections",
+    "pdf_page": 220,
+    "quote": "Architecture designs can be aspirational or future-looking, implemented and active, or plans for retirement. What they represent should be clearly documented."
+  },
+  {
+    "id": "DMBOK2-C04-15",
+    "chapter": 4,
+    "section": "4.1 Lifecycle Projections",
+    "pdf_page": 220,
+    "quote": "Current : Products currently supported and used Deployment period : Products deployed for use in the next 1-2 years"
+  },
+  {
+    "id": "DMBOK2-C04-16",
+    "chapter": 4,
+    "section": "4.1 Lifecycle Projections",
+    "pdf_page": 221,
+    "quote": "Retirement : Products the organization has retired or intends to retire within a year"
+  },
+  {
+    "id": "DMBOK2-C04-17",
+    "chapter": 4,
+    "section": "5 Implementation Guidelines",
+    "pdf_page": 223,
+    "quote": "Typically, the Enterprise Data Architecture starts with Master Data areas that are in great need for improvements"
+  },
+  {
+    "id": "DMBOK2-C04-18",
+    "chapter": 4,
+    "section": "6 Data Architecture Governance",
+    "pdf_page": 226,
+    "quote": "both a data architect and a Data Steward should be assigned to each subject area and even to each entity within a subject area"
+  },
+  {
+    "id": "DMBOK2-C07-01",
+    "chapter": 7,
+    "section": "1.1.1 Risk Reduction",
+    "pdf_page": 386,
+    "quote": "Information security begins by classifying an organization's data in order to identify which data requires protection."
+  },
+  {
+    "id": "DMBOK2-C07-02",
+    "chapter": 7,
+    "section": "1.3.1 Vulnerability",
+    "pdf_page": 390,
+    "quote": "Thus, it is critical to keep production data out of non-production environments."
+  },
+  {
+    "id": "DMBOK2-C07-03",
+    "chapter": 7,
+    "section": "1.3.4 Risk Classifications",
+    "pdf_page": 391,
+    "quote": "Risk classifications describe the sensitivity of the data and the likelihood that it might be sought after for malicious purposes."
+  },
+  {
+    "id": "DMBOK2-C07-04",
+    "chapter": 7,
+    "section": "1.3.11 Types of Data Security",
+    "pdf_page": 403,
+    "quote": "A user, process, or program should be allowed to access only the information allowed by its legitimate purpose."
+  },
+  {
+    "id": "DMBOK2-C07-05",
+    "chapter": 7,
+    "section": "1.3.12 Types of Data Security Restrictions",
+    "pdf_page": 406,
+    "quote": "Two concepts drive security restrictions: the level of confidentiality of data and regulation related to data."
+  },
+  {
+    "id": "DMBOK2-C07-06",
+    "chapter": 7,
+    "section": "1.3.12.1 Confidential Data",
+    "pdf_page": 407,
+    "quote": "A typical classification schema might include two or more of the five confidentiality classification levels listed here"
+  },
+  {
+    "id": "DMBOK2-C07-07",
+    "chapter": 7,
+    "section": "1.3.12.2.2 Industry or Contract-based Regulation",
+    "pdf_page": 411,
+    "quote": "In its contracts with vendors and partners, an organization may stipulate how specific pieces of information may or may not be used"
+  },
+  {
+    "id": "DMBOK2-C07-08",
+    "chapter": 7,
+    "section": "2.1.2 Regulatory Requirements",
+    "pdf_page": 423,
+    "quote": "subject area affected by each regulation. Add links to the corresponding security policies developed for compliance to these regulations"
+  },
+  {
+    "id": "DMBOK2-C07-09",
+    "chapter": 7,
+    "section": "2.3.1 Define Data Confidentiality Levels",
+    "pdf_page": 427,
+    "quote": "Each organization should create or adopt a classification scheme that meets its business requirements."
+  },
+  {
+    "id": "DMBOK2-C07-10",
+    "chapter": 7,
+    "section": "2.3.5.1 Assign Confidentiality Levels",
+    "pdf_page": 433,
+    "quote": "Data Stewards are responsible for evaluating and determining the appropriate confidentiality level for data based on the organization's classification scheme."
+  },
+  {
+    "id": "DMBOK2-C07-11",
+    "chapter": 7,
+    "section": "2.3.5.2 Assign Regulatory Categories",
+    "pdf_page": 433,
+    "quote": "This classification scheme provides a foundation for responding to internal and external audits."
+  },
+  {
+    "id": "DMBOK2-C07-12",
+    "chapter": 7,
+    "section": "2.3.5.4 Manage Security Policy Compliance",
+    "pdf_page": 437,
+    "quote": "Data Stewards will act in conjunction with Information Security and Corporate Counsel so that operational policies and technical controls are aligned."
+  },
+  {
+    "id": "DMBOK2-C07-13",
+    "chapter": 7,
+    "section": "2.3.5.4.1 Manage Regulatory Compliance",
+    "pdf_page": 437,
+    "quote": "Ensuring that all data requirements are measurable and therefore auditable (i.e., assertions like \"be careful\" are not measurable)"
+  },
+  {
+    "id": "DMBOK2-C07-14",
+    "chapter": 7,
+    "section": "2.3.5.4.1 Manage Regulatory Compliance",
+    "pdf_page": 438,
+    "quote": "Without an audit trail, there is no evidence of compliance. Controls should be designed to ensure they are auditable."
+  },
+  {
+    "id": "DMBOK2-C07-15",
+    "chapter": 7,
+    "section": "2.3.5.4.2 Audit Data Security and Compliance Activities",
+    "pdf_page": 438,
+    "quote": "auditors must be independent of the data and / or process involved in the audit to avoid any conflict of interest"
+  },
+  {
+    "id": "DMBOK2-C07-16",
+    "chapter": 7,
+    "section": "4.3 Data Security Attributes in Metadata",
+    "pdf_page": 442,
+    "quote": "category information should be documented in the Metadata repository and, if technology allows, tagged to the data"
+  },
+  {
+    "id": "DMBOK2-C07-17",
+    "chapter": 7,
+    "section": "4.4.5 Confidential Data Proliferation",
+    "pdf_page": 446,
+    "quote": "The more places confidential data is stored, the higher the risk of a breach."
+  },
+  {
+    "id": "DMBOK2-C07-18",
+    "chapter": 7,
+    "section": "5.3 Visibility into User Data Entitlement",
+    "pdf_page": 449,
+    "quote": "Classification of regulatory sensitivity should be a standard part of the data definition process."
+  },
+  {
+    "id": "DMBOK2-C07-19",
+    "chapter": 7,
+    "section": "5.5 Data Security in Cloud Environments",
+    "pdf_page": 452,
+    "quote": "Data security policies need to account for the distribution of data across the different service models."
+  },
+  {
+    "id": "DMBOK2-C08-01",
+    "chapter": 8,
+    "section": "1 Introduction",
+    "pdf_page": 458,
+    "quote": "the business meaning of the data, the business rules for transforming the data, and the operational history and lineage of the data"
+  },
+  {
+    "id": "DMBOK2-C08-02",
+    "chapter": 8,
+    "section": "1 Introduction",
+    "pdf_page": 459,
+    "quote": "Data Integration and Interoperability is critical to Data Warehousing and Business Intelligence, as well as Reference Data and Master Data Management"
+  },
+  {
+    "id": "DMBOK2-C08-03",
+    "chapter": 8,
+    "section": "1.3.1.2 Transform",
+    "pdf_page": 465,
+    "quote": "Semantic conversion : Conversion of data values to maintain consistent semantic representation."
+  },
+  {
+    "id": "DMBOK2-C08-04",
+    "chapter": 8,
+    "section": "1.3.1.5 Mapping",
+    "pdf_page": 468,
+    "quote": "targets to be loaded, rules for identifying target rows for update (if any), and any transformation rules or calculations to be applied"
+  },
+  {
+    "id": "DMBOK2-C08-05",
+    "chapter": 8,
+    "section": "1.3.2.3 Near-real-time and Event-driven",
+    "pdf_page": 470,
+    "quote": "State information and process dependencies must be monitored by the target application load process."
+  },
+  {
+    "id": "DMBOK2-C08-06",
+    "chapter": 8,
+    "section": "1.3.2.3 Near-real-time and Event-driven",
+    "pdf_page": 470,
+    "quote": "For example, process Master Data or dimensional data prior to transactional data that uses that Master Data."
+  },
+  {
+    "id": "DMBOK2-C08-07",
+    "chapter": 8,
+    "section": "1.3.6.1 Point-to-point",
+    "pdf_page": 475,
+    "quote": "The use of multiple interfaces to obtain data will lead to inconsistencies in the data sent to downstream systems."
+  },
+  {
+    "id": "DMBOK2-C08-08",
+    "chapter": 8,
+    "section": "1.3.6.2 Hub-and-spoke",
+    "pdf_page": 475,
+    "quote": "Data Warehouses, Data Marts, Operational Data Stores, and Master Data Management hubs are the most well-known examples of data hubs."
+  },
+  {
+    "id": "DMBOK2-C08-09",
+    "chapter": 8,
+    "section": "1.3.7.2 Orchestration and Process Controls",
+    "pdf_page": 478,
+    "quote": "Process Controls are the components that ensure shipment, delivery, extraction, and loading of data is accurate and complete."
+  },
+  {
+    "id": "DMBOK2-C08-10",
+    "chapter": 8,
+    "section": "1.3.7.8 Data-as-a-Service (DaaS)",
+    "pdf_page": 483,
+    "quote": "A common example includes information on the securities sold through a stock exchange and associated prices (current and historical)."
+  },
+  {
+    "id": "DMBOK2-C08-11",
+    "chapter": 8,
+    "section": "1.3.7.8 Data-as-a-Service (DaaS)",
+    "pdf_page": 483,
+    "quote": "the 'service' concept is also used within an organization to provide enterprise data or data services to various functions and operational systems"
+  },
+  {
+    "id": "DMBOK2-C08-12",
+    "chapter": 8,
+    "section": "1.3.8 Data Exchange Standards",
+    "pdf_page": 484,
+    "quote": "having an agreed upon exchange format or data layout between systems can significantly simplify data interoperability in an enterprise"
+  },
+  {
+    "id": "DMBOK2-C08-13",
+    "chapter": 8,
+    "section": "2.1.3 Document Data Lineage",
+    "pdf_page": 486,
+    "quote": "high-level data lineage: how the data under analysis is acquired or created by the organization, where it moves and is changed within the organization"
+  },
+  {
+    "id": "DMBOK2-C08-14",
+    "chapter": 8,
+    "section": "2.1.3 Document Data Lineage",
+    "pdf_page": 486,
+    "quote": "Detailed lineage can include the rules according to which data is changed, and the frequency of changes."
+  },
+  {
+    "id": "DMBOK2-C08-15",
+    "chapter": 8,
+    "section": "2.1.3 Document Data Lineage",
+    "pdf_page": 486,
+    "quote": "legacy data manipulation objects should be documented to ensure that the organization can analyze the impact of any changes in the data flow"
+  },
+  {
+    "id": "DMBOK2-C08-16",
+    "chapter": 8,
+    "section": "2.1.4 Profile Data",
+    "pdf_page": 487,
+    "quote": "Actual data structure and contents always differ from what is assumed."
+  },
+  {
+    "id": "DMBOK2-C08-17",
+    "chapter": 8,
+    "section": "2.1.4 Profile Data",
+    "pdf_page": 488,
+    "quote": "Assessing accuracy requires comparing to a definitive set of data that has been determined to be correct."
+  },
+  {
+    "id": "DMBOK2-C08-18",
+    "chapter": 8,
+    "section": "2.1.4 Profile Data",
+    "pdf_page": 488,
+    "quote": "The requirement to profile data must be balanced with an organization's security and privacy regulations."
+  },
+  {
+    "id": "DMBOK2-C08-19",
+    "chapter": 8,
+    "section": "2.1.5 Collect Business Rules",
+    "pdf_page": 488,
+    "quote": "Business rules fall into one of four categories: definitions of business terms, facts relating terms to each other, constraints or action assertions, and derivations."
+  },
+  {
+    "id": "DMBOK2-C08-20",
+    "chapter": 8,
+    "section": "2.1.5 Collect Business Rules",
+    "pdf_page": 488,
+    "quote": "For Master Data Management, business rules include match rules, merge rules, survivorship rules, and trust rules."
+  },
+  {
+    "id": "DMBOK2-C08-21",
+    "chapter": 8,
+    "section": "2.1.5 Collect Business Rules",
+    "pdf_page": 489,
+    "quote": "The business analyst or data steward can extract the rules from existing documentation (like use cases, specifications, or system code)"
+  },
+  {
+    "id": "DMBOK2-C08-22",
+    "chapter": 8,
+    "section": "2.2.3 Map Data Sources to Targets",
+    "pdf_page": 490,
+    "quote": "Mapping sources to targets involves specifying the rules for transforming data from one location and format to another."
+  },
+  {
+    "id": "DMBOK2-C08-23",
+    "chapter": 8,
+    "section": "2.3.6 Maintain DII Metadata",
+    "pdf_page": 494,
+    "quote": "Include business definitions and technical definitions (structure, format, size), as well as the transformation of data between the persistent data stores."
+  },
+  {
+    "id": "DMBOK2-C08-24",
+    "chapter": 8,
+    "section": "5.2 Organization and Cultural Change",
+    "pdf_page": 500,
+    "quote": "Review all data transformation mapping design and changes with by business subject matter experts in each involved system."
+  },
+  {
+    "id": "DMBOK2-C08-25",
+    "chapter": 8,
+    "section": "6 DII Governance",
+    "pdf_page": 500,
+    "quote": "a purely technical approach to DII can lead to errors in the data mappings and transformations"
+  },
+  {
+    "id": "DMBOK2-C08-26",
+    "chapter": 8,
+    "section": "6 DII Governance",
+    "pdf_page": 500,
+    "quote": "Business stakeholders should approve changes to any of these business rules."
+  },
+  {
+    "id": "DMBOK2-C08-27",
+    "chapter": 8,
+    "section": "6 DII Governance",
+    "pdf_page": 501,
+    "quote": "One approach is to determine what events trigger governance reviews (exceptions or critical events)."
+  },
+  {
+    "id": "DMBOK2-C08-28",
+    "chapter": 8,
+    "section": "6 DII Governance",
+    "pdf_page": 501,
+    "quote": "such as mandated reviews of models, auditing of Metadata, gating of deliverables, and required approvals for changes to transformation rules"
+  },
+  {
+    "id": "DMBOK2-C08-29",
+    "chapter": 8,
+    "section": "6.1 Data Sharing Agreements",
+    "pdf_page": 501,
+    "quote": "Prior to the development of interfaces or the provision of data electronically, develop a data sharing agreement or memorandum of understanding (MOU)"
+  },
+  {
+    "id": "DMBOK2-C08-30",
+    "chapter": 8,
+    "section": "6.1 Data Sharing Agreements",
+    "pdf_page": 502,
+    "quote": "acceptable use of data to be exchanged, approved by the business data stewards of the data in question"
+  },
+  {
+    "id": "DMBOK2-C08-31",
+    "chapter": 8,
+    "section": "6.1 Data Sharing Agreements",
+    "pdf_page": 502,
+    "quote": "The data sharing agreements should specify anticipated use and access to the data, restrictions on use, as well as expected service levels"
+  },
+  {
+    "id": "DMBOK2-C08-32",
+    "chapter": 8,
+    "section": "6.2 DII and Data Lineage",
+    "pdf_page": 502,
+    "quote": "Governance is required to ensure that knowledge of data origins and movement is documented."
+  },
+  {
+    "id": "DMBOK2-C08-33",
+    "chapter": 8,
+    "section": "6.2 DII and Data Lineage",
+    "pdf_page": 502,
+    "quote": "limitations to the uses of data and in order to abide by these, it is necessary to know where data moves and persists"
+  },
+  {
+    "id": "DMBOK2-C08-34",
+    "chapter": 8,
+    "section": "6.2 DII and Data Lineage",
+    "pdf_page": 502,
+    "quote": "that require organizations be able to describe where their data originated and how it has been changed as it has moved through various systems"
+  },
+  {
+    "id": "DMBOK2-C08-35",
+    "chapter": 8,
+    "section": "6.2 DII and Data Lineage",
+    "pdf_page": 502,
+    "quote": "Forward and backward data lineage (i.e., where did data get used and where did it come from) is critical as part of the impact analysis"
+  },
+  {
+    "id": "DMBOK2-C10-01",
+    "chapter": 10,
+    "section": "1.1 Business Drivers",
+    "pdf_page": 578,
+    "quote": "the ability to leverage such transactional data is highly dependent on the availability and quality of Reference and Master Data."
+  },
+  {
+    "id": "DMBOK2-C10-02",
+    "chapter": 10,
+    "section": "1.2 Goals and Principles",
+    "pdf_page": 579,
+    "quote": "Reference and Master Data belong to the organization, not to a particular application or department."
+  },
+  {
+    "id": "DMBOK2-C10-03",
+    "chapter": 10,
+    "section": "1.2 Goals and Principles",
+    "pdf_page": 579,
+    "quote": "Business Data Stewards are accountable for controlling and ensuring the quality of Reference Data."
+  },
+  {
+    "id": "DMBOK2-C10-04",
+    "chapter": 10,
+    "section": "1.2 Goals and Principles",
+    "pdf_page": 579,
+    "quote": "Changes to Reference Data values should follow a defined process; changes should be approved and communicated before they are implemented."
+  },
+  {
+    "id": "DMBOK2-C10-05",
+    "chapter": 10,
+    "section": "1.2 Goals and Principles",
+    "pdf_page": 579,
+    "quote": "Master Data values should be replicated only from the system of record."
+  },
+  {
+    "id": "DMBOK2-C10-06",
+    "chapter": 10,
+    "section": "1.3.1 Differences Between Master and Reference Data",
+    "pdf_page": 582,
+    "quote": "One challenge of Reference Data Management is that of ownership or responsibility for definition and maintenance."
+  },
+  {
+    "id": "DMBOK2-C10-07",
+    "chapter": 10,
+    "section": "1.3.1 Differences Between Master and Reference Data",
+    "pdf_page": 583,
+    "quote": "Determining responsibility for obtaining data and managing updates is part of RDM. Lack of accountability introduces risk"
+  },
+  {
+    "id": "DMBOK2-C10-08",
+    "chapter": 10,
+    "section": "1.3.1 Differences Between Master and Reference Data",
+    "pdf_page": 583,
+    "quote": "Because Master and Reference Data provide context for transactions, they shape the Transaction data entering an organization during operations"
+  },
+  {
+    "id": "DMBOK2-C10-09",
+    "chapter": 10,
+    "section": "1.3.2 Reference Data",
+    "pdf_page": 583,
+    "quote": "or other application functionality (e.g., synonym rings to enable search and discovery)."
+  },
+  {
+    "id": "DMBOK2-C10-10",
+    "chapter": 10,
+    "section": "1.3.2.1.1 Lists",
+    "pdf_page": 585,
+    "quote": "Definitions provide information that the label alone does not provide."
+  },
+  {
+    "id": "DMBOK2-C10-11",
+    "chapter": 10,
+    "section": "1.3.2.1.2 Cross-Reference Lists",
+    "pdf_page": 586,
+    "quote": "These code sets may be at different granularities or the same granularity with different values. Cross-reference data sets translate between codes values."
+  },
+  {
+    "id": "DMBOK2-C10-12",
+    "chapter": 10,
+    "section": "1.3.2.2 Proprietary or Internal Reference Data",
+    "pdf_page": 589,
+    "quote": "if different business units use different terms to describe the status of an account, then it is difficult for anyone in the organization"
+  },
+  {
+    "id": "DMBOK2-C10-13",
+    "chapter": 10,
+    "section": "1.3.2.2 Proprietary or Internal Reference Data",
+    "pdf_page": 589,
+    "quote": "Data Stewards must balance between the need to have common words for the same information and the need for flexibility"
+  },
+  {
+    "id": "DMBOK2-C10-14",
+    "chapter": 10,
+    "section": "1.3.2.3 Industry Reference Data",
+    "pdf_page": 589,
+    "quote": "Industry Reference Data is produced and maintained external to the organizations that use it, but it is required to understand transactions within those organizations."
+  },
+  {
+    "id": "DMBOK2-C10-15",
+    "chapter": 10,
+    "section": "1.3.2.5 Computational Reference Data",
+    "pdf_page": 590,
+    "quote": "foreign exchange calculations rely on managed, time stamped exchange value tables."
+  },
+  {
+    "id": "DMBOK2-C10-16",
+    "chapter": 10,
+    "section": "1.3.2.6 Standard Reference Data Set Metadata",
+    "pdf_page": 590,
+    "quote": "it is important to maintain key Metadata about Reference Data sets to ensure their lineage and currency are understood and maintained."
+  },
+  {
+    "id": "DMBOK2-C10-17",
+    "chapter": 10,
+    "section": "1.3.3.1 System of Record, System of Reference",
+    "pdf_page": 592,
+    "quote": "A System of Record is an authoritative system where data is created/captured, and/or maintained through a defined set of rules and expectations"
+  },
+  {
+    "id": "DMBOK2-C10-18",
+    "chapter": 10,
+    "section": "1.3.3.1 System of Record, System of Reference",
+    "pdf_page": 592,
+    "quote": "A System of Reference is an authoritative system where data consumers can obtain reliable data to support transactions and analysis"
+  },
+  {
+    "id": "DMBOK2-C10-19",
+    "chapter": 10,
+    "section": "1.3.3.2 Trusted Source, Golden Record",
+    "pdf_page": 592,
+    "quote": "Trusted Source is recognized as the 'best version of the truth' based on a combination of automated rules and manual stewardship of data content."
+  },
+  {
+    "id": "DMBOK2-C10-20",
+    "chapter": 10,
+    "section": "1.3.3.2 Trusted Source, Golden Record",
+    "pdf_page": 593,
+    "quote": "Promising that data is 'Golden' when it is not can undermine the confidence of data consumers."
+  },
+  {
+    "id": "DMBOK2-C10-21",
+    "chapter": 10,
+    "section": "1.3.3.3 Master Data Management",
+    "pdf_page": 595,
+    "quote": "it is best to approach Master Data Management one data domain at a time. Start small, with a handful of attributes,"
+  },
+  {
+    "id": "DMBOK2-C10-22",
+    "chapter": 10,
+    "section": "1.3.3.3 Master Data Management",
+    "pdf_page": 596,
+    "quote": "Reconciling and consolidating data across sources to provide a master record or the best version of the truth."
+  },
+  {
+    "id": "DMBOK2-C10-23",
+    "chapter": 10,
+    "section": "1.3.3.4.1 Data Model Management",
+    "pdf_page": 597,
+    "quote": "Source systems may present the identical attribute name but the data values are in completely different contexts"
+  },
+  {
+    "id": "DMBOK2-C10-24",
+    "chapter": 10,
+    "section": "1.3.3.4.1 Data Model Management",
+    "pdf_page": 598,
+    "quote": "source systems may present differently named attributes that at the enterprise level coalesce to a single attribute"
+  },
+  {
+    "id": "DMBOK2-C10-25",
+    "chapter": 10,
+    "section": "1.3.3.10 Industry Master Data – Reference Directories",
+    "pdf_page": 611,
+    "quote": "the trusted record will deviate from the reference directory with traceability to other source records, contributing attributes, and transformation rules."
+  },
+  {
+    "id": "DMBOK2-C10-26",
+    "chapter": 10,
+    "section": "1.3.4 Data Sharing Architecture",
+    "pdf_page": 611,
+    "quote": "Each Master Data subject area will likely have its own system of record."
+  },
+  {
+    "id": "DMBOK2-C10-27",
+    "chapter": 10,
+    "section": "2.1.2 Evaluate and Assess Data Sources",
+    "pdf_page": 615,
+    "quote": "The Data Stewards will need to collaborate with the business areas on reconciliation and agreement on attribute naming and enterprise level definitions."
+  },
+  {
+    "id": "DMBOK2-C10-28",
+    "chapter": 10,
+    "section": "2.1.3 Define Architectural Approach",
+    "pdf_page": 616,
+    "quote": "The data sharing hub architecture is particularly useful when there is no clear system of record for Master Data."
+  },
+  {
+    "id": "DMBOK2-C10-29",
+    "chapter": 10,
+    "section": "2.1.5 Define Stewardship and Maintenance Processes",
+    "pdf_page": 617,
+    "quote": "Technical solutions can do remarkable work matching, merging, and managing identifiers for master records. However, the process also requires stewardship"
+  },
+  {
+    "id": "DMBOK2-C10-30",
+    "chapter": 10,
+    "section": "2.2.1 Define Drivers and Requirements",
+    "pdf_page": 617,
+    "quote": "The most important Reference Data sets should drive requirements for a Reference Data Management system."
+  },
+  {
+    "id": "DMBOK2-C10-31",
+    "chapter": 10,
+    "section": "2.2.2 Assess Data Sources",
+    "pdf_page": 618,
+    "quote": "internal sources for Reference Data must be identified, compared, and assessed"
+  },
+  {
+    "id": "DMBOK2-C10-32",
+    "chapter": 10,
+    "section": "2.2.5 Define Stewardship and Maintenance Processes",
+    "pdf_page": 619,
+    "quote": "Reference Data requires stewardship to ensure that values are complete and current and that definitions are clear and understandable."
+  },
+  {
+    "id": "DMBOK2-C10-33",
+    "chapter": 10,
+    "section": "2.2.5 Define Stewardship and Maintenance Processes",
+    "pdf_page": 619,
+    "quote": "In some cases, stewards will be directly responsible for hands-on maintenance of Reference Data; in other cases, they may facilitate the process."
+  },
+  {
+    "id": "DMBOK2-C10-34",
+    "chapter": 10,
+    "section": "2.2.5 Define Stewardship and Maintenance Processes",
+    "pdf_page": 619,
+    "quote": "This could include: steward name, originating organization, expected frequency of updates, schedule for updates, processes using the Reference Data,"
+  },
+  {
+    "id": "DMBOK2-C10-35",
+    "chapter": 10,
+    "section": "2.2.5 Define Stewardship and Maintenance Processes",
+    "pdf_page": 620,
+    "quote": "These workflows themselves depend on identifying who within an organization is responsible for Reference Data content."
+  },
+  {
+    "id": "DMBOK2-C10-36",
+    "chapter": 10,
+    "section": "4.2 Monitor Data Movement",
+    "pdf_page": 621,
+    "quote": "Identify data lineage from / to administrative systems and applications"
+  },
+  {
+    "id": "DMBOK2-C10-37",
+    "chapter": 10,
+    "section": "4.4 Data Sharing Agreements",
+    "pdf_page": 624,
+    "quote": "establish sharing agreements that stipulate what data can be shared and under what conditions"
+  },
+  {
+    "id": "DMBOK2-C10-38",
+    "chapter": 10,
+    "section": "5 Organization and Cultural Change",
+    "pdf_page": 625,
+    "quote": "Perhaps the most challenging cultural change is central to governance: Determining which individuals are accountable for which decisions"
+  },
+  {
+    "id": "DMBOK2-C10-39",
+    "chapter": 10,
+    "section": "6 Reference and Master Data Governance",
+    "pdf_page": 625,
+    "quote": "Because they are shared resources, Reference and Master Data require governance and stewardship."
+  },
+  {
+    "id": "DMBOK2-C10-40",
+    "chapter": 10,
+    "section": "6.1 Metrics",
+    "pdf_page": 626,
+    "quote": "DQ dashboards can describe the quality of Reference and Master Data."
+  },
+  {
+    "id": "DMBOK2-C10-41",
+    "chapter": 10,
+    "section": "6.1 Metrics",
+    "pdf_page": 627,
+    "quote": "name or group responsible for data content, and how often the coverage is evaluated. They can be used to identify gaps in support."
+  },
+  {
+    "id": "DMBOK2-C12-01",
+    "chapter": 12,
+    "section": "1.1 Business Drivers",
+    "pdf_page": 692,
+    "quote": "Replicated and redundant dictionaries, repositories, and other Metadata storage"
+  },
+  {
+    "id": "DMBOK2-C12-02",
+    "chapter": 12,
+    "section": "1.1 Business Drivers",
+    "pdf_page": 692,
+    "quote": "Inconsistent definitions of data elements and risks associated with data misuse"
+  },
+  {
+    "id": "DMBOK2-C12-03",
+    "chapter": 12,
+    "section": "1.2 Goals and Principles",
+    "pdf_page": 693,
+    "quote": "The strategy should drive requirements, which should be defined before evaluating, purchasing, and installing Metadata management products."
+  },
+  {
+    "id": "DMBOK2-C12-04",
+    "chapter": 12,
+    "section": "1.2 Goals and Principles",
+    "pdf_page": 694,
+    "quote": "Create a feedback mechanism so that consumers can inform the Metadata Management team of Metadata that is incorrect or out-of-date"
+  },
+  {
+    "id": "DMBOK2-C12-05",
+    "chapter": 12,
+    "section": "1.3.1 Metadata vs. Data",
+    "pdf_page": 694,
+    "quote": "Metadata is a kind of data, and it should be managed as such."
+  },
+  {
+    "id": "DMBOK2-C12-06",
+    "chapter": 12,
+    "section": "1.3.2 Types of Metadata",
+    "pdf_page": 695,
+    "quote": "Metadata is often categorized into three types: business, technical, and operational."
+  },
+  {
+    "id": "DMBOK2-C12-07",
+    "chapter": 12,
+    "section": "1.3.2.1 Business Metadata",
+    "pdf_page": 696,
+    "quote": "Business rules, transformation rules, calculations, and derivations"
+  },
+  {
+    "id": "DMBOK2-C12-08",
+    "chapter": 12,
+    "section": "1.3.2.1 Business Metadata",
+    "pdf_page": 696,
+    "quote": "Data provenance and data lineage"
+  },
+  {
+    "id": "DMBOK2-C12-09",
+    "chapter": 12,
+    "section": "1.3.2.1 Business Metadata",
+    "pdf_page": 696,
+    "quote": "Designations of the system of record for data elements"
+  },
+  {
+    "id": "DMBOK2-C12-10",
+    "chapter": 12,
+    "section": "1.3.2.2 Technical Metadata",
+    "pdf_page": 697,
+    "quote": "Physical database table and column names"
+  },
+  {
+    "id": "DMBOK2-C12-11",
+    "chapter": 12,
+    "section": "1.3.2.2 Technical Metadata",
+    "pdf_page": 697,
+    "quote": "Source-to-target mapping documentation"
+  },
+  {
+    "id": "DMBOK2-C12-12",
+    "chapter": 12,
+    "section": "1.3.2.2 Technical Metadata",
+    "pdf_page": 697,
+    "quote": "Data lineage documentation, including upstream and downstream change impact information"
+  },
+  {
+    "id": "DMBOK2-C12-13",
+    "chapter": 12,
+    "section": "1.3.2.3 Operational Metadata",
+    "pdf_page": 697,
+    "quote": "Operational Metadata describes details of the processing and accessing of data."
+  },
+  {
+    "id": "DMBOK2-C12-14",
+    "chapter": 12,
+    "section": "1.3.2.3 Operational Metadata",
+    "pdf_page": 698,
+    "quote": "Results of audit, balance, control measurements"
+  },
+  {
+    "id": "DMBOK2-C12-15",
+    "chapter": 12,
+    "section": "1.3.3 ISO / IEC 11179 Metadata Registry Standard",
+    "pdf_page": 698,
+    "quote": "Part 4: Rules and Guidelines for the Formulation of Data Definitions"
+  },
+  {
+    "id": "DMBOK2-C12-16",
+    "chapter": 12,
+    "section": "1.3.5 Sources of Metadata",
+    "pdf_page": 700,
+    "quote": "The biggest risk is not knowing how much care was taken to develop and refine the definitions in the first place."
+  },
+  {
+    "id": "DMBOK2-C12-17",
+    "chapter": 12,
+    "section": "1.3.5 Sources of Metadata",
+    "pdf_page": 700,
+    "quote": "It is better to be intentional about developing definitions than to simply accept existing ones."
+  },
+  {
+    "id": "DMBOK2-C12-18",
+    "chapter": 12,
+    "section": "1.3.5 Sources of Metadata",
+    "pdf_page": 700,
+    "quote": "This is why the development of business Metadata requires stewardship."
+  },
+  {
+    "id": "DMBOK2-C12-19",
+    "chapter": 12,
+    "section": "1.3.5 Sources of Metadata",
+    "pdf_page": 701,
+    "quote": "Creating Metadata for its own sake rarely works well."
+  },
+  {
+    "id": "DMBOK2-C12-20",
+    "chapter": 12,
+    "section": "1.3.5 Sources of Metadata",
+    "pdf_page": 701,
+    "quote": "Stewards and other data management professionals should ensure that there are processes in place to maintain Metadata related to these processes."
+  },
+  {
+    "id": "DMBOK2-C12-21",
+    "chapter": 12,
+    "section": "1.3.5.2 Business Glossary",
+    "pdf_page": 701,
+    "quote": "document and store an organization's business concepts and terminology, definitions, and the relationships between those terms"
+  },
+  {
+    "id": "DMBOK2-C12-22",
+    "chapter": 12,
+    "section": "1.3.5.2 Business Glossary",
+    "pdf_page": 702,
+    "quote": "Data Steward use the business glossary to manage the lifecycle of terms and definitions"
+  },
+  {
+    "id": "DMBOK2-C12-23",
+    "chapter": 12,
+    "section": "1.3.5.2 Business Glossary",
+    "pdf_page": 702,
+    "quote": "Data stewards raise terminology and usage issues and help resolve differences across the organization."
+  },
+  {
+    "id": "DMBOK2-C12-24",
+    "chapter": 12,
+    "section": "1.3.5.2 Business Glossary",
+    "pdf_page": 702,
+    "quote": "Term name, definition, acronym or abbreviation, and any synonyms"
+  },
+  {
+    "id": "DMBOK2-C12-25",
+    "chapter": 12,
+    "section": "1.3.5.2 Business Glossary",
+    "pdf_page": 702,
+    "quote": "Business unit and or application responsible for managing the data associated with the terminology"
+  },
+  {
+    "id": "DMBOK2-C12-26",
+    "chapter": 12,
+    "section": "1.3.5.2 Business Glossary",
+    "pdf_page": 703,
+    "quote": "Conflicting definitions that need resolution, nature of the problem, action timeline"
+  },
+  {
+    "id": "DMBOK2-C12-27",
+    "chapter": 12,
+    "section": "1.3.5.2 Business Glossary",
+    "pdf_page": 703,
+    "quote": "Algorithms supporting definitions"
+  },
+  {
+    "id": "DMBOK2-C12-28",
+    "chapter": 12,
+    "section": "1.3.5.2 Business Glossary",
+    "pdf_page": 703,
+    "quote": "Official or authoritative source for the data supporting the term"
+  },
+  {
+    "id": "DMBOK2-C12-29",
+    "chapter": 12,
+    "section": "1.3.5.2 Business Glossary",
+    "pdf_page": 703,
+    "quote": "those in a pending status, and those that are missing definitions or other attributes"
+  },
+  {
+    "id": "DMBOK2-C12-30",
+    "chapter": 12,
+    "section": "1.3.5.5 Data Dictionaries",
+    "pdf_page": 704,
+    "quote": "A data dictionary defines the structure and contents of data sets, often for a single database, application, or warehouse."
+  },
+  {
+    "id": "DMBOK2-C12-31",
+    "chapter": 12,
+    "section": "1.3.5.5 Data Dictionaries",
+    "pdf_page": 704,
+    "quote": "This information, captured in the logical data model, is often lost when physical structures are deployed to production."
+  },
+  {
+    "id": "DMBOK2-C12-32",
+    "chapter": 12,
+    "section": "1.3.5.5 Data Dictionaries",
+    "pdf_page": 704,
+    "quote": "A data dictionary can help ensure that this information is not lost entirely to the organization"
+  },
+  {
+    "id": "DMBOK2-C12-33",
+    "chapter": 12,
+    "section": "1.3.5.8 Data Mapping Management Tools",
+    "pdf_page": 706,
+    "quote": "Vendors are now considering centralized repositories for the mapping specifications with capabilities to perform version control and change analysis between versions."
+  },
+  {
+    "id": "DMBOK2-C12-34",
+    "chapter": 12,
+    "section": "1.3.5.10 Directories and Catalogs",
+    "pdf_page": 706,
+    "quote": "a directory or catalog contains information about systems, sources, and locations of data within an organization"
+  },
+  {
+    "id": "DMBOK2-C12-35",
+    "chapter": 12,
+    "section": "1.3.5.12 Modeling Tools and Repositories",
+    "pdf_page": 707,
+    "quote": "Modeling tools are often the source of data dictionary content."
+  },
+  {
+    "id": "DMBOK2-C12-36",
+    "chapter": 12,
+    "section": "1.3.6.1 Centralized Metadata Architecture",
+    "pdf_page": 708,
+    "quote": "A centralized architecture consists of a single Metadata repository that contains copies of Metadata from the various sources."
+  },
+  {
+    "id": "DMBOK2-C12-37",
+    "chapter": 12,
+    "section": "1.3.6.1 Centralized Metadata Architecture",
+    "pdf_page": 708,
+    "quote": "Organizations with limited IT resources, or those seeking to automate as much as possible, may choose to avoid this architecture option."
+  },
+  {
+    "id": "DMBOK2-C12-38",
+    "chapter": 12,
+    "section": "1.3.6.1 Centralized Metadata Architecture",
+    "pdf_page": 709,
+    "quote": "Complex processes are necessary to ensure that changes in source Metadata are quickly replicated into the repository"
+  },
+  {
+    "id": "DMBOK2-C12-39",
+    "chapter": 12,
+    "section": "1.3.6.2 Distributed Metadata Architecture",
+    "pdf_page": 710,
+    "quote": "The Metadata retrieval engine responds to user requests by retrieving data from source systems in real time; there is no persistent repository."
+  },
+  {
+    "id": "DMBOK2-C12-40",
+    "chapter": 12,
+    "section": "1.3.6.2 Distributed Metadata Architecture",
+    "pdf_page": 711,
+    "quote": "No ability to support user-defined or manually inserted Metadata entries since there is no repository in which to place these additions"
+  },
+  {
+    "id": "DMBOK2-C12-41",
+    "chapter": 12,
+    "section": "1.3.6.3 Hybrid Metadata Architecture",
+    "pdf_page": 712,
+    "quote": "the repository design only accounts for the user-added Metadata, the critical standardized items, and the additions from manual sources"
+  },
+  {
+    "id": "DMBOK2-C12-42",
+    "chapter": 12,
+    "section": "1.3.6.3 Hybrid Metadata Architecture",
+    "pdf_page": 713,
+    "quote": "Additional overhead is required to link those initial results with the Metadata augmentation in the central repository"
+  },
+  {
+    "id": "DMBOK2-C12-43",
+    "chapter": 12,
+    "section": "2.2 Understand Metadata Requirements",
+    "pdf_page": 717,
+    "quote": "Processes and rules for updating Metadata (logging and referring for approval)"
+  },
+  {
+    "id": "DMBOK2-C12-44",
+    "chapter": 12,
+    "section": "2.2 Understand Metadata Requirements",
+    "pdf_page": 717,
+    "quote": "Some Metadata cannot be exposed because it will reveal the existence of highly protected data"
+  },
+  {
+    "id": "DMBOK2-C12-45",
+    "chapter": 12,
+    "section": "2.3 Define Metadata Architecture",
+    "pdf_page": 717,
+    "quote": "Design of the architecture depends on the specific requirements of the organization."
+  },
+  {
+    "id": "DMBOK2-C12-46",
+    "chapter": 12,
+    "section": "2.3.1 Create MetaModel",
+    "pdf_page": 718,
+    "quote": "Create a data model for the Metadata repository, or metamodel, as one of the first design steps after the Metadata strategy is complete"
+  },
+  {
+    "id": "DMBOK2-C12-47",
+    "chapter": 12,
+    "section": "2.4.1 Integrate Metadata",
+    "pdf_page": 723,
+    "quote": "provides an interim audit trail to assist repository managers when investigating Metadata source or quality issues"
+  },
+  {
+    "id": "DMBOK2-C12-48",
+    "chapter": 12,
+    "section": "4.1 Data Lineage and Impact Analysis",
+    "pdf_page": 725,
+    "quote": "The current version of the lineage based on programming code is referred to as 'As Implemented Lineage'"
+  },
+  {
+    "id": "DMBOK2-C12-49",
+    "chapter": 12,
+    "section": "4.1 Data Lineage and Impact Analysis",
+    "pdf_page": 725,
+    "quote": "lineage describe in mapping specification documents is referred to as 'As Designed Lineage'"
+  },
+  {
+    "id": "DMBOK2-C12-50",
+    "chapter": 12,
+    "section": "4.1 Data Lineage and Impact Analysis",
+    "pdf_page": 725,
+    "quote": "The limitations of a lineage build are based on the coverage of the Metadata management system."
+  },
+  {
+    "id": "DMBOK2-C12-51",
+    "chapter": 12,
+    "section": "4.1 Data Lineage and Impact Analysis",
+    "pdf_page": 726,
+    "quote": "The process of connecting the pieces of the data lineage referred to as stitching."
+  },
+  {
+    "id": "DMBOK2-C12-52",
+    "chapter": 12,
+    "section": "4.1 Data Lineage and Impact Analysis",
+    "pdf_page": 726,
+    "quote": "from its original locations (official source or system of record) until it lands in its final destination"
+  },
+  {
+    "id": "DMBOK2-C12-53",
+    "chapter": 12,
+    "section": "4.1 Data Lineage and Impact Analysis",
+    "pdf_page": 728,
+    "quote": "Limit the lineage discovery to data elements prioritized by the business"
+  },
+  {
+    "id": "DMBOK2-C12-54",
+    "chapter": 12,
+    "section": "4.1 Data Lineage and Impact Analysis",
+    "pdf_page": 729,
+    "quote": "Start at the source systems and identify all the immediate consumers"
+  },
+  {
+    "id": "DMBOK2-C12-55",
+    "chapter": 12,
+    "section": "4.1 Data Lineage and Impact Analysis",
+    "pdf_page": 729,
+    "quote": "What systems are impacted if the width of a specific column is changed?"
+  },
+  {
+    "id": "DMBOK2-C12-56",
+    "chapter": 12,
+    "section": "5 Implementation Guidelines",
+    "pdf_page": 730,
+    "quote": "Implement Metadata repositories using an open relational database platform."
+  },
+  {
+    "id": "DMBOK2-C12-57",
+    "chapter": 12,
+    "section": "5 Implementation Guidelines",
+    "pdf_page": 731,
+    "quote": "It should house current, planned, and historical versions of the Metadata."
+  },
+  {
+    "id": "DMBOK2-C12-58",
+    "chapter": 12,
+    "section": "5.1 Readiness Assessment / Risk Assessment",
+    "pdf_page": 731,
+    "quote": "Risk that the small set of SMEs who know the data will leave and take their knowledge with them"
+  },
+  {
+    "id": "DMBOK2-C12-59",
+    "chapter": 12,
+    "section": "5.1 Readiness Assessment / Risk Assessment",
+    "pdf_page": 731,
+    "quote": "The assessment should include the critical business data elements, available Metadata glossaries, lineage, data profiling and data quality processes"
+  },
+  {
+    "id": "DMBOK2-C12-60",
+    "chapter": 12,
+    "section": "6 Metadata Governance",
+    "pdf_page": 733,
+    "quote": "It is recommended that formal roles and responsibilities be assigned to dedicated resources, especially in large or business critical areas."
+  },
+  {
+    "id": "DMBOK2-C12-61",
+    "chapter": 12,
+    "section": "6.1 Process Controls",
+    "pdf_page": 733,
+    "quote": "The data governance team should be responsible for defining the standards and managing status changes for Metadata"
+  },
+  {
+    "id": "DMBOK2-C12-62",
+    "chapter": 12,
+    "section": "6.1 Process Controls",
+    "pdf_page": 733,
+    "quote": "More mature Metadata governance will require business terms and definitions to progress through varying status changes or governance gates"
+  },
+  {
+    "id": "DMBOK2-C12-63",
+    "chapter": 12,
+    "section": "6.1 Process Controls",
+    "pdf_page": 733,
+    "quote": "from a candidate term, to approved, to published, and to a final point in the lifecycle of replaced or retired"
+  },
+  {
+    "id": "DMBOK2-C12-64",
+    "chapter": 12,
+    "section": "6.2 Documentation of Metadata Solutions",
+    "pdf_page": 733,
+    "quote": "A master catalog of Metadata will include the sources and targets currently in scope."
+  },
+  {
+    "id": "DMBOK2-C12-65",
+    "chapter": 12,
+    "section": "6.3 Metadata Standards and Guidelines",
+    "pdf_page": 735,
+    "quote": "such rules as 'do not define a term by using the term' and completeness statements"
+  },
+  {
+    "id": "DMBOK2-C12-66",
+    "chapter": 12,
+    "section": "6.4 Metrics",
+    "pdf_page": 735,
+    "quote": "Compare ideal coverage of the enterprise Metadata (all artifacts and all instances within scope) to actual coverage."
+  },
+  {
+    "id": "DMBOK2-C12-67",
+    "chapter": 12,
+    "section": "6.4 Metrics",
+    "pdf_page": 736,
+    "quote": "Another metric would measure the percentage of attributes that have definitions, trending over time."
+  },
+  {
+    "id": "DMBOK2-C13-01",
+    "chapter": 13,
+    "section": "1 Introduction",
+    "pdf_page": 739,
+    "quote": "Many organizations fail to define what makes data fit for purpose."
+  },
+  {
+    "id": "DMBOK2-C13-02",
+    "chapter": 13,
+    "section": "1.3.1 Data Quality",
+    "pdf_page": 745,
+    "quote": "the expectations and needs of data consumers. That is, if the data is fit for the purposes to which they want to apply it."
+  },
+  {
+    "id": "DMBOK2-C13-03",
+    "chapter": 13,
+    "section": "1.3.1 Data Quality",
+    "pdf_page": 745,
+    "quote": "One of the challenges in managing the quality of data is that expectations related to quality are not always known."
+  },
+  {
+    "id": "DMBOK2-C13-04",
+    "chapter": 13,
+    "section": "1.3.2 Critical Data",
+    "pdf_page": 746,
+    "quote": "While specific drivers for criticality will differ by industry, there are common characteristics across organizations."
+  },
+  {
+    "id": "DMBOK2-C13-05",
+    "chapter": 13,
+    "section": "1.3.2 Critical Data",
+    "pdf_page": 746,
+    "quote": "required by: - Regulatory reporting - Financial reporting - Business policy - Ongoing operations - Business strategy"
+  },
+  {
+    "id": "DMBOK2-C13-06",
+    "chapter": 13,
+    "section": "1.3.2 Critical Data",
+    "pdf_page": 746,
+    "quote": "Master Data is critical by definition. Data sets or individual data elements can be assessed for criticality based on the processes that consume them"
+  },
+  {
+    "id": "DMBOK2-C13-07",
+    "chapter": 13,
+    "section": "1.3.2 Critical Data",
+    "pdf_page": 746,
+    "quote": "the nature of the reports they appear in, or the financial, regulatory, or reputational risk to the organization"
+  },
+  {
+    "id": "DMBOK2-C13-08",
+    "chapter": 13,
+    "section": "1.3.3 Data Quality Dimensions",
+    "pdf_page": 747,
+    "quote": "Data quality dimensions provide a vocabulary for defining data quality requirements."
+  },
+  {
+    "id": "DMBOK2-C13-09",
+    "chapter": 13,
+    "section": "1.3.3 Data Quality Dimensions",
+    "pdf_page": 747,
+    "quote": "The Strong-Wang framework (1996) focuses on data consumers' perceptions of data. It describes 15 dimensions across four general categories of data quality:"
+  },
+  {
+    "id": "DMBOK2-C13-10",
+    "chapter": 13,
+    "section": "1.3.3 Data Quality Dimensions",
+    "pdf_page": 748,
+    "quote": "Thomas Redman formulated a set of data quality dimension rooted in data structure"
+  },
+  {
+    "id": "DMBOK2-C13-11",
+    "chapter": 13,
+    "section": "1.3.3 Data Quality Dimensions",
+    "pdf_page": 750,
+    "quote": "Larry English presents a comprehensive set of dimensions divided into two broad categories: inherent and pragmatic"
+  },
+  {
+    "id": "DMBOK2-C13-12",
+    "chapter": 13,
+    "section": "1.3.3 Data Quality Dimensions",
+    "pdf_page": 751,
+    "quote": "In 2013, DAMA UK produced a white paper describing six core dimensions of data quality:"
+  },
+  {
+    "id": "DMBOK2-C13-13",
+    "chapter": 13,
+    "section": "1.3.3 Data Quality Dimensions",
+    "pdf_page": 752,
+    "quote": "The DAMA UK white paper also describes other characteristics that have an impact on quality."
+  },
+  {
+    "id": "DMBOK2-C13-14",
+    "chapter": 13,
+    "section": "1.3.3 Data Quality Dimensions",
+    "pdf_page": 753,
+    "quote": "While there is not a single, agreed-to set of data quality dimensions, these formulations contain common ideas."
+  },
+  {
+    "id": "DMBOK2-C13-15",
+    "chapter": 13,
+    "section": "1.3.3 Data Quality Dimensions",
+    "pdf_page": 753,
+    "quote": "characteristics that can be measured objectively (completeness, validity, format conformity) and others that depend on heavily context or on subjective interpretation (usability, reliability, reputation)"
+  },
+  {
+    "id": "DMBOK2-C13-16",
+    "chapter": 13,
+    "section": "1.3.4 Data Quality and Metadata",
+    "pdf_page": 758,
+    "quote": "A Metadata repository can house results of data quality measurements so that these are shared across the organization"
+  },
+  {
+    "id": "DMBOK2-C13-17",
+    "chapter": 13,
+    "section": "1.3.6 Data Quality Improvement Lifecycle",
+    "pdf_page": 760,
+    "quote": "the Shewhart / Deming cycle is a problem-solving model known as 'plan-do-check-act'"
+  },
+  {
+    "id": "DMBOK2-C13-18",
+    "chapter": 13,
+    "section": "1.3.7 Data Quality Business Rule Types",
+    "pdf_page": 763,
+    "quote": "describe how data should exist in order to be useful and usable within an organization. These rules can be aligned with dimensions of quality"
+  },
+  {
+    "id": "DMBOK2-C13-19",
+    "chapter": 13,
+    "section": "1.3.7 Data Quality Business Rule Types",
+    "pdf_page": 763,
+    "quote": "Definitional conformance : Confirm that the same understanding of data definitions is implemented and used properly in processes across the organization."
+  },
+  {
+    "id": "DMBOK2-C13-20",
+    "chapter": 13,
+    "section": "1.3.8 Common Causes of Data Quality Issues",
+    "pdf_page": 765,
+    "quote": "Many issues will have multiple causes and contributing factors"
+  },
+  {
+    "id": "DMBOK2-C13-21",
+    "chapter": 13,
+    "section": "1.3.8.3 Issues Caused by Data Processing Functions",
+    "pdf_page": 770,
+    "quote": "Source systems may change structures without informing downstream consumers (both human and system) or without providing sufficient time to account for the changes."
+  },
+  {
+    "id": "DMBOK2-C13-22",
+    "chapter": 13,
+    "section": "1.3.9 Data Profiling",
+    "pdf_page": 774,
+    "quote": "Results from the profiling engine must be assessed by an analyst to determine whether data conforms to rules and other requirements."
+  },
+  {
+    "id": "DMBOK2-C13-23",
+    "chapter": 13,
+    "section": "2.3 Identify Critical Data and Business Rules",
+    "pdf_page": 781,
+    "quote": "Data can be prioritized based on factors such as regulatory requirements, financial value, and direct impact on customers."
+  },
+  {
+    "id": "DMBOK2-C13-24",
+    "chapter": 13,
+    "section": "2.3 Identify Critical Data and Business Rules",
+    "pdf_page": 781,
+    "quote": "The result of the importance analysis is a ranked list of data, which the Data Quality team can use to focus their work efforts."
+  },
+  {
+    "id": "DMBOK2-C13-25",
+    "chapter": 13,
+    "section": "2.3 Identify Critical Data and Business Rules",
+    "pdf_page": 781,
+    "quote": "Often rules themselves are not explicitly documented."
+  },
+  {
+    "id": "DMBOK2-C13-26",
+    "chapter": 13,
+    "section": "2.3 Identify Critical Data and Business Rules",
+    "pdf_page": 782,
+    "quote": "Measurements that describe whether data is fit for use should be developed in relation to known uses and measurable rules"
+  },
+  {
+    "id": "DMBOK2-C13-27",
+    "chapter": 13,
+    "section": "2.4 Perform an Initial Data Quality Assessment",
+    "pdf_page": 783,
+    "quote": "Develop hypotheses about root causes of data issues - Meet with Data Stewards, SMEs, and data consumers to confirm issues and priorities"
+  },
+  {
+    "id": "DMBOK2-C13-28",
+    "chapter": 13,
+    "section": "2.5 Identify and Prioritize Potential Improvements",
+    "pdf_page": 784,
+    "quote": "It helps identify issues, but does not identify root causes, nor does it determine the impact of issues to business processes."
+  },
+  {
+    "id": "DMBOK2-C13-29",
+    "chapter": 13,
+    "section": "2.6 Define Goals for Data Quality Improvement",
+    "pdf_page": 785,
+    "quote": "determine ROI of fixes based on: The criticality (importance ranking) of the data affected Amount of data affected The age of the data"
+  },
+  {
+    "id": "DMBOK2-C13-30",
+    "chapter": 13,
+    "section": "2.7.1 Manage Data Quality Rules",
+    "pdf_page": 787,
+    "quote": "Dimensions of quality help people understand what is being measured. Consistent application of dimensions will help with the measurement and issue management processes."
+  },
+  {
+    "id": "DMBOK2-C13-31",
+    "chapter": 13,
+    "section": "2.7.1 Manage Data Quality Rules",
+    "pdf_page": 787,
+    "quote": "Data Quality Analysts should not guess at rules. Rules should be tested against actual data."
+  },
+  {
+    "id": "DMBOK2-C13-32",
+    "chapter": 13,
+    "section": "2.7.1 Manage Data Quality Rules",
+    "pdf_page": 787,
+    "quote": "Confirmed by SMEs : The goal of the rules is to describe how the data should look."
+  },
+  {
+    "id": "DMBOK2-C13-33",
+    "chapter": 13,
+    "section": "2.7.2 Measure and Monitor Data Quality",
+    "pdf_page": 788,
+    "quote": "Measurements intended to inform data consumers will focus on critical data elements and relationships"
+  },
+  {
+    "id": "DMBOK2-C13-34",
+    "chapter": 13,
+    "section": "2.7.2 Measure and Monitor Data Quality",
+    "pdf_page": 789,
+    "quote": "In most cases, it is worthwhile to put in place measurements that monitor functions similar to those that have had problems."
+  },
+  {
+    "id": "DMBOK2-C13-35",
+    "chapter": 13,
+    "section": "2.7.2 Measure and Monitor Data Quality",
+    "pdf_page": 792,
+    "quote": "Provide continuous monitoring by incorporating control and measurement processes into the information processing flow."
+  },
+  {
+    "id": "DMBOK2-C13-36",
+    "chapter": 13,
+    "section": "2.7.2 Measure and Monitor Data Quality",
+    "pdf_page": 792,
+    "quote": "Measurements can be taken at three levels of granularity: the data element value, data instance or record, or the data set."
+  },
+  {
+    "id": "DMBOK2-C13-37",
+    "chapter": 13,
+    "section": "2.7.3 Develop Operational Procedures for Managing Data Issues",
+    "pdf_page": 793,
+    "quote": "review the symptoms of the data quality incident, trace the lineage of the data in question, identify the problem and where it originated"
+  },
+  {
+    "id": "DMBOK2-C13-38",
+    "chapter": 13,
+    "section": "2.7.3 Develop Operational Procedures for Managing Data Issues",
+    "pdf_page": 794,
+    "quote": "The work of root cause analysis requires input from technical and business SMEs."
+  },
+  {
+    "id": "DMBOK2-C13-39",
+    "chapter": 13,
+    "section": "2.7.3 Develop Operational Procedures for Managing Data Issues",
+    "pdf_page": 794,
+    "quote": "Taking no action based on the cost and impact of correction versus the value of the data correction"
+  },
+  {
+    "id": "DMBOK2-C13-40",
+    "chapter": 13,
+    "section": "2.7.3 Develop Operational Procedures for Managing Data Issues",
+    "pdf_page": 795,
+    "quote": "the Data Quality team must confer with the business data owners to determine the best way to resolve the issue"
+  },
+  {
+    "id": "DMBOK2-C13-41",
+    "chapter": 13,
+    "section": "2.7.3 Develop Operational Procedures for Managing Data Issues",
+    "pdf_page": 795,
+    "quote": "Include a description of the issue and the root causes, options for remediation, and the decision on how to resolve the issue."
+  },
+  {
+    "id": "DMBOK2-C13-42",
+    "chapter": 13,
+    "section": "2.7.3 Develop Operational Procedures for Managing Data Issues",
+    "pdf_page": 796,
+    "quote": "it is valuable to define a standard vocabulary for the concepts used. Doing so will simplify classification and reporting."
+  },
+  {
+    "id": "DMBOK2-C13-43",
+    "chapter": 13,
+    "section": "2.7.3 Develop Operational Procedures for Managing Data Issues",
+    "pdf_page": 796,
+    "quote": "Standardization also makes it easier to measure the volume of issues and activities, identify patterns and interdependencies between systems and participants"
+  },
+  {
+    "id": "DMBOK2-C13-44",
+    "chapter": 13,
+    "section": "2.7.3 Develop Operational Procedures for Managing Data Issues",
+    "pdf_page": 796,
+    "quote": "Data quality issue handling requires a well-defined system of escalation based on the impact, duration, or urgency of an issue."
+  },
+  {
+    "id": "DMBOK2-C13-45",
+    "chapter": 13,
+    "section": "2.7.4 Establish Data Quality Service Level Agreements",
+    "pdf_page": 797,
+    "quote": "A data quality Service Level Agreement (SLA) specifies an organization's expectations for response and remediation for data quality issues in each system."
+  },
+  {
+    "id": "DMBOK2-C13-46",
+    "chapter": 13,
+    "section": "2.7.4 Establish Data Quality Service Level Agreements",
+    "pdf_page": 797,
+    "quote": "Expectations for quality for each data element for each of the identified dimensions in each application or system in the data value chain"
+  },
+  {
+    "id": "DMBOK2-C13-47",
+    "chapter": 13,
+    "section": "2.7.4 Establish Data Quality Service Level Agreements",
+    "pdf_page": 798,
+    "quote": "the acceptability thresholds defined by the business clients"
+  },
+  {
+    "id": "DMBOK2-C13-48",
+    "chapter": 13,
+    "section": "2.7.5 Develop Data Quality Reporting",
+    "pdf_page": 798,
+    "quote": "Data quality scorecard, which provides a high-level view of the scores associated with various metrics"
+  },
+  {
+    "id": "DMBOK2-C13-49",
+    "chapter": 13,
+    "section": "3.4 Data Quality Rule Templates",
+    "pdf_page": 800,
+    "quote": "Consistent formulation of rules makes it easier to translate business needs into code"
+  },
+  {
+    "id": "DMBOK2-C13-50",
+    "chapter": 13,
+    "section": "4.1 Preventive Actions",
+    "pdf_page": 801,
+    "quote": "Ensure staff in upstream systems understand the impact of their data on downstream users."
+  },
+  {
+    "id": "DMBOK2-C13-51",
+    "chapter": 13,
+    "section": "4.2 Corrective Actions",
+    "pdf_page": 803,
+    "quote": "corrections with scores below the level of confidence are presented to the data steward for review and approval"
+  },
+  {
+    "id": "DMBOK2-C13-52",
+    "chapter": 13,
+    "section": "4.2 Corrective Actions",
+    "pdf_page": 803,
+    "quote": "The alternative of making corrections and committing the updated records directly in production environments is extremely risky."
+  },
+  {
+    "id": "DMBOK2-C13-53",
+    "chapter": 13,
+    "section": "4.4 Effective Data Quality Metrics",
+    "pdf_page": 804,
+    "quote": "Metrics should be understood and approved by key stakeholders (e.g., business owners and Data Stewards)."
+  },
+  {
+    "id": "DMBOK2-C13-54",
+    "chapter": 13,
+    "section": "4.4 Effective Data Quality Metrics",
+    "pdf_page": 804,
+    "quote": "The business data owner is accountable"
+  },
+  {
+    "id": "DMBOK2-C13-55",
+    "chapter": 13,
+    "section": "4.4 Effective Data Quality Metrics",
+    "pdf_page": 805,
+    "quote": "Tracking helps Data Quality team members monitor activities within the scope of a data quality SLA and data sharing agreement"
+  },
+  {
+    "id": "DMBOK2-C13-56",
+    "chapter": 13,
+    "section": "4.5 Statistical Process Control",
+    "pdf_page": 805,
+    "quote": "Statistical Process Control (SPC) is a method to manage processes by analyzing measurements of variation in process inputs, outputs, or steps."
+  },
+  {
+    "id": "DMBOK2-C13-57",
+    "chapter": 13,
+    "section": "4.6 Root Cause Analysis",
+    "pdf_page": 807,
+    "quote": "A root cause of a problem is a factor that, if eliminated, would remove the problem itself."
+  },
+  {
+    "id": "DMBOK2-C13-58",
+    "chapter": 13,
+    "section": "4.6 Root Cause Analysis",
+    "pdf_page": 808,
+    "quote": "Common techniques for root cause analysis include Pareto analysis (the 80/20 rule), fishbone diagram analysis, track and trace, process analysis, and the Five Whys"
+  },
+  {
+    "id": "DMBOK2-C13-59",
+    "chapter": 13,
+    "section": "6 Data Quality and Data Governance",
+    "pdf_page": 813,
+    "quote": "Business and operational data stewards, and data owners who can identify critical data, define standards and quality expectations, and prioritize remediation of data issues"
+  },
+  {
+    "id": "DMBOK2-C13-60",
+    "chapter": 13,
+    "section": "6.1 Data Quality Policy",
+    "pdf_page": 814,
+    "quote": "Each policy should include: - Purpose, scope and applicability of the policy - Definitions of terms"
+  },
+  {
+    "id": "DMBOK2-C13-61",
+    "chapter": 13,
+    "section": "6.2 Metrics",
+    "pdf_page": 815,
+    "quote": "Counts of issues by dimensions of data quality - Issues per business function and their statuses (resolved, outstanding, escalated)"
+  },
+  {
+    "id": "DMBOK2-C15-01",
+    "chapter": 15,
+    "section": "1 Introduction",
+    "pdf_page": 876,
+    "quote": "it can be used to focus on a single Knowledge Area or even a single process"
+  },
+  {
+    "id": "DMBOK2-C15-02",
+    "chapter": 15,
+    "section": "1 Introduction",
+    "pdf_page": 877,
+    "quote": "A certain level of organizational maturity is required to conduct the assessment in the first place"
+  },
+  {
+    "id": "DMBOK2-C15-03",
+    "chapter": 15,
+    "section": "1.1 Business Drivers",
+    "pdf_page": 877,
+    "quote": "The data governance function requires a maturity assessment for planning and compliance purposes."
+  },
+  {
+    "id": "DMBOK2-C15-04",
+    "chapter": 15,
+    "section": "1.3.1 Assessment Levels and Characteristics",
+    "pdf_page": 881,
+    "quote": "CMMs usually define five or six levels of maturity, each with its own characteristics"
+  },
+  {
+    "id": "DMBOK2-C15-05",
+    "chapter": 15,
+    "section": "1.3.2 Assessment Criteria",
+    "pdf_page": 885,
+    "quote": "criteria could be formulated based on the categories in the Context Diagram"
+  },
+  {
+    "id": "DMBOK2-C15-06",
+    "chapter": 15,
+    "section": "1.3.2 Assessment Criteria",
+    "pdf_page": 886,
+    "quote": "People and resources : To what degree is the organization staffed to carry out the activity?"
+  },
+  {
+    "id": "DMBOK2-C15-07",
+    "chapter": 15,
+    "section": "1.3.3 Existing DMMA Frameworks",
+    "pdf_page": 888,
+    "quote": "Organizations should evaluate several models before choosing a vendor or before developing their own framework."
+  },
+  {
+    "id": "DMBOK2-C15-08",
+    "chapter": 15,
+    "section": "1.3.3.1 CMMI Data Management Maturity Model (DMM)",
+    "pdf_page": 888,
+    "quote": "The CMMI (Capability Maturity Model Institute) has developed the CMMI-DMM (Data Management Maturity Model)"
+  },
+  {
+    "id": "DMBOK2-C15-09",
+    "chapter": 15,
+    "section": "1.3.3.2 EDM Council DCAM",
+    "pdf_page": 888,
+    "quote": "The Enterprise Data Management Council, an industry advocacy organization for financial services headquartered in the United States"
+  },
+  {
+    "id": "DMBOK2-C15-10",
+    "chapter": 15,
+    "section": "2 Activities",
+    "pdf_page": 890,
+    "quote": "The goal is to reach a consensus view of current state capabilities, supported by evidence."
+  },
+  {
+    "id": "DMBOK2-C15-11",
+    "chapter": 15,
+    "section": "2 Activities",
+    "pdf_page": 890,
+    "quote": "Models may lose rigor or traceability to original intent if shortened or edited."
+  },
+  {
+    "id": "DMBOK2-C15-12",
+    "chapter": 15,
+    "section": "2.1.3 Define Organizational Scope",
+    "pdf_page": 891,
+    "quote": "For a first assessment, it is usually best to define a manageable scope"
+  },
+  {
+    "id": "DMBOK2-C15-13",
+    "chapter": 15,
+    "section": "2.3.1 Report Assessment Results",
+    "pdf_page": 896,
+    "quote": "Governance and metrics to measure progress"
+  },
+  {
+    "id": "DMBOK2-C15-14",
+    "chapter": 15,
+    "section": "2.4.1 Identify Actions and Create a Roadmap",
+    "pdf_page": 897,
+    "quote": "ratings can be quickly operationalized into ongoing measures, especially for activities where change is desired"
+  },
+  {
+    "id": "DMBOK2-C15-15",
+    "chapter": 15,
+    "section": "2.5 Re-assess Maturity",
+    "pdf_page": 898,
+    "quote": "Re-assessments should be conducted at regular intervals. They are part of the cycle of continuous improvement"
+  },
+  {
+    "id": "DMBOK2-C15-16",
+    "chapter": 15,
+    "section": "2.5 Re-assess Maturity",
+    "pdf_page": 898,
+    "quote": "Repeat DMM assessment as necessary on a published schedule"
+  },
+  {
+    "id": "DMBOK2-C15-17",
+    "chapter": 15,
+    "section": "4.2 DAMA-DMBOK Framework Use",
+    "pdf_page": 901,
+    "quote": "The DAMA-DMBOK can be used to prepare for or establish criteria for a DMMA."
+  },
+  {
+    "id": "DMBOK2-C15-18",
+    "chapter": 15,
+    "section": "4.2 DAMA-DMBOK Framework Use",
+    "pdf_page": 901,
+    "quote": "This fast, checklist approach can be used to determine areas that need deeper analysis, represent gaps, or point to hot spots for remediation."
+  },
+  {
+    "id": "DMBOK2-C15-19",
+    "chapter": 15,
+    "section": "6.1 DMMA Process Oversight",
+    "pdf_page": 903,
+    "quote": "If formal Data Governance is not in place, then oversight defaults to the steering committee or management layer that initiated the DMMA."
+  },
+  {
+    "id": "DMBOK2-C15-20",
+    "chapter": 15,
+    "section": "6.1 DMMA Process Oversight",
+    "pdf_page": 903,
+    "quote": "The process should have an executive sponsor, ideally the CDO, to ensure improvements in data management activities map directly to business objectives."
+  },
+  {
+    "id": "DMBOK2-C15-21",
+    "chapter": 15,
+    "section": "6.2 Metrics",
+    "pdf_page": 903,
+    "quote": "In addition to being a core component of any improvement strategy, metrics are a key communications tool."
+  },
+  {
+    "id": "DMBOK2-C15-22",
+    "chapter": 15,
+    "section": "6.2 Metrics",
+    "pdf_page": 904,
+    "quote": "Each organization should develop metrics tailored to its target state roadmap."
+  },
+  {
+    "id": "DMBOK2-C15-23",
+    "chapter": 15,
+    "section": "6.2 Metrics",
+    "pdf_page": 905,
+    "quote": "The rate at which an organization is improving its capability. A baseline is established through the DMMA. Periodic reassessment is used to trend improvement."
+  },
+  {
+    "id": "DMBOK2-C16-01",
+    "chapter": 16,
+    "section": "1 Introduction",
+    "pdf_page": 908,
+    "quote": "To do so, they need to clarify basic questions about ownership, collaboration, accountability, and decision-making."
+  },
+  {
+    "id": "DMBOK2-C16-02",
+    "chapter": 16,
+    "section": "1 Introduction",
+    "pdf_page": 908,
+    "quote": "There is no perfect organizational structure for either."
+  },
+  {
+    "id": "DMBOK2-C16-03",
+    "chapter": 16,
+    "section": "3 Data Management Organizational Constructs",
+    "pdf_page": 912,
+    "quote": "The operating model is a framework articulating roles, responsibilities, and decision-making processes."
+  },
+  {
+    "id": "DMBOK2-C16-04",
+    "chapter": 16,
+    "section": "3 Data Management Organizational Constructs",
+    "pdf_page": 912,
+    "quote": "the operating model is not an org chart"
+  },
+  {
+    "id": "DMBOK2-C16-05",
+    "chapter": 16,
+    "section": "3 Data Management Organizational Constructs",
+    "pdf_page": 912,
+    "quote": "It facilitates communication and provides a process to resolve issues."
+  },
+  {
+    "id": "DMBOK2-C16-06",
+    "chapter": 16,
+    "section": "3 Data Management Organizational Constructs",
+    "pdf_page": 912,
+    "quote": "overview of the pros and cons of decentralized, network, hybrid, federated, and centralized operating models"
+  },
+  {
+    "id": "DMBOK2-C16-07",
+    "chapter": 16,
+    "section": "3.1 Decentralized Operating Model",
+    "pdf_page": 913,
+    "quote": "It is also often difficult to define data ownership with a decentralized model."
+  },
+  {
+    "id": "DMBOK2-C16-08",
+    "chapter": 16,
+    "section": "3.2 Network Operating Model",
+    "pdf_page": 914,
+    "quote": "a documented series of connections and accountabilities via a RACI (Responsible, Accountable, Consulted, and Informed) matrix"
+  },
+  {
+    "id": "DMBOK2-C16-09",
+    "chapter": 16,
+    "section": "3.2 Network Operating Model",
+    "pdf_page": 915,
+    "quote": "The addition of a RACI helps create accountability without impacting the organizational charts."
+  },
+  {
+    "id": "DMBOK2-C16-10",
+    "chapter": 16,
+    "section": "3.3 Centralized Operating Model",
+    "pdf_page": 917,
+    "quote": "There is one person at the top. Decision-making is easier because accountability is clear."
+  },
+  {
+    "id": "DMBOK2-C16-11",
+    "chapter": 16,
+    "section": "3.4 Hybrid Operating Model",
+    "pdf_page": 918,
+    "quote": "a centralized data management Center of Excellence works with decentralized business unit groups, usually through both an executive steering committee"
+  },
+  {
+    "id": "DMBOK2-C16-12",
+    "chapter": 16,
+    "section": "3.7 DMO Alternatives and Design Considerations",
+    "pdf_page": 922,
+    "quote": "Most organizations start with a decentralized model before they move toward a formal Data Management Organization (DMO)."
+  },
+  {
+    "id": "DMBOK2-C16-13",
+    "chapter": 16,
+    "section": "3.7 DMO Alternatives and Design Considerations",
+    "pdf_page": 923,
+    "quote": "Ensure that any leadership forum (steering committee, advisory council, board) is a decision-making body"
+  },
+  {
+    "id": "DMBOK2-C16-14",
+    "chapter": 16,
+    "section": "3.7 DMO Alternatives and Design Considerations",
+    "pdf_page": 923,
+    "quote": "Consider pilot programs and waves of implementation"
+  },
+  {
+    "id": "DMBOK2-C16-15",
+    "chapter": 16,
+    "section": "4 Critical Success Factors",
+    "pdf_page": 924,
+    "quote": "success of effective Data Management Organizations, regardless of their structure: 1. Executive sponsorship 2. Clear vision 3. Proactive change management 4. Leadership alignment"
+  },
+  {
+    "id": "DMBOK2-C16-16",
+    "chapter": 16,
+    "section": "4.7 Orientation and Training",
+    "pdf_page": 926,
+    "quote": "Data stewards, owners, and custodians (i.e., those on the frontlines of change) will require indepth understanding of the data management initiative."
+  },
+  {
+    "id": "DMBOK2-C16-17",
+    "chapter": 16,
+    "section": "4.7 Orientation and Training",
+    "pdf_page": 926,
+    "quote": "This means training on new policies, processes, techniques, procedures, and even tools."
+  },
+  {
+    "id": "DMBOK2-C16-18",
+    "chapter": 16,
+    "section": "4.8 Adoption Measurement",
+    "pdf_page": 926,
+    "quote": "It is important to build metrics around the progress and adoption of the data management guidelines"
+  },
+  {
+    "id": "DMBOK2-C16-19",
+    "chapter": 16,
+    "section": "4.9 Adherence to Guiding Principles",
+    "pdf_page": 927,
+    "quote": "A guiding principle is a statement that articulates shared organizational values, underlies strategic vision and mission, and serves as a basis for integrated decision-making."
+  },
+  {
+    "id": "DMBOK2-C16-20",
+    "chapter": 16,
+    "section": "4.10 Evolution Not Revolution",
+    "pdf_page": 928,
+    "quote": "Incrementally improving the way that data is managed and prioritized by business objectives will ensure that new policies and processes are adopted"
+  },
+  {
+    "id": "DMBOK2-C16-21",
+    "chapter": 16,
+    "section": "5.1 Identify Current Data Management Participants",
+    "pdf_page": 928,
+    "quote": "Ensure that the roles are assigned to the right people at the right level within the organization"
+  },
+  {
+    "id": "DMBOK2-C16-22",
+    "chapter": 16,
+    "section": "5.2 Identify Committee Participants",
+    "pdf_page": 929,
+    "quote": "some governance work will need to be done by a Data Governance Steering Committee and by working groups"
+  },
+  {
+    "id": "DMBOK2-C16-23",
+    "chapter": 16,
+    "section": "5.2 Identify Committee Participants",
+    "pdf_page": 929,
+    "quote": "It is often easier to take advantage of existing committees to advance data management topics than it is to start a new one."
+  },
+  {
+    "id": "DMBOK2-C16-24",
+    "chapter": 16,
+    "section": "5.3 Identify and Analyze Stakeholders",
+    "pdf_page": 929,
+    "quote": "They include individual SMEs, senior leaders, teams of employees, committees, customers, government or regulatory agencies, brokers, agents, vendors, etc."
+  },
+  {
+    "id": "DMBOK2-C16-25",
+    "chapter": 16,
+    "section": "5.3 Identify and Analyze Stakeholders",
+    "pdf_page": 929,
+    "quote": "Internal stakeholders can come from IT, operations, compliance, legal, HR, finance or other lines of business."
+  },
+  {
+    "id": "DMBOK2-C16-26",
+    "chapter": 16,
+    "section": "5.3 Identify and Analyze Stakeholders",
+    "pdf_page": 929,
+    "quote": "A stakeholder analysis can help the organization determine the best approach to engaging participants in the data management process"
+  },
+  {
+    "id": "DMBOK2-C16-27",
+    "chapter": 16,
+    "section": "5.4 Involve the Stakeholders",
+    "pdf_page": 930,
+    "quote": "it is important to clearly articulate why each of the stakeholders should be involved"
+  },
+  {
+    "id": "DMBOK2-C16-28",
+    "chapter": 16,
+    "section": "6.3 Data Quality",
+    "pdf_page": 936,
+    "quote": "align the Data Quality operating model to that of the overall Data Management Organization"
+  },
+  {
+    "id": "DMBOK2-C16-29",
+    "chapter": 16,
+    "section": "7.2.2 Business Roles",
+    "pdf_page": 939,
+    "quote": "Business roles focus largely on data governance functions, especially stewardship."
+  },
+  {
+    "id": "DMBOK2-C16-30",
+    "chapter": 16,
+    "section": "7.2.2 Business Roles",
+    "pdf_page": 939,
+    "quote": "Data Stewards are usually recognized subject matter experts who are assigned accountability for Metadata and data quality"
+  },
+  {
+    "id": "DMBOK2-C16-31",
+    "chapter": 16,
+    "section": "7.2.2 Business Roles",
+    "pdf_page": 940,
+    "quote": "Stewards play different roles, depending on organizational priorities. The initial focus of stewardship is often on defining business terms and valid values"
+  },
+  {
+    "id": "DMBOK2-C16-32",
+    "chapter": 16,
+    "section": "7.2.2 Business Roles",
+    "pdf_page": 940,
+    "quote": "Stewards also define and maintain data quality requirements and business rules for assigned data attributes, help identify and resolve data issues"
+  },
+  {
+    "id": "DMBOK2-C16-33",
+    "chapter": 16,
+    "section": "7.2.2 Business Roles",
+    "pdf_page": 940,
+    "quote": "Stewards may function at the enterprise, business unit, or functional level."
+  },
+  {
+    "id": "DMBOK2-C16-34",
+    "chapter": 16,
+    "section": "7.2.3 IT Roles",
+    "pdf_page": 941,
+    "quote": "Help Desk Administrator : Responsible for handling, tracking, and resolving issues related to use of information, information systems, or the IT infrastructure."
+  },
+  {
+    "id": "DMBOK2-C16-35",
+    "chapter": 16,
+    "section": "7.2.4 Hybrid Roles",
+    "pdf_page": 942,
+    "quote": "determining the fitness of data for use and monitoring the ongoing condition of the data; contributes to root cause analysis of data issues"
+  }
+]

@@ -5,7 +5,7 @@ RULES OF THE ROAD
 - The DMBOK2 is an INDUSTRY REFERENCE ONLY for this organisation ("GENERAL INDUSTRY CONTEXT"); internal policy outranks it.
 
 WHAT YOU ARE CHECKING
-A reader produced .dmbok-work/rows/unit-3.json for unit 3 - Architecture and integration (lineage and mapping) (citations plus one row per assigned concept). Read that file first. The DMBOK2 text (a PDF-to-markdown conversion with `<!-- PDF page N -->` markers) is at C:\Users\ssomai\OneDrive - Ninety One\Documents\claude-data-steward-handoff\claude-data-steward-handoff\DAMA-DMBOK-2nd-Edition.md. Read the reader's assigned ranges yourself, with the Read tool, at most 400 lines per call: lines 3214-3877 (Chapter 4); lines 7947-8826 (Chapter 8).
+A reader produced .dmbok-work/rows/unit-3.json for unit 3 - Architecture and integration (lineage and mapping) (citations plus one row per assigned concept). Read that file first. The DMBOK2 text (a PDF-to-markdown conversion with `<!-- PDF page N -->` markers) is at C:\Users\ssomai\OneDrive - Ninety One\Documents\claude-data-steward-handoff\claude-data-steward-handoff\DAMA-DMBOK-Summary.md. Read the reader's assigned ranges yourself, with the Read tool, at most 400 lines per call: lines 3214-3877 (Chapter 4); lines 7947-8826 (Chapter 8).
 
 CONCEPTS (what the project says, and where)
 - A-15 | Lineage and mapping | Data lineage and downstream impact

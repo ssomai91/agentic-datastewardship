@@ -1,0 +1,407 @@
+{
+  "unit": 6,
+  "citation_verdicts": [
+    {
+      "id": "DMBOK2-C13-01",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-02",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-03",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-04",
+      "supports_claim": "yes",
+      "note": "Supports 'drivers vary by industry'; the list that follows is on the same page."
+    },
+    {
+      "id": "DMBOK2-C13-05",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-06",
+      "supports_claim": "yes",
+      "note": "Master Data critical by definition and assessment through consuming processes, reports and risk both appear in the passage."
+    },
+    {
+      "id": "DMBOK2-C13-07",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-08",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-09",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-10",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-11",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-12",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-13",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-14",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-15",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-16",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-17",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-18",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-19",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-20",
+      "supports_claim": "yes",
+      "note": "Passage says many issues have multiple causes; used only for that point."
+    },
+    {
+      "id": "DMBOK2-C13-21",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-22",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-23",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-24",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-25",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-26",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-27",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-28",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-29",
+      "supports_claim": "yes",
+      "note": "ROI factors for fixes (criticality, amount, age) are listed as quoted; the list continues onto page 786."
+    },
+    {
+      "id": "DMBOK2-C13-30",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-31",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-32",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-33",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-34",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-35",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-36",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-37",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-38",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-39",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-40",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-41",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-42",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-43",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-44",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-45",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-46",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-47",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-48",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-49",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-50",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-51",
+      "supports_claim": "partly",
+      "note": "Page 803 says corrections below a confidence level go to the steward, but those above the level may be committed without review. Supports human review of low-confidence fixes only, so it is a looser parallel to the project's propose-then-approve rule."
+    },
+    {
+      "id": "DMBOK2-C13-52",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-53",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-54",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-55",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-56",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-57",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-58",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-59",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-60",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C13-61",
+      "supports_claim": "yes",
+      "note": ""
+    }
+  ],
+  "row_verdicts": [
+    {
+      "concept_id": "A-12",
+      "status_fair": "agree",
+      "suggested_status": null,
+      "suggested_action": null,
+      "note": "Partial fits: human designation plus agent evidence is consistent with ch.13, and the gap is the missing criteria policy. The project files confirm no named CDE-criteria document; the reader's note that Phase 0b lacks a matching item is accurate."
+    },
+    {
+      "concept_id": "A-17",
+      "status_fair": "agree",
+      "suggested_status": null,
+      "suggested_action": null,
+      "note": "README only lists data contracts and upstream dependency management; ch.13 has no data-contract term, so SLA and data sharing agreement are analogies. Partial/wording is fair; unit 3 is the primary owner of this concept."
+    },
+    {
+      "concept_id": "A-18",
+      "status_fair": "agree",
+      "suggested_status": null,
+      "suggested_action": null,
+      "note": "ARCHITECTURE-RISKS Open Question 5 and IMPLEMENTATION-SEQUENCE Phase 0b item 2 both state no approved taxonomy exists; ch.13 treats dimensions as the core vocabulary. Missing is fair."
+    },
+    {
+      "concept_id": "A-19",
+      "status_fair": "agree",
+      "suggested_status": null,
+      "suggested_action": null,
+      "note": "Project flow (propose rule, deterministic test, draft SQL, flag threshold) matches the ch.13 expectation-to-rule path; the gaps (rule-type vocabulary, template, test against data, SME confirmation) are real."
+    },
+    {
+      "concept_id": "A-20",
+      "status_fair": "agree",
+      "suggested_status": null,
+      "suggested_action": null,
+      "note": "HANDOFF.md lines 39 and 73 and the 'Must not set business thresholds' rule keep thresholds human; ch.13 places acceptability thresholds with business clients and accountability with the business data owner. The risk-acceptance mapping is inferred, as the reader caveats."
+    },
+    {
+      "concept_id": "A-21",
+      "status_fair": "agree",
+      "suggested_status": null,
+      "suggested_action": null,
+      "note": "Control coverage appears only in BUILD-BACKLOG.md future items; no measurement, monitoring or reporting design is described. Missing is fair, with the deliberate deferral noted."
+    },
+    {
+      "concept_id": "A-22",
+      "status_fair": "agree",
+      "suggested_status": null,
+      "suggested_action": null,
+      "note": "Clustering and routing for human decision fits ch.13 diagnosis; no issue record, vocabulary, assignment, escalation or status tracking is defined. Partial/structural-proposal is fair."
+    },
+    {
+      "concept_id": "A-23",
+      "status_fair": "agree",
+      "suggested_status": null,
+      "suggested_action": null,
+      "note": "Aligned is defensible: ARCHITECTURE.md bars declaring root cause without sufficient evidence, HANDOFF.md line 25 routes unresolved questions to SME/Data Owner input, and README lists RCA. Watch point: 'final determination where evidence is incomplete' is narrower than ch.13's SME-input expectation (pages 783, 794), as the reader notes; wording could be tightened but a gap grade is not warranted."
+    },
+    {
+      "concept_id": "A-24",
+      "status_fair": "agree",
+      "suggested_status": null,
+      "suggested_action": null,
+      "note": "README names fitness-for-purpose; matches the ch.13 definition. Aligned/citation is fair."
+    }
+  ],
+  "missing_findings": [
+    {
+      "concept_id": "A-12",
+      "pdf_page": 744,
+      "note": "Section 1.2 names Criticality as a guiding principle (focus on the most critical data and prioritise by criticality and risk), and section 2.2 (page 780) lists 'identify the data critical to meeting business needs'. Both support the criticality row and would strengthen the citation set; they do not change the grade."
+    },
+    {
+      "concept_id": "A-23",
+      "pdf_page": 744,
+      "note": "Root cause remediation is a stated principle (address causes, not symptoms) and 4.2 (page 802) says corrective actions should prevent recurrence. Supports the Aligned grade; not cited."
+    },
+    {
+      "concept_id": "A-22",
+      "pdf_page": 796,
+      "note": "2.7.3 also requires an assignment process for issues and a resolution workflow tied to the SLA; the project defines neither. The reader's rationale mentions assignment but cites no passage for it."
+    },
+    {
+      "concept_id": "A-19",
+      "pdf_page": 782,
+      "note": "Section 2.3 gives column-level and data-set-level rule examples and says it is not necessary to know all rules before assessing, which bears on the rule-discovery option; not cited."
+    },
+    {
+      "concept_id": "A-21",
+      "pdf_page": 789,
+      "note": "2.7.2 says each rule should have a standard, target or threshold index for comparison and that measurement results are reported at rule and aggregate level. Directly relevant to monitoring design; not cited. Does not change the Missing grade."
+    },
+    {
+      "concept_id": "A-20",
+      "pdf_page": 762,
+      "note": "The Check stage of the improvement cycle ties further action to data falling below acceptable thresholds, reinforcing threshold ownership; not cited. No grade change."
+    }
+  ]
+}

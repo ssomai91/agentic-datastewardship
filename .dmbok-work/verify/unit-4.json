@@ -1,0 +1,257 @@
+{
+  "unit": 4,
+  "citation_verdicts": [
+    {
+      "id": "DMBOK2-C10-01",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-02",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-03",
+      "supports_claim": "yes",
+      "note": "Supports steward accountability, but only for Reference Data; the same bullet does not extend to Master Data (A-03 position wording is consistent with this)."
+    },
+    {
+      "id": "DMBOK2-C10-04",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-05",
+      "supports_claim": "yes",
+      "note": "Same bullet adds that a system of reference may be needed for sharing; does not limit the quoted claim."
+    },
+    {
+      "id": "DMBOK2-C10-06",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-07",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-08",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-09",
+      "supports_claim": "partly",
+      "note": "Page and wording are accurate, but the passage is a storage technique for Reference Data (synonym rings for search), not term synonyms in a business glossary. It supports the reader's stated caveat, not any glossary-synonym claim for A-10."
+    },
+    {
+      "id": "DMBOK2-C10-10",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-11",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-12",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-13",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-14",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-15",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-16",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-17",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-18",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-19",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-20",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-21",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-22",
+      "supports_claim": "yes",
+      "note": "Reconciliation here means consolidating sources into a master record; reader's caveat on A-25 about the different project meaning of 'reconciliation' is correct."
+    },
+    {
+      "id": "DMBOK2-C10-23",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-24",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-25",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-26",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-27",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-28",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-29",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-30",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-31",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-32",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-33",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-34",
+      "supports_claim": "yes",
+      "note": "Text says 'This could include', so it is a suggestion, which matches the reader's 'suggests'. Table 23 is missing, as the reader notes."
+    },
+    {
+      "id": "DMBOK2-C10-35",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-36",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-37",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-38",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-39",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-40",
+      "supports_claim": "yes",
+      "note": ""
+    },
+    {
+      "id": "DMBOK2-C10-41",
+      "supports_claim": "yes",
+      "note": "Sentence continues from the page 626 label; context supports steward-coverage metric identifying gaps in support."
+    }
+  ],
+  "row_verdicts": [
+    {
+      "concept_id": "A-03",
+      "status_fair": "agree",
+      "suggested_status": null,
+      "suggested_action": null,
+      "note": "Partial/wording is fair. Decision rights match Ch10 (accountability decisions left to people and governance bodies). Project does define Project Owner and Data Steward in GOVERNANCE-DECISIONS.md but never defines Data Owner or 'ownership gap'; the contract does have an ownership_gaps output field, which the reader acknowledges."
+    },
+    {
+      "concept_id": "A-10",
+      "status_fair": "agree",
+      "suggested_status": null,
+      "suggested_action": null,
+      "note": "Aligned/citation is defensible: project behaviour (surface conflicts, escalate to a human steward) is consistent with Ch10 on reconciling names and definitions. Grade is thin because Ch10 never treats a business glossary and uses 'synonym' only for search synonym rings; the reader flags this as provisional. Recommend dropping C10-09 as a supporting citation and leaning on C10-12, C10-23, C10-24, C10-27."
+    },
+    {
+      "concept_id": "A-25",
+      "status_fair": "agree",
+      "suggested_status": null,
+      "suggested_action": null,
+      "note": "Missing/structural-proposal is fair. My search of the repo markdown and contracts found no reference or master data stewardship artefact; 'reconciliation' appears once as a Context-agent content area. Note option 3 (Context-agent scope only) is a weak option that leaves the gap open, as the reader admits; record-deviation remains an available alternative."
+    },
+    {
+      "concept_id": "A-26",
+      "status_fair": "agree",
+      "suggested_status": null,
+      "suggested_action": null,
+      "note": "Partial/wording is fair. Project names authoritative sources per agent and ranks internal documented position first (a control DMBOK2 does not address); it has no system of record versus system of reference distinction for data. Reader says no counterpart exists, but docs/IMPLEMENTATION-SEQUENCE.md and docs/ARCHITECTURE-RISKS.md do use 'system of record' for case-state storage, which is a different sense and does not change the grade."
+    }
+  ],
+  "missing_findings": [
+    {
+      "concept_id": "A-03",
+      "pdf_page": 618,
+      "note": "Section 2.2.2 says owners of existing reference data must understand the benefits of central management and agree to support stewardship; directly relevant to ownership assignment and not cited."
+    },
+    {
+      "concept_id": "A-03",
+      "pdf_page": 599,
+      "note": "Data acquisition bullet 'Determining who will be responsible for monitoring and maintaining the quality of a new source's data' (starts at end of p.598/top p.599) is a further accountability-assignment statement; not cited."
+    },
+    {
+      "concept_id": "A-26",
+      "pdf_page": 620,
+      "note": "Section 2.2.6 says governance policies should mandate use of reference data from the central repository or a system of reference populated from it; relevant to authoritative-source designation and not cited."
+    }
+  ]
+}
