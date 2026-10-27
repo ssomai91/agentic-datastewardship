@@ -161,6 +161,8 @@ Potentially:
 - reconciliation;
 - regulatory reporting;
 - enterprise data products;
+- reference data;
+- master data;
 - relevant source platforms.
 
 ### Required distinction

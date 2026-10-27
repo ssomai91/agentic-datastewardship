@@ -36,3 +36,9 @@ The version-controlled repository holds **steward-added governance metadata only
 **Link convention.** A reference to something held elsewhere is written `<system>:<identifier>`, for example `glossary:GL-101`. The system name is the registered name of the source system, and the identifier is that system's own key. A reference is never a copy of the content.
 
 **Cost.** Joining repository entries with source results happens at query time, and a reference can go stale if the source changes. Agents must say when they could not resolve a reference.
+
+## 6. Reference and master data (P-11, option 1)
+
+Reference data and master data are named as explicit content areas of the Investment Operations Context Agent in `ARCHITECTURE.md`. No new agent and no new artefact type is created. This is in line with the DMBOK2 view that architecture typically starts with master data areas [DMBOK2-C04-17] and that integration is critical to reference and master data management [DMBOK2-C08-02].
+
+**What this gives and does not give.** It gives stewards context about reference and master data. It does not give stewardship *of* that data: there is no register of hubs or match and merge rules, and nothing here consolidates source records.
