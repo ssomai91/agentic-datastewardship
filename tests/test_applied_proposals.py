@@ -25,6 +25,7 @@ APPLIED = [
     ('P-10', 'docs/DATA-QUALITY-FRAMEWORK.md', ['## 4. Minimum quality issue record (P-10', '`decision_owner`', 'never records a decision']),
     ('P-11', 'docs/STEWARDSHIP-FRAMEWORK.md', ['## 6. Reference and master data (P-11', 'No new agent and no new artefact type', 'does not give stewardship']),
     ('P-11-arch', 'ARCHITECTURE.md', ['- reference data;', '- master data;']),
+    ('P-12', 'docs/DATA-CLASSIFICATION.md', ['## 1. Provisional scale', '`restricted_confidential`', 'Agents may propose', 'provisional']),
 ]
 
 

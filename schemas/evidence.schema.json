@@ -13,6 +13,7 @@
     "extracted_fact": { "type": "string" },
     "direct_or_inferred": { "type": "string", "enum": ["direct", "inferred"] },
     "timestamp": { "type": "string" },
-    "notes": { "type": "string" }
+    "notes": { "type": "string" },
+    "confidentiality_label": { "type": "string", "enum": ["unassigned", "internal_use_only", "confidential", "restricted_confidential"] }
   }
 }
