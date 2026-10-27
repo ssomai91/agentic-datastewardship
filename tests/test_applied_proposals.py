@@ -21,6 +21,7 @@ APPLIED = [
     ('P-06', 'docs/STEWARDSHIP-FRAMEWORK.md', ['## 5. Metadata: hybrid model (P-06', 'steward-added governance metadata only', '`<system>:<identifier>`']),
     ('P-07', 'docs/DATA-QUALITY-FRAMEWORK.md', ['Taxonomy version 0.1', 'Completeness', 'Consistency', 'Characteristics outside the six', 'GD-04']),
     ('P-08', 'docs/DATA-QUALITY-FRAMEWORK.md', ['## 2. Candidate rule pre-approval checklist (P-08', 'Confirmed by a subject-matter expert', 'UNRESOLVED - pending human definition']),
+    ('P-09', 'docs/DATA-QUALITY-FRAMEWORK.md', ['## 3. Quality coverage (P-09', 'Coverage is defined as a matrix', 'only when both a rule and a threshold have human approval']),
 ]
 
 

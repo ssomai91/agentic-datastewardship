@@ -29,3 +29,13 @@ Before a candidate quality rule reaches the Data Steward it must carry all four 
 | 4 | Confirmed by a subject-matter expert | The SME's name and the date, recorded by a human. An agent never records this itself. |
 
 An agent may prepare a candidate rule and attach attributes 1 to 3. Attribute 4 is human only. A threshold with no approved source stays `UNRESOLVED - pending human definition`; it is never invented.
+
+## 3. Quality coverage (P-09, option 1)
+
+**Coverage is defined as a matrix.** For each Critical Data Element, which dimensions have an approved rule and threshold, in which systems of the data value chain. This mirrors the DMBOK2 service-level scoping list of covered elements with per-element, per-dimension, per-system expectations [DMBOK2-C13-46, DMBOK2-C13-33].
+
+| CDE | System in the data value chain | Dimension | Approved rule | Approved threshold | Status |
+|---|---|---|---|---|---|
+| _one row per CDE, system and dimension_ | | | rule id or none | value, or `UNRESOLVED - pending human definition` | covered / gap / not applicable |
+
+A cell is **covered** only when both a rule and a threshold have human approval. **Coverage** for a CDE is the share of its (system, dimension) cells that are covered; a cell marked gap is reported, never filled by inference. No coverage figure exists yet: there are no approved rules or thresholds in this repository.
