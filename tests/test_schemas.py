@@ -20,6 +20,8 @@ def load(path):
     "agent-contract.schema.json",
     "agent-handoff.schema.json",
     "evidence.schema.json",
+    "material-claim.schema.json",
+    "quality-issue.schema.json",
 ])
 def test_schema_is_valid_json_schema(schema_file):
     schema = load(SCHEMAS / schema_file)

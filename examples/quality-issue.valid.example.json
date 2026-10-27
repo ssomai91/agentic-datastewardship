@@ -1,0 +1,9 @@
+{
+  "issue_id": "QI-0001",
+  "description": "Illustrative fixture only: a settlement date is null on settled transactions.",
+  "root_causes": ["Illustrative: upstream feed omits the field for one counterparty type."],
+  "remediation_options": ["Illustrative: correct at source", "Illustrative: add a default with steward sign-off"],
+  "decision": "Pending",
+  "decision_owner": "Illustrative business data owner",
+  "evidence_ids": ["EV-0001"]
+}

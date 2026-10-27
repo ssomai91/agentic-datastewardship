@@ -39,3 +39,17 @@ An agent may prepare a candidate rule and attach attributes 1 to 3. Attribute 4 
 | _one row per CDE, system and dimension_ | | | rule id or none | value, or `UNRESOLVED - pending human definition` | covered / gap / not applicable |
 
 A cell is **covered** only when both a rule and a threshold have human approval. **Coverage** for a CDE is the share of its (system, dimension) cells that are covered; a cell marked gap is reported, never filled by inference. No coverage figure exists yet: there are no approved rules or thresholds in this repository.
+
+## 4. Minimum quality issue record (P-10, option 1)
+
+An issue routed to a human carries at least the fields the DMBOK2 lists for tracked issues: a description of the issue, its root causes, options for remediation, and the decision on how to resolve it [DMBOK2-C13-41]. The decision owner is a business data owner [DMBOK2-C13-40]. The machine-readable form is `schemas/quality-issue.schema.json`.
+
+| Field | Meaning |
+|---|---|
+| `issue_id` | Unique id. |
+| `description` | What is wrong, stated from evidence. |
+| `root_causes` | Candidate causes, labelled as hypotheses until a human confirms. May be empty if unknown. |
+| `remediation_options` | The options for resolving it. |
+| `decision` | `Pending` until a human decides. An agent never records a decision. |
+| `decision_owner` | The business data owner who decides. |
+| `evidence_ids` | Optional `source_id` values of the evidence records behind the issue. |
