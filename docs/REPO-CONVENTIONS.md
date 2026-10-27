@@ -23,3 +23,8 @@
 ## No production connectivity
 
 Nothing in this repository connects to production systems, production data, or production credentials. `examples/` and `evals/` use synthetic data only.
+
+## Authority
+
+Markdown contract, JSON contract and Claude prompt form a fixed chain of authority; see [AUTHORITY-CHAIN.md](AUTHORITY-CHAIN.md).
+

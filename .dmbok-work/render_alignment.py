@@ -54,7 +54,7 @@ def main():
     out.append("")
     out.append("## 1. Source note")
     out.append("")
-    out.append("- **Source:** DAMA-DMBOK (2nd Edition), DAMA International, supplied as a PDF-derived text conversion (`DAMA-DMBOK-2nd-Edition.md`, 1,050 PDF pages). The file is kept out of git; only quotes of 25 words or fewer appear in this repository.")
+    out.append("- **Source:** DAMA-DMBOK (2nd Edition), DAMA International, supplied as a PDF-derived text conversion (`DAMA-DMBOK-2nd-Edition.md`, 1,050 PDF pages). The file is tracked in this private repository; citations in the docs use quotes of 25 words or fewer.")
     out.append("- **Status in the organisation:** industry reference only. Every DMBOK2 statement here is `GENERAL INDUSTRY CONTEXT`. ASSUMPTION - pending Data Steward / project owner confirmation: the organisation has not formally adopted the DMBOK2; adopting any element below is a proposal for human governance approval, and internal policy outranks it.")
     out.append("- **Citations:** referenced by ID and defined once in `docs/dmbok2-citations.json` (chapter, section, PDF page, quote). Each citation below is shown as `ID (ch.N §x.y, p.NNN)`. Page numbers are PDF pages (the `<!-- PDF page N -->` markers in the supplied file), not printed book pages.")
     out.append("- **Limits:** figures are missing from the conversion (209 image links point at a folder that does not exist), so figure-dependent claims are marked \"unverifiable from text\"; the text is from 2017 and predates LLM agents; it says \"critical data\" (Ch 13 §1.3.2 and §2.3) where this project says \"critical data element\", so terms are mapped, not renamed.")
