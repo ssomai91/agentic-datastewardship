@@ -18,6 +18,7 @@ APPLIED = [
     ('P-03', 'docs/STEWARDSHIP-FRAMEWORK.md', ['## 3. Governance metrics (P-03', 'Deferred.', 'system-level criteria only']),
     ('P-04', 'docs/STEWARDSHIP-FRAMEWORK.md', ['## 4. Definition approval lifecycle (P-04', 'DRAFT-NOT-APPROVED', 'GD-05']),
     ('P-05', 'docs/CDE-CRITERIA-POLICY.md', ['## 4. Criticality drivers', 'Master Data is treated as critical by definition', 'never designate a CDE', '## 7. Implementation']),
+    ('P-06', 'docs/STEWARDSHIP-FRAMEWORK.md', ['## 5. Metadata: hybrid model (P-06', 'steward-added governance metadata only', '`<system>:<identifier>`']),
 ]
 
 

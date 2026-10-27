@@ -28,3 +28,11 @@ One accountable owner is the approval and escalation endpoint, with a deputy. Th
 ## 4. Definition approval lifecycle (P-04, option 2)
 
 This repository keeps a single gate: every candidate definition is `DRAFT-NOT-APPROVED` until a human owner approves it elsewhere. Later states (published, replaced, retired) belong to the status model of the glossary system once it is chosen (`GOVERNANCE-DECISIONS.md`, GD-05). The DMBOK2 status path is an example of more mature governance, not a requirement here [DMBOK2-C12-62, DMBOK2-C12-22]. Cost: the lifecycle after approval is undefined in this repository until GD-05 is decided.
+
+## 5. Metadata: hybrid model (P-06, option 1)
+
+The version-controlled repository holds **steward-added governance metadata only**: candidate and approved definitions, CDE evidence, decisions, and links. Everything else is referenced in the glossary, catalogue or source system, not copied. This is the hybrid pattern in the DMBOK2 [DMBOK2-C12-41, DMBOK2-C12-42].
+
+**Link convention.** A reference to something held elsewhere is written `<system>:<identifier>`, for example `glossary:GL-101`. The system name is the registered name of the source system, and the identifier is that system's own key. A reference is never a copy of the content.
+
+**Cost.** Joining repository entries with source results happens at query time, and a reference can go stale if the source changes. Agents must say when they could not resolve a reference.
