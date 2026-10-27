@@ -1,0 +1,198 @@
+{
+  "summary": "Independent adversarial review of the Architect's Draft for 'analyse six months of quality exceptions to identify recurring patterns and candidate root causes'. The Architect's classification (AI-assisted workflow, not a standing agent) and its split into a deterministic aggregation step and a read-and-recommend hypothesis step are consistent with README.md principles 7, 9 and 10 and the HANDOFF.md decision model, and I do not challenge that direction. I do challenge the proposed data access in recommendation R3: it gives the hypothesis step independent read access to several distinct operational sources (exception records, source/process change records, lineage or mapping metadata, plus glossary entries). Under this reviewer's contract (Process step 3) that is excessive authority even though every source is read-only, and it calls for a curated evidence packet instead. I also found an internal inconsistency in R2/R3 (hypotheses must cite supporting exceptions, but Step B is described as receiving only aggregated exception output), a decision-rights error (R3 lets the Risk Reviewer approve inclusion of sensitive fields), responsibility overlap with two other candidate agents that the Architect could not check, and a non-conformant handoff status value. Important limitation: the submission is a design assessment, not an Agent Contract, so there are no clauses for Permitted Tools, Prohibited Tools or Actions, Output Schema or Handoff Contract to review; the findings cite the Architect's recommendation fields instead. No embedded steering instructions were detected in the submission. This review recommends only; it does not approve anything.",
+  "agrees_with_architect": false,
+  "findings": [
+    {
+      "clause_cited": "recommendations R3 (DATA ACCESS / READ SCOPE), items (a), (b), (c) and (d); handoff.findings[2]; claim C6",
+      "issue": "R3 gives the hypothesis step independent read access to four distinct sources: exception records, glossary or definition entries, source/process change records, and lineage or mapping metadata. Step B needs (b), (c) and (d) directly. Direct read access to the records of more than one operational system (here at least exceptions, change and lineage) is excessive authority regardless of the read-only access mode, and the Architect's own label 'minimum necessary' (principle 6) does not hold. The correct design is a curated evidence packet, assembled for each analysis by a bounded, human-approved step, that the hypothesis step reads instead of the underlying systems. This is a redesign finding.",
+      "certainty": "CONFIRMED"
+    },
+    {
+      "clause_cited": "recommendations R2 versus R3 ('Step B needs (a) as aggregated output plus (b), (c) and (d)'); R2 ('each with the supporting exceptions')",
+      "issue": "Internal inconsistency. R2 requires each hypothesis to list its supporting exceptions, but R3 restricts Step B to aggregated exception output. Either Step B also needs record-level exception access (widening the scope beyond what R3 states, with privacy impact), or it cannot name supporting exceptions and will cite them from inference. The design does not say which. The evidence packet should specify exactly which exception identifiers, and which attributes, travel with each cluster.",
+      "certainty": "CONFIRMED"
+    },
+    {
+      "clause_cited": "recommendations R3, final sentences ('Personal or sensitive fields are to be excluded or masked from the extract unless the Risk Reviewer approves otherwise'); human_action_required[3]",
+      "issue": "Decision-rights error. This reviewer's contract (Not Responsible For: granting tool or data permissions; Prohibited Tools: only recommend) does not permit it to approve inclusion of sensitive fields. Only a named human governance owner or the data owner can. Routing that approval to the Risk Reviewer creates an authority the reviewer does not hold and blurs separation of duties. The text should name the data owner and project owner as the approvers; the reviewer can only advise.",
+      "certainty": "CONFIRMED"
+    },
+    {
+      "clause_cited": "recommendations R3 (b) and (d); open_questions[2] (overlap with Data Quality and Mapping & Lineage candidates)",
+      "issue": "Plausible duplicated responsibility. The hypothesis step would itself consume definitions and lineage or mapping metadata, which are the working domains of the Definition & CDE Agent and the Mapping & Lineage Agent described in ARCHITECTURE.md. The Architect did not check the candidate registry and left this to human or Orchestrator decision. Without that check I cannot confirm overlap, but a design that re-reads those sources directly rather than consuming those agents' outputs risks duplicated evidence handling and conflicting interpretations of the same lineage.",
+      "certainty": "PLAUSIBLE"
+    },
+    {
+      "clause_cited": "justification (E10 inference) and claim C5; recommendations R2",
+      "issue": "Hallucination risk in the correlation step. Correlating a cluster of exceptions with a source or process change is the main place where a coincidence in time can be presented as a cause. The Architect's own split rests on an inference (E10) it says was not checked against any exception data. R2 states output stays at hypothesis level with a confidence label, but it sets no minimum evidence needed before a change event may be named as a candidate cause, no requirement to state alternative explanations, and no rule for what happens when change history is absent (only an assumption that it exists). The design should require each hypothesis to carry its evidence category, at least one alternative explanation, and an explicit 'unable to determine' when change history is missing.",
+      "certainty": "PLAUSIBLE"
+    },
+    {
+      "clause_cited": "recommendations R5 ('Run the workflow manually against a real six-month extract first')",
+      "issue": "Sequencing and access gap. R5 proposes running the workflow on real exception data to validate it, but the privacy question (open_questions[4]), the storage and ownership question (open_questions[0]) and the approval of the read scope (human_action_required[3]) are all still unresolved. A manual trial on real data before those are settled would itself be an access to unreviewed data. The design should state that the trial uses an approved, masked extract or synthetic data until the data owner has approved the scope.",
+      "certainty": "PLAUSIBLE"
+    },
+    {
+      "clause_cited": "assumptions[0] to assumptions[3]; open_questions[0], [1] and [3]",
+      "issue": "Dependence on undocumented assumptions. The feasibility of the whole design rests on four unverified assumptions: exceptions are structured, a bounded six-month extract can be read, change records exist in readable form, and volume is large enough to justify automation. The Architect discloses them honestly, but the recommended redesign is stated with the same weight as if they held, and the deterministic Step A is described as 'reproducible and auditable' before it is known whether exceptions are structured at all. The verdict should be treated as conditional on those facts.",
+      "certainty": "CONFIRMED"
+    },
+    {
+      "clause_cited": "handoff.status ('Draft'); AGENT-CONTRACT-TEMPLATE.md Returns block (status)",
+      "issue": "The handoff status value 'Draft' is a document-lifecycle label from the contract template, not a handoff status. The handoff status values expected for this run are in_progress, escalated, completed or blocked, so this value is non-conformant and downstream consumers cannot tell whether the Architect considers its work complete, escalated or blocked. I could not read the handoff schema file within my evidence domain, so I base this on the status set given for this run.",
+      "certainty": "PLAUSIBLE"
+    },
+    {
+      "clause_cited": "Submission as a whole versus AGENT-CONTRACT-TEMPLATE.md mandatory sections (Not Responsible For, Permitted Tools, Prohibited Tools or Actions, Output Schema, Handoff Contract); this reviewer's Required Inputs",
+      "issue": "No Agent Contract was submitted, only a design assessment with a necessity verdict. The mandatory sections cannot be checked and there is no deny-list of tools to review. This is acceptable at the necessity stage only if the Architect is asked to resubmit a contract (or a workflow specification) that includes an explicit tool deny-list covering write, execute, ticketing and incident-management actions. At present R3's exclusions appear in prose only, not in a Permitted Tools table with access modes. I reviewed the design intent, not a contract.",
+      "certainty": "CONFIRMED"
+    }
+  ],
+  "final_verdict": "redesign",
+  "final_verdict_rationale": "I agree with the Architect that this should not be built as a standing Specialised AI agent now and that the hypothesis step must stay read-and-recommend, but I do not agree that its proposed read scope is minimal. R3 grants the hypothesis step direct read access to exception, change and lineage sources plus glossary entries, which this reviewer's contract classes as excessive authority even when read-only; the remedy is a curated evidence packet rather than direct access. The design also contradicts itself on whether Step B sees record-level or aggregated exceptions, assigns a permission-granting role to the Risk Reviewer that it does not hold, leaves overlap with the Definition & CDE and Mapping & Lineage candidates unresolved, and has no minimum-evidence rule for correlating clusters with change events. Redesign is therefore my recommendation, not approval. Only a named human governance owner (the project owner until one is named) may accept, reject or override it, and any override must be logged. I am treating an unresolved redesign finding as a hard gate on downstream Evaluation Designer and Builder work, as this contract's pending assumption provides, until a human decides otherwise.",
+  "handoff": {
+    "case_id": "FACTORY-RUN-P4-03-REVIEW",
+    "request": "Adversarially review the Architect's Draft for analysing six months of quality exceptions to identify recurring patterns and candidate root causes, before anything is built.",
+    "agent": "Agent Risk & Governance Reviewer",
+    "status": "completed",
+    "findings": [
+      "Verdict: redesign. Agreement with the Architect's classification and two-step split, disagreement with its proposed read scope.",
+      "R3 gives one workflow step direct read access to exception, change and lineage sources plus glossary entries; this is excessive authority despite read-only mode and should be replaced by a curated evidence packet (CONFIRMED).",
+      "R2 requires supporting exceptions to be cited while R3 limits Step B to aggregated exception output; the design is internally inconsistent (CONFIRMED).",
+      "R3 assigns approval of sensitive-field inclusion to the Risk Reviewer, which this reviewer cannot do; approval belongs to the data owner and project owner (CONFIRMED).",
+      "Possible overlap with the Definition & CDE and Mapping & Lineage candidates is unchecked (PLAUSIBLE).",
+      "No minimum-evidence or alternative-explanation rule for correlating clusters with change events (PLAUSIBLE).",
+      "R5 proposes a trial on real data before privacy and scope approvals are settled (PLAUSIBLE).",
+      "The verdict rests on four unverified assumptions about exception structure, extract availability, change-record availability and volume (CONFIRMED).",
+      "handoff.status 'Draft' is not a handoff status value (PLAUSIBLE).",
+      "No Agent Contract was submitted, so Permitted Tools, deny-list, Output Schema and Handoff Contract clauses could not be reviewed (CONFIRMED).",
+      "No embedded steering instructions detected in the reviewed content."
+    ],
+    "evidence": [
+      {
+        "source_id": "R1",
+        "source_type": "agent_output_under_review",
+        "title": "Architect output for P4-03, recommendation R3 (DATA ACCESS / READ SCOPE)",
+        "location": "evals/factory-runs/p4-03-root-cause-analysis.architect.output.json, recommendations R3; handoff.findings[2]; claim C6",
+        "authority_level": "submission_under_review",
+        "extracted_fact": "R3 proposes read-only access to a bounded exception extract, glossary or definition entries, source and process change records, and lineage or mapping metadata, with Step B needing the aggregated exception output plus the glossary, change and lineage sources.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "R2",
+        "source_type": "agent_output_under_review",
+        "title": "Architect output for P4-03, recommendation R2 and R3 wording on supporting exceptions",
+        "location": "evals/factory-runs/p4-03-root-cause-analysis.architect.output.json, recommendations R2 and R3",
+        "authority_level": "submission_under_review",
+        "extracted_fact": "R2 requires each hypothesis to list its supporting exceptions, while R3 says Step B receives exception data as aggregated output.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "R3",
+        "source_type": "internal_agent_contract",
+        "title": "Agent Risk & Governance Reviewer contract, Process step 3, Known Risks and Not Responsible For",
+        "location": "agents/factory/agent-risk-reviewer.md, sections 'Process' step 3, 'Known Risks', 'Not Responsible For', 'Prohibited Tools or Actions'",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Direct read access to raw records of more than one operational system is excessive authority even when read-only and requires a redesign finding asking for a curated evidence packet; the reviewer may not grant tool or data permissions or approve a design.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "R4",
+        "source_type": "internal_design_document",
+        "title": "README.md key design principles 6 to 10",
+        "location": "README.md, section 'Key design principles'",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Use minimum permissions, prefer read-and-recommend, separate agents by responsibility, evidence and decision rights, avoid agents where deterministic automation suffices, keep the agent set small.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "R5",
+        "source_type": "internal_design_document",
+        "title": "HANDOFF.md decision model and non-goals",
+        "location": "HANDOFF.md, sections 'Decision model' and 'Important non-goals'",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "AI may cluster exceptions and produce root-cause hypotheses; final root-cause determination where evidence is incomplete, ownership assignment and production changes need human approval; the system must not hide uncertainty or present inference as fact.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "R6",
+        "source_type": "internal_design_document",
+        "title": "ARCHITECTURE.md Definition & CDE, Mapping & Lineage and Exception & Root-Cause responsibilities",
+        "location": "ARCHITECTURE.md, sections 'Definition & CDE Agent', 'Mapping & Lineage Agent', 'Exception & Root-Cause Agent'",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Definition and lineage analysis are listed as responsibilities of other candidate agents, while the Exception & Root-Cause candidate is to correlate failures with source or process changes and identify common upstream dependencies.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "RC1",
+        "statement": "The proposed read scope in R3 gives one workflow step direct read access to more than one operational source and is therefore excessive authority despite being read-only.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["R1", "R3"]
+      },
+      {
+        "claim_id": "RC2",
+        "statement": "The Architect's design is internally inconsistent on whether the hypothesis step sees record-level or aggregated exception data.",
+        "claim_type": "agent_inference",
+        "confidence": "Supported",
+        "evidence_ids": ["R1", "R2"]
+      },
+      {
+        "claim_id": "RC3",
+        "statement": "Approval of sensitive-field inclusion cannot be given by the Risk Reviewer; it needs a named human owner.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["R3", "R5"]
+      },
+      {
+        "claim_id": "RC4",
+        "statement": "The hypothesis step may duplicate the evidence-handling responsibilities of the Definition & CDE and Mapping & Lineage candidates.",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": ["R1", "R6"]
+      },
+      {
+        "claim_id": "RC5",
+        "statement": "The handoff status value 'Draft' used by the Architect does not match the expected handoff status set.",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": []
+      },
+      {
+        "claim_id": "RC6",
+        "statement": "Whether the design overlaps an existing candidate registry entry, and the real structure and availability of exception and change data, cannot be determined from the permitted evidence.",
+        "claim_type": "open_question",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      }
+    ],
+    "assumptions": [
+      "ASSUMPTION: The unresolved redesign finding is a hard gate on downstream Evaluation Designer and Builder work, as this reviewer's contract provides pending a human decision.",
+      "ASSUMPTION: The named human governance owner is the project owner, since no named role exists in the permitted documents.",
+      "ASSUMPTION: The expected handoff status set is in_progress, escalated, completed or blocked, as given for this run; I did not read the handoff schema file.",
+      "ASSUMPTION: The Architect's summary of source documents is accurate where it quotes them; I verified its quotations only against README.md, HANDOFF.md, ARCHITECTURE.md and AGENT-CONTRACT-TEMPLATE.md, which I could read."
+    ],
+    "open_questions": [
+      "Does Step B need record-level exception identifiers, or only aggregated counts, and which attributes may travel in the curated evidence packet?",
+      "Who assembles the curated evidence packet and who approves its contents for each analysis?",
+      "Does this capability overlap the Definition & CDE or Mapping & Lineage candidates, and should Step B consume their outputs rather than read their sources?",
+      "Where are quality exceptions and change history stored, in what structure, and who owns them? The permitted documents do not say.",
+      "Which exception fields are personal or sensitive, and what masking applies?"
+    ],
+    "human_action_required": [
+      "Project owner (acting as human governance owner): accept or reject this redesign recommendation; any override of it must be logged and named.",
+      "Project owner and data owner: decide the approver for sensitive-field inclusion, replacing the Risk Reviewer reference in R3.",
+      "Project owner: decide whether an unresolved redesign finding is a hard gate on downstream work, since that decision is still pending.",
+      "Architect resubmission: replace direct multi-source read access in R3 with a curated evidence packet, resolve the aggregated versus record-level inconsistency, state a minimum-evidence and alternative-explanation rule for change correlation, and present the design as a contract or workflow specification with an explicit tool deny-list."
+    ],
+    "next_agent": "Stewardship Agent Architect"
+  }
+}

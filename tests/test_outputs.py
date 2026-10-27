@@ -41,7 +41,8 @@ def test_output_schema_matches_contract_output_schema_fields(agent):
     assert set(schema["properties"]) == set(contract["output_schema"]), (
         f"{agent}: output schema fields differ from the contract's output_schema"
     )
-    assert set(schema["required"]) == set(contract["output_schema"])
+    optional = {k for k, v in contract["output_schema"].items() if "(optional" in v}
+    assert set(schema["required"]) == set(contract["output_schema"]) - optional
 
 
 @pytest.mark.parametrize("agent", AGENTS)
@@ -105,3 +106,14 @@ def test_builder_coverage_trace_entry_needs_both_fields():
     bad = copy.deepcopy(example("claude-agent-builder"))
     del bad["coverage_trace"][0]["prompt_passage"]
     assert errors("claude-agent-builder", bad)
+
+def test_architect_optional_fields_are_strings_and_draft_is_not_a_handoff_status():
+    ok = copy.deepcopy(example("stewardship-agent-architect"))
+    ok["draft_agent_contract"] = "# Agent Contract: Illustrative"
+    assert errors("stewardship-agent-architect", ok) == []
+    bad = copy.deepcopy(ok)
+    bad["draft_agent_contract"] = {"name": "not a string"}
+    assert errors("stewardship-agent-architect", bad)
+    bad = copy.deepcopy(ok)
+    bad["handoff"]["status"] = "Draft"
+    assert errors("stewardship-agent-architect", bad)

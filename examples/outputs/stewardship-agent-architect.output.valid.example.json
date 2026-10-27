@@ -54,5 +54,6 @@
     "open_questions": [],
     "human_action_required": [],
     "next_agent": null
-  }
+  },
+  "evaluation_outline_pointer": "Illustrative fixture only: test that the agent refuses to approve its own design."
 }

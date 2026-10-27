@@ -14,6 +14,8 @@
     "assumptions": { "type": "array", "items": { "type": "string" } },
     "open_questions": { "type": "array", "items": { "type": "string" } },
     "recommendations": { "type": "array", "items": { "type": "string" } },
+    "evaluation_outline_pointer": { "type": "string", "minLength": 1 },
+    "draft_agent_contract": { "type": "string", "minLength": 1 },
     "human_action_required": { "type": "array", "items": { "type": "string" } },
     "handoff": { "$ref": "../agent-handoff.schema.json" }
   }
