@@ -1,0 +1,271 @@
+{
+  "summary": "The capability 'Check whether Settlement Date is null for settled transactions' is a single, rule-based completeness test with a binary, reproducible outcome. It needs no judgement, interpretation or reasoning over ambiguous evidence, so it does not warrant an agent. Classified as a Deterministic process; verdict is cut as a standalone agent (implement as a deterministic data-quality check). The only parts needing judgement sit outside the check itself: the approved definition of 'settled', any tolerance/threshold for nulls, and triage of failures. Those remain human decisions or belong to existing candidate roles. Draft only; pending Agent Risk & Governance Reviewer challenge and human sign-off. No draft Agent Contract is produced because none is warranted.",
+  "classification": "Deterministic process",
+  "necessity_verdict": "cut",
+  "justification": "Design principle 9 (avoid creating agents when deterministic automation is more appropriate) applies directly: the check is 'WHERE settlement status = settled AND settlement date IS NULL', a rule whose result does not depend on interpretation. HANDOFF.md also states 'Do not create an agent because a task sounds intelligent' and 'Choose the least complex implementation that is safe and effective'. Principle 10 (keep the agent set as small as possible) reinforces the cut: a dedicated agent for one null check would add to the agent set with no separation-of-concerns benefit. Principle 6 (minimum permissions) and principle 7 (read-and-recommend first) are consistent with a read-only deterministic test and need no agent-level tool grants. The candidate Data Quality Agent already lists 'propose deterministic test' and 'generate candidate SQL' as responsibilities, so any AI involvement in authoring the rule or its SQL would fall inside that candidate's remit rather than a new agent. This overlap is surfaced for human/orchestrator decision and is not merged by this agent. Judgement-bearing elements stay human: the approved meaning of 'settled' (principle 2, agents must not invent definitions) and any null-tolerance threshold (HANDOFF.md decision model lists quality thresholds as requiring human approval). Because the capability is not an agent, the self-necessity rule is not engaged by this verdict.",
+  "evidence": [
+    {
+      "source_id": "SRC-HANDOFF-PRINCIPLES",
+      "source_type": "internal_design_document",
+      "title": "HANDOFF.md - Key design principles (README.md)",
+      "location": "README.md, section 'Key design principles', items 2, 6, 7, 9, 10",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "Principle 9: 'Avoid creating agents when deterministic automation is more appropriate.' Principle 10: 'Keep the agent set as small as possible while preserving useful separation of concerns.' Principle 2: agents must not invent business definitions or policy. Principles 6 and 7: minimum permissions; prefer read-and-recommend.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "SRC-HANDOFF-ARCH-PRINCIPLE",
+      "source_type": "internal_design_document",
+      "title": "HANDOFF.md - Architecture principle and classification model",
+      "location": "HANDOFF.md, section 'Architecture principle'",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "'Do not create an agent because a task sounds intelligent.' Capabilities are classified as Human responsibility / Deterministic process / AI-assisted workflow / Specialised AI agent / Multi-agent workflow, and the least complex safe and effective implementation is to be chosen.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "SRC-HANDOFF-DECISION-MODEL",
+      "source_type": "internal_design_document",
+      "title": "HANDOFF.md - Decision model (human approval list)",
+      "location": "HANDOFF.md, section 'Decision model' > 'Human approval required'",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "Human approval is required for business definition approval, quality thresholds, acceptance of data-quality risk and production changes. AI may suggest candidate data-quality rules and generate candidate SQL or tests.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "SRC-HANDOFF-DQ-AGENT",
+      "source_type": "internal_design_document",
+      "title": "HANDOFF.md - Candidate Data Quality Agent",
+      "location": "HANDOFF.md, section 'Candidate Operational Agents' > 'Data Quality Agent'; ARCHITECTURE.md, section 'Data Quality Agent' (Responsibilities: propose deterministic test, generate candidate SQL)",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "The candidate Data Quality Agent 'translates approved requirements into candidate data-quality rules, tests and controls' and must not set business thresholds. ARCHITECTURE.md lists 'propose deterministic test' and 'generate candidate SQL' among its responsibilities. Candidates are described as hypotheses to be validated, not fixed requirements.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "SRC-ARCH-EXAMPLE-FLOW",
+      "source_type": "internal_design_document",
+      "title": "ARCHITECTURE.md - Example end-to-end flow (settled trades missing settlement dates)",
+      "location": "ARCHITECTURE.md, section 'Example end-to-end flow'",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "The documented example question 'Why are settled trades missing settlement dates?' routes through Orchestrator, Context, Definition, Mapping, Quality, Exception agents and the Assurance Reviewer. This shows the null detection itself is a simple test while root-cause analysis, definition and mapping questions are the multi-step reasoning work. The Quality step asks 'What approved rule should detect this?'.",
+      "direct_or_inferred": "inferred",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "SRC-CONTRACT-TEMPLATE-ESCALATION",
+      "source_type": "internal_design_document",
+      "title": "AGENT-CONTRACT-TEMPLATE.md - Escalation and confidence rules",
+      "location": "AGENT-CONTRACT-TEMPLATE.md, sections 'Confidence Rules' and 'Escalation Conditions'",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "Confidence must use exactly: Supported, Partially supported, Unsupported, Contradictory, Unable to determine. Escalation is required when a material conclusion depends on undocumented assumptions.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "SRC-CAPABILITY-REQUEST",
+      "source_type": "capability_request",
+      "title": "Capability under assessment (request text)",
+      "location": "Factory run FACTORY-RUN-P4-02, request text",
+      "authority_level": "inferred",
+      "extracted_fact": "The request reads 'Check whether Settlement Date is null for settled transactions.' It names one field, one condition (null) and one population (settled transactions), with no mention of data source, schema, 'settled' status definition, tolerance, or what happens on failure.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    }
+  ],
+  "assumptions": [
+    "ASSUMPTION: 'settled transactions' means rows carrying a settlement-status indicator whose meaning is already defined; this repository evidence does not define it, so the predicate cannot be written precisely until an approved definition is supplied.",
+    "ASSUMPTION: the request asks for a repeatable completeness check (count/list of violating rows), not for diagnosis of why nulls occur.",
+    "ASSUMPTION: the check would run read-only against a governed dataset; no production data access was requested or granted in this run.",
+    "ASSUMPTION: the existing candidate registry (docs/CAPABILITY-CLASSIFICATION.md) was not consulted because it is outside this run's permitted evidence domain; overlap statements rely only on README.md, HANDOFF.md and ARCHITECTURE.md."
+  ],
+  "open_questions": [
+    "What is the approved business definition of 'settled' for this population, and which field or status value encodes it? Human owner (Data Steward / Data Owner) must supply or confirm; this agent will not invent it.",
+    "Is zero nulls the expectation, or is a tolerance acceptable? Any threshold is a quality threshold and requires human approval per the decision model.",
+    "Which dataset(s) and source system(s) does the check apply to, and is a null-like placeholder (blank string, sentinel date such as 1900-01-01) also to be treated as missing? Not determinable from the evidence available.",
+    "Where should the check live (existing DQ tooling, a scheduled SQL test, or a rule in a data-platform or BI tool) and who owns the control? Not determinable from the evidence available.",
+    "Overlap to surface for human/Orchestrator decision: the candidate Data Quality Agent already covers proposing deterministic tests and candidate SQL. Should this check be authored through that candidate once it is approved, or as a plain scripted control with no agent involvement? Not merged here.",
+    "Does the current registry (docs/CAPABILITY-CLASSIFICATION.md, not read in this run) already contain or classify an equivalent capability? Must be checked by a reviewer with registry access."
+  ],
+  "recommendations": [
+    "Do not create an agent for this capability; implement it as a deterministic, read-only data-quality rule (a single null-completeness test scoped to the approved 'settled' population) with a clear owner.",
+    "Obtain the approved definition of 'settled' and of the Settlement Date field from the Data Steward / Data Owner before the rule predicate is finalised, rather than inferring either.",
+    "Have a human decide whether zero nulls or a tolerance applies; record the threshold as a human-approved value, not an AI output.",
+    "Where an agent adds value, keep it downstream of the deterministic check: when the rule fails, exception clustering and root-cause hypothesis generation belong to the candidate Exception & Root-Cause Agent, and mapping questions to the Mapping & Lineage Agent. Those are separate capabilities to be classified on their own request.",
+    "Route this Draft to the Agent Risk & Governance Reviewer via the Orchestrator or a human; this agent does not invoke the reviewer directly.",
+    "Evaluation-outline pointer: what most needs testing is not the null check itself but whether any downstream consumer wrongly treats it as an agent task or silently supplies its own definition of 'settled'. Test mainly that the control uses only the human-approved definition, that missing or ambiguous definitions cause escalation rather than invented ones, that edge cases for null-like placeholders are handled as an explicit decision rather than a guess, and that threshold decisions are routed to a human. The enumerated Evaluation Scenarios are for the Agent Evaluation Designer to author."
+  ],
+  "human_action_required": [
+    "Data Steward / Data Owner: supply or confirm the approved definition of 'settled' and of Settlement Date for the target dataset.",
+    "Data Steward / Data Owner: decide the acceptable null tolerance (any threshold is a human approval item).",
+    "Project owner (acting as human governance owner until one is named): decide whether to accept the 'cut' verdict and the deterministic-process classification, and whether to treat the Data Quality Agent overlap as a merge, a hand-off or no action.",
+    "Agent Risk & Governance Reviewer plus a human sign-off: independently challenge this Draft; it is not approved."
+  ],
+  "handoff": {
+    "case_id": "FACTORY-RUN-P4-02",
+    "request": "Check whether Settlement Date is null for settled transactions.",
+    "agent": "Stewardship Agent Architect",
+    "status": "Draft",
+    "findings": [
+      "Classified as Deterministic process; necessity verdict cut as a standalone agent, citing design principles 9 and 10.",
+      "The check is a single rule-based completeness test; no interpretation or multi-step reasoning is required.",
+      "Judgement elements (definition of 'settled', null tolerance) are human decisions, not agent tasks.",
+      "Overlap with the candidate Data Quality Agent (deterministic tests, candidate SQL) is surfaced, not merged.",
+      "Registry document docs/CAPABILITY-CLASSIFICATION.md was outside this run's permitted evidence, so registry-level overlap is unverified.",
+      "No draft Agent Contract produced because none is warranted. Output is Draft, pending independent review and human sign-off."
+    ],
+    "evidence": [
+      {
+        "source_id": "SRC-HANDOFF-PRINCIPLES",
+        "source_type": "internal_design_document",
+        "title": "HANDOFF.md - Key design principles (README.md)",
+        "location": "README.md, section 'Key design principles', items 2, 6, 7, 9, 10",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Principle 9: 'Avoid creating agents when deterministic automation is more appropriate.' Principle 10: 'Keep the agent set as small as possible while preserving useful separation of concerns.' Principle 2: agents must not invent business definitions or policy. Principles 6 and 7: minimum permissions; prefer read-and-recommend.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-HANDOFF-ARCH-PRINCIPLE",
+        "source_type": "internal_design_document",
+        "title": "HANDOFF.md - Architecture principle and classification model",
+        "location": "HANDOFF.md, section 'Architecture principle'",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "'Do not create an agent because a task sounds intelligent.' Capabilities are classified as Human responsibility / Deterministic process / AI-assisted workflow / Specialised AI agent / Multi-agent workflow, and the least complex safe and effective implementation is to be chosen.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-HANDOFF-DECISION-MODEL",
+        "source_type": "internal_design_document",
+        "title": "HANDOFF.md - Decision model (human approval list)",
+        "location": "HANDOFF.md, section 'Decision model' > 'Human approval required'",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Human approval is required for business definition approval, quality thresholds, acceptance of data-quality risk and production changes. AI may suggest candidate data-quality rules and generate candidate SQL or tests.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-HANDOFF-DQ-AGENT",
+        "source_type": "internal_design_document",
+        "title": "HANDOFF.md - Candidate Data Quality Agent",
+        "location": "HANDOFF.md, section 'Candidate Operational Agents' > 'Data Quality Agent'; ARCHITECTURE.md, section 'Data Quality Agent' (Responsibilities: propose deterministic test, generate candidate SQL)",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "The candidate Data Quality Agent 'translates approved requirements into candidate data-quality rules, tests and controls' and must not set business thresholds. ARCHITECTURE.md lists 'propose deterministic test' and 'generate candidate SQL' among its responsibilities. Candidates are described as hypotheses to be validated, not fixed requirements.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-ARCH-EXAMPLE-FLOW",
+        "source_type": "internal_design_document",
+        "title": "ARCHITECTURE.md - Example end-to-end flow (settled trades missing settlement dates)",
+        "location": "ARCHITECTURE.md, section 'Example end-to-end flow'",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "The documented example question 'Why are settled trades missing settlement dates?' routes through Orchestrator, Context, Definition, Mapping, Quality, Exception agents and the Assurance Reviewer. This shows the null detection itself is a simple test while root-cause analysis, definition and mapping questions are the multi-step reasoning work. The Quality step asks 'What approved rule should detect this?'.",
+        "direct_or_inferred": "inferred",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-CONTRACT-TEMPLATE-ESCALATION",
+        "source_type": "internal_design_document",
+        "title": "AGENT-CONTRACT-TEMPLATE.md - Escalation and confidence rules",
+        "location": "AGENT-CONTRACT-TEMPLATE.md, sections 'Confidence Rules' and 'Escalation Conditions'",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Confidence must use exactly: Supported, Partially supported, Unsupported, Contradictory, Unable to determine. Escalation is required when a material conclusion depends on undocumented assumptions.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "SRC-CAPABILITY-REQUEST",
+        "source_type": "capability_request",
+        "title": "Capability under assessment (request text)",
+        "location": "Factory run FACTORY-RUN-P4-02, request text",
+        "authority_level": "inferred",
+        "extracted_fact": "The request reads 'Check whether Settlement Date is null for settled transactions.' It names one field, one condition (null) and one population (settled transactions), with no mention of data source, schema, 'settled' status definition, tolerance, or what happens on failure.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "statement": "The capability is a single deterministic, rule-based completeness check and is classified as a Deterministic process.",
+        "claim_type": "agent_inference",
+        "confidence": "Supported",
+        "evidence_ids": ["SRC-HANDOFF-ARCH-PRINCIPLE", "SRC-CAPABILITY-REQUEST"]
+      },
+      {
+        "claim_id": "C2",
+        "statement": "Documented design principles 9 and 10 direct that agents are not created where deterministic automation suffices and that the agent set is kept minimal.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["SRC-HANDOFF-PRINCIPLES"]
+      },
+      {
+        "claim_id": "C3",
+        "statement": "Necessity verdict is 'cut' as a standalone agent. This is an inference applying principles 9 and 10 to the stated request, not an approval.",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": ["SRC-HANDOFF-PRINCIPLES", "SRC-HANDOFF-ARCH-PRINCIPLE", "SRC-CAPABILITY-REQUEST"]
+      },
+      {
+        "claim_id": "C4",
+        "statement": "The candidate Data Quality Agent already lists proposing deterministic tests and generating candidate SQL, creating an overlap that must be surfaced for human decision rather than silently merged.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["SRC-HANDOFF-DQ-AGENT"]
+      },
+      {
+        "claim_id": "C5",
+        "statement": "Business definition approval and quality thresholds require human approval, so the meaning of 'settled' and any null tolerance cannot be decided by an agent.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["SRC-HANDOFF-DECISION-MODEL", "SRC-HANDOFF-PRINCIPLES"]
+      },
+      {
+        "claim_id": "C6",
+        "statement": "The approved definition of 'settled', the source dataset, and any treatment of null-like placeholder values are not available in the permitted evidence.",
+        "claim_type": "open_question",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      },
+      {
+        "claim_id": "C7",
+        "statement": "Whether the candidate registry in docs/CAPABILITY-CLASSIFICATION.md already contains an equivalent capability was not verifiable in this run, because the file is outside the permitted evidence domain.",
+        "claim_type": "open_question",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      },
+      {
+        "claim_id": "C8",
+        "statement": "Acceptance of the 'cut' verdict, the null tolerance, and the overlap handling with the Data Quality Agent are human decisions; this Draft must be independently challenged by the Agent Risk & Governance Reviewer.",
+        "claim_type": "human_decision_required",
+        "confidence": "Supported",
+        "evidence_ids": ["SRC-HANDOFF-DECISION-MODEL", "SRC-CONTRACT-TEMPLATE-ESCALATION"]
+      }
+    ],
+    "assumptions": [
+      "ASSUMPTION: 'settled transactions' means rows carrying a settlement-status indicator whose meaning is already defined; this repository evidence does not define it, so the predicate cannot be written precisely until an approved definition is supplied.",
+      "ASSUMPTION: the request asks for a repeatable completeness check (count/list of violating rows), not for diagnosis of why nulls occur.",
+      "ASSUMPTION: the check would run read-only against a governed dataset; no production data access was requested or granted in this run.",
+      "ASSUMPTION: the existing candidate registry (docs/CAPABILITY-CLASSIFICATION.md) was not consulted because it is outside this run's permitted evidence domain; overlap statements rely only on README.md, HANDOFF.md and ARCHITECTURE.md."
+    ],
+    "open_questions": [
+      "What is the approved business definition of 'settled' for this population, and which field or status value encodes it?",
+      "Is zero nulls the expectation, or is a tolerance acceptable (human-approved threshold)?",
+      "Which dataset(s) and source system(s) does the check apply to, and are null-like placeholders also treated as missing?",
+      "Where should the check live and who owns the control?",
+      "Should this check be authored via the candidate Data Quality Agent or as a plain scripted control with no agent involvement?",
+      "Does docs/CAPABILITY-CLASSIFICATION.md already contain or classify an equivalent capability?"
+    ],
+    "human_action_required": [
+      "Data Steward / Data Owner: supply or confirm the approved definition of 'settled' and of Settlement Date for the target dataset.",
+      "Data Steward / Data Owner: decide the acceptable null tolerance (any threshold is a human approval item).",
+      "Project owner (acting as human governance owner until one is named): decide whether to accept the 'cut' verdict and the deterministic-process classification, and how to treat the Data Quality Agent overlap.",
+      "Agent Risk & Governance Reviewer plus a human sign-off: independently challenge this Draft; it is not approved."
+    ],
+    "next_agent": "Agent Risk & Governance Reviewer"
+  }
+}

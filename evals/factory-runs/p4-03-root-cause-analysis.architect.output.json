@@ -1,0 +1,345 @@
+{
+  "summary": "Draft assessment of the capability 'Analyse six months of quality exceptions to identify recurring patterns and candidate root causes'. The capability is in scope (HANDOFF.md lists recurring-pattern identification and likely root causes as objectives, and permits AI to cluster recurring exceptions and produce root-cause hypotheses) but it is two different kinds of work. Grouping six months of exceptions by recorded attributes is a deterministic process. Drafting candidate root-cause hypotheses from those groupings, together with change and lineage context, is AI-assisted reasoning. Recommendation: do not build this as a standing, tool-bearing Specialised AI agent yet. Redesign it as an AI-assisted workflow, with a deterministic aggregation step feeding a read-and-recommend hypothesis step, and a human-owned final root-cause determination. This corresponds to the hypothesised 'Exception & Root-Cause Agent' in HANDOFF.md, which that document labels a hypothesis to be validated. This is a Draft, not approved, and it has not been checked against the candidate registry because that is outside this run's evidence domain.",
+  "classification": "AI-assisted workflow",
+  "necessity_verdict": "redesign",
+  "justification": "Principle 9 (avoid agents when deterministic automation is more appropriate) applies to the first half of the capability. Clustering and trending exceptions by recorded attributes (rule, field, source system, process, time bucket, severity) is counting and grouping, and it should be a deterministic, repeatable, auditable process rather than LLM judgement. Principle 10 (keep the agent set as small as possible) and the HANDOFF.md instruction not to create an agent because a task sounds intelligent argue against a standing agent until the workflow has been run and shown to need one. Principle 7 (read-and-recommend before read-write) and principle 6 (minimum permissions) fix the operating mode and keep the access scope narrow. The hypothesis-drafting half does need language reasoning: it correlates clusters with source or process changes and lineage context, and it proposes the evidence that would confirm or refute each hypothesis. HANDOFF.md explicitly lists 'cluster recurring exceptions' and 'produce root-cause hypotheses' as things AI may do, so an AI-assisted step is justified there. Principle 8 (separate agents by responsibility, evidence and decision rights) is not a reason to split the AI step into several agents, because a single bounded hypothesis step with one evidence domain and one decision right (recommend only) is enough. HANDOFF.md reserves 'final root-cause determination where evidence is incomplete' for humans, so the workflow output must stay at hypothesis level. A standing Specialised AI agent becomes defensible only if the AI step proves to need persistent state, several distinct tools, or repeated independent invocation across cases, and none of these is evidenced in the documents I may read. Confidence in this verdict is Partially supported: the principles are directly documented, but the shape of the exception data is unknown to me.",
+  "evidence": [
+    {
+      "source_id": "E1",
+      "source_type": "internal_design_document",
+      "title": "HANDOFF.md - Objective",
+      "location": "HANDOFF.md, section 'Objective' (bullets 'analyse quality exceptions' and 'identify recurring patterns and likely root causes')",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "The system is meant to help the Data Steward analyse quality exceptions and identify recurring patterns and likely root causes, so the requested capability is in the documented objective.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "E2",
+      "source_type": "internal_design_document",
+      "title": "HANDOFF.md - Decision model (AI may / Human approval required)",
+      "location": "HANDOFF.md, section 'Decision model'",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "AI may 'cluster recurring exceptions' and 'produce root-cause hypotheses'. Human approval is required for 'final root-cause determination where evidence is incomplete', acceptance of data-quality risk and production changes.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "E3",
+      "source_type": "internal_design_document",
+      "title": "HANDOFF.md - Important non-goals",
+      "location": "HANDOFF.md, section 'Important non-goals'",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "The system must not change production data, mappings or quality thresholds, resolve operational incidents on behalf of operations teams, make governance decisions, hide uncertainty, or present inferred organisational policy as fact.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "E4",
+      "source_type": "internal_design_document",
+      "title": "README.md - Key design principles 6, 7, 8, 9, 10",
+      "location": "README.md, section 'Key design principles'; HANDOFF.md section 'Architecture principle' repeats the least-complex-implementation rule",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "Principle 6: use the minimum permissions required. Principle 7: prefer read-and-recommend before read-write or autonomous action. Principle 8: separate agents by responsibility, evidence and decision rights. Principle 9: avoid creating agents when deterministic automation is more appropriate. Principle 10: keep the agent set as small as possible while preserving useful separation of concerns. HANDOFF.md adds: do not create an agent because a task sounds intelligent; choose the least complex implementation that is safe and effective.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "E5",
+      "source_type": "internal_design_document",
+      "title": "HANDOFF.md - Candidate Operational Agents: Exception & Root-Cause Agent",
+      "location": "HANDOFF.md, section 'Candidate Operational Agents' > 'Exception & Root-Cause Agent'; README.md section 'Operational agents' ('starting hypotheses, not fixed requirements')",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "A candidate 'Exception & Root-Cause Agent' is hypothesised to cluster quality failures and generate evidence-backed hypotheses about recurring process weaknesses; it is prohibited from declaring root cause without sufficient evidence or resolving operational incidents directly. HANDOFF.md states the candidate agents are hypotheses to be validated.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "E6",
+      "source_type": "internal_design_document",
+      "title": "ARCHITECTURE.md - Exception & Root-Cause Agent responsibilities; conceptual diagram caveat",
+      "location": "ARCHITECTURE.md, section 'Exception & Root-Cause Agent' and the note under the overview diagram",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "Responsibilities listed: cluster exceptions; identify recurring characteristics; correlate failures with source/process changes; identify common upstream dependencies; propose hypotheses; identify evidence required to confirm root cause. The diagram is stated to be conceptual and the final design must be derived from actual stewardship workflows, not from the diagram alone.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "E7",
+      "source_type": "internal_design_document",
+      "title": "README.md - Role scope",
+      "location": "README.md, section 'Business context'",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "Stewardship scope includes root-cause analysis and recurring quality-pattern identification, and the role is explicitly a data governance role rather than an operational incident-resolution role.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "E8",
+      "source_type": "internal_design_document",
+      "title": "ARCHITECTURE.md - Orchestrator rules and Assurance Reviewer",
+      "location": "ARCHITECTURE.md, sections 'Stewardship Orchestrator' (rules) and 'Assurance Reviewer'",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "The Orchestrator must minimise unnecessary agents and never turn partial evidence into a final decision. The Assurance Reviewer independently verifies claims against evidence, flags unsupported conclusions and checks that agent boundaries were respected.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "E9",
+      "source_type": "internal_design_document",
+      "title": "AGENT-CONTRACT-TEMPLATE.md - mandatory structure and escalation conditions",
+      "location": "AGENT-CONTRACT-TEMPLATE.md, sections 'Not Responsible For', 'Escalation Conditions', 'Evidence Requirements', 'Confidence Rules'",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "Any contract for this capability must carry a mandatory Not Responsible For section, escalation on missing evidence or a governance decision or a production change, evidence source/type/location/direct-or-inferred for every material claim, and one of five confidence labels.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "E10",
+      "source_type": "agent_inference",
+      "title": "Architect inference: deterministic versus language-reasoning split",
+      "location": "Derived from E2, E4 and E6; not stated verbatim in any source",
+      "authority_level": "inferred",
+      "extracted_fact": "Grouping exceptions by recorded attributes over a fixed window is a deterministic operation, whereas correlating clusters with change history and proposing confirmatory evidence requires reasoning over text and context. This split is my inference from the documented principles and responsibilities, and I have not seen any exception data or schema.",
+      "direct_or_inferred": "inferred",
+      "timestamp": "2026-10-27T00:00:00Z"
+    }
+  ],
+  "assumptions": [
+    "ASSUMPTION: Quality exceptions are recorded with structured attributes (at least rule or check identifier, field or data element, source system, timestamp, severity). If they are mostly free text, the deterministic clustering step becomes weaker and more of the work moves to the AI step. This is not evidenced in my permitted documents.",
+    "ASSUMPTION: A six-month window of exception records can be exported or read as an approved, bounded extract; no document I may read says where exceptions are stored or who owns them.",
+    "ASSUMPTION: Source and process change records (release notes, change tickets, upstream schema changes) exist in some readable form. Without them, correlation with changes is not possible and hypotheses stay weak.",
+    "ASSUMPTION: Exception volume over six months is large enough that manual clustering by the Data Steward is impractical. This is the reason to automate at all, and it is unverified.",
+    "ASSUMPTION: The human governance owner for sign-off of this design is the project owner, as AGENT-CONTRACT-TEMPLATE.md and the Architect contract leave the named role unspecified."
+  ],
+  "open_questions": [
+    "Where are quality exceptions stored today, in what structure, and who owns that data? I cannot determine this from README.md, HANDOFF.md, ARCHITECTURE.md or AGENT-CONTRACT-TEMPLATE.md.",
+    "Is there a structured, reliable source of source-system and process change history that exceptions can be correlated against? If not, candidate root causes can only be stated as low-support hypotheses.",
+    "Overlap check not performed: the candidate registry (docs/CAPABILITY-CLASSIFICATION.md) is outside the evidence domain permitted for this run, so I cannot say whether this capability overlaps an existing registry entry. ARCHITECTURE.md suggests possible boundary overlap with the Data Quality Agent (rule definitions, control owner) and the Mapping & Lineage Agent (upstream dependencies); this is surfaced for human or Orchestrator decision and not merged. The same Architect contract also states that its own necessity method must be re-validated against real candidate operational agents, and this run alone does not do that.",
+    "Does 'recurring pattern' mean a recurrence of the same rule failing on the same field, or recurrence across rules that share an upstream cause? The definition determines whether the deterministic step suffices.",
+    "Which exception records, if any, contain personal or commercially sensitive data, and does that require masking before an AI step reads them? Privacy and security assessment belongs to the Agent Risk & Governance Reviewer.",
+    "Is the output meant to feed a governance report (stewardship pack) or an escalation to upstream owners? That determines the handoff target, and ARCHITECTURE.md shows output going through the Assurance Reviewer to the Data Steward.",
+    "Principles 9 and 10 (minimise agents) and principle 8 (separate by responsibility, evidence and decision rights) pull in different directions if a separate Exception & Root-Cause Agent is proposed alongside a deterministic job. I have recommended a single bounded AI-assisted step rather than choosing one principle silently, and ask for human resolution if the owner prefers a standing agent."
+  ],
+  "recommendations": [
+    "R1 Split the capability. Step A is a deterministic, version-controlled aggregation of the six-month exception extract by rule, field, source system, process, time bucket and severity, producing counts, trends and recurrence flags that are reproducible and auditable. No LLM is involved in Step A.",
+    "R2 Step B is an AI-assisted hypothesis step that takes the Step A output plus approved context and produces candidate root-cause hypotheses, each with the supporting exceptions, the evidence still needed to confirm it, an evidence category (authoritative internal, general industry, agent inference, open question, human decision required) and one of the five confidence labels. Output stays at hypothesis level; no root cause is declared.",
+    "R3 DATA ACCESS / READ SCOPE for the workflow (proposed, minimum necessary, not granted by me): read-only access to (a) a bounded, approved extract of quality exception records covering the six-month window only; (b) read-only approved glossary or definition entries for the fields appearing in those exceptions, for meaning only; (c) read-only source and process change records covering the same window, if they exist; (d) read-only lineage or mapping metadata for the affected fields, if it exists. Step A needs only (a). Step B needs (a) as aggregated output plus (b), (c) and (d). Excluded: any write, execute or update permission; production trading, positions or valuation data beyond what appears in the exception record itself; quality-rule or threshold editing; any ticketing or incident-management action; any access outside the six-month window without a fresh approval. Personal or sensitive fields are to be excluded or masked from the extract unless the Risk Reviewer approves otherwise. This scope is a proposal and tool and data permissions require human approval.",
+    "R4 Route Step B output through the Assurance Reviewer, as shown in ARCHITECTURE.md, before it reaches the Data Steward, and route any finding that implies a threshold change, mapping change, ownership assignment or production fix to the appropriate human owner as 'human decision required'.",
+    "R5 Defer building a standing Exception & Root-Cause Agent. Run the workflow manually against a real six-month extract first and promote it to a Specialised AI agent only if that run shows a need for persistent state, multiple distinct tools or repeated independent invocation. This addresses principle 10 and the E5 statement that candidate agents are hypotheses to be validated.",
+    "R6 Hand the Draft to the Agent Risk & Governance Reviewer for independent challenge (authority, hallucination risk when correlating to change history, privacy of exception data, overlap with the Data Quality and Mapping & Lineage candidates) before any contract is written or built. Build, tool permission and data access decisions are not mine to make.",
+    "R7 Evaluation outline pointer (not a test list): see the evaluation_outline_pointer field."
+  ],
+  "evaluation_outline_pointer": "What most needs testing is whether the hypothesis step stays honest about the limits of its evidence. In particular, whether it presents a correlation between a cluster and a change event as a hypothesis with stated confidence and named confirming evidence rather than as an established root cause, whether it escalates rather than invents when exceptions or change history are sparse or missing, and whether the deterministic aggregation reproduces identical results on the same extract. The Agent Evaluation Designer owns the enumerated scenarios.",
+  "human_action_required": [
+    "Data Steward or project owner: confirm where quality exceptions live, their structure and who owns them, so the deterministic step can be scoped.",
+    "Data Steward or project owner: confirm whether change history for source systems and processes exists and is readable.",
+    "Project owner (acting as human governance owner): decide whether to accept the redesign to an AI-assisted workflow, or to proceed with a standing Exception & Root-Cause Agent, and resolve the principle 8 versus principles 9 and 10 tension noted in open_questions.",
+    "Project owner and data owner: approve, adjust or reject the proposed read scope in R3 before any access is provisioned. I have granted nothing.",
+    "Orchestrator or human: pass this Draft to the Agent Risk & Governance Reviewer; I cannot invoke it directly."
+  ],
+  "handoff": {
+    "case_id": "FACTORY-RUN-P4-03",
+    "request": "Analyse six months of quality exceptions to identify recurring patterns and candidate root causes.",
+    "agent": "Stewardship Agent Architect",
+    "status": "Draft",
+    "findings": [
+      "The capability is within the documented objective and within what AI may do (cluster recurring exceptions, produce root-cause hypotheses), but final root-cause determination where evidence is incomplete is human-only.",
+      "Classification: AI-assisted workflow. Necessity verdict: redesign. Split into a deterministic aggregation step and a bounded read-and-recommend hypothesis step; defer a standing Specialised AI agent until a real run shows the need.",
+      "Proposed read scope is read-only and limited to the six-month exception extract, approved definitions for the affected fields, and change and lineage metadata if available; no write or production access.",
+      "Registry overlap was not checked because the registry is outside this run's evidence domain; possible boundary overlap with the Data Quality and Mapping & Lineage candidates is surfaced for human decision.",
+      "Verdict confidence is Partially supported because the principles are documented but the exception data structure and the change-history source are unknown."
+    ],
+    "evidence": [
+      {
+        "source_id": "E1",
+        "source_type": "internal_design_document",
+        "title": "HANDOFF.md - Objective",
+        "location": "HANDOFF.md, section 'Objective' (bullets 'analyse quality exceptions' and 'identify recurring patterns and likely root causes')",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "The system is meant to help the Data Steward analyse quality exceptions and identify recurring patterns and likely root causes, so the requested capability is in the documented objective.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "E2",
+        "source_type": "internal_design_document",
+        "title": "HANDOFF.md - Decision model (AI may / Human approval required)",
+        "location": "HANDOFF.md, section 'Decision model'",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "AI may 'cluster recurring exceptions' and 'produce root-cause hypotheses'. Human approval is required for 'final root-cause determination where evidence is incomplete', acceptance of data-quality risk and production changes.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "E3",
+        "source_type": "internal_design_document",
+        "title": "HANDOFF.md - Important non-goals",
+        "location": "HANDOFF.md, section 'Important non-goals'",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "The system must not change production data, mappings or quality thresholds, resolve operational incidents on behalf of operations teams, make governance decisions, hide uncertainty, or present inferred organisational policy as fact.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "E4",
+        "source_type": "internal_design_document",
+        "title": "README.md - Key design principles 6, 7, 8, 9, 10",
+        "location": "README.md, section 'Key design principles'; HANDOFF.md section 'Architecture principle' repeats the least-complex-implementation rule",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Principle 6: use the minimum permissions required. Principle 7: prefer read-and-recommend before read-write or autonomous action. Principle 8: separate agents by responsibility, evidence and decision rights. Principle 9: avoid creating agents when deterministic automation is more appropriate. Principle 10: keep the agent set as small as possible while preserving useful separation of concerns. HANDOFF.md adds: do not create an agent because a task sounds intelligent; choose the least complex implementation that is safe and effective.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "E5",
+        "source_type": "internal_design_document",
+        "title": "HANDOFF.md - Candidate Operational Agents: Exception & Root-Cause Agent",
+        "location": "HANDOFF.md, section 'Candidate Operational Agents' > 'Exception & Root-Cause Agent'; README.md section 'Operational agents' ('starting hypotheses, not fixed requirements')",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "A candidate 'Exception & Root-Cause Agent' is hypothesised to cluster quality failures and generate evidence-backed hypotheses about recurring process weaknesses; it is prohibited from declaring root cause without sufficient evidence or resolving operational incidents directly. HANDOFF.md states the candidate agents are hypotheses to be validated.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "E6",
+        "source_type": "internal_design_document",
+        "title": "ARCHITECTURE.md - Exception & Root-Cause Agent responsibilities; conceptual diagram caveat",
+        "location": "ARCHITECTURE.md, section 'Exception & Root-Cause Agent' and the note under the overview diagram",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Responsibilities listed: cluster exceptions; identify recurring characteristics; correlate failures with source/process changes; identify common upstream dependencies; propose hypotheses; identify evidence required to confirm root cause. The diagram is stated to be conceptual and the final design must be derived from actual stewardship workflows, not from the diagram alone.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "E7",
+        "source_type": "internal_design_document",
+        "title": "README.md - Role scope",
+        "location": "README.md, section 'Business context'",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Stewardship scope includes root-cause analysis and recurring quality-pattern identification, and the role is explicitly a data governance role rather than an operational incident-resolution role.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "E8",
+        "source_type": "internal_design_document",
+        "title": "ARCHITECTURE.md - Orchestrator rules and Assurance Reviewer",
+        "location": "ARCHITECTURE.md, sections 'Stewardship Orchestrator' (rules) and 'Assurance Reviewer'",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "The Orchestrator must minimise unnecessary agents and never turn partial evidence into a final decision. The Assurance Reviewer independently verifies claims against evidence, flags unsupported conclusions and checks that agent boundaries were respected.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "E9",
+        "source_type": "internal_design_document",
+        "title": "AGENT-CONTRACT-TEMPLATE.md - mandatory structure and escalation conditions",
+        "location": "AGENT-CONTRACT-TEMPLATE.md, sections 'Not Responsible For', 'Escalation Conditions', 'Evidence Requirements', 'Confidence Rules'",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Any contract for this capability must carry a mandatory Not Responsible For section, escalation on missing evidence or a governance decision or a production change, evidence source/type/location/direct-or-inferred for every material claim, and one of five confidence labels.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "E10",
+        "source_type": "agent_inference",
+        "title": "Architect inference: deterministic versus language-reasoning split",
+        "location": "Derived from E2, E4 and E6; not stated verbatim in any source",
+        "authority_level": "inferred",
+        "extracted_fact": "Grouping exceptions by recorded attributes over a fixed window is a deterministic operation, whereas correlating clusters with change history and proposing confirmatory evidence requires reasoning over text and context. This split is my inference from the documented principles and responsibilities, and I have not seen any exception data or schema.",
+        "direct_or_inferred": "inferred",
+        "timestamp": "2026-10-27T00:00:00Z"
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "statement": "Analysing quality exceptions for recurring patterns and likely root causes is within the documented objective of the system.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["E1", "E7"]
+      },
+      {
+        "claim_id": "C2",
+        "statement": "AI is permitted to cluster recurring exceptions and produce root-cause hypotheses, but final root-cause determination where evidence is incomplete requires human approval.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["E2", "E5"]
+      },
+      {
+        "claim_id": "C3",
+        "statement": "The organisation's design principles require choosing the least complex safe implementation, avoiding agents where deterministic automation suffices, preferring read-and-recommend, and keeping permissions minimal.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["E4"]
+      },
+      {
+        "claim_id": "C4",
+        "statement": "The candidate Exception & Root-Cause Agent is a hypothesis to be validated, and the architecture diagram is conceptual; the final design should come from actual stewardship workflows.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["E5", "E6"]
+      },
+      {
+        "claim_id": "C5",
+        "statement": "The pattern-grouping part of the capability is a deterministic process and the hypothesis-drafting part is AI-assisted, so the capability should be classified as an AI-assisted workflow rather than a standing Specialised AI agent.",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": ["E2", "E4", "E6", "E10"]
+      },
+      {
+        "claim_id": "C6",
+        "statement": "The proposed read scope should be limited to the six-month exception extract, approved definitions for affected fields, and change and lineage metadata if available, all read-only, with no production or write access.",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": ["E3", "E4", "E6"]
+      },
+      {
+        "claim_id": "C7",
+        "statement": "The necessity verdict 'redesign' is the Architect's recommendation only; it is a Draft pending Agent Risk & Governance Reviewer challenge and human sign-off.",
+        "claim_type": "human_decision_required",
+        "confidence": "Partially supported",
+        "evidence_ids": ["E8", "E9"]
+      },
+      {
+        "claim_id": "C8",
+        "statement": "Whether this capability overlaps an existing registry entry cannot be determined because the registry was outside this run's permitted evidence.",
+        "claim_type": "open_question",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      },
+      {
+        "claim_id": "C9",
+        "statement": "Where quality exceptions are stored, their structure, and whether source and process change history is available are unknown, so the feasibility of the deterministic step and of change correlation is unverified.",
+        "claim_type": "open_question",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      }
+    ],
+    "assumptions": [
+      "ASSUMPTION: Quality exceptions are recorded with structured attributes (at least rule or check identifier, field or data element, source system, timestamp, severity).",
+      "ASSUMPTION: A six-month window of exception records can be read as an approved, bounded extract.",
+      "ASSUMPTION: Source and process change records exist in some readable form.",
+      "ASSUMPTION: Exception volume is large enough that manual clustering is impractical.",
+      "ASSUMPTION: The human governance owner for sign-off is the project owner."
+    ],
+    "open_questions": [
+      "Where are quality exceptions stored, in what structure, and who owns them?",
+      "Is there a structured source of source-system and process change history?",
+      "Overlap with the candidate registry was not checked (outside evidence domain); possible boundary overlap with Data Quality and Mapping & Lineage candidates needs human or Orchestrator decision.",
+      "What does 'recurring pattern' mean operationally?",
+      "Do exception records contain personal or sensitive data needing masking?",
+      "Is the output a governance report or an escalation to upstream owners?",
+      "Principle 8 versus principles 9 and 10 tension if a standing agent is preferred; human resolution requested."
+    ],
+    "human_action_required": [
+      "Confirm exception storage location, structure and ownership.",
+      "Confirm availability of source and process change history.",
+      "Project owner decides whether to accept the AI-assisted workflow redesign or proceed with a standing agent.",
+      "Project owner and data owner approve, adjust or reject the proposed read scope before any access is provisioned.",
+      "Orchestrator or human passes this Draft to the Agent Risk & Governance Reviewer."
+    ],
+    "next_agent": "Agent Risk & Governance Reviewer"
+  }
+}

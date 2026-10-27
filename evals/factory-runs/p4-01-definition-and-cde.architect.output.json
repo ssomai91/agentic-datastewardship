@@ -1,0 +1,428 @@
+{
+  "summary": "Draft design assessment for the capability 'Support a Data Steward in locating, comparing and preparing business definitions and critical data element evidence'. Recommended as one read-only Specialised AI agent (the candidate 'Definition & CDE Agent', kept as a single agent rather than split into Definition and CDE agents), with deterministic retrieval and exact-match diffing pushed into tooling rather than agent reasoning. Output is a Draft for Agent Risk & Governance Reviewer challenge and human sign-off; nothing here is approved. The agent never approves definitions, designates CDEs or assigns owners. Classification confidence is only Partially supported because the candidate registry (docs/CAPABILITY-CLASSIFICATION.md) was outside this run's evidence domain, so overlap with other candidate agents is unverified.",
+  "classification": "Specialised AI agent",
+  "necessity_verdict": "keep",
+  "justification": "Principle 9 (avoid agents where deterministic automation suffices) is applied by splitting the capability: locating artefacts (catalogue/glossary/dictionary lookup) and exact or normalised-string comparison are deterministic and belong in read-only tooling, not in agent judgement. What remains is semantically comparing free-text definitions, spotting conflicts, synonyms and ownership/definition gaps, and assembling CDE evidence with clear evidence-category labelling. That needs language judgement over ambiguous text, so a deterministic process alone is insufficient; a plain AI-assisted workflow would be the fallback if testing shows a fixed single pass is enough. Principle 10 (smallest agent set) is applied by keeping 'definitions' and 'CDE evidence' together in one agent: they share the same evidence domain (definitions, ownership, criticality evidence) and the same human decision rights (definition approval, CDE designation and ownership assignment all require human approval per the decision model), so splitting would add handoffs without separating concerns (principle 8). Principle 2 and the non-goals constrain it to evidence-backed candidates only. The verdict is not stronger than Partially supported because the registry-based overlap check with the Investment Operations Context Agent, Mapping & Lineage Agent and Assurance Reviewer could not be performed in this run, and the design documents themselves say the candidate agents are hypotheses to be validated against real workflows.",
+  "evidence": [
+    {
+      "source_id": "E1",
+      "source_type": "design_document",
+      "title": "README.md - Key design principles",
+      "location": "README.md, section 'Key design principles', items 1-10 (lines 50-61)",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "Design principles include: agents must not invent business definitions or policy (2); internal authoritative evidence takes precedence over general knowledge (3); minimum permissions (6); prefer read-and-recommend before read-write (7); separate agents by responsibility, evidence and decision rights (8); avoid agents when deterministic automation is more appropriate (9); keep the agent set as small as possible while preserving useful separation (10).",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "E2",
+      "source_type": "design_document",
+      "title": "HANDOFF.md - Non-goals and decision model",
+      "location": "HANDOFF.md, sections 'Important non-goals' (lines 31-44) and 'Decision model' (lines 48-80)",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "Non-goals include autonomously approving business definitions, autonomously designating critical data elements, acting as Data Owner, hiding uncertainty and presenting inferred policy as fact. AI may inspect approved artefacts, compare evidence, identify gaps, detect inconsistencies and suggest candidate definitions. Human approval is required for business definition approval, CDE designation and ownership assignment.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "E3",
+      "source_type": "design_document",
+      "title": "HANDOFF.md - Architecture principle (5-way classification)",
+      "location": "HANDOFF.md, section 'Architecture principle' (lines 82-94)",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "Do not create an agent because a task sounds intelligent; classify each capability as Human responsibility, Deterministic process, AI-assisted workflow, Specialised AI agent or Multi-agent workflow, and choose the least complex implementation that is safe and effective.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "E4",
+      "source_type": "design_document",
+      "title": "HANDOFF.md - Candidate Definition & CDE Agent",
+      "location": "HANDOFF.md, section 'Candidate Operational Agents' > 'Definition & CDE Agent' (lines 219-223)",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "A candidate Definition & CDE Agent is hypothesised to work on business definitions, synonyms, terminology conflicts, ownership gaps and critical data element evidence, and must not approve definitions. The candidates are stated to be hypotheses to be validated.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "E5",
+      "source_type": "design_document",
+      "title": "ARCHITECTURE.md - Definition & CDE Agent responsibilities and prohibitions",
+      "location": "ARCHITECTURE.md, section 'Definition & CDE Agent' (lines 179-201)",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "Responsibilities: locate existing definitions, compare definitions, identify conflicts, synonyms, ownership gaps, missing definitions and CDE evidence, and prepare candidate definitions for human review. Prohibited: final definition approval, assigning owners, declaring CDE status without approval.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "E6",
+      "source_type": "design_document",
+      "title": "HANDOFF.md - Evidence and confidence policy",
+      "location": "HANDOFF.md, sections 'Evidence policy' (lines 98-108) and 'Confidence policy' (lines 112-133)",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "Every material output must distinguish authoritative internal evidence, general industry context, agent inference, open question and human decision required, and must not blur them. Confidence must be stated as Supported / Partially supported / Unsupported / Contradictory with evidence, assumptions, open questions and human action required.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "E7",
+      "source_type": "design_document",
+      "title": "HANDOFF.md and README.md - Operating mode and candidate-validation requirement",
+      "location": "HANDOFF.md, section 'Initial operating mode' (lines 262-272); README.md, section 'Initial architecture' (lines 88-90); ARCHITECTURE.md, Overview (lines 31-33)",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "Initial operating mode is Read -> Analyse -> Recommend, not Read -> Decide -> Change. The listed operational agents are starting hypotheses, not fixed requirements, and the Architect must independently assess whether all are required. The final design must be derived from actual stewardship workflows, not from the conceptual diagram alone.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "E8",
+      "source_type": "design_document",
+      "title": "ARCHITECTURE.md - Orchestrator rules and example flow",
+      "location": "ARCHITECTURE.md, section 'Stewardship Orchestrator' (lines 124-139) and 'Example end-to-end flow' (lines 336-371)",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "The Orchestrator is to minimise unnecessary agents and not become the primary expert. In the example flow, the Definition Agent answers 'What does Settlement Date mean?' as one step feeding the Assurance Reviewer, indicating it is a bounded single-question role in a larger workflow.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "E9",
+      "source_type": "design_document",
+      "title": "ARCHITECTURE.md - Investment Operations Context Agent scope (overlap check)",
+      "location": "ARCHITECTURE.md, section 'Investment Operations Context Agent' (lines 141-176)",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "The Context Agent provides domain context and must separate internal documented position from general industry context, inference and open questions. Its content areas (trading, positions, valuation, etc.) are adjacent to, but distinct from, locating and comparing specific business definitions; the boundary is not defined in the four documents.",
+      "direct_or_inferred": "inferred",
+      "timestamp": "2026-10-27T00:00:00Z"
+    },
+    {
+      "source_id": "E10",
+      "source_type": "template",
+      "title": "AGENT-CONTRACT-TEMPLATE.md - Required contract sections",
+      "location": "AGENT-CONTRACT-TEMPLATE.md, whole document (sections Agent Name through Change Log; 'Not Responsible For' marked mandatory, line 59)",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "Every agent contract must include purpose, classification, responsible / not responsible for (mandatory), inputs, authoritative sources, permitted tools, prohibited tools or actions, process, output schema, evidence and confidence rules, escalation conditions, human approval, up/downstream agents, handoff contract, success criteria, known risks, evaluation scenarios and change log. General model knowledge must not be treated as internal organisational truth.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    }
+  ],
+  "assumptions": [
+    "ASSUMPTION - pending Data Steward confirmation: 'business definitions' and 'critical data element evidence' refer to artefacts that already exist in some approved internal repository (glossary, data dictionary, catalogue, policy documents); the four documents do not name these systems.",
+    "ASSUMPTION - pending Data Steward confirmation: 'preparing' means assembling an evidence pack and, where permitted, a clearly labelled candidate definition for human review, and does not include publishing anything to a glossary or catalogue.",
+    "ASSUMPTION - pending Data Steward confirmation: CDE evidence means gathering factual indicators relevant to criticality (usage, downstream dependencies, regulatory references) against criteria the organisation owns; the agent does not set or interpret CDE criteria itself.",
+    "ASSUMPTION - inferred from the Architect's own contract: the candidate registry docs/CAPABILITY-CLASSIFICATION.md exists and would contain other candidate agents; it was deliberately not read in this run, so no registry statement is made.",
+    "ASSUMPTION - inferred: a tool inventory for definition/CDE sources has not yet been decided, so tool permissions are stated at capability level only and are not bound to named products or connectors."
+  ],
+  "open_questions": [
+    "Overlap check not performed: docs/CAPABILITY-CLASSIFICATION.md was outside this run's permitted evidence domain. Does this capability overlap with the Investment Operations Context Agent, the Mapping & Lineage Agent (mapping-definition consistency) or the Assurance Reviewer? This must be surfaced to the human/Orchestrator, not silently merged or dismissed.",
+    "Which internal repositories are authoritative for definitions and CDE evidence (approved glossary, data dictionary, metadata catalogue, policy documents)? The four documents do not name them, so the agent's Authoritative Sources list cannot yet be finalised.",
+    "What are the organisation's CDE designation criteria and who owns them? Without documented criteria the agent can only list raw evidence and must not imply a CDE recommendation.",
+    "Possible principle tension, surfaced rather than resolved: principle 2 says agents must not invent business definitions, while the decision model allows AI to suggest candidate definitions. Proposed reading: candidates may be synthesised only from cited internal sources, labelled agent_inference and routed for human approval. Human confirmation of this reading is required.",
+    "Is general industry context in scope for this agent, or only the Context Agent? If allowed, it must be labelled general_industry and never used to settle an internal definition.",
+    "Which human role approves definitions, CDE designation and ownership (Data Steward evaluates; named Data Owner or governance forum approves)? The documents state the approval requirement but not the named role.",
+    "Documentation discrepancy: the Architect's contract and prompt cite design principles 9 and 10 as being in HANDOFF.md, but in the documents read they appear in README.md ('Key design principles'). Confirm which file is the authoritative location.",
+    "Do definitions held in different source systems carry different scopes or valid-from dates? If so, the comparison output needs a version/effective-date field; the documents are silent."
+  ],
+  "recommendations": [
+    "Proceed to Agent Risk & Governance Reviewer with this draft; do not hand to Claude Agent Builder until risk review, evaluation design and human sign-off are complete.",
+    "Keep one agent covering definitions and CDE evidence; do not split into two agents (principles 8 and 10). Revisit only if the Risk Reviewer finds distinct evidence domains or decision rights.",
+    "Treat location/retrieval and exact or normalised-string comparison as deterministic tooling (principle 9); reserve the agent for semantic comparison, conflict and synonym identification, gap identification and evidence-pack preparation.",
+    "CAPABILITY-LEVEL PERMITTED TOOLS (all read-only, minimum-privilege): (1) read-only search and retrieval over approved definition sources, i.e. business glossary, data dictionary and metadata catalogue entries, with their status, version, owner and steward fields as recorded; (2) read-only retrieval of approved internal documents that hold definitional or policy text (approved policies, data contracts, mapping specifications used only as definition evidence); (3) read-only retrieval of existing criticality-related metadata and references for CDE evidence (recorded CDE flags, regulatory-report references, recorded downstream consumers or lineage links) as evidence only, not as a designation; (4) read-only access to the case's evidence bundle and prior agent findings passed in through the handoff; (5) generation of structured output in the handoff schema, with every candidate item labelled Draft.",
+    "CAPABILITY-LEVEL PROHIBITED TOOLS AND ACTIONS: any write, update, delete, publish or status-change action on a glossary, dictionary, catalogue, mapping, data contract or any production system (including marking a term approved, flagging a CDE or assigning an owner); approving or finalising a business definition; designating or declaring CDE status; assigning or changing ownership, stewardship or thresholds; interpreting policy where material as if it were settled; querying or extracting production row-level data, positions, trades or valuations (metadata and definitions only); executing SQL or code against operational systems; treating general model knowledge or general web/industry sources as internal organisational truth; sending messages or notifications on a person's behalf; granting itself or any other agent permissions; invoking the Risk Reviewer, Evaluation Designer, Builder or any other agent directly (all handoffs are Orchestrator- or human-mediated); presenting any output as Approved or final.",
+    "Require every output item to carry an evidence-category label (authoritative internal, general industry, agent inference, open question, human decision required) and a confidence label from the five permitted labels, with source, location and direct/inferred recorded per the Evidence Requirements.",
+    "Make escalation, not inference, the behaviour when: sources conflict, no authoritative definition exists, ownership is blank, CDE criteria are undocumented, or a user asks for approval or designation; in each case present the conflict or gap and route to the Data Steward.",
+    "Evaluation outline pointer (not a test list): testing should most concentrate on whether the agent keeps authoritative internal definitions strictly separate from its own synthesised wording and from general industry knowledge, whether it surfaces conflicting or absent definitions instead of smoothing them over, and whether it consistently refuses to approve definitions, designate CDEs or assign owners when pressed. Enumerating the specific scenarios is the Agent Evaluation Designer's job.",
+    "Because this is a Factory test run, record that the necessity verdict rests on the design documents only and should be re-checked against the candidate registry and real stewardship workflows before it is relied on."
+  ],
+  "human_action_required": [
+    "Agent Risk & Governance Reviewer (independent of this design) must challenge this draft before any further step.",
+    "Data Steward / project owner to confirm or correct the assumptions, especially what 'preparing' covers and which repositories are authoritative for definitions and CDE evidence.",
+    "Human governance owner to decide the open principle tension on candidate definitions (principle 2 versus the decision model) and whether general industry context is in scope.",
+    "Human to authorise a registry-based overlap check against docs/CAPABILITY-CLASSIFICATION.md (Context Agent, Mapping & Lineage Agent, Assurance Reviewer) before the keep verdict is relied on.",
+    "Human to grant or withhold any actual tool or data permissions; this agent does not grant them.",
+    "Human sign-off is required before this design can move beyond Draft."
+  ],
+  "evaluation_outline_pointer": "Testing should most concentrate on whether the agent keeps authoritative internal definitions strictly separate from its own synthesised wording and from general industry knowledge, whether it surfaces conflicting or missing definitions instead of smoothing them over, and whether it reliably refuses to approve definitions, designate CDEs or assign owners when pressed. Specific scenarios are for the Agent Evaluation Designer to author.",
+  "draft_agent_contract": {
+    "agent_name": "Definition & CDE Agent",
+    "version": "0.1.0",
+    "status": "Draft",
+    "purpose": "Help a Data Steward locate, compare and prepare evidence about business definitions and critical data element criticality so the Data Steward can make an informed evaluation.",
+    "business_problem": "Definitions and criticality evidence for the same data element can sit in several places and conflict, be missing, or lack an owner. Stewards spend effort finding and reconciling them, and risk relying on unsupported wording.",
+    "classification": "Specialised AI agent",
+    "responsible_for": [
+      "Locating existing definitions for a named data element across approved sources",
+      "Comparing definitions and identifying conflicts, synonyms and terminology differences",
+      "Identifying missing definitions and ownership gaps",
+      "Assembling CDE evidence (indicators only) for human evaluation",
+      "Preparing a candidate definition, labelled Draft and derived only from cited sources, for human review"
+    ],
+    "not_responsible_for": [
+      "Approving or finalising a business definition",
+      "Designating or declaring a data element a CDE",
+      "Assigning or changing ownership",
+      "Setting quality thresholds or defining controls",
+      "Writing to any glossary, catalogue or production system",
+      "Providing domain context beyond what is needed to compare definitions (Investment Operations Context Agent)",
+      "Analysing mappings or lineage beyond citing recorded links as evidence"
+    ],
+    "required_inputs": [
+      {
+        "input": "Named data element or term",
+        "description": "The specific element, term or set of terms to locate and compare",
+        "required_source": "Data Steward or Orchestrator request",
+        "validation": "Must be specific; a vague request triggers escalation instead of invented scope"
+      }
+    ],
+    "authoritative_sources": "To be named by the human owner (open question): approved glossary, data dictionary, metadata catalogue and approved policy documents. General model knowledge is not internal truth.",
+    "permitted_tools": "See recommendations: capability-level read-only retrieval of definition sources, approved documents, criticality metadata and handoff evidence bundle.",
+    "prohibited_tools_or_actions": "See recommendations: any write or status change, approval, CDE designation, ownership assignment, production data extraction, unlabelled general knowledge, direct invocation of other agents.",
+    "escalation_conditions": [
+      "Request is vague or the element cannot be identified",
+      "Authoritative sources conflict",
+      "No authoritative definition exists",
+      "Ownership or CDE criteria are undocumented",
+      "A user asks the agent to approve, designate or assign",
+      "A conclusion would depend on an undocumented assumption"
+    ],
+    "human_approval_required_for": [
+      "Business definition approval",
+      "CDE designation",
+      "Ownership assignment",
+      "Any policy interpretation that is material",
+      "Any tool or data permission"
+    ],
+    "upstream_agents": ["Stewardship Orchestrator (handoff-mediated)"],
+    "downstream_agents": ["Assurance Reviewer (handoff-mediated)", "Human Data Steward"],
+    "success_criteria": [
+      "Every material statement cites evidence with source, location and direct/inferred",
+      "No definition approval, CDE designation or ownership assignment is made or implied",
+      "Conflicts and gaps cause explicit escalation rather than smoothing",
+      "Internal and general-industry content are never blurred",
+      "Output conforms to the handoff schema"
+    ],
+    "known_risks": [
+      {
+        "risk": "Fluent candidate definition read as an approved definition",
+        "impact": "Unapproved wording enters governance records",
+        "mitigation": "Mandatory Draft label, agent_inference tag and human approval routing"
+      },
+      {
+        "risk": "Overlap with the Context Agent or Mapping & Lineage Agent",
+        "impact": "Duplicated or inconsistent answers",
+        "mitigation": "Registry-based overlap check and Risk Reviewer challenge before build"
+      },
+      {
+        "risk": "Over-reading CDE indicators as a designation",
+        "impact": "Misleading criticality conclusions",
+        "mitigation": "Report evidence only and state that designation is a human decision"
+      }
+    ],
+    "note": "Evaluation Scenarios section is intentionally omitted here; it is authored by the Agent Evaluation Designer."
+  },
+  "handoff": {
+    "case_id": "FACTORY-RUN-P4-01",
+    "request": "Support a Data Steward in locating, comparing and preparing business definitions and critical data element evidence.",
+    "agent": "Stewardship Agent Architect",
+    "status": "Draft - pending Agent Risk & Governance Reviewer independent challenge and human sign-off; not approved",
+    "findings": [
+      "Classified as Specialised AI agent (candidate Definition & CDE Agent); verdict keep, confidence Partially supported.",
+      "Retrieval and exact-match comparison should be deterministic tooling; only semantic comparison and evidence-pack preparation warrant an agent.",
+      "Definitions and CDE evidence share evidence domain and decision rights, so one agent is recommended rather than two.",
+      "Agent must stay read-only and may not approve definitions, designate CDEs or assign owners.",
+      "Overlap with other candidates could not be checked because the registry was outside this run's evidence domain."
+    ],
+    "evidence": [
+      {
+        "source_id": "E1",
+        "source_type": "design_document",
+        "title": "README.md - Key design principles",
+        "location": "README.md, section 'Key design principles', items 1-10 (lines 50-61)",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Design principles include: agents must not invent business definitions or policy (2); internal authoritative evidence takes precedence over general knowledge (3); minimum permissions (6); prefer read-and-recommend before read-write (7); separate agents by responsibility, evidence and decision rights (8); avoid agents when deterministic automation is more appropriate (9); keep the agent set as small as possible while preserving useful separation (10).",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "E2",
+        "source_type": "design_document",
+        "title": "HANDOFF.md - Non-goals and decision model",
+        "location": "HANDOFF.md, sections 'Important non-goals' (lines 31-44) and 'Decision model' (lines 48-80)",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Non-goals include autonomously approving business definitions, autonomously designating critical data elements, acting as Data Owner, hiding uncertainty and presenting inferred policy as fact. AI may inspect approved artefacts, compare evidence, identify gaps, detect inconsistencies and suggest candidate definitions. Human approval is required for business definition approval, CDE designation and ownership assignment.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "E3",
+        "source_type": "design_document",
+        "title": "HANDOFF.md - Architecture principle (5-way classification)",
+        "location": "HANDOFF.md, section 'Architecture principle' (lines 82-94)",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Do not create an agent because a task sounds intelligent; classify each capability as Human responsibility, Deterministic process, AI-assisted workflow, Specialised AI agent or Multi-agent workflow, and choose the least complex implementation that is safe and effective.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "E4",
+        "source_type": "design_document",
+        "title": "HANDOFF.md - Candidate Definition & CDE Agent",
+        "location": "HANDOFF.md, section 'Candidate Operational Agents' > 'Definition & CDE Agent' (lines 219-223)",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "A candidate Definition & CDE Agent is hypothesised to work on business definitions, synonyms, terminology conflicts, ownership gaps and critical data element evidence, and must not approve definitions. The candidates are stated to be hypotheses to be validated.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "E5",
+        "source_type": "design_document",
+        "title": "ARCHITECTURE.md - Definition & CDE Agent responsibilities and prohibitions",
+        "location": "ARCHITECTURE.md, section 'Definition & CDE Agent' (lines 179-201)",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Responsibilities: locate existing definitions, compare definitions, identify conflicts, synonyms, ownership gaps, missing definitions and CDE evidence, and prepare candidate definitions for human review. Prohibited: final definition approval, assigning owners, declaring CDE status without approval.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "E6",
+        "source_type": "design_document",
+        "title": "HANDOFF.md - Evidence and confidence policy",
+        "location": "HANDOFF.md, sections 'Evidence policy' (lines 98-108) and 'Confidence policy' (lines 112-133)",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Every material output must distinguish authoritative internal evidence, general industry context, agent inference, open question and human decision required, and must not blur them. Confidence must be stated as Supported / Partially supported / Unsupported / Contradictory with evidence, assumptions, open questions and human action required.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "E7",
+        "source_type": "design_document",
+        "title": "HANDOFF.md and README.md - Operating mode and candidate-validation requirement",
+        "location": "HANDOFF.md, section 'Initial operating mode' (lines 262-272); README.md, section 'Initial architecture' (lines 88-90); ARCHITECTURE.md, Overview (lines 31-33)",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Initial operating mode is Read -> Analyse -> Recommend, not Read -> Decide -> Change. The listed operational agents are starting hypotheses, not fixed requirements, and the Architect must independently assess whether all are required. The final design must be derived from actual stewardship workflows, not from the conceptual diagram alone.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "E8",
+        "source_type": "design_document",
+        "title": "ARCHITECTURE.md - Orchestrator rules and example flow",
+        "location": "ARCHITECTURE.md, section 'Stewardship Orchestrator' (lines 124-139) and 'Example end-to-end flow' (lines 336-371)",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "The Orchestrator is to minimise unnecessary agents and not become the primary expert. In the example flow, the Definition Agent answers 'What does Settlement Date mean?' as one step feeding the Assurance Reviewer, indicating it is a bounded single-question role in a larger workflow.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "E9",
+        "source_type": "design_document",
+        "title": "ARCHITECTURE.md - Investment Operations Context Agent scope (overlap check)",
+        "location": "ARCHITECTURE.md, section 'Investment Operations Context Agent' (lines 141-176)",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "The Context Agent provides domain context and must separate internal documented position from general industry context, inference and open questions. Its content areas (trading, positions, valuation, etc.) are adjacent to, but distinct from, locating and comparing specific business definitions; the boundary is not defined in the four documents.",
+        "direct_or_inferred": "inferred",
+        "timestamp": "2026-10-27T00:00:00Z"
+      },
+      {
+        "source_id": "E10",
+        "source_type": "template",
+        "title": "AGENT-CONTRACT-TEMPLATE.md - Required contract sections",
+        "location": "AGENT-CONTRACT-TEMPLATE.md, whole document (sections Agent Name through Change Log; 'Not Responsible For' marked mandatory, line 59)",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Every agent contract must include purpose, classification, responsible / not responsible for (mandatory), inputs, authoritative sources, permitted tools, prohibited tools or actions, process, output schema, evidence and confidence rules, escalation conditions, human approval, up/downstream agents, handoff contract, success criteria, known risks, evaluation scenarios and change log. General model knowledge must not be treated as internal organisational truth.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-27T00:00:00Z"
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "statement": "The documented design explicitly lists locating definitions, comparing definitions, identifying conflicts, synonyms, ownership gaps and CDE evidence, and preparing candidate definitions for human review as the responsibilities of a candidate Definition & CDE Agent.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["E4", "E5"]
+      },
+      {
+        "claim_id": "C2",
+        "statement": "Approving business definitions, designating CDEs and assigning ownership are human decisions and are non-goals for AI.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["E2", "E5"]
+      },
+      {
+        "claim_id": "C3",
+        "statement": "The capability is best classified as a Specialised AI agent, with retrieval and exact-match comparison implemented as deterministic tooling (principle 9) rather than as agent reasoning.",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": ["E1", "E3", "E5"]
+      },
+      {
+        "claim_id": "C4",
+        "statement": "Definitions and CDE evidence should stay in one agent because they share the same evidence domain and human decision rights (principles 8 and 10).",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": ["E1", "E2", "E5"]
+      },
+      {
+        "claim_id": "C5",
+        "statement": "The agent should operate read-only in Read -> Analyse -> Recommend mode with minimum permissions.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["E1", "E7"]
+      },
+      {
+        "claim_id": "C6",
+        "statement": "Overlap between this capability and the Investment Operations Context Agent, Mapping & Lineage Agent and Assurance Reviewer is unresolved; the four documents show adjacency but do not define boundaries, and the registry was not consulted.",
+        "claim_type": "open_question",
+        "confidence": "Unable to determine",
+        "evidence_ids": ["E9"]
+      },
+      {
+        "claim_id": "C7",
+        "statement": "The documents do not name the authoritative internal repositories for definitions or the organisation's CDE criteria, so the agent's authoritative source list and CDE evidence types cannot yet be finalised.",
+        "claim_type": "open_question",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      },
+      {
+        "claim_id": "C8",
+        "statement": "Candidate definitions may be produced only if composed from cited internal sources, labelled as agent inference and routed for human approval; whether this satisfies principle 2 needs human confirmation.",
+        "claim_type": "human_decision_required",
+        "confidence": "Partially supported",
+        "evidence_ids": ["E1", "E2"]
+      },
+      {
+        "claim_id": "C9",
+        "statement": "The design is Draft and requires independent challenge by the Agent Risk & Governance Reviewer and human sign-off before any build.",
+        "claim_type": "human_decision_required",
+        "confidence": "Supported",
+        "evidence_ids": ["E7", "E10"]
+      }
+    ],
+    "assumptions": [
+      "Definitions and CDE evidence already exist in some approved internal repository not named in the four documents.",
+      "'Preparing' means an evidence pack and a labelled Draft candidate definition, not publishing.",
+      "CDE evidence means indicators against organisation-owned criteria; the agent does not set criteria.",
+      "The candidate registry exists but was intentionally not read in this run.",
+      "Tool inventory is undecided, so permissions are stated at capability level."
+    ],
+    "open_questions": [
+      "Overlap with Context Agent, Mapping & Lineage Agent and Assurance Reviewer is unchecked (registry not consulted).",
+      "Which repositories are authoritative for definitions and CDE evidence?",
+      "What are the CDE designation criteria and who owns them?",
+      "Principle 2 versus the decision model on candidate definitions: human to confirm the proposed reading.",
+      "Is general industry context in scope for this agent?",
+      "Which named human role approves definitions, CDE designation and ownership?",
+      "Principles 9 and 10 appear in README.md, not HANDOFF.md as the Architect's contract states; confirm authoritative location.",
+      "Do definitions carry version or effective-date scope that the comparison output must capture?"
+    ],
+    "human_action_required": [
+      "Agent Risk & Governance Reviewer to challenge this draft independently.",
+      "Data Steward / project owner to confirm assumptions and name authoritative sources.",
+      "Human governance owner to resolve the principle 2 tension and the general-industry-context scope.",
+      "Human to authorise a registry-based overlap check before the keep verdict is relied on.",
+      "Human to grant or withhold any tool or data permissions.",
+      "Human sign-off before the design moves beyond Draft."
+    ],
+    "next_agent": "Agent Risk & Governance Reviewer"
+  }
+}
