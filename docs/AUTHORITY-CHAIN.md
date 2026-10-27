@@ -19,9 +19,16 @@ Each agent exists in three forms. They are not equals. When they disagree, the h
 ## What is enforced today
 
 - `tests/test_contracts.py` pairs each Markdown contract with its JSON contract and validates the JSON against the schema.
-- Prompt-to-contract consistency (version, tools, authority) is **not** checked yet. It is backlog item P2-04.
+- `tests/test_agent_consistency.py` checks, for all five agents, that:
+  - the JSON contract's name, version and status equal the Markdown contract's;
+  - the prompt's frontmatter `name` matches its file, and it has a description and an explicit `tools` list;
+  - the prompt's tools do not exceed what the agent may hold (read-only, plus `Write` for the Builder only);
+  - the prompt names its governing contract path, and any version it cites equals the contract's;
+  - none of the three files has mis-encoded characters, and confidence labels match `schemas/material-claim.schema.json`.
+- `tests/test_outputs.py` checks that each Factory agent's output schema (`schemas/outputs/`) has exactly the fields in its contract's `output_schema`.
 
 ## Known gaps
 
-- Several `.claude/agents/*.md` files contain mis-encoded punctuation (for example `â€”` for an em dash). Re-save them as UTF-8 without BOM when P2-04 adds the consistency checks.
+- Each contract's `handoff_contract.returns` lacks the `claims` field that `schemas/agent-handoff.schema.json` now requires. The check is recorded as an expected failure in `tests/test_agent_consistency.py`. Fix it in the Markdown contracts first, with Project Owner sign-off (`GOVERNANCE-DECISIONS.md`, GD-01), then the JSON, then remove the expected failure.
+- The Stewardship Agent Architect's output schema has no `claims` field because its contract does not list one. Claims travel inside its embedded `handoff`.
 - The Definition & CDE prompt is limited by the contract's assumption that no real glossary system is connected (backlog P4-04).
