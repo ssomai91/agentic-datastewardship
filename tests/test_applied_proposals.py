@@ -14,6 +14,7 @@ CITATION_ID = re.compile(r"DMBOK2-C\d{2}-\d{2}")
 APPLIED = [
     ('P-01', 'docs/STEWARDSHIP-FRAMEWORK.md', ['## 1. Steward title (P-01', 'neutral title **Data Steward**', 'No steward type']),
     ('P-01-readme', 'README.md', ['neutral title', 'docs/STEWARDSHIP-FRAMEWORK.md']),
+    ('P-02', 'docs/STEWARDSHIP-FRAMEWORK.md', ['## 2. Governance owner and escalation (P-02', 'Deputy', 'Executive sponsor', 'no layered escalation']),
 ]
 
 
