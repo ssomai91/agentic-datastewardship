@@ -129,3 +129,5 @@ Then:
 7. Produce a recommended implementation sequence as `docs/IMPLEMENTATION-SEQUENCE.md`.
 
 Human approval is required before moving into implementation.
+
+> Terminology: "Data Steward" is used as a neutral title. DMBOK2 stewardship definitions are general industry context only; see `docs/STEWARDSHIP-FRAMEWORK.md`.
