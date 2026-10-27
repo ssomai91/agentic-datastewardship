@@ -27,6 +27,7 @@ APPLIED = [
     ('P-11-arch', 'ARCHITECTURE.md', ['- reference data;', '- master data;']),
     ('P-12', 'docs/DATA-CLASSIFICATION.md', ['## 1. Provisional scale', '`restricted_confidential`', 'Agents may propose', 'provisional']),
     ('P-13', 'docs/STEWARDSHIP-FRAMEWORK.md', ['## 7. Operating model (P-13', 'decentralised model', 'Collaboration forum']),
+    ('P-14', 'docs/SUCCESS-MEASURES.md', ['Baseline date', 'Review schedule', 'Not met / Partly met / Met', 'target state']),
 ]
 
 
