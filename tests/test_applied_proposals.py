@@ -15,6 +15,7 @@ APPLIED = [
     ('P-01', 'docs/STEWARDSHIP-FRAMEWORK.md', ['## 1. Steward title (P-01', 'neutral title **Data Steward**', 'No steward type']),
     ('P-01-readme', 'README.md', ['neutral title', 'docs/STEWARDSHIP-FRAMEWORK.md']),
     ('P-02', 'docs/STEWARDSHIP-FRAMEWORK.md', ['## 2. Governance owner and escalation (P-02', 'Deputy', 'Executive sponsor', 'no layered escalation']),
+    ('P-03', 'docs/STEWARDSHIP-FRAMEWORK.md', ['## 3. Governance metrics (P-03', 'Deferred.', 'system-level criteria only']),
 ]
 
 

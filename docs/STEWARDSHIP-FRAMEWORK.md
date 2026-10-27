@@ -20,3 +20,7 @@ One accountable owner is the approval and escalation endpoint, with a deputy. Th
 **Escalation path.** Agent, then Data Steward, then Project Owner (or deputy). A finding or question that the Data Steward cannot settle goes to the Project Owner, and the decision is recorded in `GOVERNANCE-DECISIONS.md`.
 
 **Not adopted.** The optional title "Chief Data Steward" [DMBOK2-C03-21] is not used. This section is the short operating framework and accountabilities statement the DMBOK2 recommends [DMBOK2-C03-32].
+
+## 3. Governance metrics (P-03, option 3)
+
+**Deferred.** The success criteria in `HANDOFF.md` remain system-level criteria only. Programme-level stewardship metrics are deferred to the organisation's own governance metrics, and are revisited as the programme matures, since the DMBOK2 expects metrics to change with maturity [DMBOK2-C03-64]. See `docs/SUCCESS-MEASURES.md` for how the system-level criteria are measured.
