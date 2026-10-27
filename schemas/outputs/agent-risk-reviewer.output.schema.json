@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ninetyone.internal/schemas/outputs/agent-risk-reviewer.output.schema.json",
+  "title": "Agent Risk & Governance Reviewer output",
+  "type": "object",
+  "required": ["summary", "agrees_with_architect", "findings", "final_verdict", "final_verdict_rationale", "handoff"],
+  "additionalProperties": false,
+  "properties": {
+    "summary": { "type": "string", "minLength": 1 },
+    "agrees_with_architect": { "type": "boolean" },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["clause_cited", "issue", "certainty"],
+        "additionalProperties": false,
+        "properties": {
+          "clause_cited": { "type": "string", "minLength": 1 },
+          "issue": { "type": "string", "minLength": 1 },
+          "certainty": { "type": "string", "enum": ["CONFIRMED", "PLAUSIBLE"] }
+        }
+      }
+    },
+    "final_verdict": { "type": "string", "enum": ["keep", "cut", "merge", "redesign", "defer"] },
+    "final_verdict_rationale": { "type": "string", "minLength": 1 },
+    "handoff": { "$ref": "../agent-handoff.schema.json" }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ninetyone.internal/schemas/outputs/claude-agent-builder.output.schema.json",
+  "title": "Claude Agent Builder output",
+  "type": "object",
+  "required": ["summary", "generated_files", "coverage_trace", "uncovered_fields", "handoff"],
+  "additionalProperties": false,
+  "properties": {
+    "summary": { "type": "string", "minLength": 1 },
+    "generated_files": { "type": "array", "items": { "type": "string", "pattern": "^prompts/" } },
+    "coverage_trace": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["contract_field", "prompt_passage"],
+        "additionalProperties": false,
+        "properties": {
+          "contract_field": { "type": "string", "minLength": 1 },
+          "prompt_passage": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "uncovered_fields": { "type": "array", "items": { "type": "string" } },
+    "handoff": { "$ref": "../agent-handoff.schema.json" }
+  }
+}

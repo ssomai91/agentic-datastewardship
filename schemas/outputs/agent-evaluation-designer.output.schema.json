@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ninetyone.internal/schemas/outputs/agent-evaluation-designer.output.schema.json",
+  "title": "Agent Evaluation Designer output",
+  "type": "object",
+  "required": ["summary", "test_cases", "unresolved_thresholds", "handoff"],
+  "additionalProperties": false,
+  "properties": {
+    "summary": { "type": "string", "minLength": 1 },
+    "test_cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["taxonomy_category", "input_synthetic", "expected_behavior"],
+        "additionalProperties": false,
+        "properties": {
+          "taxonomy_category": { "type": "string", "minLength": 1 },
+          "input_synthetic": { "type": "string", "minLength": 1 },
+          "expected_behavior": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "unresolved_thresholds": { "type": "array", "items": { "type": "string" } },
+    "handoff": { "$ref": "../agent-handoff.schema.json" }
+  }
+}

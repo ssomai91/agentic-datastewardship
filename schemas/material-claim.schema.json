@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ninetyone.internal/schemas/material-claim.schema.json",
+  "title": "Material Claim",
+  "description": "A conclusion an agent relies on or reports. Every material claim states its kind, its confidence label and the evidence behind it. claim_type uses the five HANDOFF.md evidence categories; evidence_ids refer to source_id values of evidence.schema.json records in the same handoff.",
+  "type": "object",
+  "required": ["claim_id", "statement", "claim_type", "confidence", "evidence_ids"],
+  "additionalProperties": false,
+  "properties": {
+    "claim_id": { "type": "string", "minLength": 1 },
+    "statement": { "type": "string", "minLength": 1 },
+    "claim_type": {
+      "type": "string",
+      "enum": ["authoritative_internal", "general_industry", "agent_inference", "open_question", "human_decision_required"]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": ["Supported", "Partially supported", "Unsupported", "Contradictory", "Unable to determine"]
+    },
+    "evidence_ids": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+    "notes": { "type": "string" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "confidence": { "enum": ["Supported", "Partially supported", "Contradictory"] } }, "required": ["confidence"] },
+      "then": { "properties": { "evidence_ids": { "minItems": 1 } } }
+    },
+    {
+      "if": { "properties": { "claim_type": { "enum": ["authoritative_internal", "general_industry"] } }, "required": ["claim_type"] },
+      "then": { "properties": { "evidence_ids": { "minItems": 1 } } }
+    }
+  ]
+}

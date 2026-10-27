@@ -4,7 +4,27 @@
   "agent": "example-agent",
   "status": "completed",
   "findings": ["n/a"],
-  "evidence": [],
+  "evidence": [
+    {
+      "source_id": "EV-0001",
+      "source_type": "repository_document",
+      "title": "HANDOFF.md (illustrative)",
+      "location": "HANDOFF.md, Decision model",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "Agents propose; the Data Steward evaluates; the appropriate human owner approves.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-27T00:00:00Z"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "CL-0001",
+      "statement": "Illustrative fixture only: the agent has no approval authority.",
+      "claim_type": "authoritative_internal",
+      "confidence": "Supported",
+      "evidence_ids": ["EV-0001"]
+    }
+  ],
   "assumptions": [],
   "open_questions": [],
   "human_action_required": [],

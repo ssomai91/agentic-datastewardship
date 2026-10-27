@@ -4,6 +4,8 @@ from pathlib import Path
 import pytest
 from jsonschema import Draft202012Validator
 
+from schema_registry import validator_for
+
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMAS = ROOT / "schemas"
 EXAMPLES = ROOT / "examples"
@@ -42,9 +44,8 @@ def test_invalid_contract_example_fails_on_missing_mandatory_fields():
 
 
 def test_valid_handoff_example_passes():
-    schema = load(SCHEMAS / "agent-handoff.schema.json")
     instance = load(EXAMPLES / "agent-handoff.valid.example.json")
-    Draft202012Validator(schema).validate(instance)
+    validator_for(SCHEMAS / "agent-handoff.schema.json").validate(instance)
 
 
 def test_valid_evidence_example_passes():
