@@ -13,7 +13,7 @@ Register of project-level decisions that the Agent Contracts and Factory agents 
 | GD-03 | DMBOK alignment scope | Decided | 2026-10-27 |
 | GD-04 | Data-quality taxonomy | Decided (proposal; owner to confirm in org policy) | 2026-10-27 |
 | GD-05 | Glossary / catalogue system for the Definition & CDE Agent | **Open** | - |
-| GD-06 | DMBOK alignment proposals P-01 to P-14 | Decided (not yet applied) | 2026-10-27 |
+| GD-06 | DMBOK alignment proposals P-01 to P-14 | Decided and applied as drafts | 2026-10-27 |
 
 ---
 
@@ -82,4 +82,6 @@ Register of project-level decisions that the Agent Contracts and Factory agents 
 
 **Where this connects to earlier decisions.** P-02 (single accountable owner) matches GD-01, P-07 (DAMA UK six dimensions) matches GD-04, and P-04 (keep the single draft gate until a glossary system is chosen) waits on GD-05.
 
-**Not yet applied.** This records the decisions only. Applying them means edits to the handoff files and contracts, for example the one-line DMBOK note for the steward title (P-01), naming a deputy for escalation (P-02), recording the deferral of programme metrics (P-03), and the new fields and checklists in P-05 to P-12. Each change follows the authority chain (Markdown contract first, then JSON, then prompt) and is a separate piece of work. The alignment doc itself stays a draft for review.
+**Applied (2026-10-27).** All 14 are applied as drafts, one commit each, with a guard test (`tests/test_applied_proposals.py`) checking each is present and cites real DMBOK2 ids. Where each landed is shown in the Decision column of `docs/DMBOK-ALIGNMENT.md` section 4. The new documents are `docs/STEWARDSHIP-FRAMEWORK.md`, `docs/CDE-CRITERIA-POLICY.md`, `docs/DATA-QUALITY-FRAMEWORK.md`, `docs/DATA-CLASSIFICATION.md` and `docs/SUCCESS-MEASURES.md`, plus `schemas/quality-issue.schema.json` and an optional `confidentiality_label` on `schemas/evidence.schema.json`. Edits to the owner's original files are pointer notes only (a README note, and two bullets in `ARCHITECTURE.md`).
+
+**Still for the owner.** The names of the Project Owner, deputy and Data Steward; the executive sponsor; the collaboration forum; the real review schedule and baseline confirmation; tailoring the CDE criteria; and whether to approve each new document. P-04's later lifecycle states wait on GD-05.
