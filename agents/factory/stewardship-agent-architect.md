@@ -6,7 +6,7 @@
 
 ## Version
 
-`0.1.2`
+`0.1.3`
 
 ## Status
 
@@ -182,6 +182,8 @@ Use one of:
 - Contradictory
 - Unable to determine
 
+A claim of type `open_question` or `human_decision_required` is not an assertion about the evidence. Label it `Unable to determine`, unless it cites evidence ids. `Supported`, `Partially supported` and `Contradictory` are for claims that cite at least one evidence id that exists in the handoff.
+
 Any necessity or classification verdict that concerns the Architect's own existence must never carry a confidence label stronger than `Partially supported`.
 
 ---
@@ -325,6 +327,7 @@ Splits deterministic aggregation from AI-assisted hypothesis drafting. The hypot
 | 0.1.0 | 2026-09-17 | Initial draft, incorporating docs/ARCHITECTURE-RISKS.md §1 mitigations | n/a — Draft, pending human sign-off |
 | 0.1.1 | 2026-10-27 | Factory-run findings: add `evaluation_outline_pointer` and `draft_agent_contract` to the output schema; state that `Draft` is not a handoff status; require a curated evidence packet instead of direct multi-source read access (Process step 6, prohibited action, escalation, Test 5) | n/a — Draft, pending human sign-off |
 | 0.1.2 | 2026-10-27 | Handoff Returns now include `request` (echo of the original request) and `claims` (material claims) and carry `evidence` as structured evidence records, matching `schemas/agent-handoff.schema.json` | n/a — Draft, pending human sign-off |
+| 0.1.3 | 2026-10-28 | Confidence rule: claims of type open_question or human_decision_required carry `Unable to determine` unless they cite evidence; Supported, Partially supported and Contradictory need at least one cited evidence id (found by the Definition & CDE Agent evaluation, evals/definition-and-cde-runs/RESULTS.md finding 1) | n/a — Draft, pending human sign-off |
 
 ---
 

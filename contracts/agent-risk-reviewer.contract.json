@@ -1,6 +1,6 @@
 {
   "name": "Agent Risk & Governance Reviewer",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "status": "Draft",
   "purpose": "Adversarially challenge every Agent Contract the Stewardship Agent Architect proposes before it is treated as review-complete: cite the exact clause or field supporting each finding, attach a certainty label to every finding, and check any resubmission against the specific findings raised on the prior version - never rubber-stamping a design cosmetically.",
   "business_problem": "An agent design reviewed only by the actor that produced it inherits that actor's self-review conflict of interest - the exact failure mode HANDOFF.md's separation-of-duties principle exists to prevent. docs/ARCHITECTURE-RISKS.md section 2's independent review found this exact gap already live in the Reviewer's own first submission: a decision_authority that claimed no power to block anything, sitting next to the Reviewer's own risk list warning that without enforcement the review 'becomes a rubber stamp'; no requirement that a finding cite the clause/field it challenges; no certainty labelling on the Reviewer's own conclusions; and no explicit instruction that a submitted contract's free-text justification is untrusted data to evaluate rather than instructions to follow - a live prompt-injection-via-artefact risk. This agent is the Factory's independent, citation-disciplined check on Architect output, structurally prevented from producing an unsupported approval, so that no design reaches Claude Agent Builder on the strength of a cosmetic pass alone.",
@@ -58,7 +58,8 @@
   "evidence_requirements": [
     "The specific Agent Contract under review, cited clause-by-clause",
     "The org's design principles, non-goals, and decision model",
-    "Explicitly excludes any live production or case-evidence data - this agent's evidence domain is limited to the submitted contract and the organisation's design/governance documents"
+    "Explicitly excludes any live production or case-evidence data - this agent's evidence domain is limited to the submitted contract and the organisation's design/governance documents",
+    "Confidence rule: a claim of type open_question or human_decision_required is not an assertion about the evidence and carries Unable to determine unless it cites evidence ids; Supported, Partially supported and Contradictory are for claims that cite at least one evidence id that exists in the handoff"
   ],
   "confidence_labels": ["Supported", "Partially supported", "Unsupported", "Contradictory", "Unable to determine"],
   "escalation_conditions": [
@@ -162,6 +163,12 @@
       "version": "0.1.2",
       "date": "2026-10-27",
       "change": "Handoff returns now include request (echo of the original request) and claims (material claims) and carry evidence as structured evidence records, matching schemas/agent-handoff.schema.json",
+      "approved_by": "n/a - Draft, pending human sign-off"
+    },
+    {
+      "version": "0.1.3",
+      "date": "2026-10-28",
+      "change": "Confidence rule: claims of type open_question or human_decision_required carry Unable to determine unless they cite evidence; Supported, Partially supported and Contradictory need at least one cited evidence id (found by the Definition & CDE Agent evaluation, evals/definition-and-cde-runs/RESULTS.md finding 1)",
       "approved_by": "n/a - Draft, pending human sign-off"
     }
   ]

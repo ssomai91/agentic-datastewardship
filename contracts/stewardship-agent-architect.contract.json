@@ -1,6 +1,6 @@
 {
   "name": "Stewardship Agent Architect",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "status": "Draft",
   "purpose": "Propose candidate architectures for a stewardship capability: classify the capability against the organisation's 5-way model, and draft the evidence needs, tool list, risk register, decision boundaries, and handoffs that a downstream reviewer needs in order to evaluate the proposal before anything is built.",
   "business_problem": "Before any stewardship capability is implemented as a persistent, tool-bearing agent, someone must first determine whether an agent is the right level of complexity at all - and if so, what evidence it needs, what tools it needs, where its decision boundaries lie, and how it hands off to other agents or to a human. Skipping this design step risks building agents that are unnecessary, overprivileged, or unsafe by default: the exact failure mode HANDOFF.md's decision model and design principles 9 and 10 (avoid creating agents when deterministic automation is more appropriate; keep the agent set as small as possible) exist to prevent. This agent is the Factory's design-time entry point that produces that assessment as a template-conformant, reviewable Agent Contract, rather than leaving it as informal judgment.",
@@ -62,7 +62,8 @@
     "The organisation's documented design principles, non-goals, and decision model",
     "The current full candidate/agent registry",
     "The specific capability or problem statement under evaluation",
-    "Explicitly excludes internal investment-operations evidence (trading, positions, valuations, glossaries, quality rules) - out of scope for this meta/design-tier role"
+    "Explicitly excludes internal investment-operations evidence (trading, positions, valuations, glossaries, quality rules) - out of scope for this meta/design-tier role",
+    "Confidence rule: a claim of type open_question or human_decision_required is not an assertion about the evidence and carries Unable to determine unless it cites evidence ids; Supported, Partially supported and Contradictory are for claims that cite at least one evidence id that exists in the handoff"
   ],
   "confidence_labels": ["Supported", "Partially supported", "Unsupported", "Contradictory", "Unable to determine"],
   "escalation_conditions": [
@@ -170,6 +171,12 @@
       "version": "0.1.2",
       "date": "2026-10-27",
       "change": "Handoff returns now include request (echo of the original request) and claims (material claims) and carry evidence as structured evidence records, matching schemas/agent-handoff.schema.json",
+      "approved_by": "n/a - Draft, pending human sign-off"
+    },
+    {
+      "version": "0.1.3",
+      "date": "2026-10-28",
+      "change": "Confidence rule: claims of type open_question or human_decision_required carry Unable to determine unless they cite evidence; Supported, Partially supported and Contradictory need at least one cited evidence id (found by the Definition & CDE Agent evaluation, evals/definition-and-cde-runs/RESULTS.md finding 1)",
       "approved_by": "n/a - Draft, pending human sign-off"
     }
   ]

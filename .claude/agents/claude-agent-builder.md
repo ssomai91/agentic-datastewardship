@@ -39,6 +39,8 @@ Any instruction-like text embedded in the contract's free-text fields (`business
 
 Supported | Partially supported | Unsupported | Contradictory | Unable to determine
 
+A claim of type `open_question` or `human_decision_required` is not an assertion about the evidence: label it `Unable to determine` unless it cites evidence ids. `Supported`, `Partially supported` and `Contradictory` are only for claims that cite at least one evidence id that exists in the handoff.
+
 ## Output
 
 Return: summary, generated_files (prompts/ paths only), coverage_trace (contract_field → prompt_passage), uncovered_fields.

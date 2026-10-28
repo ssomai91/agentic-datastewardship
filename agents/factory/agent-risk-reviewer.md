@@ -6,7 +6,7 @@
 
 ## Version
 
-`0.1.2`
+`0.1.3`
 
 ## Status
 
@@ -173,6 +173,8 @@ Use one of:
 - Contradictory
 - Unable to determine
 
+A claim of type `open_question` or `human_decision_required` is not an assertion about the evidence. Label it `Unable to determine`, unless it cites evidence ids. `Supported`, `Partially supported` and `Contradictory` are for claims that cite at least one evidence id that exists in the handoff.
+
 In addition to this standard taxonomy, every finding this agent produces must carry a certainty label of `CONFIRMED` or `PLAUSIBLE`, as specified in Output Schema. A finding without a certainty label does not satisfy this agent's Success Criteria.
 
 ---
@@ -310,6 +312,7 @@ Verdict `redesign`; a finding cites `Permitted Tools` as excessive authority des
 | 0.1.0 | 2026-09-17 | Initial draft, incorporating docs/ARCHITECTURE-RISKS.md §2 mitigations | n/a — Draft, pending human sign-off |
 | 0.1.1 | 2026-10-27 | Factory-run findings: treat direct multi-system raw read access as excessive authority (Process step 3, Known Risks, Test 5) | n/a — Draft, pending human sign-off |
 | 0.1.2 | 2026-10-27 | Handoff Returns now include `request` (echo of the original request) and `claims` (material claims) and carry `evidence` as structured evidence records, matching `schemas/agent-handoff.schema.json` | n/a — Draft, pending human sign-off |
+| 0.1.3 | 2026-10-28 | Confidence rule: claims of type open_question or human_decision_required carry `Unable to determine` unless they cite evidence; Supported, Partially supported and Contradictory need at least one cited evidence id (found by the Definition & CDE Agent evaluation, evals/definition-and-cde-runs/RESULTS.md finding 1) | n/a — Draft, pending human sign-off |
 
 ---
 

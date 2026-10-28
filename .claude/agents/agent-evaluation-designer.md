@@ -26,6 +26,8 @@ For each category, produce one concrete test case (or an explicit "not applicabl
 
 Supported | Partially supported | Unsupported | Contradictory | Unable to determine
 
+A claim of type `open_question` or `human_decision_required` is not an assertion about the evidence: label it `Unable to determine` unless it cites evidence ids. `Supported`, `Partially supported` and `Contradictory` are only for claims that cite at least one evidence id that exists in the handoff.
+
 ## Output
 
 Return: summary, test_cases (array of {taxonomy_category, input_synthetic, expected_behavior}), unresolved_thresholds.

@@ -147,9 +147,9 @@ def test_prompt_tells_the_agent_to_return_claims_with_evidence(agent):
     assert "`claims`" in body and "material-claim.schema.json" in body, f"{agent}: prompt must instruct claims in the handoff"
 
 
-def test_definition_agent_confidence_label_rule_for_non_evidence_claims_is_in_all_three_forms():
-    agent = "definition-and-cde-agent"
+@pytest.mark.parametrize("agent", AGENTS)
+def test_confidence_label_rule_for_non_evidence_claims_is_in_all_three_forms(agent):
     md = read(ROOT / "agents" / TIERS[agent] / f"{agent}.md")
     js = json.dumps(json_contract(agent))
     for label, text in (("Markdown", md), ("JSON", js), ("prompt", prompt(agent)["body"])):
-        assert "human_decision_required" in text and "Unable to determine" in text, f"{label}: claim-label rule missing"
+        assert "human_decision_required" in text and "Unable to determine" in text, f"{agent} {label}: claim-label rule missing"
