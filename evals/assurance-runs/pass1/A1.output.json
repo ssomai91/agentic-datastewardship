@@ -1,0 +1,448 @@
+{
+  "summary": "gate=HOLD_RECOMMENDED | blocking_findings=2 | findings=7 | claims_reviewed=8/8 | run=SYN-VAL-1314fae9bdf6",
+  "gate_recommendation": "HOLD_RECOMMENDED",
+  "gate_recommendation_note": "Recommendation only; not a clearance or approval; effect on progress not decided (GD-01 open).",
+  "coverage": {
+    "packs_in_scope": 1,
+    "packs_reviewed": 1,
+    "claims_in_pack": 8,
+    "claims_reviewed": 8,
+    "sampling_rule_ref": null
+  },
+  "manifest_declarations": {
+    "produced_by": "Definition & CDE Agent",
+    "authored_by": "Definition & CDE Agent",
+    "assembled_by": "SYN-ROLE-ASSEMBLER",
+    "manifest_approved_by": "SYN-ROLE-MANIFEST-APPROVER",
+    "uncited_evidence_ids": [],
+    "provenance": "synthetic"
+  },
+  "deterministic_checks_consumed": [
+    { "check": "output_schema", "run_id": "SYN-VAL-1314fae9bdf6", "result": "pass" },
+    { "check": "duplicate_and_unresolved_evidence_ids", "run_id": "SYN-VAL-1314fae9bdf6", "result": "pass" },
+    { "check": "boundary", "run_id": "SYN-VAL-1314fae9bdf6", "result": "pass" },
+    { "check": "approval_log_extract", "run_id": "SYN-APPR-2ea52106e3e3", "result": "pass" }
+  ],
+  "uncited_evidence_dispositions": [],
+  "findings": [
+    {
+      "finding_id": "AR-AR-RUN1-A1-001",
+      "finding_type": "unsupported",
+      "blocking": true,
+      "source_claim_id": "C4",
+      "evidence_ids": ["GL-101", "GL-204"],
+      "locations": [
+        "pack/producer-output.json@bb44e318ce86 handoff.claims[claim_id=C4].statement",
+        "evidence/GL-101.json@7ff463d74965 extracted_fact",
+        "evidence/GL-204.json@3aa7edb28214 extracted_fact"
+      ],
+      "quoted_excerpt": "The recorded CDE flag for 'Settlement Date' is inconsistent across the entries: true on GL-101 and false on GL-204.",
+      "action_required": "UNSUPPORTED: C4 unsupported",
+      "contested": false
+    },
+    {
+      "finding_id": "AR-AR-RUN1-A1-002",
+      "finding_type": "unsupported",
+      "blocking": true,
+      "source_claim_id": "C5",
+      "evidence_ids": ["GL-101", "GL-204"],
+      "locations": [
+        "pack/producer-output.json@bb44e318ce86 handoff.claims[claim_id=C5].statement",
+        "evidence/GL-101.json@7ff463d74965 extracted_fact",
+        "evidence/GL-204.json@3aa7edb28214 extracted_fact"
+      ],
+      "quoted_excerpt": "The two entries name different owners (Avery Example for GL-101, Blake Example for GL-204), so no single accountable owner for the term is identifiable from the glossary.",
+      "action_required": "UNSUPPORTED: C5 unsupported",
+      "contested": false
+    },
+    {
+      "finding_id": "AR-AR-RUN1-A1-003",
+      "finding_type": "unsupported",
+      "blocking": false,
+      "source_claim_id": "C3",
+      "evidence_ids": ["GL-101", "GL-204"],
+      "locations": [
+        "pack/producer-output.json@bb44e318ce86 handoff.claims[claim_id=C3].statement",
+        "evidence/GL-101.json@7ff463d74965 extracted_fact",
+        "evidence/GL-204.json@3aa7edb28214 extracted_fact"
+      ],
+      "quoted_excerpt": "The two Approved definitions differ in meaning: GL-101 describes the actual exchange date, GL-204 the contractually agreed due date.",
+      "action_required": "UNSUPPORTED: C3 unsupported",
+      "contested": false
+    },
+    {
+      "finding_id": "AR-AR-RUN1-A1-004",
+      "finding_type": "unsupported",
+      "blocking": false,
+      "source_claim_id": null,
+      "evidence_ids": ["GL-101", "GL-204"],
+      "locations": [
+        "pack/producer-output.json@bb44e318ce86 conflicts_identified[3]",
+        "evidence/GL-101.json@7ff463d74965 extracted_fact",
+        "evidence/GL-204.json@3aa7edb28214 extracted_fact"
+      ],
+      "quoted_excerpt": "The glossary records a possible_duplicate term link between GL-101 and GL-204. The link is a flag, not a resolution.",
+      "action_required": "REQUEST_EVIDENCE: evidence_record pack/producer-output.json#conflicts_identified[3]",
+      "contested": false
+    },
+    {
+      "finding_id": "AR-AR-RUN1-A1-005",
+      "finding_type": "evidence_gap",
+      "blocking": false,
+      "source_claim_id": null,
+      "evidence_ids": [],
+      "locations": [
+        "manifest.json items"
+      ],
+      "quoted_excerpt": null,
+      "action_required": "REQUEST_EVIDENCE: named_packet_item manifest.json#items",
+      "contested": false
+    },
+    {
+      "finding_id": "AR-AR-RUN1-A1-006",
+      "finding_type": "evidence_gap",
+      "blocking": false,
+      "source_claim_id": null,
+      "evidence_ids": ["AR-EV-VAL-SYN-VAL-1314fae9bdf6"],
+      "locations": [
+        "checks/validator-report.json@f25e5f4079b3 checks[2].detail"
+      ],
+      "quoted_excerpt": "STAND-IN call log supplied by the test harness; it is not a record of the run that produced this pack",
+      "action_required": "REQUEST_EVIDENCE: validator_report checks/validator-report.json#checks[2]",
+      "contested": false
+    },
+    {
+      "finding_id": "AR-AR-RUN1-A1-007",
+      "finding_type": "evidence_gap",
+      "blocking": false,
+      "source_claim_id": null,
+      "evidence_ids": [],
+      "locations": [
+        "pack/producer-output.json@bb44e318ce86 handoff.case_id",
+        "manifest.json case_id"
+      ],
+      "quoted_excerpt": "EVAL-S01-P3",
+      "action_required": "REQUEST_EVIDENCE: manifest_field manifest.json#case_id",
+      "contested": false
+    }
+  ],
+  "reviewed_claims": [
+    {
+      "source_claim_id": "C1",
+      "producer_claim_assessment": "Supported",
+      "finding_ids": [],
+      "evidence": [
+        {
+          "authority_level": "authoritative_internal",
+          "direct_or_inferred": "direct",
+          "extracted_fact": "The date on which cash and securities are exchanged to complete a trade.",
+          "location": "SYNTH-GLOSSARY/GL-101",
+          "source_id": "GL-101",
+          "source_type": "glossary_term",
+          "timestamp": "2026-10-28T00:00:00Z",
+          "title": "Settlement Date"
+        }
+      ],
+      "assumption_excerpts": [],
+      "action_required": "HUMAN_ACTION: Data Steward supply_packet_item"
+    },
+    {
+      "source_claim_id": "C2",
+      "producer_claim_assessment": "Supported",
+      "finding_ids": [],
+      "evidence": [
+        {
+          "authority_level": "authoritative_internal",
+          "direct_or_inferred": "direct",
+          "extracted_fact": "The contractual date by which payment and delivery of a trade must complete, as agreed at execution.",
+          "location": "SYNTH-GLOSSARY/GL-204",
+          "source_id": "GL-204",
+          "source_type": "glossary_term",
+          "timestamp": "2026-10-28T00:00:00Z",
+          "title": "Settlement Date"
+        }
+      ],
+      "assumption_excerpts": [],
+      "action_required": "HUMAN_ACTION: Data Steward supply_packet_item"
+    },
+    {
+      "source_claim_id": "C3",
+      "producer_claim_assessment": "Partially supported",
+      "finding_ids": ["AR-AR-RUN1-A1-003"],
+      "evidence": [
+        {
+          "authority_level": "authoritative_internal",
+          "direct_or_inferred": "direct",
+          "extracted_fact": "The date on which cash and securities are exchanged to complete a trade.",
+          "location": "SYNTH-GLOSSARY/GL-101",
+          "source_id": "GL-101",
+          "source_type": "glossary_term",
+          "timestamp": "2026-10-28T00:00:00Z",
+          "title": "Settlement Date"
+        },
+        {
+          "authority_level": "authoritative_internal",
+          "direct_or_inferred": "direct",
+          "extracted_fact": "The contractual date by which payment and delivery of a trade must complete, as agreed at execution.",
+          "location": "SYNTH-GLOSSARY/GL-204",
+          "source_id": "GL-204",
+          "source_type": "glossary_term",
+          "timestamp": "2026-10-28T00:00:00Z",
+          "title": "Settlement Date"
+        }
+      ],
+      "assumption_excerpts": [],
+      "action_required": "UNSUPPORTED: C3 unsupported"
+    },
+    {
+      "source_claim_id": "C4",
+      "producer_claim_assessment": "Unsupported",
+      "finding_ids": ["AR-AR-RUN1-A1-001"],
+      "evidence": [
+        {
+          "authority_level": "authoritative_internal",
+          "direct_or_inferred": "direct",
+          "extracted_fact": "The date on which cash and securities are exchanged to complete a trade.",
+          "location": "SYNTH-GLOSSARY/GL-101",
+          "source_id": "GL-101",
+          "source_type": "glossary_term",
+          "timestamp": "2026-10-28T00:00:00Z",
+          "title": "Settlement Date"
+        },
+        {
+          "authority_level": "authoritative_internal",
+          "direct_or_inferred": "direct",
+          "extracted_fact": "The contractual date by which payment and delivery of a trade must complete, as agreed at execution.",
+          "location": "SYNTH-GLOSSARY/GL-204",
+          "source_id": "GL-204",
+          "source_type": "glossary_term",
+          "timestamp": "2026-10-28T00:00:00Z",
+          "title": "Settlement Date"
+        }
+      ],
+      "assumption_excerpts": [],
+      "action_required": "UNSUPPORTED: C4 unsupported"
+    },
+    {
+      "source_claim_id": "C5",
+      "producer_claim_assessment": "Unsupported",
+      "finding_ids": ["AR-AR-RUN1-A1-002"],
+      "evidence": [
+        {
+          "authority_level": "authoritative_internal",
+          "direct_or_inferred": "direct",
+          "extracted_fact": "The date on which cash and securities are exchanged to complete a trade.",
+          "location": "SYNTH-GLOSSARY/GL-101",
+          "source_id": "GL-101",
+          "source_type": "glossary_term",
+          "timestamp": "2026-10-28T00:00:00Z",
+          "title": "Settlement Date"
+        },
+        {
+          "authority_level": "authoritative_internal",
+          "direct_or_inferred": "direct",
+          "extracted_fact": "The contractual date by which payment and delivery of a trade must complete, as agreed at execution.",
+          "location": "SYNTH-GLOSSARY/GL-204",
+          "source_id": "GL-204",
+          "source_type": "glossary_term",
+          "timestamp": "2026-10-28T00:00:00Z",
+          "title": "Settlement Date"
+        }
+      ],
+      "assumption_excerpts": [],
+      "action_required": "UNSUPPORTED: C5 unsupported"
+    },
+    {
+      "source_claim_id": "C6",
+      "producer_claim_assessment": "Partially supported",
+      "finding_ids": [],
+      "evidence": [
+        {
+          "authority_level": "authoritative_internal",
+          "direct_or_inferred": "direct",
+          "extracted_fact": "The date on which cash and securities are exchanged to complete a trade.",
+          "location": "SYNTH-GLOSSARY/GL-101",
+          "source_id": "GL-101",
+          "source_type": "glossary_term",
+          "timestamp": "2026-10-28T00:00:00Z",
+          "title": "Settlement Date"
+        },
+        {
+          "authority_level": "authoritative_internal",
+          "direct_or_inferred": "direct",
+          "extracted_fact": "The contractual date by which payment and delivery of a trade must complete, as agreed at execution.",
+          "location": "SYNTH-GLOSSARY/GL-204",
+          "source_id": "GL-204",
+          "source_type": "glossary_term",
+          "timestamp": "2026-10-28T00:00:00Z",
+          "title": "Settlement Date"
+        }
+      ],
+      "assumption_excerpts": [
+        "Both entries refer to the same business concept; the possible_duplicate link suggests this, but whether they are true duplicates or distinct concepts (actual vs contractual date) is not established by the glossary."
+      ],
+      "action_required": "HUMAN_ACTION: Data Steward supply_packet_item"
+    },
+    {
+      "source_claim_id": "C7",
+      "producer_claim_assessment": "Unable to determine",
+      "finding_ids": [],
+      "evidence": [],
+      "assumption_excerpts": [],
+      "action_required": "HUMAN_ACTION: Data Steward supply_packet_item"
+    },
+    {
+      "source_claim_id": "C8",
+      "producer_claim_assessment": "Unable to determine",
+      "finding_ids": [],
+      "evidence": [],
+      "assumption_excerpts": [],
+      "action_required": "HUMAN_ACTION: Data Steward supply_packet_item"
+    }
+  ],
+  "boundary_check": "unable_to_determine",
+  "approval_check": "unable_to_determine",
+  "contradictions": [],
+  "evidence_requests": [
+    "REQUEST_EVIDENCE: named_packet_item manifest.json#items",
+    "REQUEST_EVIDENCE: validator_report checks/validator-report.json#checks[2]",
+    "REQUEST_EVIDENCE: manifest_field manifest.json#case_id",
+    "REQUEST_EVIDENCE: approval_entry checks/approval-log-extract.json#entries[subject=GL-204]",
+    "REQUEST_EVIDENCE: named_packet_item manifest.json#coverage"
+  ],
+  "contested_findings": [],
+  "assumptions": [
+    "Only the supplied synthetic glossary file was used. No live glossary or catalog system is connected, and no other source was consulted.",
+    "Both entries refer to the same business concept; the possible_duplicate link suggests this, but whether they are true duplicates or distinct concepts (actual vs contractual date) is not established by the glossary.",
+    "Evidence timestamps use the evaluation run date because the glossary carries no retrieval or effective dates."
+  ],
+  "open_questions": [
+    "REQUEST_EVIDENCE: named_packet_item manifest.json#coverage"
+  ],
+  "recommendations": [
+    "HUMAN_ACTION: Data Steward supply_packet_item"
+  ],
+  "human_action_required": [
+    "HUMAN_ACTION: Data Steward supply_packet_item",
+    "HUMAN_ACTION: Project Owner decide_blocking_effect"
+  ],
+  "handoff": {
+    "case_id": "AR-RUN1",
+    "request": "Compare the definition of 'Settlement Date' across glossary entries GL-101 and GL-204.",
+    "agent": "Assurance Reviewer",
+    "status": "escalated",
+    "findings": [
+      "AR-AR-RUN1-A1-GATE | HOLD_RECOMMENDED | SYN-VAL-1314fae9bdf6 | recommendation, not a clearance",
+      "AR-AR-RUN1-A1-001 | unsupported | true | C4 | pack/producer-output.json@bb44e318ce86 handoff.claims[claim_id=C4].statement; evidence/GL-101.json@7ff463d74965 extracted_fact; evidence/GL-204.json@3aa7edb28214 extracted_fact",
+      "AR-AR-RUN1-A1-002 | unsupported | true | C5 | pack/producer-output.json@bb44e318ce86 handoff.claims[claim_id=C5].statement; evidence/GL-101.json@7ff463d74965 extracted_fact; evidence/GL-204.json@3aa7edb28214 extracted_fact",
+      "AR-AR-RUN1-A1-003 | unsupported | false | C3 | pack/producer-output.json@bb44e318ce86 handoff.claims[claim_id=C3].statement; evidence/GL-101.json@7ff463d74965 extracted_fact; evidence/GL-204.json@3aa7edb28214 extracted_fact",
+      "AR-AR-RUN1-A1-004 | unsupported | false | null | pack/producer-output.json@bb44e318ce86 conflicts_identified[3]; evidence/GL-101.json@7ff463d74965 extracted_fact; evidence/GL-204.json@3aa7edb28214 extracted_fact",
+      "AR-AR-RUN1-A1-005 | evidence_gap | false | null | manifest.json items",
+      "AR-AR-RUN1-A1-006 | evidence_gap | false | null | checks/validator-report.json@f25e5f4079b3 checks[2].detail",
+      "AR-AR-RUN1-A1-007 | evidence_gap | false | null | pack/producer-output.json@bb44e318ce86 handoff.case_id; manifest.json case_id"
+    ],
+    "evidence": [
+      {
+        "authority_level": "authoritative_internal",
+        "direct_or_inferred": "direct",
+        "extracted_fact": "The date on which cash and securities are exchanged to complete a trade.",
+        "location": "SYNTH-GLOSSARY/GL-101",
+        "source_id": "GL-101",
+        "source_type": "glossary_term",
+        "timestamp": "2026-10-28T00:00:00Z",
+        "title": "Settlement Date"
+      },
+      {
+        "authority_level": "authoritative_internal",
+        "direct_or_inferred": "direct",
+        "extracted_fact": "The contractual date by which payment and delivery of a trade must complete, as agreed at execution.",
+        "location": "SYNTH-GLOSSARY/GL-204",
+        "source_id": "GL-204",
+        "source_type": "glossary_term",
+        "timestamp": "2026-10-28T00:00:00Z",
+        "title": "Settlement Date"
+      },
+      {
+        "authority_level": "authoritative_internal",
+        "direct_or_inferred": "direct",
+        "extracted_fact": "STAND-IN call log supplied by the test harness; it is not a record of the run that produced this pack",
+        "location": "checks/validator-report.json@f25e5f4079b3 checks[2].detail",
+        "source_id": "AR-EV-VAL-SYN-VAL-1314fae9bdf6",
+        "source_type": "validator_report",
+        "timestamp": "SYN-VAL-1314fae9bdf6",
+        "title": "checks/validator-report.json"
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "AR-C-GATE",
+        "statement": "AR-AR-RUN1-A1-GATE | HOLD_RECOMMENDED | SYN-VAL-1314fae9bdf6 | recommendation, not a clearance",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": ["GL-101", "GL-204", "AR-EV-VAL-SYN-VAL-1314fae9bdf6"]
+      },
+      {
+        "claim_id": "AR-C-AR-AR-RUN1-A1-001",
+        "statement": "AR-AR-RUN1-A1-001 | unsupported | true | C4",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": ["GL-101", "GL-204"]
+      },
+      {
+        "claim_id": "AR-C-AR-AR-RUN1-A1-002",
+        "statement": "AR-AR-RUN1-A1-002 | unsupported | true | C5",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": ["GL-101", "GL-204"]
+      },
+      {
+        "claim_id": "AR-C-AR-AR-RUN1-A1-003",
+        "statement": "AR-AR-RUN1-A1-003 | unsupported | false | C3",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": ["GL-101", "GL-204"]
+      },
+      {
+        "claim_id": "AR-C-AR-AR-RUN1-A1-004",
+        "statement": "AR-AR-RUN1-A1-004 | unsupported | false | null",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": ["GL-101", "GL-204"]
+      },
+      {
+        "claim_id": "AR-C-AR-AR-RUN1-A1-005",
+        "statement": "AR-AR-RUN1-A1-005 | evidence_gap | false | null",
+        "claim_type": "agent_inference",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      },
+      {
+        "claim_id": "AR-C-AR-AR-RUN1-A1-006",
+        "statement": "AR-AR-RUN1-A1-006 | evidence_gap | false | null",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": ["AR-EV-VAL-SYN-VAL-1314fae9bdf6"]
+      },
+      {
+        "claim_id": "AR-C-AR-AR-RUN1-A1-007",
+        "statement": "AR-AR-RUN1-A1-007 | evidence_gap | false | null",
+        "claim_type": "agent_inference",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      }
+    ],
+    "assumptions": [
+      "Only the supplied synthetic glossary file was used. No live glossary or catalog system is connected, and no other source was consulted.",
+      "Both entries refer to the same business concept; the possible_duplicate link suggests this, but whether they are true duplicates or distinct concepts (actual vs contractual date) is not established by the glossary.",
+      "Evidence timestamps use the evaluation run date because the glossary carries no retrieval or effective dates."
+    ],
+    "open_questions": [
+      "REQUEST_EVIDENCE: named_packet_item manifest.json#coverage"
+    ],
+    "human_action_required": [
+      "HUMAN_ACTION: Data Steward supply_packet_item",
+      "HUMAN_ACTION: Project Owner decide_blocking_effect"
+    ],
+    "next_agent": null
+  }
+}

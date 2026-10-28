@@ -12,7 +12,7 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from assurance.gate import GateInputs, derive, is_blocking
+from assurance.gate import GATE_VALUES, GateInputs, derive, is_blocking
 from assurance.manifest import coverage_state, missing_inputs, stop_conditions
 from assurance.validator import result_of
 from handoff_checks import handoff_reference_problems
@@ -34,17 +34,46 @@ class Verdict:
 
 
 def _location_text(packet, location):
-    """Location form: <item path>[@<version>][#<field path or line>]. Returns (item text or None, problem or None)."""
-    path = location.split("#", 1)[0]
-    version = None
-    if "@" in path:
-        path, version = path.split("@", 1)
+    """Resolve a location string to (item text or None, problem or None).
+
+    The contract says a location names the packet item, version and field path or line, but gives no syntax, so agents write it in
+    their own words. Resolution is therefore lenient: the longest manifest item path that occurs inside the string wins (manifest.json
+    itself is allowed); a version token that follows the path, if present, must equal the manifest version. A location that names no
+    packet item is a problem; a missing version token is only a warning at the caller.
+    """
     versions = {i["path"]: i["version"] for i in packet.manifest["items"]}
-    if path not in packet.items or path not in versions:
-        return None, f"location names an item that is not in the packet: {path}"
-    if version is not None and version != versions[path]:
-        return None, f"location version {version} differs from the manifest version {versions[path]} for {path}"
-    return packet.items[path], None
+    names = sorted(list(versions) + ["manifest.json"], key=len, reverse=True)
+    hit = next((n for n in names if n in location), None)
+    if hit is None:
+        return None, f"location names no item in the packet: {location[:80]}"
+    if hit == "manifest.json":
+        return json.dumps(packet.manifest, indent=2, ensure_ascii=False, sort_keys=True), None
+    after = location.split(hit, 1)[1]
+    token = re.match(r"@([0-9a-f]{12})", after)
+    if token and token.group(1) != versions[hit]:
+        return None, f"location version {token.group(1)} differs from the manifest version {versions[hit]} for {hit}"
+    return packet.items[hit], None
+
+
+def _occurs_verbatim(excerpt, text):
+    """Verbatim at the location: in the raw item text, or in a string value of a JSON item (JSON escapes quotes and newlines)."""
+    if excerpt in text:
+        return True
+    try:
+        data = json.loads(text)
+    except ValueError:
+        return False
+    stack = [data]
+    while stack:
+        node = stack.pop()
+        if isinstance(node, str):
+            if excerpt in node:
+                return True
+        elif isinstance(node, dict):
+            stack.extend(node.values())
+        elif isinstance(node, list):
+            stack.extend(node)
+    return False
 
 
 def derive_expected(output, packet, validator_report, resolutions=None):
@@ -77,8 +106,8 @@ def check_output(output, packet, validator_report, approval_extract, resolutions
     if output["gate_recommendation"] != exp.value:
         problems.append(f"(a) gate {output['gate_recommendation']} differs from the step 9 value {exp.value} ({', '.join(exp.reasons)})")
     gate_claims = [c for c in output["handoff"]["claims"] if c["claim_id"] == "AR-C-GATE"]
-    if len(gate_claims) != 1 or not gate_claims[0]["statement"].startswith(f"Gate {exp.value}"):
-        problems.append("(a) the own claim AR-C-GATE is missing, repeated or states a different gate")
+    if len(gate_claims) != 1 or exp.value not in gate_claims[0]["statement"] or any(v in gate_claims[0]["statement"] for v in GATE_VALUES if v != exp.value):
+        problems.append("(a) the own claim AR-C-GATE is missing, repeated or states a different gate (its statement format is not specified; only the gate value is checked)")
     if output["handoff"]["status"] != exp.handoff_status:
         problems.append(f"(a) handoff.status {output['handoff']['status']} differs from the status table value {exp.handoff_status}")
     assess = {rc["source_claim_id"]: rc["producer_claim_assessment"] for rc in output["reviewed_claims"]}
@@ -87,8 +116,8 @@ def check_output(output, packet, validator_report, approval_extract, resolutions
         if f["blocking"] != want:
             problems.append(f"(a) finding {f['finding_id']} blocking={f['blocking']} but the step 9 rank 2 test gives {want}")
     cov = output["coverage"]
-    if cov["claims_in_pack"] != len(pack_claim_ids) or cov["claims_reviewed"] != len(output["reviewed_claims"]):
-        problems.append("(a) coverage counts do not match the pack and the reviewed claims")
+    if cov["claims_reviewed"] != len(output["reviewed_claims"]) or (exp.rank != 1 and cov["claims_in_pack"] != len(pack_claim_ids)):
+        problems.append("(a) coverage counts do not match the pack and the reviewed claims (at rank 1 the pack is not read, so claims_in_pack is not checked)")
     want_boundary = {"pass": "consistent", "fail": "breach", "absent": "unable_to_determine"}[result_of(validator_report or {"checks": []}, "boundary")]
     if output["boundary_check"] != want_boundary:
         problems.append(f"(a) boundary_check {output['boundary_check']} differs from the validator report ({want_boundary})")
@@ -120,7 +149,7 @@ def check_output(output, packet, validator_report, approval_extract, resolutions
     for f in output["findings"]:
         if f["quoted_excerpt"] is not None:
             texts = [_location_text(packet, loc) for loc in f["locations"]]
-            if not any(t is not None and f["quoted_excerpt"] in t for t, _ in texts):
+            if not any(t is not None and _occurs_verbatim(f["quoted_excerpt"], t) for t, _ in texts):
                 problems.append(f"(d) quoted_excerpt of {f['finding_id']} does not occur verbatim at any of its locations")
     for rec in output["handoff"]["evidence"]:
         sid = rec["source_id"]
@@ -138,7 +167,7 @@ def check_output(output, packet, validator_report, approval_extract, resolutions
             text, why = _location_text(packet, rec["location"])
             if why:
                 problems.append(f"(d) {sid}: {why}")
-            elif rec["extracted_fact"] not in text:
+            elif not _occurs_verbatim(rec["extracted_fact"], text):
                 problems.append(f"(d) {sid}: extracted_fact does not occur verbatim at its location")
         else:
             item = packet.items.get(f"evidence/{sid}.json")

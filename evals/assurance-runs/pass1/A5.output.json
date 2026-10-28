@@ -1,0 +1,81 @@
+{
+  "summary": "gate=INCOMPLETE; stop_condition=provenance_missing; findings=0; claims_reviewed=0; run=AR-RUN1-A5-RUN",
+  "gate_recommendation": "INCOMPLETE",
+  "gate_recommendation_note": "Recommendation only; not a clearance or approval; effect on progress not decided (GD-01 open).",
+  "coverage": {
+    "packs_in_scope": 0,
+    "packs_reviewed": 0,
+    "claims_in_pack": 0,
+    "claims_reviewed": 0,
+    "sampling_rule_ref": null
+  },
+  "manifest_declarations": {
+    "produced_by": "Definition & CDE Agent",
+    "authored_by": "Definition & CDE Agent",
+    "assembled_by": "SYN-ROLE-ASSEMBLER",
+    "manifest_approved_by": "SYN-ROLE-MANIFEST-APPROVER",
+    "uncited_evidence_ids": [],
+    "provenance": "missing"
+  },
+  "deterministic_checks_consumed": [],
+  "uncited_evidence_dispositions": [],
+  "findings": [],
+  "reviewed_claims": [],
+  "boundary_check": "unable_to_determine",
+  "approval_check": "unable_to_determine",
+  "contradictions": [],
+  "evidence_requests": [
+    "REQUEST_EVIDENCE: manifest_field manifest.json provenance"
+  ],
+  "contested_findings": [],
+  "assumptions": [],
+  "open_questions": [
+    "REQUEST_EVIDENCE: manifest_field manifest.json provenance"
+  ],
+  "recommendations": [
+    "HUMAN_ACTION: Data Steward supply_packet_item"
+  ],
+  "human_action_required": [
+    "HUMAN_ACTION: Data Steward supply_packet_item"
+  ],
+  "handoff": {
+    "case_id": "AR-RUN1",
+    "request": "Compare the definition of 'Settlement Date' across glossary entries GL-101 and GL-204.",
+    "agent": "Assurance Reviewer",
+    "status": "escalated",
+    "findings": [
+      "AR-AR-RUN1-A5-GATE | INCOMPLETE | AR-RUN1-A5-RUN | recommendation, not a clearance"
+    ],
+    "evidence": [
+      {
+        "source_id": "AR-EV-CLAUSE-1",
+        "source_type": "manifest",
+        "title": "manifest.json",
+        "location": "manifest.json, version not recorded in packet, line 34, field provenance",
+        "authority_level": "inferred",
+        "extracted_fact": "\"provenance\": \"missing\"",
+        "direct_or_inferred": "direct",
+        "timestamp": "not recorded in packet"
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "AR-C-GATE",
+        "statement": "AR-AR-RUN1-A5-GATE | INCOMPLETE | recommendation, not a clearance",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": [
+          "AR-EV-CLAUSE-1"
+        ]
+      }
+    ],
+    "assumptions": [],
+    "open_questions": [
+      "REQUEST_EVIDENCE: manifest_field manifest.json provenance"
+    ],
+    "human_action_required": [
+      "HUMAN_ACTION: Data Steward supply_packet_item"
+    ],
+    "next_agent": null
+  }
+}

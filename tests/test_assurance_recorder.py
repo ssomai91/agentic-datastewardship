@@ -310,3 +310,59 @@ def test_a_record_never_carries_an_approved_cleared_or_passed_state(tmp_path):
     text = json.dumps(r).lower()
     assert "approved" not in text and "cleared" not in text and "passed" not in text
     assert r["assurance_gate_recommendation"] in Recorder.ALLOWED_VALUES
+
+# ---- checks relaxed after the first agent run, where the contract does not specify the form (see evals/assurance-runs/RESULTS.md) -------
+
+def test_the_gate_claim_statement_format_is_not_pinned_only_the_gate_value_is():
+    packet, report, extract = world()
+    out = clean_output(packet, report, extract)
+    out["handoff"]["claims"][0]["statement"] = f"AR-SYN-CASE-001-SYN-PACK-01-GATE | NO_BLOCKING_FINDINGS_IDENTIFIED | {report['run_id']} | recommendation, not a clearance"
+    assert check_output(out, packet, report, extract).accepted
+    out["handoff"]["claims"][0]["statement"] = "AR-GATE | HOLD_RECOMMENDED | x"
+    assert reasons(check_output(out, packet, report, extract), "a")
+    out["handoff"]["claims"][0]["statement"] = "no gate stated here"
+    assert reasons(check_output(out, packet, report, extract), "a")
+
+
+@pytest.mark.parametrize("location", [
+    "checks/validator-report.json@{ver} checks[2].detail",              # prose after the path, as agents write it
+    "checks/validator-report.json, version {ver}, line 5",              # a different syntax again
+    "manifest.json, version not recorded in packet, field provenance",  # the manifest itself is a legitimate location
+])
+def test_free_form_locations_that_name_a_packet_item_resolve(location):
+    packet, report, extract = world()
+    ver = {i["path"]: i["version"] for i in packet.manifest["items"]}["checks/validator-report.json"]
+    out = clean_output(packet, report, extract)
+    quote = '"provenance": "synthetic"' if location.startswith("manifest") else '"check": "boundary"'
+    out["handoff"]["evidence"][1].update(location=location.format(ver=ver), extracted_fact=quote)
+    assert not reasons(check_output(out, packet, report, extract), "d"), check_output(out, packet, report, extract).problems
+
+
+def test_a_location_that_names_no_packet_item_is_still_rejected_and_a_wrong_version_token_too():
+    packet, report, extract = world()
+    out = clean_output(packet, report, extract)
+    out["handoff"]["evidence"][1]["location"] = "somewhere else entirely"
+    assert reasons(check_output(out, packet, report, extract), "d")
+    out2 = clean_output(packet, report, extract)
+    out2["handoff"]["evidence"][1]["location"] = "checks/validator-report.json@ffffffffffff"
+    assert reasons(check_output(out2, packet, report, extract), "d")
+
+
+def test_a_quotation_of_a_json_string_value_is_verbatim_even_though_the_file_escapes_quotes():
+    packet, report, extract = world()
+    out = hold_output(packet, report, extract, excerpt="x")
+    pack = json.loads(packet.items["pack/producer-output.json"])
+    sentence = pack["summary"]
+    out["findings"][0]["quoted_excerpt"] = sentence
+    assert not reasons(check_output(out, packet, report, extract), "d")
+    out["findings"][0]["quoted_excerpt"] = sentence + " and more"
+    assert reasons(check_output(out, packet, report, extract), "d")
+
+
+def test_at_rank_1_the_pack_claim_count_is_not_required_but_nothing_may_be_reviewed():
+    packet, report, extract = world(roles={"assembled_by": "SYN Definition & CDE Agent"})
+    stop = clean_output(packet, report, extract, gate="INCOMPLETE", reviewed=False)
+    stop["coverage"]["claims_in_pack"] = 0
+    assert check_output(stop, packet, report, extract).accepted
+    stop["coverage"]["claims_reviewed"] = 3
+    assert reasons(check_output(stop, packet, report, extract), "a")
