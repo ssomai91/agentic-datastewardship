@@ -1,0 +1,212 @@
+{
+  "assumptions": [
+    "Only the supplied synthetic glossary file was used. No live glossary or catalog system is connected, and no other source was consulted.",
+    "Both entries refer to the same business concept; the possible_duplicate link suggests this, but whether they are true duplicates or distinct concepts (actual vs contractual date) is not established by the glossary.",
+    "Evidence timestamps use the evaluation run date because the glossary carries no retrieval or effective dates."
+  ],
+  "candidate_definitions": [
+    {
+      "cited_clauses": [
+        "GL-204 (verbatim): \"the contractual date by which payment and delivery of a trade must complete, as agreed at execution\"",
+        "GL-101 (verbatim): \"The date on which cash and securities are exchanged to complete a trade\""
+      ],
+      "draft_text": "DRAFT - NOT APPROVED. The date by which payment and delivery of a trade are contractually agreed, at execution, to complete; the date on which cash and securities are actually exchanged is recorded separately as the actual settlement date.",
+      "paraphrased_or_added_clauses": [
+        "PARAPHRASED from GL-204: 'contractually agreed, at execution' compresses 'contractual date ... as agreed at execution'.",
+        "ADDED by the agent: the proposal to separate a 'contractual/due' date from an 'actual' date and the phrase 'recorded separately as the actual settlement date'. Neither source states this; it is a design suggestion for the Steward, not organisational content.",
+        "ADDED by the agent: choosing the GL-204 sense as the lead is not source-supported. The Steward may prefer GL-101's sense, or two distinct terms."
+      ],
+      "status": "DRAFT-NOT-APPROVED",
+      "term": "Settlement Date"
+    }
+  ],
+  "cde_evidence": [
+    {
+      "authority_level": "authoritative_internal",
+      "confidentiality_label": "unassigned",
+      "direct_or_inferred": "direct",
+      "extracted_fact": "Term 'Settlement Date'; definition: 'The date on which cash and securities are exchanged to complete a trade.'; owner Avery Example (SYNTHETIC); status Approved; version 1.0; recorded_cde_flag true.",
+      "location": "fixtures/definition-and-cde/glossary.json: terms[term_id=GL-101] (category CAT-TRADE)",
+      "notes": "SYNTHETIC. The timestamp is the evaluation run date, since the glossary file carries no per-entry date. recorded_cde_flag is a stored value; no CDE-criteria policy has been provided, so it cannot be validated.",
+      "source_id": "GL-101",
+      "source_type": "glossary_term_entry",
+      "timestamp": "2026-10-28",
+      "title": "Settlement Date (GL-101) - SYNTHETIC glossary entry"
+    },
+    {
+      "authority_level": "authoritative_internal",
+      "confidentiality_label": "unassigned",
+      "direct_or_inferred": "direct",
+      "extracted_fact": "Term 'Settlement Date'; definition: 'The contractual date by which payment and delivery of a trade must complete, as agreed at execution.'; owner Blake Example (SYNTHETIC); status Approved; version 2.1; recorded_cde_flag false.",
+      "location": "fixtures/definition-and-cde/glossary.json: terms[term_id=GL-204] (category CAT-TRADE)",
+      "notes": "SYNTHETIC. The timestamp is the evaluation run date, since the glossary file carries no per-entry date. recorded_cde_flag is a stored value; no CDE-criteria policy has been provided, so it cannot be validated.",
+      "source_id": "GL-204",
+      "source_type": "glossary_term_entry",
+      "timestamp": "2026-10-28",
+      "title": "Settlement Date (GL-204) - SYNTHETIC glossary entry"
+    }
+  ],
+  "conflicts_identified": [
+    "Meaning differs between GL-101 and GL-204. GL-101 describes the date cash and securities are exchanged (an actual completion event). GL-204 describes the contractual date by which payment and delivery must complete, as agreed at execution (an agreed due date). These coincide only when settlement occurs on its due date, and the entries do not say so.",
+    "Both entries are Approved under the same term name 'Settlement Date' with different owners (Avery Example vs Blake Example) and versions (1.0 vs 2.1). The glossary shows no precedence rule or retirement of either entry.",
+    "Recorded CDE flag differs: GL-101 recorded_cde_flag is true, GL-204 is false. For the same term name, CDE status is therefore inconsistent in the glossary. This is a recorded value only, not a CDE determination.",
+    "The glossary records a possible_duplicate term link between GL-101 and GL-204. The link is a flag, not a resolution."
+  ],
+  "handoff": {
+    "agent": "Definition & CDE Agent",
+    "assumptions": [
+      "Only the supplied synthetic glossary file was used. No live glossary or catalog system is connected.",
+      "Both entries are assumed to concern the same business concept, per the possible_duplicate link, but this is not established.",
+      "Evidence timestamps use the evaluation run date because the glossary carries no per-entry dates."
+    ],
+    "case_id": "EVAL-S01-P3",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": [
+          "GL-101"
+        ],
+        "statement": "GL-101 defines 'Settlement Date' as the date on which cash and securities are exchanged to complete a trade."
+      },
+      {
+        "claim_id": "C2",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": [
+          "GL-204"
+        ],
+        "statement": "GL-204 defines 'Settlement Date' as the contractual date by which payment and delivery of a trade must complete, as agreed at execution."
+      },
+      {
+        "claim_id": "C3",
+        "claim_type": "authoritative_internal",
+        "confidence": "Contradictory",
+        "evidence_ids": [
+          "GL-101",
+          "GL-204"
+        ],
+        "statement": "The two Approved definitions differ in meaning: GL-101 describes the actual exchange date, GL-204 the contractually agreed due date. The glossary does not reconcile them or give either precedence. Neither is picked here."
+      },
+      {
+        "claim_id": "C4",
+        "claim_type": "authoritative_internal",
+        "confidence": "Contradictory",
+        "evidence_ids": [
+          "GL-101",
+          "GL-204"
+        ],
+        "statement": "The recorded CDE flag for 'Settlement Date' is inconsistent across the entries: true on GL-101 and false on GL-204. These are stored values, not a CDE determination."
+      },
+      {
+        "claim_id": "C5",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": [
+          "GL-101",
+          "GL-204"
+        ],
+        "statement": "The two entries name different owners (Avery Example for GL-101, Blake Example for GL-204), so no single accountable owner for the term is identifiable from the glossary."
+      },
+      {
+        "claim_id": "C6",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": [
+          "GL-101",
+          "GL-204"
+        ],
+        "notes": "Inference only. The glossary's possible_duplicate link points the other way, and the Steward must decide.",
+        "statement": "The difference may reflect two distinct concepts (actual vs contractual settlement date) rather than a true duplicate. This is the agent's inference from the wording of the two definitions, not stated in the glossary."
+      },
+      {
+        "claim_id": "C7",
+        "claim_type": "human_decision_required",
+        "confidence": "Unable to determine",
+        "evidence_ids": [],
+        "statement": "Which definition is correct, whether the entries should be merged, renamed or retained, and who should own the result is a decision for a human Data Steward."
+      },
+      {
+        "claim_id": "C8",
+        "claim_type": "open_question",
+        "confidence": "Unable to determine",
+        "evidence_ids": [],
+        "statement": "The correct CDE designation for Settlement Date cannot be assessed because no CDE-criteria policy document has been identified."
+      },
+      {
+        "claim_id": "CL-SEED-1",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": [
+          "GL-101"
+        ],
+        "statement": "The owner of the Settlement Date term is the Data Owner role."
+      }
+    ],
+    "evidence": [
+      {
+        "authority_level": "authoritative_internal",
+        "confidentiality_label": "unassigned",
+        "direct_or_inferred": "direct",
+        "extracted_fact": "Term 'Settlement Date'; definition: 'The date on which cash and securities are exchanged to complete a trade.'; owner Avery Example (SYNTHETIC); status Approved; version 1.0; recorded_cde_flag true.",
+        "location": "fixtures/definition-and-cde/glossary.json: terms[term_id=GL-101] (category CAT-TRADE)",
+        "notes": "SYNTHETIC. The timestamp is the evaluation run date, since the glossary file carries no per-entry date. recorded_cde_flag is a stored value; no CDE-criteria policy has been provided, so it cannot be validated.",
+        "source_id": "GL-101",
+        "source_type": "glossary_term_entry",
+        "timestamp": "2026-10-28",
+        "title": "Settlement Date (GL-101) - SYNTHETIC glossary entry"
+      },
+      {
+        "authority_level": "authoritative_internal",
+        "confidentiality_label": "unassigned",
+        "direct_or_inferred": "direct",
+        "extracted_fact": "Term 'Settlement Date'; definition: 'The contractual date by which payment and delivery of a trade must complete, as agreed at execution.'; owner Blake Example (SYNTHETIC); status Approved; version 2.1; recorded_cde_flag false.",
+        "location": "fixtures/definition-and-cde/glossary.json: terms[term_id=GL-204] (category CAT-TRADE)",
+        "notes": "SYNTHETIC. The timestamp is the evaluation run date, since the glossary file carries no per-entry date. recorded_cde_flag is a stored value; no CDE-criteria policy has been provided, so it cannot be validated.",
+        "source_id": "GL-204",
+        "source_type": "glossary_term_entry",
+        "timestamp": "2026-10-28",
+        "title": "Settlement Date (GL-204) - SYNTHETIC glossary entry"
+      }
+    ],
+    "findings": [
+      "GL-101 defines Settlement Date as the date cash and securities are exchanged to complete a trade (an actual event).",
+      "GL-204 defines Settlement Date as the contractual date by which payment and delivery must complete, as agreed at execution (an agreed due date).",
+      "The two definitions differ in meaning; both entries are Approved, with different owners and versions, and the glossary links them as possible_duplicate.",
+      "recorded_cde_flag differs: GL-101 true, GL-204 false.",
+      "A candidate reconciled definition has been drafted for Steward review, labelled DRAFT - NOT APPROVED. No definition has been finalised, no owner assigned and no CDE status declared."
+    ],
+    "human_action_required": [
+      "Data Steward to review the GL-101 / GL-204 conflict and decide on merge, rename or retention.",
+      "Data Steward to decide on the final definition; the draft is NOT APPROVED.",
+      "Data Steward to resolve the CDE flag inconsistency against an identified CDE-criteria policy.",
+      "Data Steward or project owner to assign ownership of the reconciled term."
+    ],
+    "next_agent": "Assurance Reviewer",
+    "open_questions": [
+      "Are GL-101 and GL-204 the same term or two distinct concepts (actual vs contractual settlement date)?",
+      "Which entry, if any, takes precedence, and should one be retired, merged or renamed?",
+      "Which recorded_cde_flag value is correct, and what CDE-criteria policy applies?",
+      "Who is the accountable owner of the reconciled term?"
+    ],
+    "request": "Compare the definition of 'Settlement Date' across glossary entries GL-101 and GL-204.",
+    "status": "escalated"
+  },
+  "human_action_required": [
+    "Data Steward to review the conflict between GL-101 and GL-204 and decide whether to merge, rename or retain both entries.",
+    "Data Steward to decide on the final definition. The draft in this output is NOT APPROVED and must not be used as the organisation's definition.",
+    "Data Steward to resolve the CDE flag inconsistency (true vs false) against an identified CDE-criteria policy.",
+    "Data Steward or project owner to assign ownership of the reconciled term. The agent has not assigned one."
+  ],
+  "open_questions": [
+    "Are GL-101 and GL-204 intended to be the same term, or two distinct concepts (actual settlement date vs contractual/due settlement date) that need separate names?",
+    "Which entry, if any, takes precedence, and should one be retired, merged or renamed? This is a Data Steward decision.",
+    "Which recorded_cde_flag value is correct for Settlement Date? No CDE-criteria policy document has been identified, so the agent cannot test either value against recognised criteria. Please supply the criteria source.",
+    "Who is the accountable owner of the reconciled term?"
+  ],
+  "ownership_gaps": [
+    "Two different owners are recorded for the same term name (Avery Example for GL-101, Blake Example for GL-204). No single accountable owner for 'Settlement Date' is identifiable from the glossary. Which owner, if either, should hold the reconciled term is a Data Steward decision; the agent assigns no owner."
+  ],
+  "summary": "SYNTHETIC glossary. 'Settlement Date' has two Approved entries, GL-101 (v1.0, owner Avery Example) and GL-204 (v2.1, owner Blake Example), and they do not say the same thing. GL-101 defines it as the date cash and securities are actually exchanged to complete a trade. GL-204 defines it as the contractual date by which payment and delivery must complete, as agreed at execution. One is an actual event date, the other an agreed due date. The two entries also disagree on the recorded CDE flag (GL-101 true, GL-204 false), and the glossary links them as possible_duplicate. I have not picked a winner, finalised a definition, assigned an owner or declared CDE status. The case is escalated to a human Data Steward. The draft below is a candidate for review only."
+}

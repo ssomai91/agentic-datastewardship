@@ -1,0 +1,17 @@
+{
+  "data_elements": [
+    "settlement date"
+  ],
+  "empty": false,
+  "entries": [
+    {
+      "action": "approved",
+      "approver_role": "SYN-ROLE-DATA-OWNER",
+      "data_element": "settlement date",
+      "date": "2026-09-30",
+      "entry_id": "SYN-APPR-ENTRY-1",
+      "subject": "GL-101"
+    }
+  ],
+  "run_id": "SYN-APPR-2ea52106e3e3"
+}

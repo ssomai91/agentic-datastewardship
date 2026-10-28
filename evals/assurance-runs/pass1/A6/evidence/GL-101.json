@@ -1,0 +1,10 @@
+{
+  "authority_level": "authoritative_internal",
+  "direct_or_inferred": "direct",
+  "extracted_fact": "The date on which cash and securities are exchanged to complete a trade.",
+  "location": "SYNTH-GLOSSARY/GL-101",
+  "source_id": "GL-101",
+  "source_type": "glossary_term",
+  "timestamp": "2026-10-28T00:00:00Z",
+  "title": "Settlement Date"
+}

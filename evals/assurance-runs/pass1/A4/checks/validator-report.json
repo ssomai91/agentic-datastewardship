@@ -1,0 +1,20 @@
+{
+  "checks": [
+    {
+      "check": "output_schema",
+      "detail": "",
+      "result": "pass"
+    },
+    {
+      "check": "duplicate_and_unresolved_evidence_ids",
+      "detail": "",
+      "result": "pass"
+    },
+    {
+      "check": "boundary",
+      "detail": "STAND-IN call log supplied by the test harness; it is not a record of the run that produced this pack",
+      "result": "pass"
+    }
+  ],
+  "run_id": "SYN-VAL-94647f450bed"
+}

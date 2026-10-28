@@ -1,0 +1,39 @@
+{
+  "approval_log_run_id": "SYN-APPR-2ea52106e3e3",
+  "assembled_by": "SYN-ROLE-ASSEMBLER",
+  "authored_by": "Definition & CDE Agent",
+  "case_id": "AR-RUN1",
+  "coverage": "full",
+  "evidence_store_query": "records cited by the pack plus records keyed to data elements ['settlement date']",
+  "evidence_store_run_id": "STORE-RUN-89797220062f",
+  "items": [
+    {
+      "path": "checks/approval-log-extract.json",
+      "version": "26cdf0a87dc7"
+    },
+    {
+      "path": "checks/validator-report.json",
+      "version": "3cca78eccfe3"
+    },
+    {
+      "path": "evidence/GL-101.json",
+      "version": "7ff463d74965"
+    },
+    {
+      "path": "evidence/GL-204.json",
+      "version": "3aa7edb28214"
+    },
+    {
+      "path": "pack/producer-output.json",
+      "version": "293746c4e756"
+    }
+  ],
+  "manifest_approved_by": "SYN-ROLE-MANIFEST-APPROVER",
+  "pack_id": "A4",
+  "produced_by": "Definition & CDE Agent",
+  "provenance": "synthetic",
+  "request": "Compare the definition of 'Settlement Date' across glossary entries GL-101 and GL-204.",
+  "sampling_rule_ref": null,
+  "uncited_evidence_ids": [],
+  "validator_run_id": "SYN-VAL-94647f450bed"
+}
