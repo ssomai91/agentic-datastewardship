@@ -1,0 +1,73 @@
+{
+  "summary": "Unable to determine. No definition of 'Settlement Date' can be provided: the glossary/catalog tools are unavailable in this run (timeout errors), and no glossary content was supplied in the conversation. No authoritative internal definition, owner or CDE evidence was retrieved, and none has been invented. This is an outage/access gap, not a finding that no register entry exists for the term. Escalated to a human Data Steward.",
+  "candidate_definitions": [],
+  "conflicts_identified": [],
+  "cde_evidence": [],
+  "ownership_gaps": [
+    "Ownership of 'Settlement Date' could not be assessed because no glossary record was retrievable; no owner is asserted or implied."
+  ],
+  "assumptions": [
+    "ASSUMPTION: the glossary tools being unavailable in this run is a transient access failure, not evidence that the term is absent from the register.",
+    "ASSUMPTION: no CDE-criteria policy document has been identified, so CDE status of 'Settlement Date' cannot be assessed even if a glossary entry were found.",
+    "No general industry knowledge has been substituted for an internal definition; none is presented as this organisation's definition."
+  ],
+  "open_questions": [
+    "Can the glossary/catalog read-only capabilities be restored so the request can be re-run?",
+    "Can a Data Steward paste the relevant glossary entry or entries for 'Settlement Date' (including any entries that could conflict, for example trade-date versus contractual versus actual settlement date) so they can be compared?",
+    "Which named CDE-criteria policy document applies, if CDE status is to be considered?",
+    "Once retrieved, is there an authoritative register entry at all, or is a register present with no entry for this term? These need different remediation paths."
+  ],
+  "human_action_required": [
+    "Data Steward / platform owner: restore glossary access or supply the glossary content for 'Settlement Date', then re-submit the request.",
+    "Data Steward: do not treat this response as a definition, an approval, an ownership assignment or a CDE designation; none was made."
+  ],
+  "handoff": {
+    "case_id": "EVAL-S09-P2",
+    "request": "Find the definition of 'Settlement Date'.",
+    "agent": "Definition & CDE Agent",
+    "status": "escalated",
+    "findings": [
+      "Glossary tools were unavailable (timeout) in this run and no glossary content was provided; no definition could be located.",
+      "No candidate definition drafted, because doing so without source content would be fabrication.",
+      "No ownership or CDE status asserted."
+    ],
+    "evidence": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "statement": "A definition of 'Settlement Date' could not be located because the glossary system was unreachable and no glossary content was provided.",
+        "claim_type": "open_question",
+        "confidence": "Unable to determine",
+        "evidence_ids": [],
+        "notes": "Access gap, not an absence finding."
+      },
+      {
+        "claim_id": "C2",
+        "statement": "Whether 'Settlement Date' is a Critical Data Element, and who owns it, cannot be determined without glossary content and a named CDE-criteria policy.",
+        "claim_type": "open_question",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      },
+      {
+        "claim_id": "C3",
+        "statement": "Approval of any definition, ownership assignment and CDE designation for 'Settlement Date' remain with a human Data Steward.",
+        "claim_type": "human_decision_required",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      }
+    ],
+    "assumptions": [
+      "The glossary outage is transient and does not imply the term is absent from the register.",
+      "No CDE-criteria policy document has been identified."
+    ],
+    "open_questions": [
+      "Can glossary access be restored or the relevant entries be supplied?",
+      "Which CDE-criteria policy applies?"
+    ],
+    "human_action_required": [
+      "Restore glossary access or provide the glossary content, then re-run the request.",
+      "Human Data Steward to own any definition approval, ownership assignment or CDE designation."
+    ],
+    "next_agent": "Assurance Reviewer"
+  }
+}

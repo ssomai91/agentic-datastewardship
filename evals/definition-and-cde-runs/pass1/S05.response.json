@@ -1,0 +1,155 @@
+{
+  "summary": "The glossary holds two distinct, Approved entries for 'Position' in different categories: GL-501 'Position (Trading)' (Trade Lifecycle) and GL-502 'Position (Employment/HR)' (Organisation). The request does not say which sense is meant, so no single meaning is asserted. Both definitions are reported verbatim for Data Steward disambiguation. Neither entry is recorded as a CDE, and no CDE-criteria policy document has been identified, so no CDE conclusion is drawn.",
+  "candidate_definitions": [
+    {
+      "term": "Position (Trading)",
+      "draft_text": "The quantity of a security or instrument held in a portfolio at a point in time.",
+      "cited_clauses": [
+        "The quantity of a security or instrument held in a portfolio at a point in time. (GL-501, v1.0, verbatim)"
+      ],
+      "paraphrased_or_added_clauses": [],
+      "status": "DRAFT-NOT-APPROVED"
+    },
+    {
+      "term": "Position (Employment/HR)",
+      "draft_text": "A defined job role within the organisation, with a title, grade and reporting line.",
+      "cited_clauses": [
+        "A defined job role within the organisation, with a title, grade and reporting line. (GL-502, v1.0, verbatim)"
+      ],
+      "paraphrased_or_added_clauses": [],
+      "status": "DRAFT-NOT-APPROVED"
+    }
+  ],
+  "conflicts_identified": [
+    "Homonym, not a contradiction: 'Position' resolves to two unrelated meanings (GL-501 trading holding vs GL-502 HR job role) in different categories (CAT-TRADE vs CAT-ORG). No term link between GL-501 and GL-502 exists in the glossary. The unqualified word 'Position' is ambiguous, and neither sense should be chosen without the requester's context."
+  ],
+  "cde_evidence": [
+    {
+      "source_id": "GL-501",
+      "source_type": "glossary_term",
+      "title": "Position (Trading)",
+      "location": "fixtures/definition-and-cde/glossary.json > terms > GL-501",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "recorded_cde_flag is false for GL-501. This is a recorded register value only, not a CDE determination.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-28",
+      "notes": "SYNTHETIC glossary."
+    },
+    {
+      "source_id": "GL-502",
+      "source_type": "glossary_term",
+      "title": "Position (Employment/HR)",
+      "location": "fixtures/definition-and-cde/glossary.json > terms > GL-502",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "recorded_cde_flag is false for GL-502. This is a recorded register value only, not a CDE determination.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-28",
+      "notes": "SYNTHETIC glossary."
+    }
+  ],
+  "ownership_gaps": [
+    "None identified: both entries record an owner (GL-501 Emery Example (SYNTHETIC); GL-502 Finley Example (SYNTHETIC)). Recorded as-is; this agent assigns and confirms nothing."
+  ],
+  "assumptions": [
+    "The synthetic glossary file fixtures/definition-and-cde/glossary.json is the only glossary content available; no live glossary/catalog system is connected.",
+    "The words 'Position (Trading)' and 'Position (Employment/HR)' in the glossary are treated as the qualified forms of the unqualified request term 'Position'.",
+    "No approved CDE-criteria policy document has been identified, so CDE status cannot be assessed; it is requested as an open input."
+  ],
+  "open_questions": [
+    "Which sense of 'Position' does the requester mean: the trading holding (GL-501) or the HR job role (GL-502)?",
+    "Should the glossary carry a disambiguation link or a preferred-sense convention between GL-501 and GL-502? This is a Data Steward decision.",
+    "Which approved policy document defines the recognised CDE criteria, so that CDE status of Position (Trading) can be assessed by a human?"
+  ],
+  "human_action_required": [
+    "Data Steward / requester to confirm which sense of 'Position' applies before either definition is relied upon.",
+    "Data Steward to review the two DRAFT - NOT APPROVED candidate entries. Final approval of any definition, any ownership assignment and any CDE designation remain human decisions."
+  ],
+  "handoff": {
+    "case_id": "EVAL-S05-P1",
+    "request": "What does 'Position' mean?",
+    "agent": "Definition & CDE Agent",
+    "status": "escalated",
+    "findings": [
+      "Two Approved glossary entries match 'Position': GL-501 'Position (Trading)' and GL-502 'Position (Employment/HR)'.",
+      "GL-501: The quantity of a security or instrument held in a portfolio at a point in time.",
+      "GL-502: A defined job role within the organisation, with a title, grade and reporting line.",
+      "The request is ambiguous between the two senses; escalated for disambiguation rather than choosing one.",
+      "Both entries have recorded_cde_flag false; CDE status is not assessed because no CDE-criteria policy is identified."
+    ],
+    "evidence": [
+      {
+        "source_id": "GL-501",
+        "source_type": "glossary_term",
+        "title": "Position (Trading)",
+        "location": "fixtures/definition-and-cde/glossary.json > terms > GL-501",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Term 'Position (Trading)', category CAT-TRADE, status Approved, version 1.0, owner Emery Example (SYNTHETIC): 'The quantity of a security or instrument held in a portfolio at a point in time.' recorded_cde_flag false.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28",
+        "notes": "SYNTHETIC glossary."
+      },
+      {
+        "source_id": "GL-502",
+        "source_type": "glossary_term",
+        "title": "Position (Employment/HR)",
+        "location": "fixtures/definition-and-cde/glossary.json > terms > GL-502",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Term 'Position (Employment/HR)', category CAT-ORG, status Approved, version 1.0, owner Finley Example (SYNTHETIC): 'A defined job role within the organisation, with a title, grade and reporting line.' recorded_cde_flag false.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28",
+        "notes": "SYNTHETIC glossary."
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "statement": "The glossary defines 'Position (Trading)' (GL-501, Approved) as the quantity of a security or instrument held in a portfolio at a point in time.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["GL-501"]
+      },
+      {
+        "claim_id": "C2",
+        "statement": "The glossary defines 'Position (Employment/HR)' (GL-502, Approved) as a defined job role within the organisation, with a title, grade and reporting line.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["GL-502"]
+      },
+      {
+        "claim_id": "C3",
+        "statement": "The unqualified term 'Position' has two distinct glossary meanings in different categories, so it cannot be answered with a single definition without context.",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": ["GL-501", "GL-502"],
+        "notes": "Both entries are directly evidenced; the ambiguity conclusion is the agent's inference."
+      },
+      {
+        "claim_id": "C4",
+        "statement": "Which sense of 'Position' the requester intends is not determinable from the request.",
+        "claim_type": "open_question",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      },
+      {
+        "claim_id": "C5",
+        "statement": "Whether either Position entry is a Critical Data Element cannot be determined: both record a CDE flag of false, but no CDE-criteria policy document has been identified and CDE designation requires human approval.",
+        "claim_type": "human_decision_required",
+        "confidence": "Unable to determine",
+        "evidence_ids": ["GL-501", "GL-502"]
+      }
+    ],
+    "assumptions": [
+      "The synthetic glossary file is the only glossary content available; no live glossary/catalog system is connected.",
+      "No approved CDE-criteria policy document has been identified."
+    ],
+    "open_questions": [
+      "Which sense of 'Position' does the requester mean: GL-501 (trading) or GL-502 (HR)?",
+      "Which approved policy document defines the recognised CDE criteria?"
+    ],
+    "human_action_required": [
+      "Data Steward / requester to confirm the intended sense of 'Position'.",
+      "Data Steward to review the DRAFT - NOT APPROVED candidates; approval, ownership assignment and CDE designation remain human decisions."
+    ],
+    "next_agent": "Assurance Reviewer"
+  }
+}

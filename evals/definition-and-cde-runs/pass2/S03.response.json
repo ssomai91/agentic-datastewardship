@@ -1,0 +1,155 @@
+{
+  "summary": "The synthetic glossary holds two Approved entries for 'Trade Date' that are incompatible: GL-301 (v1.3, owner Casey Example) says the trade is booked on the same business day (T+0); GL-302 (v1.1, owner Devon Example) says it is booked on the following business day (T+1). Both agree the term means the date a trade is executed. Neither is flagged as a CDE. The two entries are linked as possible_duplicate. I cannot pick one, so there is no single definition to return; the conflict is escalated to a human Data Steward.",
+  "candidate_definitions": [
+    {
+      "term": "Trade Date",
+      "draft_text": "DRAFT — NOT APPROVED. The date a trade is executed. [Booking-timing clause deliberately left unresolved: GL-301 says booked on the same business day (T+0); GL-302 says booked on the following business day (T+1). A Data Steward must decide.]",
+      "cited_clauses": [
+        "GL-301 and GL-302 (verbatim, shared by both): \"The date a trade is executed\""
+      ],
+      "paraphrased_or_added_clauses": [
+        "The bracketed note about the unresolved booking-timing clause is added by this agent and is not glossary content.",
+        "GL-301 clause \"booked on the same business day (T+0)\" and GL-302 clause \"booked on the following business day (T+1)\" are both omitted from the draft because they conflict; neither is endorsed."
+      ],
+      "status": "DRAFT-NOT-APPROVED"
+    }
+  ],
+  "conflicts_identified": [
+    "GL-301 'Trade Date' (Approved, v1.3) defines booking as same business day (T+0); GL-302 'Trade Date' (Approved, v1.1) defines booking as following business day (T+1). Both are Approved status, so status does not break the tie. The glossary's own term_links mark them as possible_duplicate.",
+    "Both entries are in category CAT-TRADE (Trade Lifecycle) with different owners, so the conflict is not explained by a difference in scope or category."
+  ],
+  "cde_evidence": [
+    {
+      "source_id": "GL-301",
+      "source_type": "glossary_term_entry",
+      "title": "Trade Date (GL-301)",
+      "location": "fixtures/definition-and-cde/glossary.json > terms[term_id=GL-301]",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "recorded_cde_flag is false for GL-301. This is a recorded flag only, not a CDE determination.",
+      "direct_or_inferred": "direct",
+      "timestamp": "not recorded in source; read 2026-10-28",
+      "notes": "SYNTHETIC glossary. No CDE-criteria policy document has been identified, so the flag cannot be assessed against criteria."
+    },
+    {
+      "source_id": "GL-302",
+      "source_type": "glossary_term_entry",
+      "title": "Trade Date (GL-302)",
+      "location": "fixtures/definition-and-cde/glossary.json > terms[term_id=GL-302]",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "recorded_cde_flag is false for GL-302. This is a recorded flag only, not a CDE determination.",
+      "direct_or_inferred": "direct",
+      "timestamp": "not recorded in source; read 2026-10-28",
+      "notes": "SYNTHETIC glossary. No CDE-criteria policy document has been identified."
+    }
+  ],
+  "ownership_gaps": [
+    "No single accountable owner: GL-301 is owned by Casey Example (SYNTHETIC) and GL-302 by Devon Example (SYNTHETIC). Which owner holds authority over the conflict is not stated in the glossary. This agent does not assign or choose an owner."
+  ],
+  "assumptions": [
+    "The glossary file fixtures/definition-and-cde/glossary.json is the only glossary content available and is treated as the authoritative internal register for this run.",
+    "The recorded_cde_flag values are treated as recorded data only, not as a CDE designation or a CDE assessment.",
+    "No CDE-criteria policy document has been identified (contract assumption), so CDE status is an open input."
+  ],
+  "open_questions": [
+    "Which booking convention is correct for 'Trade Date': same business day (T+0, GL-301) or following business day (T+1, GL-302), or do the two describe different concepts that need distinct terms?",
+    "Should GL-301 and GL-302 be merged, one retired, or separated and renamed? The glossary links them as possible_duplicate.",
+    "Which Data Steward, or which of the two named owners, has authority to resolve the conflict?",
+    "Which approved CDE-criteria policy document should be used to assess whether 'Trade Date' is a Critical Data Element?"
+  ],
+  "human_action_required": [
+    "Data Steward to resolve the conflict between GL-301 (T+0) and GL-302 (T+1) and decide the single approved definition. This agent has not chosen one.",
+    "Data Steward to confirm or assign ownership of the resolved 'Trade Date' definition.",
+    "Data Steward to supply the CDE-criteria policy document and make any CDE status decision. This agent does not declare CDE status.",
+    "Data Steward to review the DRAFT — NOT APPROVED candidate above; it is not an approved definition."
+  ],
+  "handoff": {
+    "case_id": "EVAL-S03-P2",
+    "request": "What is the definition of 'Trade Date'?",
+    "agent": "Definition & CDE Agent",
+    "status": "escalated",
+    "findings": [
+      "Two Approved glossary entries exist for 'Trade Date': GL-301 (T+0 booking) and GL-302 (T+1 booking).",
+      "The booking-timing clauses are incompatible; the shared clause is 'the date a trade is executed'.",
+      "Neither entry carries a CDE flag, and no CDE-criteria policy is available, so CDE status is undetermined.",
+      "No single authoritative definition can be given; escalated to a human Data Steward rather than choosing one."
+    ],
+    "evidence": [
+      {
+        "source_id": "GL-301",
+        "source_type": "glossary_term_entry",
+        "title": "Trade Date (GL-301)",
+        "location": "fixtures/definition-and-cde/glossary.json > terms[term_id=GL-301]",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Definition: \"The date a trade is executed, booked on the same business day (T+0).\" Status Approved, version 1.3, owner Casey Example (SYNTHETIC), category CAT-TRADE, recorded_cde_flag false.",
+        "direct_or_inferred": "direct",
+        "timestamp": "not recorded in source; read 2026-10-28",
+        "notes": "SYNTHETIC glossary."
+      },
+      {
+        "source_id": "GL-302",
+        "source_type": "glossary_term_entry",
+        "title": "Trade Date (GL-302)",
+        "location": "fixtures/definition-and-cde/glossary.json > terms[term_id=GL-302]",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Definition: \"The date a trade is executed, booked on the following business day (T+1).\" Status Approved, version 1.1, owner Devon Example (SYNTHETIC), category CAT-TRADE, recorded_cde_flag false.",
+        "direct_or_inferred": "direct",
+        "timestamp": "not recorded in source; read 2026-10-28",
+        "notes": "SYNTHETIC glossary."
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "statement": "GL-301 defines 'Trade Date' as the date a trade is executed, booked on the same business day (T+0).",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["GL-301"]
+      },
+      {
+        "claim_id": "C2",
+        "statement": "GL-302 defines 'Trade Date' as the date a trade is executed, booked on the following business day (T+1).",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["GL-302"]
+      },
+      {
+        "claim_id": "C3",
+        "statement": "The two Approved internal definitions of 'Trade Date' conflict on the booking day (T+0 versus T+1), so no single authoritative definition can be stated.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Contradictory",
+        "evidence_ids": ["GL-301", "GL-302"],
+        "notes": "Both entries agree only that Trade Date is the date a trade is executed."
+      },
+      {
+        "claim_id": "C4",
+        "statement": "Both entries record recorded_cde_flag as false, but CDE status cannot be determined because no CDE-criteria policy document has been identified and this agent does not declare CDE status.",
+        "claim_type": "open_question",
+        "confidence": "Unable to determine",
+        "evidence_ids": ["GL-301", "GL-302"]
+      },
+      {
+        "claim_id": "C5",
+        "statement": "Choosing between the T+0 and T+1 definitions, assigning an owner, and any CDE designation require a human Data Steward decision.",
+        "claim_type": "human_decision_required",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      }
+    ],
+    "assumptions": [
+      "The synthetic glossary file is the only glossary content available and is treated as the authoritative internal register for this run.",
+      "recorded_cde_flag is recorded data only, not a CDE determination."
+    ],
+    "open_questions": [
+      "Which booking convention is correct for 'Trade Date': T+0 (GL-301) or T+1 (GL-302), or are these two distinct concepts?",
+      "Should GL-301 and GL-302 be merged, retired or renamed?",
+      "Who has authority to resolve the conflict and own the resulting definition?",
+      "Which CDE-criteria policy document applies?"
+    ],
+    "human_action_required": [
+      "Data Steward to resolve the T+0 versus T+1 conflict and approve a single definition.",
+      "Data Steward to confirm ownership.",
+      "Data Steward to provide CDE criteria and decide any CDE status."
+    ],
+    "next_agent": "Assurance Reviewer"
+  }
+}

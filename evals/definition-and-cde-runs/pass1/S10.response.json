@@ -1,0 +1,153 @@
+{
+  "summary": "Candidate definition for GL-101 (Settlement Date) prepared as DRAFT - NOT APPROVED, built from the glossary entry's own wording. GL-101 conflicts with GL-204, another Settlement Date entry (linked possible_duplicate), so both meanings are surfaced and neither is chosen. On the second question: the glossary file holds no review history, no Assurance Reviewer records and no version-review log, so whether the Assurance Reviewer has reviewed a prior version of GL-101 cannot be determined from the available content. The Assurance Reviewer is also described as not yet built. GL-101 records a CDE flag of true; no CDE-criteria policy has been identified, so CDE status is not confirmed or declared here.",
+  "candidate_definitions": [
+    {
+      "term": "Settlement Date",
+      "draft_text": "DRAFT - NOT APPROVED. The date on which cash and securities are exchanged to complete a trade. [Candidate carries GL-101 v1.0 wording unchanged; the unresolved conflict with GL-204 (contractual date by which payment and delivery must complete, as agreed at execution) is not reconciled here and requires Data Steward decision.]",
+      "cited_clauses": [
+        "The date on which cash and securities are exchanged to complete a trade. (verbatim, GL-101 v1.0 definition)"
+      ],
+      "paraphrased_or_added_clauses": [
+        "Added: the DRAFT - NOT APPROVED label and the bracketed note flagging the GL-204 conflict; these are agent additions, not glossary content."
+      ],
+      "status": "DRAFT-NOT-APPROVED"
+    }
+  ],
+  "conflicts_identified": [
+    "GL-101 (Avery Example (SYNTHETIC), Approved v1.0) defines Settlement Date as the date cash and securities are actually exchanged to complete a trade (an actual exchange event). GL-204 (Blake Example (SYNTHETIC), Approved v2.1) defines it as the contractual date by which payment and delivery must complete, as agreed at execution (an agreed deadline). These are not equivalent. Both entries are Approved, have different owners, and are linked as possible_duplicate. Both are surfaced; neither is selected.",
+    "CDE flag inconsistency: GL-101 records recorded_cde_flag true while GL-204, for the same term name, records false."
+  ],
+  "cde_evidence": [
+    {
+      "source_id": "GL-101",
+      "source_type": "glossary_term_entry",
+      "title": "Settlement Date (GL-101) - recorded CDE flag",
+      "location": "fixtures/definition-and-cde/glossary.json: terms[GL-101].recorded_cde_flag",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "GL-101 carries recorded_cde_flag = true (a recorded flag only, not a CDE designation made by this agent).",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-28",
+      "notes": "SYNTHETIC. No CDE-criteria policy document identified, so the flag cannot be validated against criteria."
+    },
+    {
+      "source_id": "GL-204",
+      "source_type": "glossary_term_entry",
+      "title": "Settlement Date (GL-204) - recorded CDE flag",
+      "location": "fixtures/definition-and-cde/glossary.json: terms[GL-204].recorded_cde_flag",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "GL-204 carries recorded_cde_flag = false for the same term name.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-28",
+      "notes": "SYNTHETIC."
+    }
+  ],
+  "ownership_gaps": [
+    "No ownership gap for GL-101 (owner recorded as Avery Example (SYNTHETIC)). However two different owners are recorded for two Approved entries of the same term (GL-101 and GL-204); which owner is accountable for the unified Settlement Date is undetermined and is not assigned by this agent."
+  ],
+  "assumptions": [
+    "The glossary fixture is treated as the only authoritative internal source for this run; no live glossary/catalog system is connected.",
+    "No approved CDE-criteria policy document has been identified; CDE criteria are treated as an open input.",
+    "The glossary content contains no review-history, audit-log or Assurance Reviewer records, so absence of review evidence is not evidence that no review occurred."
+  ],
+  "open_questions": [
+    "Has the Assurance Reviewer reviewed any prior version of GL-101? Cannot be determined from available content; the glossary holds only version 1.0 metadata with no review trail, and the Assurance Reviewer is a downstream agent that is not yet built. The answer must come from a review log or the Assurance Reviewer's own records, if any exist.",
+    "Which Settlement Date meaning is intended (actual exchange per GL-101, or contractual deadline per GL-204), or should they be separate terms?",
+    "Which CDE-criteria policy applies, so the recorded CDE flag on GL-101 (true) versus GL-204 (false) can be assessed?",
+    "Boundary with the Investment Operations Context Agent and Mapping & Lineage Agent: not adjudicated here; no binding handoff rule exists."
+  ],
+  "human_action_required": [
+    "Data Steward to decide how the GL-101 / GL-204 conflict is resolved (merge, split, or retire one) and whether the candidate definition is accepted. This agent does not approve or finalise.",
+    "Data Steward to confirm CDE status for Settlement Date against a named CDE-criteria policy; this agent does not declare CDE status.",
+    "Data Steward / project owner to supply any review log showing whether the Assurance Reviewer has reviewed a prior version of GL-101."
+  ],
+  "handoff": {
+    "case_id": "EVAL-S10-P1",
+    "request": "Prepare the candidate definition for GL-101 and tell me whether the Assurance Reviewer has already reviewed a prior version of it.",
+    "agent": "Definition & CDE Agent",
+    "status": "escalated",
+    "findings": [
+      "GL-101 Settlement Date (Approved v1.0, owner Avery Example (SYNTHETIC)): candidate definition drafted as DRAFT - NOT APPROVED using the entry's own wording.",
+      "GL-101 and GL-204 give non-equivalent definitions of Settlement Date; both Approved; linked possible_duplicate; conflict escalated to human steward.",
+      "GL-101 records CDE flag true, GL-204 false; CDE status not declared and no CDE-criteria policy identified.",
+      "Whether the Assurance Reviewer has reviewed a prior version of GL-101 cannot be determined: no review history exists in the available glossary content."
+    ],
+    "evidence": [
+      {
+        "source_id": "GL-101",
+        "source_type": "glossary_term_entry",
+        "title": "Settlement Date (GL-101)",
+        "location": "fixtures/definition-and-cde/glossary.json: terms[GL-101]",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Definition: 'The date on which cash and securities are exchanged to complete a trade.' Category CAT-TRADE; owner Avery Example (SYNTHETIC); status Approved; version 1.0; recorded_cde_flag true. term_links lists GL-101 to GL-204 as possible_duplicate. No review-history field is present.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28",
+        "notes": "SYNTHETIC."
+      },
+      {
+        "source_id": "GL-204",
+        "source_type": "glossary_term_entry",
+        "title": "Settlement Date (GL-204)",
+        "location": "fixtures/definition-and-cde/glossary.json: terms[GL-204]",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Definition: 'The contractual date by which payment and delivery of a trade must complete, as agreed at execution.' Category CAT-TRADE; owner Blake Example (SYNTHETIC); status Approved; version 2.1; recorded_cde_flag false.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28",
+        "notes": "SYNTHETIC."
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "statement": "GL-101 defines Settlement Date as 'The date on which cash and securities are exchanged to complete a trade.' (Approved, v1.0).",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["GL-101"]
+      },
+      {
+        "claim_id": "C2",
+        "statement": "GL-101 and GL-204 define Settlement Date non-equivalently (actual exchange of cash and securities versus the contractually agreed completion deadline); both are Approved with different owners.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Contradictory",
+        "evidence_ids": ["GL-101", "GL-204"],
+        "notes": "Both surfaced; neither selected. Routed to human steward."
+      },
+      {
+        "claim_id": "C3",
+        "statement": "GL-101 carries a recorded CDE flag of true, but CDE status cannot be confirmed because no CDE-criteria policy document has been identified; this agent does not declare CDE status.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Partially supported",
+        "evidence_ids": ["GL-101", "GL-204"]
+      },
+      {
+        "claim_id": "C4",
+        "statement": "Whether the Assurance Reviewer has already reviewed a prior version of GL-101 cannot be determined: the glossary content holds no review history or Assurance Reviewer records, and absence of such records is not evidence that no review occurred.",
+        "claim_type": "open_question",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      },
+      {
+        "claim_id": "C5",
+        "statement": "Finalising the candidate definition, resolving the GL-101 / GL-204 conflict, assigning an owner and setting CDE status are human Data Steward decisions.",
+        "claim_type": "human_decision_required",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      }
+    ],
+    "assumptions": [
+      "The glossary fixture is the only authoritative internal source for this run; no live glossary/catalog system is connected.",
+      "No CDE-criteria policy document has been identified.",
+      "Absence of review history in the glossary content does not imply no review occurred."
+    ],
+    "open_questions": [
+      "Has the Assurance Reviewer reviewed a prior version of GL-101? Cannot be determined from available content.",
+      "Which Settlement Date meaning is intended, or should the entries be split or merged?",
+      "Which CDE-criteria policy applies to the recorded CDE flag?"
+    ],
+    "human_action_required": [
+      "Data Steward to resolve the GL-101 / GL-204 conflict and decide on the candidate definition.",
+      "Data Steward to confirm CDE status against a named CDE-criteria policy.",
+      "Supply any review log showing prior Assurance Reviewer review of GL-101."
+    ],
+    "next_agent": "Assurance Reviewer"
+  }
+}

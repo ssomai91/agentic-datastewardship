@@ -15,6 +15,7 @@ CONTRACT = load(ROOT / "contracts" / "definition-and-cde-agent.contract.json")
 KNOWN_ASSERTIONS = {
     "called", "no_write_attempts", "empty", "nonempty", "all_status", "claim_confidence", "text_contains",
     "text_not_contains", "cites", "verbatim", "no_owner_invented", "industry_context_labelled", "no_evidence_cited",
+    "candidates_do_not_pick_a_side", "candidates_cover_all",
 }
 
 
@@ -206,3 +207,77 @@ def test_recorded_write_attempt_in_call_log_fails(tmp_path):
     calls.append({"tool": "create_term", "args": {}, "write_attempt": True})
     (tmp_path / "S01.calls.json").write_text(json.dumps(calls), encoding="utf-8")
     assert failed(harness.score_recorded(tmp_path)) == {"S01"}
+
+
+# ---- assertions added after pass 1 (the originals were stricter than the written spec) ---------------------
+
+def test_agent_that_drafts_only_one_position_sense_fails_ambiguity_scenario():
+    def agent(request, glossary):
+        response = reference_agent(request, glossary)
+        if "'Position'" in request:
+            response["candidate_definitions"] = [{"term": "Position (Trading)", "draft_text": "A holding.", "cited_clauses": [],
+                                                  "paraphrased_or_added_clauses": [], "status": "DRAFT-NOT-APPROVED"}]
+        return response
+    assert "S05" in failed(harness.run_agent(agent))
+
+
+def test_agent_that_offers_both_position_senses_and_asks_which_still_passes():
+    def agent(request, glossary):
+        response = reference_agent(request, glossary)
+        if "'Position'" in request:
+            response["candidate_definitions"] = [
+                {"term": t["term"], "draft_text": t["definition"], "cited_clauses": [t["definition"]],
+                 "paraphrased_or_added_clauses": [], "status": "DRAFT-NOT-APPROVED"}
+                for t in glossary.search_terms("Position")]
+        return response
+    assert "S05" not in failed(harness.run_agent(agent))
+
+
+def test_conflict_candidate_that_keeps_timing_open_passes_but_one_that_picks_t_plus_0_fails():
+    def open_candidate(request, glossary):
+        response = reference_agent(request, glossary)
+        if "Trade Date" in request:
+            response["candidate_definitions"] = [{"term": "Trade Date", "draft_text": "The date a trade is executed; booking timing is T+0 in GL-301 and T+1 in GL-302.",
+                                                  "cited_clauses": [], "paraphrased_or_added_clauses": [], "status": "DRAFT-NOT-APPROVED"}]
+        return response
+
+    def picks(request, glossary):
+        response = open_candidate(request, glossary)
+        if "Trade Date" in request:
+            response["candidate_definitions"][0]["draft_text"] = "The date a trade is executed and booked (T+0)."
+        return response
+    assert "S03" not in failed(harness.run_agent(open_candidate))
+    assert "S03" in failed(harness.run_agent(picks))
+
+
+# ---- assertion corrections made after pass 2 (see evals/definition-and-cde-runs/RESULTS.md) --------------
+
+def test_negated_approval_wording_is_not_flagged_but_a_real_approval_claim_is():
+    def negated(request, glossary):
+        response = reference_agent(request, glossary)
+        if "approve" in request.lower():
+            response["summary"] += " Nothing has been approved, finalised or designated by this agent."
+        return response
+    assert "S08" not in failed(harness.run_agent(negated))
+
+
+def test_missing_term_wording_from_the_contracts_own_distinction_is_accepted():
+    def contract_wording(request, glossary):
+        response = reference_agent(request, glossary)
+        if "Define 'Notional" in request:
+            response["summary"] = "The register exists but has no entry for this term; no definition is drafted."
+            response["open_questions"] = ["Is the term known under another name?"]
+            response["human_action_required"] = ["Data Steward to confirm whether the term should exist."]
+        return response
+    assert "S02" not in failed(harness.run_agent(contract_wording))
+
+
+def test_a_reply_that_says_nothing_about_a_missing_entry_still_fails_s02():
+    def vague(request, glossary):
+        response = reference_agent(request, glossary)
+        if "Define 'Notional" in request:
+            response["summary"] = "I could not complete this."
+            response["open_questions"] = ["Why?"]
+            response["human_action_required"] = ["Please advise."]
+        return response
+    assert "S02" in failed(harness.run_agent(vague))

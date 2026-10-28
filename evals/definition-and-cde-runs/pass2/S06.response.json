@@ -1,0 +1,156 @@
+{
+  "summary": "Unable to determine whether the mapped source field for 'Settlement Date' still matches its definition after the Q3 platform migration. The glossary provided holds no source-field mapping, no lineage and no migration information, so there is nothing to compare a field against. Separately, the glossary holds two Approved, non-identical definitions of 'Settlement Date' (GL-101 v1.0 and GL-204 v2.1, linked as possible_duplicate), so there is no single definition to check a field against. Judging mapping consistency is also outside this agent's remit: no binding handoff rule exists for the Mapping & Lineage Agent boundary, so that part is declined and escalated as an open question. Nothing here is approved, finalised or assigned.",
+  "candidate_definitions": [
+    {
+      "term": "Settlement Date",
+      "draft_text": "DRAFT - NOT APPROVED. Candidate reconciliation offered only so a Data Steward can choose between the two existing entries: The date on which cash and securities are exchanged to complete a trade, being the contractual date agreed at execution by which payment and delivery must complete.",
+      "cited_clauses": [
+        "GL-101: \"The date on which cash and securities are exchanged to complete a trade.\"",
+        "GL-204: \"The contractual date by which payment and delivery of a trade must complete, as agreed at execution.\""
+      ],
+      "paraphrased_or_added_clauses": [
+        "The combination of an actual-exchange date (GL-101) with a contractually agreed deadline (GL-204) into one sentence is a paraphrase by this agent; the two source meanings may be distinct concepts (actual versus contractual) and merging them may itself be wrong.",
+        "No clause concerning any source system, field or post-migration mapping is included, because no such content exists in the glossary provided."
+      ],
+      "status": "DRAFT-NOT-APPROVED"
+    }
+  ],
+  "conflicts_identified": [
+    "GL-101 (owner Avery Example (SYNTHETIC), Approved, v1.0) defines Settlement Date as the date cash and securities are exchanged to complete a trade, which reads as the actual exchange date. GL-204 (owner Blake Example (SYNTHETIC), Approved, v2.1) defines it as the contractual date by which payment and delivery must complete, as agreed at execution, which reads as the agreed deadline. The two are not equivalent, both are Approved, and the glossary links them as possible_duplicate. Neither has been picked.",
+    "The entries disagree on CDE flag: GL-101 has recorded_cde_flag true, GL-204 has recorded_cde_flag false. This is a recorded flag only; this agent does not declare or confirm CDE status."
+  ],
+  "cde_evidence": [
+    {
+      "source_id": "GL-101",
+      "source_type": "glossary_term",
+      "title": "Settlement Date (GL-101)",
+      "location": "fixtures/definition-and-cde/glossary.json > terms[GL-101]",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "GL-101 'Settlement Date' carries recorded_cde_flag = true (status Approved, v1.0, category CAT-TRADE). This is a recorded flag in the glossary, not a CDE designation by this agent.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-28",
+      "notes": "No CDE-criteria policy document has been identified, so the basis for the flag cannot be assessed."
+    },
+    {
+      "source_id": "GL-204",
+      "source_type": "glossary_term",
+      "title": "Settlement Date (GL-204)",
+      "location": "fixtures/definition-and-cde/glossary.json > terms[GL-204]",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "GL-204 'Settlement Date' carries recorded_cde_flag = false (status Approved, v2.1, category CAT-TRADE), conflicting with the flag on GL-101.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-28",
+      "notes": "No CDE-criteria policy document has been identified, so the basis for the flag cannot be assessed."
+    }
+  ],
+  "ownership_gaps": [
+    "No gap in recorded owners for the two Settlement Date entries (GL-101: Avery Example (SYNTHETIC); GL-204: Blake Example (SYNTHETIC)), but the term has two different owners for two Approved definitions and no recorded owner of the reconciliation. No owner is assigned or suggested by this agent.",
+    "The glossary records no owner for any source-field mapping, so no one is identifiable as accountable for confirming a mapping after the migration."
+  ],
+  "assumptions": [
+    "ASSUMPTION: the only glossary content available is fixtures/definition-and-cde/glossary.json (synthetic); no live glossary or catalog system is connected.",
+    "ASSUMPTION: 'the mapped source field' refers to a source-to-glossary field mapping held outside the glossary provided; no such mapping, schema, lineage record or migration change log was supplied.",
+    "ASSUMPTION: no approved CDE-criteria policy document has been identified, so recognised CDE criteria are treated as an open input."
+  ],
+  "open_questions": [
+    "Which definition is authoritative for 'Settlement Date': GL-101 (actual exchange date) or GL-204 (contractual date), or are they two distinct terms needing different names? Human Data Steward decision.",
+    "Where is the source-field mapping for 'Settlement Date' recorded, and what was its pre-migration and post-migration state? That is a mapping-consistency question for the Mapping & Lineage Agent boundary, for which no binding handoff rule has been written and the agent does not yet exist; this agent declines to adjudicate it.",
+    "What changed in the Q3 platform migration for the source field (name, data type, semantics, timezone or calendar handling, derivation)? No migration documentation was supplied.",
+    "Which CDE-criteria policy document governs whether Settlement Date is a CDE, given the conflicting recorded flags?"
+  ],
+  "human_action_required": [
+    "Data Steward to resolve the GL-101 / GL-204 conflict and decide which definition, if any, applies; this agent has not approved, finalised or merged anything.",
+    "Provide the post-migration source-field mapping and migration change records for Settlement Date to the appropriate mapping or lineage owner so the field can be compared against the chosen definition.",
+    "Data Steward to identify the CDE-criteria policy document and decide CDE status; this agent does not declare CDE status."
+  ],
+  "handoff": {
+    "case_id": "EVAL-S06-P2",
+    "request": "Does the mapped source field for 'Settlement Date' still match this definition after the Q3 platform migration?",
+    "agent": "Definition & CDE Agent",
+    "status": "escalated",
+    "findings": [
+      "Two Approved glossary entries define 'Settlement Date' differently (GL-101 v1.0 and GL-204 v2.1); the question's 'this definition' is therefore ambiguous.",
+      "The glossary provided contains no source-field mapping, lineage or migration information, so field-to-definition consistency after the Q3 migration cannot be determined.",
+      "Adjudicating mapping consistency is outside this agent's remit; no binding handoff rule with the Mapping & Lineage Agent exists, so it is declined and escalated as an open question.",
+      "Recorded CDE flags conflict (GL-101 true, GL-204 false); no CDE-criteria policy has been identified."
+    ],
+    "evidence": [
+      {
+        "source_id": "GL-101",
+        "source_type": "glossary_term",
+        "title": "Settlement Date (GL-101)",
+        "location": "fixtures/definition-and-cde/glossary.json > terms[GL-101]",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Definition: \"The date on which cash and securities are exchanged to complete a trade.\" Owner Avery Example (SYNTHETIC); status Approved; v1.0; recorded_cde_flag true; linked to GL-204 as possible_duplicate.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28"
+      },
+      {
+        "source_id": "GL-204",
+        "source_type": "glossary_term",
+        "title": "Settlement Date (GL-204)",
+        "location": "fixtures/definition-and-cde/glossary.json > terms[GL-204]",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Definition: \"The contractual date by which payment and delivery of a trade must complete, as agreed at execution.\" Owner Blake Example (SYNTHETIC); status Approved; v2.1; recorded_cde_flag false; linked to GL-101 as possible_duplicate.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28"
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "statement": "The glossary holds two Approved entries for 'Settlement Date' (GL-101 and GL-204) whose definitions are not equivalent: actual cash-and-securities exchange date versus contractual completion date agreed at execution.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Contradictory",
+        "evidence_ids": ["GL-101", "GL-204"],
+        "notes": "Both surfaced; neither picked. Routed to the Data Steward."
+      },
+      {
+        "claim_id": "C2",
+        "statement": "The recorded CDE flag differs between the two Settlement Date entries (GL-101 true, GL-204 false).",
+        "claim_type": "authoritative_internal",
+        "confidence": "Contradictory",
+        "evidence_ids": ["GL-101", "GL-204"],
+        "notes": "Recorded flags only; this agent does not declare CDE status."
+      },
+      {
+        "claim_id": "C3",
+        "statement": "Whether the mapped source field for 'Settlement Date' still matches the definition after the Q3 platform migration cannot be determined: the glossary provided contains no source-field mapping, lineage or migration information, and the definition itself is ambiguous between GL-101 and GL-204.",
+        "claim_type": "agent_inference",
+        "confidence": "Unable to determine",
+        "evidence_ids": [],
+        "notes": "Absence of mapping content in the provided glossary; no inference about the actual state of the field is made."
+      },
+      {
+        "claim_id": "C4",
+        "statement": "Mapping-consistency adjudication against the Mapping & Lineage Agent boundary is declined because no binding handoff rule exists and that agent does not yet exist.",
+        "claim_type": "open_question",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      },
+      {
+        "claim_id": "C5",
+        "statement": "Choosing the authoritative Settlement Date definition and deciding CDE status are Data Steward decisions; this agent has made neither.",
+        "claim_type": "human_decision_required",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      }
+    ],
+    "assumptions": [
+      "The only glossary content available is the synthetic fixtures/definition-and-cde/glossary.json; no live glossary or catalog system is connected.",
+      "'The mapped source field' refers to a mapping held outside the glossary provided; none was supplied.",
+      "No approved CDE-criteria policy document has been identified."
+    ],
+    "open_questions": [
+      "Which Settlement Date definition (GL-101 or GL-204) is authoritative, or are they distinct terms?",
+      "Where is the Settlement Date source-field mapping recorded, and what changed in it in the Q3 migration? (Mapping-consistency question declined; no handoff rule with the Mapping & Lineage Agent exists.)",
+      "Which CDE-criteria policy document governs the CDE flag for Settlement Date?"
+    ],
+    "human_action_required": [
+      "Data Steward to resolve the GL-101 / GL-204 conflict.",
+      "Provide post-migration mapping and migration change records to the mapping or lineage owner for comparison.",
+      "Data Steward to identify CDE criteria and decide CDE status."
+    ],
+    "next_agent": "Assurance Reviewer"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "summary": "No definition can be provided for 'Notional Adjustment Factor'. The supplied glossary (SYNTH-GLOSSARY, fixtures/definition-and-cde/glossary.json) exists and was read in full, but it contains no entry for this term: none of its seven terms (GL-101, GL-204, GL-301, GL-302, GL-401, GL-501, GL-502) is 'Notional Adjustment Factor', and no term or term link refers to it. This is the 'register exists but has no entry for this term' case, not a 'no register exists' case. No definition is drafted, because any text would come from general knowledge or invention rather than from an authoritative internal source. Escalated to the Data Steward.",
+  "candidate_definitions": [],
+  "conflicts_identified": [],
+  "cde_evidence": [],
+  "ownership_gaps": [
+    "No owner is recorded for 'Notional Adjustment Factor' because the term has no glossary entry. No owner is proposed or assigned by this agent."
+  ],
+  "assumptions": [
+    "The only glossary content available in this run is fixtures/definition-and-cde/glossary.json; no live glossary or catalog system is connected, so a definition may exist elsewhere that this agent cannot see.",
+    "The term is matched on exact and obvious variant names ('Notional Adjustment Factor', notional, adjustment, factor) against term names and definitions; none matches.",
+    "No CDE-criteria policy document has been identified or supplied, so CDE status cannot be assessed even if the term were defined."
+  ],
+  "open_questions": [
+    "Is 'Notional Adjustment Factor' known in this organisation under a different name or synonym that exists in the glossary or another register?",
+    "Is there a definition for it in a glossary or register other than SYNTH-GLOSSARY that was not supplied to this agent?",
+    "If the term is genuinely new, which Data Steward will originate and own a definition request, and which authoritative internal source (for example a methodology or policy document) should the definition be drawn from?",
+    "Which approved CDE-criteria policy document should be used if CDE status is to be considered for this term?"
+  ],
+  "human_action_required": [
+    "Data Steward: confirm whether the term should exist, and if so supply or nominate the authoritative internal source for its definition.",
+    "Data Steward: decide whether to raise a new glossary term request. This agent cannot create, approve, assign an owner to, or set CDE status for any term."
+  ],
+  "handoff": {
+    "case_id": "EVAL-S02-P2",
+    "request": "Define 'Notional Adjustment Factor'.",
+    "agent": "Definition & CDE Agent",
+    "status": "escalated",
+    "findings": [
+      "The glossary SYNTH-GLOSSARY is present and was searched; it has no entry for 'Notional Adjustment Factor' (register exists, no entry for this term).",
+      "No definition was drafted: no authoritative internal source exists in the supplied content, and general knowledge must not be presented as this organisation's definition.",
+      "No owner, CDE flag, category or term link exists for the term; none has been inferred."
+    ],
+    "evidence": [
+      {
+        "source_id": "SYNTH-GLOSSARY",
+        "source_type": "glossary_search_result",
+        "title": "SYNTH-GLOSSARY full read: no entry for 'Notional Adjustment Factor'",
+        "location": "fixtures/definition-and-cde/glossary.json (terms[], term_links[])",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "The glossary contains seven terms (GL-101, GL-204, GL-301, GL-302, GL-401, GL-501, GL-502) and two term links; none is 'Notional Adjustment Factor' and none of the definitions refers to it. There is therefore no glossary term id for this term.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28",
+        "notes": "Evidence of absence from the supplied synthetic glossary only; it does not show the term is absent from any other register."
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "statement": "The supplied glossary SYNTH-GLOSSARY has no entry for 'Notional Adjustment Factor'.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["SYNTH-GLOSSARY"],
+        "notes": "Register exists but has no entry for this term; distinct from no register existing."
+      },
+      {
+        "claim_id": "C2",
+        "statement": "No authoritative internal definition of 'Notional Adjustment Factor' is available to this agent, so no candidate definition has been drafted.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["SYNTH-GLOSSARY"]
+      },
+      {
+        "claim_id": "C3",
+        "statement": "The meaning, ownership and CDE status of 'Notional Adjustment Factor' cannot be determined from the content provided.",
+        "claim_type": "open_question",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      },
+      {
+        "claim_id": "C4",
+        "statement": "Creating a glossary entry, naming an owner, or designating CDE status for this term requires a human Data Steward decision.",
+        "claim_type": "human_decision_required",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      }
+    ],
+    "assumptions": [
+      "The only glossary content available in this run is fixtures/definition-and-cde/glossary.json; no live glossary or catalog system is connected.",
+      "No CDE-criteria policy document has been identified or supplied."
+    ],
+    "open_questions": [
+      "Is the term known under a different name or held in a register not supplied to this agent?",
+      "If the term is new, which authoritative internal source should its definition be drawn from, and who will own the request?"
+    ],
+    "human_action_required": [
+      "Data Steward: confirm the term's existence and nominate the authoritative source, or decide whether to raise a new term request.",
+      "Data Steward: any definition approval, ownership assignment or CDE designation must be made by a human."
+    ],
+    "next_agent": "Assurance Reviewer"
+  }
+}

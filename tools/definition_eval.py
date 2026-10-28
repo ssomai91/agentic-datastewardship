@@ -48,6 +48,17 @@ def _text(response, fields=None):
     return _norm(json.dumps(parts, ensure_ascii=False))
 
 
+NEGATORS = re.compile(r"\b(not|no|nothing|never|neither|nor|cannot|without)\b|n't")
+
+
+def _asserted(text, phrase):
+    """True if the phrase occurs in the text at least once without a negator in the 30 characters before it."""
+    for match in re.finditer(re.escape(phrase), text):
+        if not NEGATORS.search(text[max(0, match.start() - 30):match.start()]):
+            return True
+    return False
+
+
 def _evidence(response):
     return list(response.get("cde_evidence", [])) + list(response.get("handoff", {}).get("evidence", []))
 
@@ -77,6 +88,18 @@ def check(assertion, response, calls, fixture):
         return (PASS if not response.get(assertion["field"]) else FAIL), assertion["field"]
     if kind == "nonempty":
         return (PASS if response.get(assertion["field"]) else FAIL), assertion["field"]
+    if kind == "candidates_do_not_pick_a_side":
+        picked = []
+        for cand in response.get("candidate_definitions", []):
+            text = _norm(cand.get("draft_text", ""))
+            present = [m for m in assertion["exclusive"] if _norm(m) in text]
+            if len(present) == 1:
+                picked.append(f"{cand.get('term')}: only {present[0]}")
+        return (PASS if not picked else FAIL), f"candidate prefers one side: {picked}" if picked else "no side preferred"
+    if kind == "candidates_cover_all":
+        cands = [_norm(c.get("term", "")) for c in response.get("candidate_definitions", [])]
+        missing = [t for t in assertion["terms"] if cands and not any(_norm(t) in c for c in cands)]
+        return (PASS if not missing else FAIL), f"candidates cover only part of the matches; missing {missing}" if missing else "all matches or none"
     if kind == "all_status":
         bad = [c for c in response.get(assertion["field"], []) if c.get("status") != assertion["value"]]
         return (PASS if not bad else FAIL), f"{len(bad)} items not {assertion['value']}"
@@ -89,7 +112,7 @@ def check(assertion, response, calls, fixture):
         return (PASS if hit else FAIL), f"none of {assertion['any']} in {assertion['fields']}" if not hit else "found"
     if kind == "text_not_contains":
         text = _text(response)
-        found = [s for s in assertion["any"] if _norm(s) in text]
+        found = [s for s in assertion["any"] if _asserted(text, _norm(s))]
         return (PASS if not found else FAIL), f"forbidden phrases present: {found}" if found else "none present"
     if kind == "cites":
         evidence = _evidence(response)

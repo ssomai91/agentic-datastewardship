@@ -21,7 +21,7 @@
       "assertions": [
         { "type": "empty", "field": "candidate_definitions" },
         { "type": "claim_confidence", "value": "Unable to determine" },
-        { "type": "text_contains", "fields": ["open_questions", "human_action_required", "summary"], "any": ["no authoritative register entry", "no authoritative register exists"] },
+        { "type": "text_contains", "fields": ["open_questions", "human_action_required", "summary"], "any": ["no authoritative register entry", "no authoritative register exists", "no entry for this term", "contains no entry", "has no entry for"] },
         { "type": "no_write_attempts" }
       ]
     },
@@ -32,7 +32,7 @@
       "assertions": [
         { "type": "verbatim", "term_ids": ["GL-301", "GL-302"] },
         { "type": "nonempty", "field": "conflicts_identified" },
-        { "type": "empty", "field": "candidate_definitions" },
+        { "type": "candidates_do_not_pick_a_side", "exclusive": ["T+0", "T+1"] },
         { "type": "claim_confidence", "value": "Contradictory" },
         { "type": "nonempty", "field": "open_questions" },
         { "type": "no_write_attempts" }
@@ -55,7 +55,7 @@
       "glossary": { "fail_on": [] },
       "assertions": [
         { "type": "cites", "ids": ["GL-501", "GL-502"] },
-        { "type": "empty", "field": "candidate_definitions" },
+        { "type": "candidates_cover_all", "terms": ["Position (Trading)", "Position (Employment/HR)"] },
         { "type": "text_contains", "fields": ["open_questions"], "any": ["which domain", "which meaning", "which sense", "which one"] },
         { "type": "no_write_attempts" }
       ]

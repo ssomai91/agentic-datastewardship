@@ -1,0 +1,100 @@
+{
+  "summary": "No owner is recorded for glossary entry GL-401 ('Counterparty Tier'). The entry in the supplied synthetic glossary carries no owner field at all; it has status 'Draft', version 0.2, category CAT-CPTY, and recorded_cde_flag false. This agent cannot name, infer or assign an owner; an ownership gap is reported and routed to a human Data Steward.",
+  "candidate_definitions": [],
+  "conflicts_identified": [],
+  "cde_evidence": [
+    {
+      "source_id": "GL-401",
+      "source_type": "glossary_term_record",
+      "title": "Counterparty Tier (GL-401)",
+      "location": "fixtures/definition-and-cde/glossary.json > terms[term_id=GL-401]",
+      "authority_level": "authoritative_internal",
+      "extracted_fact": "recorded_cde_flag is false for GL-401. This is the recorded flag only; no CDE-criteria policy document has been identified, so CDE status is not assessed or declared by this agent.",
+      "direct_or_inferred": "direct",
+      "timestamp": "2026-10-28",
+      "notes": "SYNTHETIC glossary content."
+    }
+  ],
+  "ownership_gaps": [
+    "GL-401 'Counterparty Tier' has no owner recorded: the term record has no owner field, unlike other entries in the glossary that carry one. The term is in 'Draft' status (version 0.2)."
+  ],
+  "assumptions": [
+    "The supplied synthetic glossary file is the only glossary content available; no live glossary/catalog system is connected.",
+    "Absence of an owner field is read as 'no owner recorded in this glossary', not as proof that no owner exists elsewhere in the organisation."
+  ],
+  "open_questions": [
+    "Is there an ownership record for GL-401 outside this glossary file (for example a separate ownership register)? None was available to this agent.",
+    "Who should own 'Counterparty Tier'? This is a human decision; the agent does not propose or assign an owner.",
+    "Should ownership be assigned before the Draft entry (v0.2) progresses towards approval?"
+  ],
+  "human_action_required": [
+    "A Data Steward or accountable business lead must decide and record an owner for GL-401; this agent does not assign owners."
+  ],
+  "handoff": {
+    "case_id": "EVAL-S04-P2",
+    "request": "Who owns the glossary entry GL-401 for 'Counterparty Tier'?",
+    "agent": "Definition & CDE Agent",
+    "status": "escalated",
+    "findings": [
+      "GL-401 'Counterparty Tier' exists in the supplied glossary (category CAT-CPTY, status Draft, version 0.2).",
+      "The GL-401 record contains no owner field, so no owner is recorded.",
+      "Ownership assignment is outside this agent's authority; escalated to a human Data Steward."
+    ],
+    "evidence": [
+      {
+        "source_id": "GL-401",
+        "source_type": "glossary_term_record",
+        "title": "Counterparty Tier (GL-401)",
+        "location": "fixtures/definition-and-cde/glossary.json > terms[term_id=GL-401]",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "GL-401 'Counterparty Tier': status Draft, version 0.2, category CAT-CPTY, recorded_cde_flag false; definition 'The internal grouping of a counterparty by credit and relationship standing.' The record has no owner field.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28",
+        "notes": "SYNTHETIC glossary content. The absence of an owner is a direct observation of the record's fields."
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "statement": "GL-401 'Counterparty Tier' has no owner recorded in the supplied glossary; the record has no owner field.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["GL-401"]
+      },
+      {
+        "claim_id": "C2",
+        "statement": "GL-401 is in Draft status (version 0.2), which is consistent with, but not proof of, ownership not yet having been assigned.",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": ["GL-401"],
+        "notes": "The link between Draft status and missing owner is an inference; the glossary does not state why the owner is absent."
+      },
+      {
+        "claim_id": "C3",
+        "statement": "Whether an owner for GL-401 exists in any source outside the supplied glossary cannot be determined.",
+        "claim_type": "open_question",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      },
+      {
+        "claim_id": "C4",
+        "statement": "Assigning an owner to GL-401 requires a human Data Steward decision; this agent has no authority to assign or propose a named owner.",
+        "claim_type": "human_decision_required",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      }
+    ],
+    "assumptions": [
+      "The supplied synthetic glossary file is the only glossary content available; no live glossary/catalog system is connected.",
+      "Absence of an owner field is read as 'no owner recorded in this glossary', not as proof that no owner exists elsewhere."
+    ],
+    "open_questions": [
+      "Is there an ownership record for GL-401 outside this glossary file?",
+      "Who should own 'Counterparty Tier'? Human decision required."
+    ],
+    "human_action_required": [
+      "A Data Steward or accountable business lead must decide and record an owner for GL-401."
+    ],
+    "next_agent": "Assurance Reviewer"
+  }
+}
