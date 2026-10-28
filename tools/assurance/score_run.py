@@ -1,6 +1,6 @@
 """Score recorded Assurance Reviewer outputs against the FROZEN expectations and through the recorder (DC-8).
 
-    python tools/assurance/score_run.py [outputs_dir]      # default evals/assurance-runs/pass1
+    python tools/assurance/score_run.py [1|2]      # pass number; reads evals/assurance-runs/pass<N>/ and EXPECTED[-pass<N>].json
 
 Two separate questions per packet: (1) do the agent's gate, status and rank match EXPECTED.json; (2) does the recorder accept the output.
 A mismatch is reported, not judged: read the findings before calling the agent wrong.
@@ -15,7 +15,8 @@ sys.path.insert(0, str(ROOT / "tools"))
 from assurance import run_slice  # noqa: E402
 from assurance.recorder import check_output  # noqa: E402
 
-EXPECTED = ROOT / "evals" / "assurance-runs" / "EXPECTED.json"
+RUN_DIR = ROOT / "evals" / "assurance-runs"
+GATE_TO_STATUS = run_slice.GATE_TO_STATUS
 
 
 def score_one(pid, packet, output, expected):
@@ -25,21 +26,27 @@ def score_one(pid, packet, output, expected):
     got = {"gate": output.get("gate_recommendation"), "status": output.get("handoff", {}).get("status")}
     assess = {rc["source_claim_id"]: rc["producer_claim_assessment"] for rc in output.get("reviewed_claims", [])}
     types = [f["finding_type"] for f in output.get("findings", [])]
-    matches = {"gate": got["gate"] == expected["expected_gate"], "status": got["status"] == expected["expected_status"]}
+    gates = expected.get("expected_gates") or [expected["expected_gate"]]
+    matches = {"gate": got["gate"] in gates,
+               "status": got["status"] == (GATE_TO_STATUS.get(got["gate"]) if "expected_gates" in expected else expected["expected_status"])}
     for cid, want in expected.get("expected_claim_assessment", {}).items():
         matches[f"assessment {cid}"] = assess.get(cid) == want
+    for cid, wants in expected.get("expected_claim_assessment_in", {}).items():
+        matches[f"assessment {cid}"] = assess.get(cid) in wants
+    if "expected_boundary_check" in expected:
+        matches["boundary_check"] = output.get("boundary_check") == expected["expected_boundary_check"]
     for t in expected.get("expected_finding_types_include", []):
         matches[f"finding type {t}"] = t in types
     if expected["expected_rank"] == 1:
         matches["no claims reviewed (rank 1)"] = not output.get("reviewed_claims")
-    return {"id": pid, "expected": (expected["expected_gate"], expected["expected_status"]), "got": (got["gate"], got["status"]), "matches": matches,
+    return {"id": pid, "expected": (gates, expected.get("expected_status")), "got": (got["gate"], got["status"]), "matches": matches,
             "recorder_accepted": verdict.accepted, "problems": verdict.problems, "assessments": assess, "finding_types": types}
 
 
-def main(outputs_dir=None):
-    outputs_dir = Path(outputs_dir) if outputs_dir else ROOT / "evals" / "assurance-runs" / "pass1"
-    expected = json.loads(EXPECTED.read_text(encoding="utf-8"))["packets"]
-    packets = run_slice.packets()
+def main(passno=1, outputs_dir=None):
+    outputs_dir = Path(outputs_dir) if outputs_dir else RUN_DIR / f"pass{passno}"
+    expected = json.loads((RUN_DIR / ("EXPECTED.json" if passno == 1 else f"EXPECTED-pass{passno}.json")).read_text(encoding="utf-8"))["packets"]
+    packets = run_slice.packets(passno)
     rows = []
     for pid in sorted(expected):
         f = outputs_dir / f"{pid}.output.json"
@@ -57,7 +64,7 @@ def main(outputs_dir=None):
 
 if __name__ == "__main__":
     sys.stdout.reconfigure(encoding="utf-8")
-    rows = main(sys.argv[1] if len(sys.argv) > 1 else None)
+    rows = main(int(sys.argv[1]) if len(sys.argv) > 1 else 1)
     for r in rows:
         if r.get("missing") or r.get("unparseable"):
             print(r["id"], "MISSING" if r.get("missing") else "UNPARSEABLE " + r["unparseable"][:80])

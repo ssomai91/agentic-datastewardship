@@ -22,14 +22,21 @@ class CaseStore:
         self.synthetic = synthetic  # True, False, or None when the store does not say (provenance then reads "missing")
 
     @classmethod
-    def from_glossary(cls, path):
+    def from_glossary(cls, path, full_detail=False):
+        """full_detail=False keeps each record to the definition text only (the first run's LOSSY stand-in, kept so pass 1 reproduces).
+        full_detail=True carries the whole entry: owner, status, version and CDE flag, so claims about them can be checked against
+        independent evidence."""
         data = json.loads(Path(path).read_text(encoding="utf-8"))
         records = []
         for t in data["terms"]:
+            fact = t["definition"]
+            if full_detail:
+                fact = (f"Term '{t['term']}'; definition: '{t['definition']}'; owner {t.get('owner') or 'not recorded'}; "
+                        f"status {t['status']}; version {t['version']}; recorded_cde_flag {str(t['recorded_cde_flag']).lower()}.")
             records.append({
                 "source_id": t["term_id"], "source_type": "glossary_term", "title": t["term"],
                 "location": f"{data['glossary_id']}/{t['term_id']}", "authority_level": "authoritative_internal",
-                "extracted_fact": t["definition"], "direct_or_inferred": "direct", "timestamp": TIMESTAMP,
+                "extracted_fact": fact, "direct_or_inferred": "direct", "timestamp": TIMESTAMP,
                 "data_element": element_key(t["term"]),
             })
         synthetic = True if "SYNTHETIC" in data.get("_note", "") else None

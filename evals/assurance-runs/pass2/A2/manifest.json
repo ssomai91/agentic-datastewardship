@@ -1,0 +1,35 @@
+{
+  "approval_log_run_id": "SYN-APPR-014183abb60d",
+  "assembled_by": "SYN-ROLE-ASSEMBLER",
+  "authored_by": "Definition & CDE Agent",
+  "case_id": "AR-RUN2",
+  "coverage": "full",
+  "evidence_store_query": "records cited by the pack plus records keyed to data elements ['counterparty tier']",
+  "evidence_store_run_id": "STORE-RUN-8f692f0a8314",
+  "items": [
+    {
+      "path": "checks/approval-log-extract.json",
+      "version": "6a2b5dfa9165"
+    },
+    {
+      "path": "checks/validator-report.json",
+      "version": "63f14c67a383"
+    },
+    {
+      "path": "evidence/GL-401.json",
+      "version": "84cdc61261c2"
+    },
+    {
+      "path": "pack/producer-output.json",
+      "version": "4b1ca15e61aa"
+    }
+  ],
+  "manifest_approved_by": "SYN-ROLE-MANIFEST-APPROVER",
+  "pack_id": "A2",
+  "produced_by": "Definition & CDE Agent",
+  "provenance": "synthetic",
+  "request": "Who owns the glossary entry GL-401 for 'Counterparty Tier'?",
+  "sampling_rule_ref": null,
+  "uncited_evidence_ids": [],
+  "validator_run_id": "SYN-VAL-9475fd49eb71"
+}
