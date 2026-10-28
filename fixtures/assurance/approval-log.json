@@ -1,0 +1,7 @@
+{
+  "_note": "SYNTHETIC stand-in approval log for the Assurance Reviewer slice. Not a real approval record.",
+  "entries": [
+    { "entry_id": "SYN-APPR-ENTRY-1", "data_element": "settlement date", "subject": "GL-101", "action": "approved", "approver_role": "SYN-ROLE-DATA-OWNER", "date": "2026-09-30" },
+    { "entry_id": "SYN-APPR-ENTRY-2", "data_element": "trade date", "subject": "GL-301", "action": "reviewed", "approver_role": "SYN-ROLE-DATA-OWNER", "date": "2026-09-29" }
+  ]
+}
