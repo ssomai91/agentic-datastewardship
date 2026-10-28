@@ -19,7 +19,7 @@ Each agent exists in three forms. They are not equals. When they disagree, the h
 ## What is enforced today
 
 - `tests/test_contracts.py` pairs each Markdown contract with its JSON contract and validates the JSON against the schema.
-- `tests/test_agent_consistency.py` checks, for all five agents, that:
+- `tests/test_agent_consistency.py` checks, for all six agents, that:
   - the JSON contract's name, version and status equal the Markdown contract's;
   - the prompt's frontmatter `name` matches its file, and it has a description and an explicit `tools` list;
   - the prompt's tools do not exceed what the agent may hold (read-only, plus `Write` for the Builder only);

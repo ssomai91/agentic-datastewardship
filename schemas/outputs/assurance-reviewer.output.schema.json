@@ -1,0 +1,409 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ninetyone.internal/schemas/outputs/assurance-reviewer.output.schema.json",
+  "title": "Assurance Reviewer output",
+  "description": "Structured output of the Assurance Reviewer (contract v0.1.5, Draft). Every agent-authored string is an identifier, an enum value, a verbatim quotation or a closed form; there is no free-text narrative field. A gate recommendation is a recommendation only, never a clearance or approval.",
+  "type": "object",
+  "required": [
+    "summary",
+    "gate_recommendation",
+    "gate_recommendation_note",
+    "coverage",
+    "manifest_declarations",
+    "deterministic_checks_consumed",
+    "uncited_evidence_dispositions",
+    "findings",
+    "reviewed_claims",
+    "boundary_check",
+    "approval_check",
+    "contradictions",
+    "evidence_requests",
+    "contested_findings",
+    "assumptions",
+    "open_questions",
+    "recommendations",
+    "human_action_required",
+    "handoff"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "gate_recommendation": {
+      "enum": [
+        "HOLD_RECOMMENDED",
+        "NO_BLOCKING_FINDINGS_IDENTIFIED",
+        "INCOMPLETE"
+      ]
+    },
+    "gate_recommendation_note": {
+      "type": "string",
+      "minLength": 1
+    },
+    "coverage": {
+      "type": "object",
+      "required": [
+        "packs_in_scope",
+        "packs_reviewed",
+        "claims_in_pack",
+        "claims_reviewed",
+        "sampling_rule_ref"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "packs_in_scope": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "packs_reviewed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "claims_in_pack": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "claims_reviewed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sampling_rule_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "manifest_declarations": {
+      "type": "object",
+      "required": [
+        "produced_by",
+        "authored_by",
+        "assembled_by",
+        "manifest_approved_by",
+        "uncited_evidence_ids",
+        "provenance"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "produced_by": {
+          "type": "string"
+        },
+        "authored_by": {
+          "type": "string"
+        },
+        "assembled_by": {
+          "type": "string"
+        },
+        "manifest_approved_by": {
+          "type": "string"
+        },
+        "uncited_evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "provenance": {
+          "enum": [
+            "synthetic",
+            "real",
+            "missing"
+          ]
+        }
+      }
+    },
+    "deterministic_checks_consumed": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "check",
+          "run_id",
+          "result"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "check": {
+            "type": "string"
+          },
+          "run_id": {
+            "type": "string"
+          },
+          "result": {
+            "enum": [
+              "pass",
+              "fail",
+              "absent"
+            ]
+          }
+        }
+      }
+    },
+    "uncited_evidence_dispositions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "evidence_id",
+          "disposition"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "evidence_id": {
+            "type": "string"
+          },
+          "disposition": {
+            "enum": [
+              "consistent",
+              "contradicts",
+              "unable_to_determine"
+            ]
+          }
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "finding_id",
+          "finding_type",
+          "blocking",
+          "source_claim_id",
+          "evidence_ids",
+          "locations",
+          "quoted_excerpt",
+          "action_required",
+          "contested"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "finding_id": {
+            "type": "string",
+            "pattern": "^AR-.+-\\d{3}$"
+          },
+          "finding_type": {
+            "enum": [
+              "unsupported",
+              "assumption",
+              "contradiction",
+              "missing_approval",
+              "boundary_breach",
+              "inference_as_fact",
+              "embedded_instruction",
+              "source_id_collision",
+              "evidence_gap"
+            ]
+          },
+          "blocking": {
+            "type": "boolean"
+          },
+          "source_claim_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "locations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "quoted_excerpt": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "action_required": {
+            "$ref": "#/$defs/closed_form"
+          },
+          "contested": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "reviewed_claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_claim_id",
+          "producer_claim_assessment",
+          "finding_ids",
+          "evidence",
+          "assumption_excerpts",
+          "action_required"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "source_claim_id": {
+            "type": "string"
+          },
+          "producer_claim_assessment": {
+            "enum": [
+              "Supported",
+              "Partially supported",
+              "Unsupported",
+              "Contradictory",
+              "Unable to determine"
+            ]
+          },
+          "finding_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "$ref": "../evidence.schema.json"
+            }
+          },
+          "assumption_excerpts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "action_required": {
+            "$ref": "#/$defs/closed_form"
+          }
+        }
+      }
+    },
+    "prior_finding_dispositions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "prior_finding_id",
+          "disposition"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "prior_finding_id": {
+            "type": "string"
+          },
+          "disposition": {
+            "enum": [
+              "appears_addressed",
+              "not_addressed",
+              "unable_to_determine"
+            ]
+          }
+        }
+      }
+    },
+    "boundary_check": {
+      "enum": [
+        "consistent",
+        "breach",
+        "unable_to_determine"
+      ]
+    },
+    "approval_check": {
+      "enum": [
+        "consistent",
+        "missing_approval",
+        "unable_to_determine"
+      ]
+    },
+    "contradictions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "claim_id",
+          "with",
+          "locations"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "claim_id": {
+            "type": "string"
+          },
+          "with": {
+            "type": "string"
+          },
+          "locations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "evidence_requests": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^REQUEST_EVIDENCE: (evidence_record|approval_entry|validator_report|manifest_field|contract_clause|named_packet_item) \\S.*$"
+      }
+    },
+    "contested_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/closed_form"
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/closed_form"
+      }
+    },
+    "human_action_required": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/closed_form"
+      }
+    },
+    "handoff": {
+      "$ref": "../agent-handoff.schema.json"
+    }
+  },
+  "$defs": {
+    "closed_form": {
+      "type": "string",
+      "anyOf": [
+        {
+          "pattern": "^REQUEST_EVIDENCE: (evidence_record|approval_entry|validator_report|manifest_field|contract_clause|named_packet_item) \\S.*$"
+        },
+        {
+          "pattern": "^HUMAN_ACTION: .+ (adjudicate_contested_finding|record_hold_resolution|supply_packet_item|decide_blocking_effect)$"
+        },
+        {
+          "pattern": "^UNSUPPORTED: \\S+ (unsupported|assumption|contradiction|missing_approval|boundary_breach|inference_as_fact|embedded_instruction|source_id_collision|evidence_gap)$"
+        }
+      ]
+    }
+  }
+}

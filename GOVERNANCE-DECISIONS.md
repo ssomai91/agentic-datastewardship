@@ -97,4 +97,6 @@ Register of project-level decisions that the Agent Contracts and Factory agents 
 
 **Review stopping rule.** Fixed before the third review pass in `evals/factory-runs/p6-assurance-reviewer.STOPPING-RULE.md`.
 
+**Outcome.** The Factory build is recorded in `evals/factory-runs/p6-assurance-reviewer.RESULTS.md`. The contract (`agents/operational/assurance-reviewer.md`, v0.1.5), its JSON form, output schema, 66-case test specification and a draft prompt exist. The final review pass found no blocking defect. The agent cannot run until the eight build preconditions exist, and 20 open points await the owner.
+
 **Status of the contract.** `Draft`. Approval by the Project Owner is not given.

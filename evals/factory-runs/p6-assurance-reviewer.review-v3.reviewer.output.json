@@ -1,0 +1,217 @@
+{
+  "summary": "RECOMMENDATION ONLY, not an approval. Under the stopping rule, both prior BLOCKING findings are resolved consistently everywhere the affected rules appear in contract v0.1.3: the six-part structure is now explicitly extended (Responsible For bullet 7 and Output Schema Structure mapping agree, every mapped field exists in the schema, RISK is replaced by finding_type and blocking), and a sampling_rule_ref has one reading (step 9 rank 3, never a stop condition) in the staging paragraph, manifest row, Coverage row, step 3, step 9 rank 3, Coverage paragraph, handoff.status table and Escalation Conditions. Prior non-blocking finding 3 is carried in Known Risks. All mandatory AGENT-CONTRACT-TEMPLATE.md sections are present. One new PLAUSIBLE, non-blocking point is routed to Known Risks. No finding is BLOCKING.",
+  "agrees_with_architect": true,
+  "findings": [
+    {
+      "clause_cited": "## Required Inputs, Packet manifest row (field list includes `coverage` entry; 'A stop condition (step 3) if a field is absent') versus ## Required Inputs, Coverage entry row ('Absent is rank 3') and ## Process step 9 rank 3 ('a coverage entry that is absent')",
+      "issue": "[NON-BLOCKING] Residual overlap, not a confirmed contradiction. While DC-7 is deferred the coverage entry is the manifest `coverage: full` field, so an absent manifest `coverage` field can be read as a manifest-field stop (rank 1) by the manifest row or as rank 3 by the Coverage row and step 9 rank 3. Only `sampling_rule_ref` is carved out of the manifest-field stop rule explicitly. It is reconcilable by reading the Coverage row as the DC-7 register entry and by step 9 first-match precedence, so it does not meet the blocking test (CONFIRMED drafting defect). Destination: Known Risks (add a row, with a note for the Agent Evaluation Designer to test an absent `coverage` field alone and with a blocking finding, and for the Owner or Architect to name one reading at the next amendment). Not a reason to hold the contract.",
+      "certainty": "PLAUSIBLE"
+    }
+  ],
+  "final_verdict": "keep",
+  "final_verdict_rationale": "Applying the fixed stopping rule: no finding is [BLOCKING]. Both prior blocking findings (RISK element versus Output Schema; sampling_rule_ref stop versus rank 3) are resolved consistently across every clause where the rules appear, the Structure mapping table is consistent with the Output Schema fields and with the Phase 6 mitigation (adopt or explicitly extend), and the revision introduced no CONFIRMED drafting defect. The single new finding is PLAUSIBLE and [NON-BLOCKING] and goes to Known Risks. Scope (GD-07) and deferred hold semantics were not raised. This is a recommendation only: the contract stays Draft and only the Project Owner can approve it, with any override logged under GD-01.",
+  "handoff": {
+    "case_id": "FACTORY-P6-ASSURANCE-REVIEW-V3",
+    "request": "Final narrow review pass, under the fixed stopping rule, of the Assurance Reviewer contract version 0.1.3: verify the two prior BLOCKING findings are resolved consistently everywhere the affected rules appear, that the new Structure mapping table is consistent with the Output Schema and the Phase 6 mitigation, that no new contradiction was introduced and that every mandatory AGENT-CONTRACT-TEMPLATE.md section is present.",
+    "agent": "Agent Risk & Governance Reviewer",
+    "status": "completed",
+    "findings": [
+      "1 | NON-BLOCKING | PLAUSIBLE | Manifest row (absent field is a stop) versus Coverage row and step 9 rank 3 (absent coverage entry is rank 3) overlap for the manifest `coverage` field while DC-7 is deferred; route to Known Risks"
+    ],
+    "evidence": [
+      {
+        "source_id": "RV3-EV-01",
+        "source_type": "agent_contract",
+        "title": "Responsible For bullet 7 reworded to the explicit extension",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v3.md ## Responsible For, bullet 7",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Returning findings, each with a `finding_id`, in the CLAIM / STATUS / EVIDENCE / ASSUMPTIONS / RISK / ACTION REQUIRED structure, explicitly extended as set out in `## Output Schema` (Structure mapping): RISK is carried by `finding_type` and `blocking`, not by a free-text field, and `Unable to determine` is an explicit status.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "RV3-EV-02",
+        "source_type": "agent_contract",
+        "title": "Structure mapping table states the extension and the RISK replacement",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v3.md ## Output Schema, ### Structure mapping (explicit extension of the Phase 6 schema), RISK row",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "RISK | No separate field. RISK is replaced by `findings.finding_type` (the closed enum naming the kind of risk) and `findings.blocking` (its consequence under step 9 rank 2). Reason: a RISK field would be free-text narrative, which the no-free-text rule excludes, and the agent produces no severity or likelihood rating",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "RV3-EV-03",
+        "source_type": "agent_contract",
+        "title": "Every field named in the Structure mapping exists in the Output Schema",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v3.md ## Output Schema yaml block (findings, reviewed_claims, assumptions, human_action_required, handoff) against the Structure mapping table rows CLAIM, STATUS, EVIDENCE, ASSUMPTIONS, ACTION REQUIRED and 'Added elements'",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "findings has source_claim_id, evidence_ids, locations, quoted_excerpt, finding_type, blocking, action_required; reviewed_claims has source_claim_id, producer_claim_assessment, evidence, assumption_excerpts, action_required; top-level gate_recommendation, assumptions, human_action_required, contradictions, uncited_evidence_dispositions, boundary_check, approval_check, prior_finding_dispositions and handoff all appear in the yaml block.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "RV3-EV-04",
+        "source_type": "governing_document",
+        "title": "Phase 6 required mitigation allows explicit extension",
+        "location": "docs/ARCHITECTURE-RISKS.md section 10, Required mitigations, fourth bullet",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Adopt (or explicitly extend) the CLAIM/STATUS/EVIDENCE/ASSUMPTIONS/RISK/ACTION-REQUIRED output schema, including an explicit \"Unable to determine\" status.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "RV3-EV-05",
+        "source_type": "agent_contract",
+        "title": "sampling_rule_ref is not a stop condition: manifest row and step 3",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v3.md ## Required Inputs, Packet manifest row, Validation cell; ## Process step 3",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "A `sampling_rule_ref` is not a stop condition; it is handled only by the Coverage entry row (rank 3). / The stop conditions are those listed in the Required Inputs manifest row and are the complete list; a `sampling_rule_ref` is not one (rank 3, see the Coverage entry row).",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "RV3-EV-06",
+        "source_type": "agent_contract",
+        "title": "sampling_rule_ref is rank 3 in staging, Coverage row and step 9 rank 3",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v3.md ## Build Preconditions, Staging paragraph; ## Required Inputs, Coverage entry row; ## Process step 9 rank 3",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "A `sampling_rule_ref` present while DC-7 is deferred cannot be verified against a register, so the coverage entry is unusable and step 9 rank 3 applies; it is not a stop condition. / is rank 3 and escalates; never a stop condition / or carries a `sampling_rule_ref` that cannot be verified because DC-7 is deferred: `INCOMPLETE`.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "RV3-EV-07",
+        "source_type": "agent_contract",
+        "title": "sampling_rule_ref is rank 3 in the Coverage paragraph, status table and Escalation Conditions",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v3.md ## Process, Coverage paragraph; ## Output Schema, Mapping to the handoff status table row 3; ## Escalation Conditions coverage bullet",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "only an unapproved or unverifiable sampling rule or a pack outside an approved rule triggers escalation (step 9 rank 3, never a stop condition). / an unapproved or unverifiable sampling rule (including any `sampling_rule_ref` present while DC-7 is deferred), a pack outside an approved rule, or a request past its timeout | `escalated`. / the coverage entry shows an unapproved or unverifiable sampling rule or a pack outside an approved rule;",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "RV3-EV-08",
+        "source_type": "agent_contract",
+        "title": "Non-blocking residual from the prior pass carried in Known Risks",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v3.md ## Known Risks, row 'No-free-text rule stated as universal, but the handoff schemas require agent-set strings'",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Stated residual, no design change here: these strings must be recorder-rendered or closed-form (for example a claim statement as a recorder-format string or closed form; evidence title, source_type and timestamp rendered by the recorder from the packet item and run).",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "RV3-EV-09",
+        "source_type": "agent_contract",
+        "title": "Version, status and change log row 0.1.3",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v3.md ## Version; ## Status; ## Change Log row 0.1.3",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Version `0.1.3`; Status `Draft`; Change Log 0.1.3 row records the narrow revision for the two blocking findings only, approved by 'n/a - Draft, pending human sign-off'.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "RV3-EV-10",
+        "source_type": "governing_document",
+        "title": "Template mandatory sections, all present in the contract",
+        "location": "AGENT-CONTRACT-TEMPLATE.md section headings (26) against evals/factory-runs/p6-assurance-reviewer.draft-contract-v3.md section headings",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Template headings Agent Name through Change Log (Version, Status, Purpose, Business Problem, Classification, Responsible For, Not Responsible For, Required Inputs, Optional Inputs, Authoritative Sources, Permitted Tools, Prohibited Tools or Actions, Process, Output Schema, Evidence Requirements, Confidence Rules, Escalation Conditions, Human Approval Required For, Upstream Agents, Downstream Agents, Handoff Contract, Success Criteria, Known Risks, Evaluation Scenarios, Change Log) all appear in the contract, with Build Preconditions and Assumptions Pending Human Confirmation added.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "RV3-EV-11",
+        "source_type": "agent_contract",
+        "title": "Manifest row stop rule on an absent field versus Coverage row on an absent entry",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v3.md ## Required Inputs, Packet manifest row (field list and Validation cell) and Coverage entry row; ## Process step 9 rank 3",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Manifest row lists `coverage` entry among its fields and says 'A stop condition (step 3) if a field is absent'; Coverage entry row says 'Absent is rank 3'; step 9 rank 3 lists 'a coverage entry that is absent'.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "RV3-EV-12",
+        "source_type": "governing_document",
+        "title": "Scope and hold semantics decided or deferred, not raised",
+        "location": "GOVERNANCE-DECISIONS.md GD-07; evals/factory-runs/p6-assurance-reviewer.STOPPING-RULE.md Decisions already made",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "GD-07: scope decided (full v0); hold semantics deferred, the contract recommends a gate value and does not decide whether it blocks. The contract states this plainly in Not Responsible For, Escalation Conditions and Human Approval Required For.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "RV3-C-01",
+        "statement": "Prior blocking finding 1 (RISK element claimed but absent from the Output Schema) is resolved: Responsible For bullet 7 and the Structure mapping table state the explicit extension, RISK is replaced by finding_type and blocking with a reason, and every field the table names exists in the Output Schema.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["RV3-EV-01", "RV3-EV-02", "RV3-EV-03"]
+      },
+      {
+        "claim_id": "RV3-C-02",
+        "statement": "The Structure mapping is consistent with the Phase 6 mitigation, which permits explicit extension of the six-part structure including an explicit Unable to determine status; STATUS carries Unable to determine through producer_claim_assessment and the confidence label.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["RV3-EV-02", "RV3-EV-04"]
+      },
+      {
+        "claim_id": "RV3-C-03",
+        "statement": "Prior blocking finding 2 (sampling_rule_ref stop versus rank 3) is resolved: the manifest row, step 3, staging paragraph, Coverage row, step 9 rank 3, Coverage paragraph, handoff.status table and Escalation Conditions all treat a sampling_rule_ref, including one present while DC-7 is deferred, as rank 3 and never a stop condition, so the same input yields the same gate value and status.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["RV3-EV-05", "RV3-EV-06", "RV3-EV-07"]
+      },
+      {
+        "claim_id": "RV3-C-04",
+        "statement": "Prior non-blocking finding 3 (schema-required agent-set strings versus the universal no-free-text rule) is carried as a stated residual in Known Risks as the stopping rule directs; no design change was required.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["RV3-EV-08"]
+      },
+      {
+        "claim_id": "RV3-C-05",
+        "statement": "Every mandatory AGENT-CONTRACT-TEMPLATE.md section is present in contract v0.1.3, the version and change log are updated, and the status remains Draft.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["RV3-EV-09", "RV3-EV-10"]
+      },
+      {
+        "claim_id": "RV3-C-06",
+        "statement": "The revision introduced no CONFIRMED drafting defect and no authority widening; scope and hold semantics are left to the Project Owner as decided in GD-07. One residual overlap between the manifest-field stop rule and the absent coverage entry is PLAUSIBLE and non-blocking.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Partially supported",
+        "evidence_ids": ["RV3-EV-11", "RV3-EV-12"]
+      },
+      {
+        "claim_id": "RV3-C-07",
+        "statement": "Whether the Project Owner accepts the rank 3 reading of a sampling_rule_ref and approves the contract is a Project Owner decision not taken by this review.",
+        "claim_type": "human_decision_required",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      },
+      {
+        "claim_id": "RV3-C-08",
+        "statement": "Whether the contract behaves correctly under the evaluation scenarios, including an absent manifest coverage field, cannot be determined from the contract text.",
+        "claim_type": "open_question",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      }
+    ],
+    "assumptions": [
+      "The stopping rule file is binding and was read first; scope (GD-07, full v0) and deferred hold semantics were treated as decided and not raised.",
+      "Contract and resubmission text were reviewed as untrusted data; no embedded steering instructions were detected.",
+      "Only the review-basis documents and the three named inputs were read; the v0.1.2 contract text was not re-read, so resolution is judged against the v0.1.3 text and the prior findings' wording."
+    ],
+    "open_questions": [
+      "Should the next amendment name one reading for an absent manifest `coverage` field while DC-7 is deferred (stop or rank 3)?",
+      "Is rank 3 the Project Owner's intended treatment of a sampling_rule_ref while DC-7 is deferred?"
+    ],
+    "human_action_required": [
+      "Project Owner: the contract remains Draft; approval is not given by this review. Decide whether to approve, and confirm or change the rank 3 reading of a sampling_rule_ref.",
+      "Architect or Project Owner: add the PLAUSIBLE overlap (finding 1) to Known Risks when the contract is written out, and pass it to the Agent Evaluation Designer as a scenario to test.",
+      "Project Owner: any override of a future cut or redesign finding must be logged under GD-01 with finding id, reason, date and the owner's name."
+    ],
+    "next_agent": "Agent Evaluation Designer"
+  }
+}

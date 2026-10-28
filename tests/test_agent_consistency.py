@@ -19,6 +19,7 @@ ALLOWED_TOOLS = {
     "agent-evaluation-designer": READ_ONLY,
     "claude-agent-builder": READ_ONLY | {"Write"},
     "definition-and-cde-agent": READ_ONLY,
+    "assurance-reviewer": {"Read"},  # packet-scoped read only; no search tool (contract, Permitted Tools)
 }
 TIERS = {
     "stewardship-agent-architect": "factory",
@@ -26,6 +27,7 @@ TIERS = {
     "agent-evaluation-designer": "factory",
     "claude-agent-builder": "factory",
     "definition-and-cde-agent": "operational",
+    "assurance-reviewer": "operational",
 }
 AGENTS = sorted(TIERS)
 

@@ -1,0 +1,148 @@
+{
+  "summary": "Gate NO_BLOCKING_FINDINGS_IDENTIFIED; packs 1 of 1; claims 3 of 3; run SYN-RUN-001.",
+  "gate_recommendation": "NO_BLOCKING_FINDINGS_IDENTIFIED",
+  "gate_recommendation_note": "Recommendation only. Not a clearance or approval. Whether a hold blocks progress is not decided (GD-01 open).",
+  "coverage": {
+    "packs_in_scope": 1,
+    "packs_reviewed": 1,
+    "claims_in_pack": 3,
+    "claims_reviewed": 3,
+    "sampling_rule_ref": null
+  },
+  "manifest_declarations": {
+    "produced_by": "SYN Definition & CDE Agent",
+    "authored_by": "SYN Definition & CDE Agent",
+    "assembled_by": "SYN-ROLE-ASSEMBLER",
+    "manifest_approved_by": "SYN-ROLE-MANIFEST-APPROVER",
+    "uncited_evidence_ids": [],
+    "provenance": "synthetic"
+  },
+  "deterministic_checks_consumed": [
+    {
+      "check": "boundary",
+      "run_id": "SYN-RUN-001",
+      "result": "pass"
+    },
+    {
+      "check": "approval_log",
+      "run_id": "SYN-APPR-001",
+      "result": "pass"
+    }
+  ],
+  "uncited_evidence_dispositions": [],
+  "findings": [],
+  "reviewed_claims": [
+    {
+      "source_claim_id": "SYN-C-01",
+      "producer_claim_assessment": "Supported",
+      "finding_ids": [],
+      "evidence": [
+        {
+          "source_id": "SYN-EV-01",
+          "source_type": "packet_evidence_record",
+          "title": "SYNTHETIC producer evidence record",
+          "location": "SYN-PACK-01/evidence/SYN-EV-01",
+          "authority_level": "authoritative_internal",
+          "extracted_fact": "SYNTHETIC: the register entry states the term's definition.",
+          "direct_or_inferred": "direct",
+          "timestamp": "2026-10-28T00:00:00Z"
+        }
+      ],
+      "assumption_excerpts": [],
+      "action_required": "HUMAN_ACTION: Data Steward supply_packet_item"
+    },
+    {
+      "source_claim_id": "SYN-C-02",
+      "producer_claim_assessment": "Supported",
+      "finding_ids": [],
+      "evidence": [
+        {
+          "source_id": "SYN-EV-01",
+          "source_type": "packet_evidence_record",
+          "title": "SYNTHETIC producer evidence record",
+          "location": "SYN-PACK-01/evidence/SYN-EV-01",
+          "authority_level": "authoritative_internal",
+          "extracted_fact": "SYNTHETIC: the register entry states the term's definition.",
+          "direct_or_inferred": "direct",
+          "timestamp": "2026-10-28T00:00:00Z"
+        }
+      ],
+      "assumption_excerpts": [],
+      "action_required": "HUMAN_ACTION: Data Steward supply_packet_item"
+    },
+    {
+      "source_claim_id": "SYN-C-03",
+      "producer_claim_assessment": "Partially supported",
+      "finding_ids": [],
+      "evidence": [
+        {
+          "source_id": "SYN-EV-01",
+          "source_type": "packet_evidence_record",
+          "title": "SYNTHETIC producer evidence record",
+          "location": "SYN-PACK-01/evidence/SYN-EV-01",
+          "authority_level": "authoritative_internal",
+          "extracted_fact": "SYNTHETIC: the register entry states the term's definition.",
+          "direct_or_inferred": "direct",
+          "timestamp": "2026-10-28T00:00:00Z"
+        }
+      ],
+      "assumption_excerpts": [],
+      "action_required": "REQUEST_EVIDENCE: evidence_record SYN-PACK-01/evidence/SYN-EV-02"
+    }
+  ],
+  "boundary_check": "consistent",
+  "approval_check": "consistent",
+  "contradictions": [],
+  "evidence_requests": [],
+  "contested_findings": [],
+  "assumptions": [],
+  "open_questions": [],
+  "recommendations": [],
+  "human_action_required": [],
+  "handoff": {
+    "case_id": "SYN-CASE-001",
+    "request": "Review the SYNTHETIC Definition & CDE pack for SYN-ELEM-A",
+    "agent": "Assurance Reviewer",
+    "status": "completed",
+    "findings": [
+      "AR-SYN-CASE-001-SYN-PACK-01-GATE | NO_BLOCKING_FINDINGS_IDENTIFIED | SYN-RUN-001 | recommendation, not a clearance"
+    ],
+    "evidence": [
+      {
+        "source_id": "SYN-EV-01",
+        "source_type": "packet_evidence_record",
+        "title": "SYNTHETIC producer evidence record",
+        "location": "SYN-PACK-01/evidence/SYN-EV-01",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "SYNTHETIC: the register entry states the term's definition.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "AR-EV-VAL-001",
+        "source_type": "validator_report",
+        "title": "SYNTHETIC validator report",
+        "location": "SYN-PACK-01/validator-report",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "SYNTHETIC: validator run SYN-RUN-001 reports pass for the boundary check.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "AR-C-GATE",
+        "statement": "Gate NO_BLOCKING_FINDINGS_IDENTIFIED (recommendation only)",
+        "claim_type": "agent_inference",
+        "confidence": "Supported",
+        "evidence_ids": [
+          "AR-EV-VAL-001"
+        ]
+      }
+    ],
+    "assumptions": [],
+    "open_questions": [],
+    "human_action_required": [],
+    "next_agent": null
+  }
+}

@@ -24,6 +24,7 @@ CONTRACT_PAIRS = [
     ("agents/factory/agent-evaluation-designer.md", "contracts/agent-evaluation-designer.contract.json"),
     ("agents/factory/claude-agent-builder.md", "contracts/claude-agent-builder.contract.json"),
     ("agents/operational/definition-and-cde-agent.md", "contracts/definition-and-cde-agent.contract.json"),
+    ("agents/operational/assurance-reviewer.md", "contracts/assurance-reviewer.contract.json"),
 ]
 
 
