@@ -1,0 +1,10 @@
+{
+  "authority_level": "authoritative_internal",
+  "direct_or_inferred": "direct",
+  "extracted_fact": "Term 'Counterparty Tier'; definition: 'The internal grouping of a counterparty by credit and relationship standing.'; owner not recorded; status Draft; version 0.2; recorded_cde_flag false.",
+  "location": "SYNTH-GLOSSARY/GL-401",
+  "source_id": "GL-401",
+  "source_type": "glossary_term",
+  "timestamp": "2026-10-28T00:00:00Z",
+  "title": "Counterparty Tier"
+}

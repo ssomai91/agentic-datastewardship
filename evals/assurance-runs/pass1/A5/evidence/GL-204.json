@@ -1,0 +1,10 @@
+{
+  "authority_level": "authoritative_internal",
+  "direct_or_inferred": "direct",
+  "extracted_fact": "The contractual date by which payment and delivery of a trade must complete, as agreed at execution.",
+  "location": "SYNTH-GLOSSARY/GL-204",
+  "source_id": "GL-204",
+  "source_type": "glossary_term",
+  "timestamp": "2026-10-28T00:00:00Z",
+  "title": "Settlement Date"
+}

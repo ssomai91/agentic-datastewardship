@@ -1,0 +1,290 @@
+{
+  "summary": "gate=INCOMPLETE; findings=6; blocking=0; claims_reviewed=4/4; run=SYN-VAL-9475fd49eb71",
+  "gate_recommendation": "INCOMPLETE",
+  "gate_recommendation_note": "Recommendation only; not a clearance or approval; effect on progress not decided (GD-01 open).",
+  "coverage": {
+    "packs_in_scope": 1,
+    "packs_reviewed": 1,
+    "claims_in_pack": 4,
+    "claims_reviewed": 4,
+    "sampling_rule_ref": null
+  },
+  "manifest_declarations": {
+    "produced_by": "Definition & CDE Agent",
+    "authored_by": "Definition & CDE Agent",
+    "assembled_by": "SYN-ROLE-ASSEMBLER",
+    "manifest_approved_by": "SYN-ROLE-MANIFEST-APPROVER",
+    "uncited_evidence_ids": [],
+    "provenance": "synthetic"
+  },
+  "deterministic_checks_consumed": [
+    { "check": "output_schema", "run_id": "SYN-VAL-9475fd49eb71", "result": "pass" },
+    { "check": "duplicate_and_unresolved_evidence_ids", "run_id": "SYN-VAL-9475fd49eb71", "result": "pass" },
+    { "check": "boundary", "run_id": "SYN-VAL-9475fd49eb71", "result": "pass" },
+    { "check": "approval_log_extract", "run_id": "SYN-APPR-014183abb60d", "result": "pass" }
+  ],
+  "uncited_evidence_dispositions": [],
+  "findings": [
+    {
+      "finding_id": "AR-AR-RUN1-A2-001",
+      "finding_type": "unsupported",
+      "blocking": false,
+      "source_claim_id": "C1",
+      "evidence_ids": ["GL-401"],
+      "locations": [
+        "pack/producer-output.json@4b1ca15e61aa handoff.claims[claim_id=C1].statement",
+        "evidence/GL-401.json@0205b59af9cb extracted_fact"
+      ],
+      "quoted_excerpt": "The glossary entry GL-401 'Counterparty Tier' has no owner recorded.",
+      "action_required": "UNSUPPORTED: C1 unsupported",
+      "contested": false
+    },
+    {
+      "finding_id": "AR-AR-RUN1-A2-002",
+      "finding_type": "unsupported",
+      "blocking": false,
+      "source_claim_id": "C2",
+      "evidence_ids": ["GL-401"],
+      "locations": [
+        "pack/producer-output.json@4b1ca15e61aa handoff.claims[claim_id=C2].statement",
+        "evidence/GL-401.json@0205b59af9cb extracted_fact"
+      ],
+      "quoted_excerpt": "GL-401 is in Draft status at version 0.2 and is not flagged as a CDE in the recorded data.",
+      "action_required": "UNSUPPORTED: C2 unsupported",
+      "contested": false
+    },
+    {
+      "finding_id": "AR-AR-RUN1-A2-003",
+      "finding_type": "evidence_gap",
+      "blocking": false,
+      "source_claim_id": null,
+      "evidence_ids": ["GL-401"],
+      "locations": [
+        "pack/producer-output.json@4b1ca15e61aa handoff.evidence[source_id=GL-401].location",
+        "evidence/GL-401.json@0205b59af9cb location"
+      ],
+      "quoted_excerpt": "fixtures/definition-and-cde/glossary.json, terms[term_id=GL-401]",
+      "action_required": "REQUEST_EVIDENCE: named_packet_item fixtures/definition-and-cde/glossary.json",
+      "contested": false
+    },
+    {
+      "finding_id": "AR-AR-RUN1-A2-004",
+      "finding_type": "evidence_gap",
+      "blocking": false,
+      "source_claim_id": null,
+      "evidence_ids": [],
+      "locations": [
+        "manifest.json@manifest items[]"
+      ],
+      "quoted_excerpt": null,
+      "action_required": "REQUEST_EVIDENCE: named_packet_item manifest.json items[governing documents]",
+      "contested": false
+    },
+    {
+      "finding_id": "AR-AR-RUN1-A2-005",
+      "finding_type": "evidence_gap",
+      "blocking": false,
+      "source_claim_id": null,
+      "evidence_ids": [],
+      "locations": [
+        "manifest.json@manifest case_id",
+        "pack/producer-output.json@4b1ca15e61aa handoff.case_id"
+      ],
+      "quoted_excerpt": "\"case_id\": \"EVAL-S04-P3\"",
+      "action_required": "REQUEST_EVIDENCE: manifest_field manifest.json case_id",
+      "contested": false
+    },
+    {
+      "finding_id": "AR-AR-RUN1-A2-006",
+      "finding_type": "evidence_gap",
+      "blocking": false,
+      "source_claim_id": null,
+      "evidence_ids": ["AR-EV-VAL-SYN-VAL-9475fd49eb71"],
+      "locations": [
+        "checks/validator-report.json@788605d0c371 checks[check=boundary].detail"
+      ],
+      "quoted_excerpt": "STAND-IN call log supplied by the test harness; it is not a record of the run that produced this pack",
+      "action_required": "REQUEST_EVIDENCE: validator_report checks/validator-report.json",
+      "contested": false
+    }
+  ],
+  "reviewed_claims": [
+    {
+      "source_claim_id": "C1",
+      "producer_claim_assessment": "Partially supported",
+      "finding_ids": ["AR-AR-RUN1-A2-001", "AR-AR-RUN1-A2-003"],
+      "evidence": [
+        {
+          "source_id": "GL-401",
+          "source_type": "glossary_term",
+          "title": "Counterparty Tier",
+          "location": "SYNTH-GLOSSARY/GL-401",
+          "authority_level": "authoritative_internal",
+          "extracted_fact": "The internal grouping of a counterparty by credit and relationship standing.",
+          "direct_or_inferred": "direct",
+          "timestamp": "2026-10-28T00:00:00Z"
+        }
+      ],
+      "assumption_excerpts": [
+        "The glossary file fixtures/definition-and-cde/glossary.json is treated as the sole available glossary content for this run; no live glossary or catalog system is connected.",
+        "Absence of an owner field is read as 'no owner recorded in this glossary content', not as proof that no owner exists elsewhere (for example in an unrecorded register)."
+      ],
+      "action_required": "UNSUPPORTED: C1 unsupported"
+    },
+    {
+      "source_claim_id": "C2",
+      "producer_claim_assessment": "Partially supported",
+      "finding_ids": ["AR-AR-RUN1-A2-002"],
+      "evidence": [
+        {
+          "source_id": "GL-401",
+          "source_type": "glossary_term",
+          "title": "Counterparty Tier",
+          "location": "SYNTH-GLOSSARY/GL-401",
+          "authority_level": "authoritative_internal",
+          "extracted_fact": "The internal grouping of a counterparty by credit and relationship standing.",
+          "direct_or_inferred": "direct",
+          "timestamp": "2026-10-28T00:00:00Z"
+        }
+      ],
+      "assumption_excerpts": [],
+      "action_required": "UNSUPPORTED: C2 unsupported"
+    },
+    {
+      "source_claim_id": "C3",
+      "producer_claim_assessment": "Unable to determine",
+      "finding_ids": [],
+      "evidence": [],
+      "assumption_excerpts": [],
+      "action_required": "HUMAN_ACTION: Data Steward supply_packet_item"
+    },
+    {
+      "source_claim_id": "C4",
+      "producer_claim_assessment": "Unable to determine",
+      "finding_ids": [],
+      "evidence": [],
+      "assumption_excerpts": [],
+      "action_required": "HUMAN_ACTION: Data Steward supply_packet_item"
+    }
+  ],
+  "boundary_check": "unable_to_determine",
+  "approval_check": "consistent",
+  "contradictions": [],
+  "evidence_requests": [
+    "REQUEST_EVIDENCE: named_packet_item manifest.json items[governing documents]",
+    "REQUEST_EVIDENCE: named_packet_item fixtures/definition-and-cde/glossary.json",
+    "REQUEST_EVIDENCE: validator_report checks/validator-report.json"
+  ],
+  "contested_findings": [],
+  "assumptions": [
+    "The glossary file fixtures/definition-and-cde/glossary.json is treated as the sole available glossary content for this run; no live glossary or catalog system is connected.",
+    "Absence of an owner field is read as 'no owner recorded in this glossary content', not as proof that no owner exists elsewhere (for example in an unrecorded register)."
+  ],
+  "open_questions": [],
+  "recommendations": [
+    "UNSUPPORTED: C1 unsupported",
+    "UNSUPPORTED: C2 unsupported"
+  ],
+  "human_action_required": [
+    "HUMAN_ACTION: Data Steward supply_packet_item",
+    "HUMAN_ACTION: Project Owner decide_blocking_effect"
+  ],
+  "handoff": {
+    "case_id": "AR-RUN1",
+    "request": "Who owns the glossary entry GL-401 for 'Counterparty Tier'?",
+    "agent": "Assurance Reviewer",
+    "status": "escalated",
+    "findings": [
+      "AR-AR-RUN1-A2-GATE | INCOMPLETE | SYN-VAL-9475fd49eb71 | recommendation, not a clearance",
+      "AR-AR-RUN1-A2-001 | unsupported | false | C1 | pack/producer-output.json@4b1ca15e61aa handoff.claims[claim_id=C1].statement; evidence/GL-401.json@0205b59af9cb extracted_fact",
+      "AR-AR-RUN1-A2-002 | unsupported | false | C2 | pack/producer-output.json@4b1ca15e61aa handoff.claims[claim_id=C2].statement; evidence/GL-401.json@0205b59af9cb extracted_fact",
+      "AR-AR-RUN1-A2-003 | evidence_gap | false | null | pack/producer-output.json@4b1ca15e61aa handoff.evidence[source_id=GL-401].location; evidence/GL-401.json@0205b59af9cb location",
+      "AR-AR-RUN1-A2-004 | evidence_gap | false | null | manifest.json@manifest items[]",
+      "AR-AR-RUN1-A2-005 | evidence_gap | false | null | manifest.json@manifest case_id; pack/producer-output.json@4b1ca15e61aa handoff.case_id",
+      "AR-AR-RUN1-A2-006 | evidence_gap | false | null | checks/validator-report.json@788605d0c371 checks[check=boundary].detail"
+    ],
+    "evidence": [
+      {
+        "source_id": "GL-401",
+        "source_type": "glossary_term",
+        "title": "Counterparty Tier",
+        "location": "SYNTH-GLOSSARY/GL-401",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "The internal grouping of a counterparty by credit and relationship standing.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "AR-EV-VAL-SYN-VAL-9475fd49eb71",
+        "source_type": "validator_report",
+        "title": "SYN-VAL-9475fd49eb71",
+        "location": "checks/validator-report.json@788605d0c371 checks[check=boundary].detail",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "STAND-IN call log supplied by the test harness; it is not a record of the run that produced this pack",
+        "direct_or_inferred": "direct",
+        "timestamp": "not stated in packet"
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "AR-C-GATE",
+        "statement": "AR-AR-RUN1-A2-GATE | INCOMPLETE | SYN-VAL-9475fd49eb71 | recommendation, not a clearance",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": ["GL-401", "AR-EV-VAL-SYN-VAL-9475fd49eb71"]
+      },
+      {
+        "claim_id": "AR-C-AR-AR-RUN1-A2-001",
+        "statement": "AR-AR-RUN1-A2-001 | unsupported | false | C1",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": ["GL-401"]
+      },
+      {
+        "claim_id": "AR-C-AR-AR-RUN1-A2-002",
+        "statement": "AR-AR-RUN1-A2-002 | unsupported | false | C2",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": ["GL-401"]
+      },
+      {
+        "claim_id": "AR-C-AR-AR-RUN1-A2-003",
+        "statement": "AR-AR-RUN1-A2-003 | evidence_gap | false | null",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": ["GL-401"]
+      },
+      {
+        "claim_id": "AR-C-AR-AR-RUN1-A2-004",
+        "statement": "AR-AR-RUN1-A2-004 | evidence_gap | false | null",
+        "claim_type": "agent_inference",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      },
+      {
+        "claim_id": "AR-C-AR-AR-RUN1-A2-005",
+        "statement": "AR-AR-RUN1-A2-005 | evidence_gap | false | null",
+        "claim_type": "agent_inference",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      },
+      {
+        "claim_id": "AR-C-AR-AR-RUN1-A2-006",
+        "statement": "AR-AR-RUN1-A2-006 | evidence_gap | false | null",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": ["AR-EV-VAL-SYN-VAL-9475fd49eb71"]
+      }
+    ],
+    "assumptions": [
+      "The glossary file fixtures/definition-and-cde/glossary.json is treated as the sole available glossary content for this run; no live glossary or catalog system is connected.",
+      "Absence of an owner field is read as 'no owner recorded in this glossary content', not as proof that no owner exists elsewhere (for example in an unrecorded register)."
+    ],
+    "open_questions": [],
+    "human_action_required": [
+      "HUMAN_ACTION: Data Steward supply_packet_item",
+      "HUMAN_ACTION: Project Owner decide_blocking_effect"
+    ],
+    "next_agent": null
+  }
+}
