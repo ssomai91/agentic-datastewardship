@@ -1,0 +1,513 @@
+{
+  "summary": "RECOMMENDATION ONLY, not an approval. The resubmission genuinely fixes most of my 18 prior findings: 15 are resolved in the clause text, not just asserted in the Architect's map (hold semantics, re-review never clearing, bounded recorder with a named field, deputy removal, finding ids, Data Steward versus Project Owner adjudication, packet-only Read, explicit build preconditions, SQL and lineage descoped, own-evidence wrapping, coverage, state-dependent controls, provenance fields, v0 scope, evaluation pointer). Three are only partly resolved (handoff status mapping, producer-controlled packet declaration, closed vocabulary coverage), so the Architect's claim that all 18 are RESOLVED is overstated. The revision also introduced new defects, the most serious being a gate-derivation rule that contradicts itself on INCOMPLETE versus HOLD precedence, which the deterministic recorder relies on, plus an unchanged version number. The recorder cannot detect under-reporting, and own-evidence records are agent-authored. The agent's authority limits are sound and not widened. The agent's own logic is not over-complex, but its deployment depends on eight non-existent components, which is disproportionate for a first v0 and is a staging decision for the Project Owner. I cannot confirm the contract is ready for the Evaluation Designer until the CONFIRMED findings are fixed.",
+  "agrees_with_architect": false,
+  "findings": [
+    {
+      "clause_cited": "Prior finding 10 (handoff mapping) not fully resolved: Output Schema 'Mapping to the handoff' table rows for INCOMPLETE; Process step 3 ('escalate for real data or self-review'); Required Inputs rows for validator report, approval-log extract and coverage entry (each 'INCOMPLETE')",
+      "issue": "The mapping now exists but is not total or consistent. INCOMPLETE has two rows (in_progress when a partial review is returned with an open evidence request; blocked for packet or manifest absent, real-data provenance or self-review stop), yet INCOMPLETE is also produced by a missing validator report, approval-log extract, coverage entry or non-independent assembler, which fit neither row cleanly. Real-data provenance and self-review are mapped to blocked while step 3, Escalation Conditions and GD-02 say escalate. A recorder that must cross-check handoff.status against the gate cannot be written from this table. Prior finding 10 is only partly addressed.",
+      "certainty": "CONFIRMED"
+    },
+    {
+      "clause_cited": "Prior finding 14 (producer-controlled packet) not fully resolved: Build Preconditions DC-1 ('includes uncited and contradicting evidence from the evidence store'); Required Inputs 'Packet manifest' contradicting_or_uncited_evidence_exists; Process step 3",
+      "issue": "Independence of assembly is now required, but the remedy rests on a deterministic assembly step that identifies contradicting evidence. Contradiction is a semantic judgement, no evidence store is defined anywhere in the contract, and DC-1's builder is an unassigned assumption. The agent must take the yes/no declaration on trust: 'no' lets it treat the packet as complete although the contract admits it cannot detect withheld evidence. The residual limit in Evidence Requirements is honest, but the declaration is presented as a control. State what DC-1 does mechanically (for example, include all records for the same data elements regardless of citation) or drop 'contradicting' from the deterministic duty.",
+      "certainty": "PLAUSIBLE"
+    },
+    {
+      "clause_cited": "Prior finding 16 (drift into producer work) only partly mechanised: Output Schema closed-vocabulary paragraph; Prohibited Tools last bullet; Success Criteria 'No action_required or recommendation contains replacement producer content'",
+      "issue": "The closed vocabulary constrains three fields to a prefix, but each prefix is followed by free text, and findings.description, reviewed_claims.risk, summary and contradictions have no vocabulary, only a prose ban 'in any output field'. The Success Criterion tests only two of the fields. Substitute wording can still travel in the unconstrained fields. This is the narrative-only restriction pattern the risk register warns about, though lower in severity than in v0.",
+      "certainty": "PLAUSIBLE"
+    },
+    {
+      "clause_cited": "NEW: Process step 9 (bullet 1 'INCOMPLETE if any required input... is missing', bullet 2 'otherwise HOLD_RECOMMENDED', and the closing sentence 'When both an INCOMPLETE condition and a hold condition are present, the value is HOLD_RECOMMENDED')",
+      "issue": "Introduced by the revision. The derivation rule contradicts itself: bullet 2 begins 'otherwise', so INCOMPLETE takes precedence, while the closing sentence reverses the precedence. Process step 11 makes the recorder re-derive the gate by this rule and reject mismatches, so the same input can be validly recorded as either value or wrongly rejected. Step 3 adds a third behaviour (stop and review nothing further on a manifest defect), so for those cases no hold finding can exist at all. The only deterministic check on the gate cannot be built or tested until the precedence is stated once.",
+      "certainty": "CONFIRMED"
+    },
+    {
+      "clause_cited": "NEW: Process step 11 and Known Risks 'Agent steers the status record (prompt injection, error)' mitigation 'accepts only enumerated values, re-derives the gate from findings, rejects mismatches'",
+      "issue": "The recorder re-derives the gate from the agent's own findings and reviewed_claims. A steered or mistaken agent that emits no blocking finding, or labels a claim Supported, yields a self-consistent NO_BLOCKING_FINDINGS_IDENTIFIED that passes every recorder check. The mitigation stops only inconsistent outputs, not under-reporting, yet the risk row presents it as the answer to 'a bad pack gets a clean marker'. The contract defines NO_BLOCKING_FINDINGS_IDENTIFIED as not a clearance, which helps, but the residual (completeness of findings is verified by no component) should be stated in Known Risks and Evidence Requirements, and the Evaluation Designer should test injection that lowers findings rather than one that changes the enum.",
+      "certainty": "PLAUSIBLE"
+    },
+    {
+      "clause_cited": "NEW: Process step 7 (AR-EV- records 'extracted_fact stating what it shows'); Confidence Rules; Process step 11 ('own-evidence citations resolve')",
+      "issue": "Introduced by the revision to satisfy prior finding 11. The agent authors both its conclusion and the evidence record it then cites for a Supported or Contradictory label. The recorder checks only that the cited id resolves, not that the clause text, validator result or empty approval extract described in extracted_fact matches the packet item named in location. Citing a record the agent wrote is circular support. Add a deterministic fidelity check (for example a quoted excerpt or hash of the packet item verified by the recorder) or cap own conclusions resting solely on agent-authored records at Partially supported.",
+      "certainty": "PLAUSIBLE"
+    },
+    {
+      "clause_cited": "NEW: Version; Change Log (single row '0.1.0 ... Initial draft ... revised after the Risk Reviewer's 18 findings')",
+      "issue": "The resubmitted text keeps version 0.1.0 and describes itself as an initial draft, so the v0 text I reviewed and the v1 text share one identifier. Override logs and finding ids under GD-01 depend on knowing which contract version a finding or approval refers to; two different texts under one version defeats that audit trail. Bump the version and record the 18-finding revision as its own change-log row.",
+      "certainty": "CONFIRMED"
+    },
+    {
+      "clause_cited": "NEW: Build Preconditions (DC-1 to DC-8, 'None of them exists today'); Assumptions Pending Human Confirmation (eight items); Success Criteria final bullet ('pass against real evaluated Definition & CDE output')",
+      "issue": "The contract has grown from roughly 25 KB to 42 KB while the agent's own judgement is only three questions, yet deployment now depends on eight deterministic components, none existing and six with no named builder, plus Project Owner acceptance for each. DC-5 (request tracker) and DC-7 (coverage register) serve one producer, 100 per cent coverage and synthetic data and look deferrable for a first v0. The Evaluation Designer also cannot exercise the agent without fixtures standing in for DC-3, DC-4 and DC-8 outputs. This is a proportionality and sequencing concern, not a defect in the authority limits. A staged v0 (the minimum components needed to test the three judgement questions, the rest deferred by amendment) is a decision for the Project Owner.",
+      "certainty": "PLAUSIBLE"
+    }
+  ],
+  "final_verdict": "redesign",
+  "final_verdict_rationale": "Narrow redesign (a drafting amendment to the same capability, not a cut, merge or defer). Required before the Evaluation Designer: (1) state one gate precedence in Process step 9 and align step 3 and the recorder; (2) make the handoff.status mapping total and consistent with 'escalate' for real data and self-review; (3) bump the version and add a change-log row; (4) restate DC-1's mechanical duty and the evidence store, or drop 'contradicting'; (5) state the under-reporting and agent-authored-evidence residuals in Known Risks and Evidence Requirements, with a fidelity check or a confidence cap; (6) extend the vocabulary or checks to the free-text fields. The Project Owner should also decide whether to stage the build preconditions. Complexity: the agent's own logic is proportionate (three judgement questions, no write or live access), but eight unbuilt components, six unassigned, make the whole disproportionate for a first v0 and untestable as written. Nothing here is approved; only the Project Owner can approve, and any override of this redesign finding must be logged under GD-01.",
+  "handoff": {
+    "case_id": "FACTORY-P6-ASSURANCE-REVIEW-V1",
+    "request": "Review the resubmitted Assurance Reviewer draft contract v1 (evals/factory-runs/p6-assurance-reviewer.draft-contract-v1.md) against the 18 prior findings, confirm each was actually addressed rather than reworded or merely asserted, raise any new defects introduced by the revision, cite exact clauses with CONFIRMED or PLAUSIBLE, and never approve.",
+    "agent": "Agent Risk & Governance Reviewer",
+    "status": "completed",
+    "findings": [
+      "Recommendation only; not an approval. 15 of 18 prior findings are resolved in the revised text; 3 (10, 14, 16) are only partly resolved; 8 findings are listed in this output (3 prior-linked, 5 new).",
+      "CONFIRMED: Process step 9 gate derivation contradicts itself on INCOMPLETE versus HOLD precedence, and the recorder depends on it.",
+      "CONFIRMED: handoff.status mapping is not total (INCOMPLETE rows) and conflicts with 'escalate' for real data and self-review (prior finding 10).",
+      "CONFIRMED: version stays 0.1.0 across two different texts.",
+      "PLAUSIBLE: DC-1 'contradicting evidence' is not a deterministic duty and the evidence store is undefined (prior finding 14); recorder cannot detect under-reporting; AR-EV- records are agent-authored and unverified; closed vocabulary does not cover free-text fields (prior finding 16); eight-component build load is disproportionate for a first v0.",
+      "Verdict: redesign (a narrow drafting amendment, not a new capability). I cannot confirm readiness for the Evaluation Designer."
+    ],
+    "evidence": [
+      {
+        "source_id": "P1",
+        "source_type": "agent_contract_draft",
+        "title": "Hold semantics",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v1.md: Purpose; Not Responsible For 'Deciding whether a recommendation blocks progress'; Process step 9; Assumptions bullet 1",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "The contract no longer calls the hold advisory; it states gate recommendation only, leaves hard gate versus advisory to the Project Owner (GD-01 Still open), and defines resolution as a human-recorded act.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "P2",
+        "source_type": "agent_contract_draft",
+        "title": "Re-review",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v1.md: Not Responsible For 'Clearing, resolving, superseding...'; Process step 12; Optional Inputs 'Prior assurance output'",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "A re-review is a new separate record that never clears, supersedes or closes an earlier hold; per-finding dispositions are recommendations only.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "P3",
+        "source_type": "agent_contract_draft",
+        "title": "Recorder bounds",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v1.md: Process step 11; Known Risks 'Agent steers the status record'",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Recorder is deterministic, append-only, accepts three enum values, re-derives the gate, rejects mismatches, never writes approved/cleared/passed, never downgrades; field named assurance_gate_recommendation.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "P4",
+        "source_type": "agent_contract_draft",
+        "title": "Override role",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v1.md: Human Approval Required For bullets 1-3; Process steps 10 and 11; Assumptions bullet 2",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "'or deputy' removed from the rule; Project Owner by title per GD-01; deputy authority stated as an assumption pending confirmation.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "P5",
+        "source_type": "agent_contract_draft",
+        "title": "Finding identifier",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v1.md: Output Schema findings.finding_id; Mapping to the handoff",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "finding_id AR-<case_id>-<pack_id>-<NNN> is in the schema; handoff.findings strings begin with it; recorder links finding ids.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "P6",
+        "source_type": "agent_contract_draft",
+        "title": "Contested findings",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v1.md: Process step 10; Human Approval Required For bullet 3; Responsible For bullet 11",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Contested findings route to the Project Owner; the Data Steward recommends and does not decide, being the pack recipient; aligned to GD-01.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "P7",
+        "source_type": "agent_contract_draft",
+        "title": "Packet-only scope",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v1.md: Authoritative Sources; Permitted Tools; Required Inputs 'Governing documents'; DC-2",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Governing documents are manifest-listed packet copies; Read is bound to the packet at tool level (DC-2); agent not deployable until DC-2 exists.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "P8",
+        "source_type": "agent_contract_draft",
+        "title": "Build preconditions",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v1.md: Build Preconditions DC-1 to DC-8; Classification; Known Risks 'Required deterministic components do not exist'",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Eight deterministic components stated as non-existent build preconditions; absent input yields INCOMPLETE, never inference.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "P9",
+        "source_type": "agent_contract_draft",
+        "title": "SQL and lineage scope",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v1.md: Purpose 'v0 scope'; Not Responsible For 'Querying lineage tools... inspecting SQL or lineage in v0'; Process step 6",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "SQL and lineage inspection removed from v0 pending deterministic tooling and a contract amendment.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "P11",
+        "source_type": "agent_contract_draft",
+        "title": "Own-evidence wrapping",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v1.md: Process step 7; Output Schema mapping of finding_type; Confidence Rules",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Own evidence is wrapped as evidence.schema.json records with AR-EV- ids; finding_type to producer-claim-assessment mapping given; the two label layers are distinguished.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "P12",
+        "source_type": "agent_contract_draft",
+        "title": "Coverage",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v1.md: Process 'Coverage' paragraph; Responsible For bullet 1; Escalation Conditions bullet 9",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Default 100 percent; only an unapproved sampling rule escalates; packs_in_scope from register DC-7; materiality structural; routing 'before the Data Steward' placed outside the agent.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "P13",
+        "source_type": "agent_contract_draft",
+        "title": "State-dependent controls",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v1.md: Process step 8; Build Preconditions DC-5, DC-6; Process step 11 last sentence",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Timeout, provenance and request state are owned by DC-5/DC-6 and read by the agent; override reconciliation moved to the recorder.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "P15",
+        "source_type": "agent_contract_draft",
+        "title": "Provenance fields",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v1.md: Required Inputs 'Packet manifest' produced_by/authored_by; Process step 3",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Manifest carries produced_by and authored_by; the Assurance Reviewer named as producer or author stops the review.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "P17",
+        "source_type": "agent_contract_draft",
+        "title": "v0 scope",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v1.md: Purpose 'v0 scope'; Upstream Agents; Not Responsible For",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "v0 limited to Definition & CDE packs; cross-pack checks and other producers deferred to amendment.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "P18",
+        "source_type": "agent_contract_draft",
+        "title": "Evaluation pointer",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v1.md: Evaluation Scenarios",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Pointer retained and extended with the contradiction-derived scenarios; authorship left to the Evaluation Designer.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "N1",
+        "source_type": "agent_contract_draft",
+        "title": "Gate derivation rule",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v1.md: Process step 9 (bullets 1 and 2 and the final sentence)",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Bullet 1: INCOMPLETE if any required input is missing, with bullet 2 introduced by 'otherwise'; the closing sentence says that when both an INCOMPLETE condition and a hold condition are present the value is HOLD_RECOMMENDED.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "N2",
+        "source_type": "agent_contract_draft",
+        "title": "Handoff status mapping",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v1.md: Output Schema 'Mapping to the handoff' table; Process step 3",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Two INCOMPLETE rows (in_progress when partial with an open request; blocked for packet absent, real-data or self-review) while step 3 says 'escalate' for real data and Required Inputs makes other missing inputs INCOMPLETE without a mapped status.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "N3",
+        "source_type": "agent_contract_draft",
+        "title": "DC-1 and manifest declaration",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v1.md: Build Preconditions DC-1; Required Inputs 'Packet manifest' contradicting_or_uncited_evidence_exists",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "DC-1 is deterministic yet must include contradicting evidence from 'the evidence store' and declare whether contradicting evidence exists; no evidence store is named or specified.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "N4",
+        "source_type": "agent_contract_draft",
+        "title": "Closed vocabulary scope",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v1.md: Output Schema (closed vocabulary paragraph); Prohibited Tools last bullet",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Closed vocabulary covers action_required, recommendations and evidence_requests with free text after each prefix; description, risk, summary and contradictions are constrained only by a prose prohibition.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "N5",
+        "source_type": "agent_contract_draft",
+        "title": "Recorder checks and Known Risks",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v1.md: Process step 11; Known Risks 'Agent steers the status record'",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "The recorder checks internal consistency (gate against the agent's own findings, id resolution); no component verifies that findings are complete or that AR-EV- extracted_fact text matches the packet item cited.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "N6",
+        "source_type": "agent_contract_draft",
+        "title": "Version and change log",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v1.md: Version; Change Log row 0.1.0",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Version remains 0.1.0 and the Change Log has one row calling the text an initial draft revised after the 18 findings, so the reviewed v0 text and this text share an identifier.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "N7",
+        "source_type": "agent_contract_draft",
+        "title": "Build load",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v1.md: Build Preconditions; Assumptions Pending Human Confirmation",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Eight non-existent components, six with an unassigned builder, gate deployment; many assumptions pending.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "R0",
+        "source_type": "agent_output",
+        "title": "Prior review (18 findings)",
+        "location": "evals/factory-runs/p6-assurance-reviewer.review-v0.reviewer.output.json",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Eighteen findings raised against v0 of the contract; verdict redesign.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "R1",
+        "source_type": "agent_output",
+        "title": "Architect resolution map",
+        "location": "evals/factory-runs/p6-assurance-reviewer.architect-v1.output.json recommendations 1-18",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Architect asserts all 18 findings RESOLVED; the assertion was checked clause by clause against the revised text.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "R2",
+        "source_type": "governance_decision",
+        "title": "GD-01",
+        "location": "GOVERNANCE-DECISIONS.md GD-01",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Project Owner adjudicates contested cut/redesign findings; Data Steward recommends but does not approve; hard gate versus advisory and role holder names remain open.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "R3",
+        "source_type": "schema",
+        "title": "Evidence schema",
+        "location": "schemas/evidence.schema.json",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "source_type is a free string; authority_level enum authoritative_internal|general_industry|inferred; all listed fields required.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "RV1-1",
+        "statement": "Prior finding 1 (advisory hold versus override regime) is resolved: the contract specifies a recommendation only, leaves hard gate versus advisory to the Project Owner (GD-01), and treats resolution as a human-recorded act.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": [
+          "P1",
+          "R2"
+        ]
+      },
+      {
+        "claim_id": "RV1-2",
+        "statement": "Prior finding 2 (re-review clearing a hold) is resolved: a re-review is a new record that never clears or supersedes an earlier hold.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": [
+          "P2"
+        ]
+      },
+      {
+        "claim_id": "RV1-3",
+        "statement": "Prior finding 3 (recorder echoing the agent) is addressed on paper: the recorder is bounded, append-only and enum-limited and the field is named; the residual under-reporting gap is raised as a new finding.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Partially supported",
+        "evidence_ids": [
+          "P3",
+          "N5"
+        ]
+      },
+      {
+        "claim_id": "RV1-4",
+        "statement": "Prior finding 4 (deputy widening GD-01) is resolved: the deputy is removed from the rule and stated as an assumption.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": [
+          "P4",
+          "R2"
+        ]
+      },
+      {
+        "claim_id": "RV1-5",
+        "statement": "Prior finding 5 (no finding identifier) is resolved: finding_id is in the schema and leads each handoff finding string.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": [
+          "P5"
+        ]
+      },
+      {
+        "claim_id": "RV1-6",
+        "statement": "Prior finding 6 (Data Steward settling contested findings) is resolved and aligned to GD-01.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": [
+          "P6",
+          "R2"
+        ]
+      },
+      {
+        "claim_id": "RV1-7",
+        "statement": "Prior finding 7 (packet-only versus repository documents) is resolved: governing documents are manifest-listed packet copies and Read is bound at tool level to the packet (DC-2).",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": [
+          "P7"
+        ]
+      },
+      {
+        "claim_id": "RV1-8",
+        "statement": "Prior finding 8 (non-existent deterministic components) is resolved on paper: DC-1 to DC-8 are explicit build preconditions and absent input yields INCOMPLETE; sequencing sits in Build Preconditions, not only a risk cell. Proportionality is raised separately.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": [
+          "P8",
+          "N7"
+        ]
+      },
+      {
+        "claim_id": "RV1-9",
+        "statement": "Prior finding 9 (SQL and lineage without deterministic inputs) is resolved by scoping SQL and lineage inspection out of v0.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": [
+          "P9"
+        ]
+      },
+      {
+        "claim_id": "RV1-11",
+        "statement": "Prior finding 11 (own evidence not representable) is largely resolved by AR-EV- evidence records and the finding_type mapping, but the records are agent-authored and unverified (new finding).",
+        "claim_type": "authoritative_internal",
+        "confidence": "Partially supported",
+        "evidence_ids": [
+          "P11",
+          "R3"
+        ]
+      },
+      {
+        "claim_id": "RV1-12",
+        "statement": "Prior finding 12 (coverage policy) is resolved: 100 per cent default, register-sourced population, structural materiality, routing placed outside the agent.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": [
+          "P12"
+        ]
+      },
+      {
+        "claim_id": "RV1-13",
+        "statement": "Prior finding 13 (state-dependent controls) is resolved: timeout, provenance and override reconciliation are owned by named deterministic components and read by the agent.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": [
+          "P13"
+        ]
+      },
+      {
+        "claim_id": "RV1-15",
+        "statement": "Prior finding 15 (provenance for the self-review prohibition) is resolved by produced_by and authored_by manifest fields and a stop rule.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": [
+          "P15"
+        ]
+      },
+      {
+        "claim_id": "RV1-17",
+        "statement": "Prior finding 17 (scope names non-existent producers) is resolved: v0 is limited to Definition & CDE packs.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": [
+          "P17"
+        ]
+      },
+      {
+        "claim_id": "RV1-18",
+        "statement": "Prior finding 18 (evaluation pointer) is resolved as a pointer and now lists the contradiction-derived scenarios; it should also add under-reporting injection and the gate-precedence case.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": [
+          "P18"
+        ]
+      },
+      {
+        "claim_id": "RV1-X",
+        "statement": "Prior findings 10, 14 and 16 are not fully resolved; the Architect's map marks all 18 RESOLVED, which overstates the position by those three and by the new defects raised here.",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": [
+          "R0",
+          "R1",
+          "N1",
+          "N2",
+          "N3",
+          "N4"
+        ]
+      },
+      {
+        "claim_id": "RV1-D1",
+        "statement": "Whether an assurance hold is advisory or a hard gate, who holds the deputy, adjudication and manifest-approval roles, and whether the build is staged are decisions for the Project Owner and are not made by this review.",
+        "claim_type": "human_decision_required",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      },
+      {
+        "claim_id": "RV1-Q1",
+        "statement": "Whether the Risk & Governance Reviewer and Assurance Reviewer remain two agents is still open (ARCHITECTURE-RISKS Open Question 1).",
+        "claim_type": "open_question",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      }
+    ],
+    "assumptions": [
+      "Review rests only on the v1 draft, the v0 draft, the prior review, the Architect's v1 output and the named repository design and governance documents.",
+      "'Does not exist' means not present in this repository; existence elsewhere is not established.",
+      "Contract text treated as untrusted data; no embedded steering instructions detected.",
+      "All data is synthetic."
+    ],
+    "open_questions": [
+      "Which single precedence applies when a required input is missing and a hold finding also exists?",
+      "What does DC-1 do mechanically to include contradicting evidence, and what is the evidence store?",
+      "Which component verifies that AR-EV- records match the packet items they cite?",
+      "Should the first v0 be staged to a smaller set of deterministic components?"
+    ],
+    "human_action_required": [
+      "Project Owner to adjudicate this redesign recommendation; any override to be logged under GD-01 with finding id, reason, date and name.",
+      "Stewardship Agent Architect to resubmit (new version number) fixing the CONFIRMED findings and the three partly resolved prior findings; this reviewer to re-check.",
+      "Project Owner to decide staging of the build preconditions and the deputy, adjudication and manifest-approval roles."
+    ],
+    "next_agent": null
+  }
+}

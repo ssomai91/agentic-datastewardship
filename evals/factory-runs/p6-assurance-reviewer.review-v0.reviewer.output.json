@@ -1,0 +1,293 @@
+{
+  "summary": "RECOMMENDATION ONLY, not an approval. The draft Assurance Reviewer contract (v0.1.0) is structurally complete: every mandatory AGENT-CONTRACT-TEMPLATE.md section is present, Not Responsible For and the prohibited-actions deny-list are explicit, live and multi-source access is refused, and the five confidence labels and the v0.1.3 open_question / human_decision_required rule are reproduced correctly. It does not, however, resolve the Phase 6 required mitigations cleanly. Main problems: (a) the hold is described as advisory and 'does not stop a human', yet an override role, override log and 'override without a log entry is a finding' are built around it, and the contract is contradictory about who may clear a hold (a resubmission re-review by the agent effectively clears one); (b) the gate status is written by a recorder that simply echoes the agent's own recommendation, so ASSURANCE-NO-BLOCKING-FINDINGS is an agent-set pass marker and a prompt-injection target; (c) the override log needs a finding ID but the output schema has none; (d) the contract requires deterministic checks (boundary check, approval-log lookup, SQL and lineage tool outputs) and an assembly step that do not exist, and the contract does not make their existence a build precondition, so the agent's boundary, approval and SQL/lineage duties would return Unable to determine on every run; (e) Permitted Tools says 'packet only' but Authoritative Sources and Process cite repository documents outside the packet, and the Read tool carries no mechanical scope; (f) the handoff cannot carry the output schema's gate status or claim-level findings, handoff.status has no mapping from the three gate values, and own-finding evidence (validator run, approval-log entry, contract clause) has no representation as evidence records; (g) several controls cannot be enforced or tested by the agent (100 per cent coverage before reaching the Data Steward, evidence-request timeout, real-data detection, 'override without log entry'). Verdict: redesign (a targeted v0.2 of the contract, not a new capability); the Architect's necessity verdict of redesign is kept, but its claim that every required mitigation is resolved is not supported. Build remains gated on human decisions already listed as pending.",
+  "agrees_with_architect": false,
+  "findings": [
+    {
+      "clause_cited": "Not Responsible For: 'Operating as a hard block; it recommends and records a status, it does not stop a human'; Process step 9 'never as a hard block'; Process step 11 'only the Project Owner (or deputy) may override a hold'; Human Approval Required For 'Overriding or clearing an assurance hold'; Assumptions Pending Human Confirmation 'whether an assurance hold is advisory (as drafted) or a hard gate'",
+      "issue": "Internal contradiction on the nature of the hold. If a hold is advisory and does not stop a human, there is nothing for the Project Owner to 'override', and an override log and the rule 'an override without a log entry is itself a finding' have no trigger (the Data Steward can simply proceed). If the hold is a gate, then Not Responsible For and Process 9 are wrong. The body states as settled a point that the Assumptions section (and GD-01 'Still open') records as undecided, so five clauses would change if the owner decides 'hard gate'. Required mitigation 1 asks for a precisely specified gating mechanism; this is not yet precise.",
+      "certainty": "CONFIRMED"
+    },
+    {
+      "clause_cited": "Not Responsible For: 'Overriding, clearing or dismissing its own or any other agent's finding'; Prohibited Tools or Actions: 'clearing or overriding a hold'; Process step 12 (Resubmission) and step 9 (status values); Optional Inputs: 'Prior assurance output for the same case'",
+      "issue": "The agent is forbidden to clear a hold but, on resubmission, re-reviews the new pack and returns a fresh gate recommendation that the recorder writes. A new ASSURANCE-NO-BLOCKING-FINDINGS therefore replaces an earlier ASSURANCE-HOLD with no Project Owner override and no log entry. The contract does not say whether a re-review status supersedes, or sits beside, an earlier hold, nor who confirms a hold is resolved. This is the agent clearing its own hold in effect.",
+      "certainty": "CONFIRMED"
+    },
+    {
+      "clause_cited": "Permitted Tools (final paragraph: 'written by a deterministic status recorder outside the agent, from the agent's returned gate recommendation'); Process step 9; Known Risks 'Prompt injection through the pack or evidence'",
+      "issue": "The recorder is only a conduit: it writes whatever the agent returns. In practice the agent sets the case-pack status field, and ASSURANCE-NO-BLOCKING-FINDINGS reads as a clearance mark even though the clause defines it as 'no blocking finding identified'. No human or independent check sits between a steered or mistaken model output and the status field. The Known Risks mitigation for injection ('treated as untrusted data') is a prompt-level control only; the contract does not bound the recorder (for example, accept only the three enum values, never downgrade an existing HOLD without a logged human action, record the run identifier). Also the 'named case-pack status field' is never actually named, and the case store does not exist.",
+      "certainty": "CONFIRMED"
+    },
+    {
+      "clause_cited": "Process step 11 and Human Approval Required For ('Project Owner or deputy only'); GOVERNANCE-DECISIONS.md GD-01 Override rule",
+      "issue": "GD-01 says a cut / redesign finding may be overridden only by the Project Owner and the override must be logged with finding ID, reason, date and owner's name. The contract widens this to 'or deputy' and extends it from design-time Risk Reviewer findings to run-time case holds, and states it as a rule in Process 11 and Human Approval (the 'ASSUMPTION' tag appears only in the Assumptions section and a trailing sentence). Case-level holds on every material pack could also make the Project Owner a volume bottleneck. The deputy role is not in GD-01.",
+      "certainty": "CONFIRMED"
+    },
+    {
+      "clause_cited": "Process step 11 (override log 'with finding ID'); Output Schema (reviewed_claims has no finding identifier; findings, contested_findings, evidence_requests are arrays of string)",
+      "issue": "GD-01's override log requires a finding ID, and Process 10 requires findings to be marked contested and tracked, but no finding carries an identifier anywhere in the Output Schema or the handoff (handoff findings are plain strings). An override cannot be logged against, or a contested finding traced to, a specific finding as specified. This is a gap in required mitigation 1 (audit logging of every override).",
+      "certainty": "CONFIRMED"
+    },
+    {
+      "clause_cited": "Process step 10 (Contested findings: 'If the Data Steward cannot settle it...'); Human Approval Required For ('Accepting or rejecting a contested finding'); GD-01 (Data Steward 'recommends but does not approve'; Project Owner 'adjudicates contested ... findings')",
+      "issue": "The first adjudication step is placed with the Data Steward ('settle'), but Human Approval Required For treats accepting or rejecting a contested finding as an approval-class decision and GD-01 gives adjudication to the Project Owner while the Data Steward only recommends. It is unclear whether the Data Steward settling a contested finding is a decision or a recommendation. The Data Steward is also the recipient of the pack under review, so the same person judges the finding and the pack.",
+      "certainty": "CONFIRMED"
+    },
+    {
+      "clause_cited": "Authoritative Sources (last bullet: GOVERNANCE-DECISIONS.md); Process step 8 (docs/STEWARDSHIP-FRAMEWORK.md section 2); Escalation Conditions (GD-02); Permitted Tools ('Read (curated evidence packet only)'); Not Responsible For and Prohibited Tools ('any file outside the curated evidence packet')",
+      "issue": "Contradiction: the agent may read only the curated packet, yet its Authoritative Sources and process rely on repository governance documents that are not stated to be in the packet. Either those documents must be listed in the manifest (and a version recorded) or the references must be removed. Separately, 'Read' is a general file-reading tool; the packet-only limit is prose, not a tool-level scope, which is the narrative-only restriction pattern System-Wide Risks calls out as authority creep.",
+      "certainty": "CONFIRMED"
+    },
+    {
+      "clause_cited": "Required Inputs rows 'Deterministic validator report' and 'Approval-log extract'; Process step 1; Responsible For bullets 6 and 7; Success Criteria 3 ('a boundary breach ... identified'); Known Risks 'Premature build with no real producer outputs'",
+      "issue": "The contract makes a tool-permission-versus-contract boundary check, an approval-log lookup and an approval-log extract required inputs, but tools/handoff_checks.py only reports duplicate evidence ids, duplicate claim ids and unresolved evidence ids. No boundary checker, approval log or packet-assembly step exists, and the Architect's own open questions say so. The build precondition (Known Risks) names only real producer output, not these components. Until they exist the agent returns Unable to determine for boundary and approval checks on every run, and Success Criterion 3 cannot be met. Required mitigation 5 (state the build-sequencing dependency) is also placed only in a risk-table cell, not in Process, Escalation or Human Approval.",
+      "certainty": "CONFIRMED"
+    },
+    {
+      "clause_cited": "Responsible For bullet 8 ('Inspecting SQL, logic and lineage statements as static text, using only deterministic tool outputs supplied in the packet'); Required Inputs (no row for SQL or lineage tool outputs); Process step 6; docs/ARCHITECTURE-RISKS.md section 10 'Hallucination / explainability risk'",
+      "issue": "The mitigation for the hallucination risk is deterministic tooling (a SQL diff or lint step, a lineage-graph query) feeding structured facts. The contract names these as the only permitted basis for SQL and lineage review but lists no such input in Required Inputs and does not say what happens when none is supplied. Without them the agent is left to free-form judgement on SQL and lineage text, which is the risk the mitigation targets. Auditing 'lineage consistency with cited evidence' also overlaps in practice with re-analysing lineage if the packet has no structured lineage output.",
+      "certainty": "CONFIRMED"
+    },
+    {
+      "clause_cited": "Returns (handoff: findings, evidence, claims, next_agent: null); Output Schema (assurance_status, reviewed_claims, coverage; 'handoff.status uses in_progress, escalated, completed or blocked'); schemas/agent-handoff.schema.json",
+      "issue": "The mapping from the output to the handoff is undefined. handoff.findings is an array of strings and has nowhere to carry assurance_status, coverage or the per-claim reviewed_claims structure. No rule says which handoff.status results from ASSURANCE-HOLD (escalated?), ASSURANCE-INCOMPLETE (blocked? escalated?) or ASSURANCE-NO-BLOCKING-FINDINGS (completed?). 'blocked' conflicts with the 'never a hard block' stance if used for a hold. The recorder cannot reliably read a gate recommendation from a handoff whose fields do not hold it. Receives also lists the previous agent's handoff fields (agent, status, findings, evidence, claims, ...) at the same level as the new case fields, which is ambiguous about whose values they are.",
+      "certainty": "CONFIRMED"
+    },
+    {
+      "clause_cited": "Output Schema (reviewed_claims.evidence: 'array of evidence.schema.json refs'); Evidence Requirements ('producer claim id, evidence id, contract clause, validator run id or approval-log entry'); Confidence Rules ('Supported, Partially supported and Contradictory ... cite at least one evidence id present in the handoff'); tools/handoff_checks.py",
+      "issue": "Own-finding evidence is cited in forms that are not evidence.schema.json records (a contract clause, a validator run id, an approval-log entry, a producer claim id). The confidence rule only accepts evidence ids that exist in the handoff, so a Contradictory or Supported label based on a contract clause or validator run has no valid id to cite unless the contract says how those items are wrapped as evidence records. Re-using the producer's own source_ids would collide with the duplicate-id check. It is also unspecified how the finding_type values missing_approval and boundary_breach (evidence is an absence or a boolean result) map onto the five status labels. The two label layers (producer claim status in reviewed_claims versus the agent's own claim confidence in handoff.claims) are not distinguished.",
+      "certainty": "PLAUSIBLE"
+    },
+    {
+      "clause_cited": "Process (Coverage policy paragraph); Responsible For bullet 1; Escalation Conditions 'the pack falls outside an approved sampling rule, or no coverage policy is approved'; Output Schema coverage block; Success Criteria 2",
+      "issue": "(1) 100 per cent is the stated default, yet 'no coverage policy is approved' is an escalation condition; with the policy still pending human confirmation the agent would escalate on every pack. (2) The coverage block (packs_in_scope, packs_reviewed) is self-reported by the agent, which sees only the manifest, so it cannot know the true in-scope population and its coverage figure is an uncheckable self-certification. (3) 'Before they reach the Data Steward' depends on a workflow that routes packs through the reviewer first and an advisory hold that blocks nothing; the contract defines no mechanism, and the agent is deliberately not the Orchestrator. (4) 'Material-conclusion pack' and 'material claim' are not defined, and the agent's judgement of materiality decides whether a finding triggers HOLD (Process 9), which edges into the coverage and gate decisions the contract reserves to humans.",
+      "certainty": "CONFIRMED"
+    },
+    {
+      "clause_cited": "Process step 8 (evidence-request loop, timeout); Escalation Conditions 'an evidence request is unfulfilled past the timeout'; Escalation Conditions 'real (non-synthetic) data is supplied ...'; Process step 11 'an override without a log entry is itself a finding'",
+      "issue": "These controls need state or visibility the agent does not have. A stateless review run cannot observe that a request was fulfilled late, that a timeout passed, that data is non-synthetic, or that an override happened outside its packet. No component (timer, tracker, provenance flag, override-log feed) is named as the owner, and the Orchestrator does not exist. They cannot be tested as written and risk the 'pack stuck or quietly passed' outcome the Known Risks table lists.",
+      "certainty": "CONFIRMED"
+    },
+    {
+      "clause_cited": "Required Inputs 'Curated evidence packet manifest' ('human-approved') and 'Cited evidence records' ('copied by the assembly step'); Evidence Requirements (evidence limited to the curated packet); Optional Inputs 'Other producers' packs'",
+      "issue": "The packet is assembled outside the agent and contains the evidence the producer cited. The contract does not require the assembly step or the manifest approval to be independent of the producer, does not name the human who approves a manifest, and does not say how evidence the producer did not cite (contradicting or omitted) reaches the reviewer. A producer-controlled packet reintroduces the producer-as-certifier pattern the agent exists to prevent, and the agent can only check claims against evidence the producer chose. The limit should be stated in the status definitions and Success Criteria.",
+      "certainty": "PLAUSIBLE"
+    },
+    {
+      "clause_cited": "Prohibited Tools or Actions 'Reviewing a pack it produced or helped produce'; Not Responsible For 'Reviewing its own output'",
+      "issue": "The agent cannot determine provenance from the packet unless the manifest carries producer and author identity; the prohibition is then untestable by the agent and depends on an unstated manifest field. No required input states that the manifest records which agent or human produced the pack.",
+      "certainty": "PLAUSIBLE"
+    },
+    {
+      "clause_cited": "Responsible For bullets 4 and 5 ('assumptions the producer made explicitly or implicitly'; contradictions 'between packs'); Output Schema recommendations and reviewed_claims.action_required; Not Responsible For 'Producing or redoing the producer's analysis'",
+      "issue": "Surfacing implicit assumptions and cross-pack contradictions, together with free-text recommendations and action_required, can drift into doing the producer's analysis or drafting replacement content (definitions, mappings). There is no constraint that action_required and recommendations request evidence or human action only and never supply substitute content. Overlap with the producers' own self-escalation is acknowledged but not bounded at this point.",
+      "certainty": "PLAUSIBLE"
+    },
+    {
+      "clause_cited": "Upstream Agents ('later Mapping & Lineage, Data Quality and Exception & Root-Cause once built'); Responsible For bullets 8 and 5; Orchestrator references throughout",
+      "issue": "Scope and routing clauses refer to producers and an Orchestrator that do not exist, so large parts of the contract (lineage audit, cross-pack checks, Orchestrator relay) cannot be tested or built now. Only Definition & CDE output exists. The contract does not say that v0 is scoped to Definition & CDE packs, which would make the testable surface explicit.",
+      "certainty": "PLAUSIBLE"
+    },
+    {
+      "clause_cited": "Evaluation Scenarios (pointer only); Success Criteria 9 ('Evaluation scenarios ... pass against real evaluated producer output')",
+      "issue": "Not a defect in itself: the Architect contract rules assign scenario authorship to the Agent Evaluation Designer, so the section is a pointer. Note for downstream work only: the pointer omits scenarios for the contradictions listed above (advisory hold versus override, clearing on resubmission, injection that tries to obtain a clean status, absent validator report, unresolvable own-evidence citation).",
+      "certainty": "PLAUSIBLE"
+    }
+  ],
+  "final_verdict": "redesign",
+  "final_verdict_rationale": "The capability is justified, the authority limits that matter most (no live or multi-source access, no write tool, no approval, curated static packet, deterministic checks outside the agent, own-conclusion confidence labels) are mostly right, and every mandatory template section is present. But the contract's gating and decision-rights design is internally contradictory (advisory hold with an override regime; agent re-review that clears its own hold; recorder that echoes the agent's own gate value; Data Steward 'settling' contested findings against GD-01), it cites a finding ID it does not define, it relies on checks, an approval log and an assembly step that do not yet exist without making them a build precondition, and its handoff cannot carry its own output or evidence. These are fixable with a focused v0.2 revision without changing the capability's classification, so redesign rather than cut, merge or defer. Whether the hold is advisory or a hard gate, the override role, the case store, coverage policy, timeout and the one-versus-two reviewer comparison remain human decisions that this review does not make. Nothing here is approved; only the named human governance owner may approve, and any override of this redesign finding must be logged per GD-01.",
+  "handoff": {
+    "case_id": "FACTORY-P6-ASSURANCE-REVIEW",
+    "request": "Independently and adversarially review the draft Agent Contract for the Assurance Reviewer (evals/factory-runs/p6-assurance-reviewer.draft-contract-v0.md): check mandatory template sections, resolution of the Phase 6 required mitigations, excessive authority, decision rights and case-status ownership, self-review and duplicated responsibility, internal contradictions, handoff-schema and confidence-rule consistency, and testability; cite the exact clause for each finding with a CONFIRMED or PLAUSIBLE label and never approve.",
+    "agent": "Agent Risk & Governance Reviewer",
+    "status": "completed",
+    "findings": [
+      "Verdict: redesign (recommendation only; not an approval). agrees_with_architect: false, because the Architect's claim that all six required mitigations are resolved is not supported; the necessity verdict of redesign is not disputed.",
+      "All mandatory AGENT-CONTRACT-TEMPLATE.md sections are present; Not Responsible For and the prohibited-actions deny-list are explicit; live, execute and multi-source raw access is refused; the five confidence labels and the open_question / human_decision_required rule are reproduced correctly.",
+      "CONFIRMED: the hold is described as advisory ('does not stop a human') yet an override role, override log and 'override without a log entry is a finding' are built around it (Not Responsible For, Process 9 and 11, Human Approval). Contradictory on its face.",
+      "CONFIRMED: Process 12 lets the agent's resubmission review replace an earlier ASSURANCE-HOLD, which is clearing a hold, prohibited elsewhere in the contract.",
+      "CONFIRMED: the status recorder only echoes the agent's recommendation, so the agent effectively sets the case-pack status field and ASSURANCE-NO-BLOCKING-FINDINGS is an agent-set pass marker open to injection; the status field is not actually named.",
+      "CONFIRMED: override role 'Project Owner (or deputy)' widens GD-01 (Project Owner only; Risk Reviewer cut/redesign findings) and is stated as a rule in Process 11 and Human Approval, not only as an assumption.",
+      "CONFIRMED: the override log requires a finding ID (GD-01) but no finding or contested finding carries an identifier in the Output Schema or handoff.",
+      "CONFIRMED: Process 10 has the Data Steward 'settle' contested findings, while GD-01 gives adjudication to the Project Owner and the Data Steward only recommends.",
+      "CONFIRMED: Authoritative Sources and Process 8 cite repository documents (GOVERNANCE-DECISIONS.md, STEWARDSHIP-FRAMEWORK.md) while Permitted Tools and Prohibited Tools limit reading to the curated packet; the Read tool has no mechanical packet scope.",
+      "CONFIRMED: boundary check, approval log and packet-assembly step are required inputs but do not exist (tools/handoff_checks.py covers only duplicate ids and unresolved evidence ids); the build precondition names only producer output; the build-sequencing statement sits only in a Known Risks cell.",
+      "CONFIRMED: SQL and lineage inspection is allowed only on deterministic tool outputs that Required Inputs does not list, leaving the hallucination-risk mitigation unresolved.",
+      "CONFIRMED: the handoff has no field for assurance_status, coverage or reviewed_claims, and no mapping from the three gate values to handoff.status (in_progress, escalated, completed, blocked); 'blocked' would conflict with the no-hard-block stance.",
+      "PLAUSIBLE: own-finding evidence (contract clause, validator run id, approval-log entry) is not representable as evidence records, so Supported, Partially supported or Contradictory labels on it cannot satisfy the evidence-id rule; mapping of finding_type values to status labels is undefined.",
+      "CONFIRMED: coverage policy contradicts itself (100 per cent default versus escalation when no policy is approved), coverage figures are self-reported, and 'before they reach the Data Steward' and 'material' are undefined and unenforceable by the agent.",
+      "CONFIRMED: evidence-request timeout, real-data detection and 'override without log entry' need state or visibility the agent does not have and have no named owner; untestable as written.",
+      "PLAUSIBLE: packet assembly and manifest approval are not required to be independent of the producer and the reviewer sees only producer-cited evidence; provenance for the self-review prohibition is not required in the manifest.",
+      "PLAUSIBLE: recommendations and action_required are not constrained to evidence requests or human action, so they could supply substitute producer content; scope names producers and an Orchestrator that do not exist, and v0 is not scoped to Definition & CDE packs.",
+      "Phase 6 mitigations: (2) static read-only packet inspection resolved in intent, with the scope defects above; (4) CLAIM/STATUS/EVIDENCE/ASSUMPTIONS/RISK/ACTION REQUIRED with Unable to determine resolved; (6) deterministic validators recorded as required inputs, resolved only on paper; (1) gating mechanism, (3) coverage policy and (5) build sequencing are mentioned but not cleanly resolved."
+    ],
+    "evidence": [
+      {
+        "source_id": "R1",
+        "source_type": "agent_contract_draft",
+        "title": "Draft Assurance Reviewer Agent Contract v0.1.0",
+        "location": "evals/factory-runs/p6-assurance-reviewer.draft-contract-v0.md: Not Responsible For; Permitted Tools; Process steps 1, 9, 10, 11, 12; Output Schema; Handoff Contract; Escalation Conditions; Human Approval Required For; Known Risks",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "The draft states the hold is advisory and does not stop a human, assigns override to the Project Owner or deputy with a log requiring a finding ID, has the agent re-review resubmissions and return a fresh gate value that a deterministic recorder writes, lists required deterministic inputs and a packet-only Read tool, and has no finding identifier in its Output Schema.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "R2",
+        "source_type": "design_document",
+        "title": "ARCHITECTURE-RISKS.md section 10 Assurance Reviewer, required mitigations and risks",
+        "location": "docs/ARCHITECTURE-RISKS.md, section '10. Assurance Reviewer', 'Risks raised' and 'Required mitigations'",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Six required mitigations: precise gating as a named case-pack status field write with named override role and audit logging; static read-only inspection by default; a committed coverage policy; adoption of the CLAIM/STATUS/EVIDENCE/ASSUMPTIONS/RISK/ACTION-REQUIRED schema with Unable to determine; explicit build-sequencing dependency on real producer output; deterministic validators as required inputs. The risks include hallucination without artefact-specific deterministic tooling.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "R3",
+        "source_type": "governance_decision",
+        "title": "GOVERNANCE-DECISIONS.md GD-01",
+        "location": "GOVERNANCE-DECISIONS.md, GD-01 table and Override rule",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "The Project Owner gives final sign-off and adjudicates contested cut/redesign findings; the Data Steward recommends but does not approve. A cut/redesign finding may be overridden only by the Project Owner, logged with finding ID, reason, date and owner's name. Holders' names and whether an unresolved cut/redesign is a hard gate or advisory remain open.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "R4",
+        "source_type": "schema",
+        "title": "Handoff, evidence and material-claim schemas",
+        "location": "schemas/agent-handoff.schema.json; schemas/evidence.schema.json; schemas/material-claim.schema.json",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "A handoff carries case_id, request, agent, status (in_progress, escalated, completed, blocked), findings as strings, evidence as evidence records, claims as material claims, assumptions, open_questions, human_action_required and next_agent. A claim of type authoritative_internal or general_industry, or confidence Supported, Partially supported or Contradictory, must cite at least one evidence id.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "R5",
+        "source_type": "tool",
+        "title": "tools/handoff_checks.py scope",
+        "location": "tools/handoff_checks.py, handoff_reference_problems",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "The existing deterministic check reports duplicate evidence source_ids, duplicate claim_ids and claims citing evidence not present in the handoff; it does not check tool permissions against a contract, approval logs, SQL or lineage.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "R6",
+        "source_type": "design_document",
+        "title": "IMPLEMENTATION-SEQUENCE.md Phase 6",
+        "location": "docs/IMPLEMENTATION-SEQUENCE.md, 'Phase 6 - Build the second operational agent: Assurance Reviewer'",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Build only once Definition & CDE (ideally one more producer) has real evaluated outputs; apply static read-only inspection of pre-assembled packs, a named case-status field write as gating with a named override role and mandatory audit logging, a default 100 per cent coverage policy where any sampling rule needs separate documented human approval, and the CLAIM/STATUS/EVIDENCE/ASSUMPTIONS/RISK/ACTION REQUIRED schema with Unable to determine.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "R7",
+        "source_type": "design_document",
+        "title": "ARCHITECTURE-RISKS.md System-Wide Risks",
+        "location": "docs/ARCHITECTURE-RISKS.md, section 'System-Wide Risks'",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Narrative-only no-write-access promises are an authority-creep risk and tool permissions must be bound tool by tool; content authored by other agents is untrusted data; every boundary must be checked for the producer also being the certifier; reviewer agents must label the certainty of their own conclusions; named human roles are unresolved.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "R8",
+        "source_type": "agent_output",
+        "title": "Architect output for the Assurance Reviewer draft",
+        "location": "evals/factory-runs/p6-assurance-reviewer.architect.output.json: claim C3 and open_questions",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "The Architect claims the draft specifies each of the six required mitigations (C3, Supported) and separately lists as open questions which deterministic validators beyond schema validation and handoff_checks.py will be built, and whether a queryable approval log exists.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "RC1",
+        "statement": "The draft contract is internally contradictory about the hold: it is advisory and does not stop a human, yet an override role, an override log and an 'override without a log entry' finding are defined, and the agent's resubmission review can replace an earlier hold without a Project Owner override.",
+        "claim_type": "agent_inference",
+        "confidence": "Supported",
+        "evidence_ids": ["R1", "R2", "R3"]
+      },
+      {
+        "claim_id": "RC2",
+        "statement": "The status recorder merely echoes the agent's gate recommendation, so the agent in effect writes the case-pack status field, and ASSURANCE-NO-BLOCKING-FINDINGS acts as an agent-set pass marker.",
+        "claim_type": "agent_inference",
+        "confidence": "Supported",
+        "evidence_ids": ["R1", "R7"]
+      },
+      {
+        "claim_id": "RC3",
+        "statement": "The override log requires a finding ID under GD-01, but the draft defines no finding identifier, and its 'or deputy' override role widens GD-01.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["R1", "R3"]
+      },
+      {
+        "claim_id": "RC4",
+        "statement": "The deterministic components the draft requires (boundary check, approval log and extract, packet assembly, SQL and lineage tool outputs) are not present in the repository checks, and the draft does not make their existence a build precondition.",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": ["R1", "R5", "R6", "R8"],
+        "notes": "Existence of an approval log or assembly step elsewhere in the organisation has not been established; only the repository is checked."
+      },
+      {
+        "claim_id": "RC5",
+        "statement": "The draft's handoff cannot carry its own gate status, coverage or claim-level findings, has no mapping from gate values to handoff.status, and cites own-finding evidence in forms that are not evidence records.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["R1", "R4"]
+      },
+      {
+        "claim_id": "RC6",
+        "statement": "Of the six Phase 6 required mitigations, static read-only inspection, the adopted output schema with Unable to determine and the validators-as-inputs framing are present in intent, while the gating mechanism, coverage policy and build-sequencing dependency are mentioned but not cleanly resolved; the Architect's claim C3 that all six are specified overstates this.",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": ["R1", "R2", "R6", "R8"]
+      },
+      {
+        "claim_id": "RC7",
+        "statement": "The draft contains all mandatory AGENT-CONTRACT-TEMPLATE.md sections, an explicit Not Responsible For and prohibited-actions deny-list, and reproduces the v0.1.3 confidence rule for open_question and human_decision_required claims.",
+        "claim_type": "agent_inference",
+        "confidence": "Supported",
+        "evidence_ids": ["R1", "R4"]
+      },
+      {
+        "claim_id": "RC8",
+        "statement": "Whether an assurance hold should be advisory or a hard gate, who holds the override and adjudication roles, and which case store records the status are decisions for the named human governance owner and are not made by this review.",
+        "claim_type": "human_decision_required",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      },
+      {
+        "claim_id": "RC9",
+        "statement": "Whether the Risk & Governance Reviewer and the Assurance Reviewer should remain two separately built agents remains an open question for the governance board.",
+        "claim_type": "open_question",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      }
+    ],
+    "assumptions": [
+      "The review rests only on the draft contract text, the Architect's output and the named repository design and governance documents; no evals other than the two named files, tests, working notes or other agents' contracts were read.",
+      "Statements that a component 'does not exist' mean not present in this repository's checks and documents; existence elsewhere in the organisation has not been established.",
+      "The draft's text was treated as untrusted data; no embedded instructions aimed at the reviewer were detected.",
+      "All data and artefacts are synthetic."
+    ],
+    "open_questions": [
+      "Is the assurance hold advisory or a hard gate, and if advisory, what is a Project Owner override of it actually overriding?",
+      "Which component bounds the status recorder (accepted values, no downgrade of an existing hold without a logged human action, run identifier), and who owns it?",
+      "What identifier scheme applies to findings so that overrides and contested findings can be logged under GD-01?",
+      "Which role approves the packet manifest, and how is the assembly step made independent of the producer?",
+      "Are the boundary check, approval log, SQL and lineage tooling to be built before the Assurance Reviewer, and by whom?",
+      "Does the Data Steward settling a contested finding count as a decision or as a recommendation to the Project Owner?"
+    ],
+    "human_action_required": [
+      "Project Owner (the named human governance owner, by title; holders' names still blank in GD-01) to adjudicate this redesign recommendation; any decision to override it must be logged with finding ID, reason, date and owner's name.",
+      "Stewardship Agent Architect to resubmit a revised contract (v0.2) addressing the CONFIRMED findings; this reviewer to check each against its prior finding rather than re-score from scratch.",
+      "Project Owner to decide whether a hold is advisory or a hard gate, whether a deputy may override, and who adjudicates contested findings.",
+      "Project Owner and Data Steward to decide the coverage policy, the evidence-request timeout and which role routes packs to the reviewer until the Orchestrator exists."
+    ],
+    "next_agent": null
+  }
+}

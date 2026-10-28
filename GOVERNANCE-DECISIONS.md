@@ -14,6 +14,7 @@ Register of project-level decisions that the Agent Contracts and Factory agents 
 | GD-04 | Data-quality taxonomy | Decided (proposal; owner to confirm in org policy) | 2026-10-27 |
 | GD-05 | Glossary / catalogue system for the Definition & CDE Agent | **Open** | - |
 | GD-06 | DMBOK alignment proposals P-01 to P-14 | Decided and applied as drafts | 2026-10-27 |
+| GD-07 | Assurance Reviewer v0 scope and hold semantics | Decided (scope); hold semantics deferred | 2026-10-28 |
 
 ---
 
@@ -85,3 +86,15 @@ Register of project-level decisions that the Agent Contracts and Factory agents 
 **Applied (2026-10-27).** All 14 are applied as drafts, one commit each, with a guard test (`tests/test_applied_proposals.py`) checking each is present and cites real DMBOK2 ids. Where each landed is shown in the Decision column of `docs/DMBOK-ALIGNMENT.md` section 4. The new documents are `docs/STEWARDSHIP-FRAMEWORK.md`, `docs/CDE-CRITERIA-POLICY.md`, `docs/DATA-QUALITY-FRAMEWORK.md`, `docs/DATA-CLASSIFICATION.md` and `docs/SUCCESS-MEASURES.md`, plus `schemas/quality-issue.schema.json` and an optional `confidentiality_label` on `schemas/evidence.schema.json`. Edits to the owner's original files are pointer notes only (a README note, and two bullets in `ARCHITECTURE.md`).
 
 **Still for the owner.** The names of the Project Owner, deputy and Data Steward; the executive sponsor; the collaboration forum; the real review schedule and baseline confirmation; tailoring the CDE criteria; and whether to approve each new document. P-04's later lifecycle states wait on GD-05.
+
+## GD-07 Assurance Reviewer v0 scope and hold semantics (Phase 6)
+
+**Question.** How much does the first version of the Assurance Reviewer cover, and is a hold advisory or a hard gate?
+
+**Decision (project owner, 2026-10-28).**
+- **Scope: the full v0 as drafted.** All eight build preconditions (packet assembly, packet-scoped read, validator and boundary checker, approval-log lookup, evidence-request tracker, provenance flag, coverage register, status recorder) are specified now. The Risk Reviewer noted that none of them exists yet and that the agent is not deployable until they do; that stays true.
+- **Hold semantics: deferred.** Whether a hold blocks progress remains open under GD-01. The contract recommends a gate value and does not decide whether it blocks.
+
+**Review stopping rule.** Fixed before the third review pass in `evals/factory-runs/p6-assurance-reviewer.STOPPING-RULE.md`.
+
+**Status of the contract.** `Draft`. Approval by the Project Owner is not given.
