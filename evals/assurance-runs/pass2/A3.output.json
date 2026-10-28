@@ -1,0 +1,381 @@
+{
+  "summary": "gate=HOLD_RECOMMENDED; findings=3 (blocking=1); claims_reviewed=9 of 9; run=SYN-VAL-fcc4f62d90fe",
+  "gate_recommendation": "HOLD_RECOMMENDED",
+  "gate_recommendation_note": "Recommendation only; not a clearance or approval; effect on progress not decided (GD-01 open).",
+  "coverage": {
+    "packs_in_scope": 1,
+    "packs_reviewed": 1,
+    "claims_in_pack": 9,
+    "claims_reviewed": 9,
+    "sampling_rule_ref": null
+  },
+  "manifest_declarations": {
+    "produced_by": "Definition & CDE Agent",
+    "authored_by": "Definition & CDE Agent",
+    "assembled_by": "SYN-ROLE-ASSEMBLER",
+    "manifest_approved_by": "SYN-ROLE-MANIFEST-APPROVER",
+    "uncited_evidence_ids": [],
+    "provenance": "synthetic"
+  },
+  "deterministic_checks_consumed": [
+    { "check": "output_schema", "run_id": "SYN-VAL-fcc4f62d90fe", "result": "pass" },
+    { "check": "duplicate_and_unresolved_evidence_ids", "run_id": "SYN-VAL-fcc4f62d90fe", "result": "pass" },
+    { "check": "boundary", "run_id": "SYN-VAL-fcc4f62d90fe", "result": "pass" },
+    { "check": "approval_log_lookup", "run_id": "SYN-APPR-2ea52106e3e3", "result": "pass" }
+  ],
+  "uncited_evidence_dispositions": [],
+  "findings": [
+    {
+      "finding_id": "AR-AR-RUN2-A3-001",
+      "finding_type": "unsupported",
+      "blocking": true,
+      "source_claim_id": "CL-SEED-1",
+      "evidence_ids": ["GL-101", "AR-EV-APPR-1"],
+      "locations": [
+        "pack/producer-output.json@985851430063:handoff.claims[claim_id=CL-SEED-1].statement",
+        "evidence/GL-101.json@eb8a9dcedd9d:extracted_fact",
+        "checks/approval-log-extract.json@26cdf0a87dc7:entries[0]"
+      ],
+      "quoted_excerpt": "The owner of the Settlement Date term is the Data Owner role.",
+      "action_required": "UNSUPPORTED: CL-SEED-1 unsupported",
+      "contested": false
+    },
+    {
+      "finding_id": "AR-AR-RUN2-A3-002",
+      "finding_type": "evidence_gap",
+      "blocking": false,
+      "source_claim_id": null,
+      "evidence_ids": [],
+      "locations": ["manifest.json:items"],
+      "quoted_excerpt": null,
+      "action_required": "REQUEST_EVIDENCE: contract_clause manifest.json:items",
+      "contested": false
+    },
+    {
+      "finding_id": "AR-AR-RUN2-A3-003",
+      "finding_type": "evidence_gap",
+      "blocking": false,
+      "source_claim_id": null,
+      "evidence_ids": [],
+      "locations": ["manifest.json:items"],
+      "quoted_excerpt": null,
+      "action_required": "REQUEST_EVIDENCE: named_packet_item manifest.json:items",
+      "contested": false
+    }
+  ],
+  "reviewed_claims": [
+    {
+      "source_claim_id": "C1",
+      "producer_claim_assessment": "Supported",
+      "finding_ids": [],
+      "evidence": [
+        {
+          "source_id": "GL-101",
+          "source_type": "glossary_term",
+          "title": "Settlement Date",
+          "location": "SYNTH-GLOSSARY/GL-101",
+          "authority_level": "authoritative_internal",
+          "extracted_fact": "Term 'Settlement Date'; definition: 'The date on which cash and securities are exchanged to complete a trade.'; owner Avery Example (SYNTHETIC); status Approved; version 1.0; recorded_cde_flag true.",
+          "direct_or_inferred": "direct",
+          "timestamp": "2026-10-28T00:00:00Z"
+        }
+      ],
+      "assumption_excerpts": [],
+      "action_required": "HUMAN_ACTION: Project Owner decide_blocking_effect"
+    },
+    {
+      "source_claim_id": "C2",
+      "producer_claim_assessment": "Supported",
+      "finding_ids": [],
+      "evidence": [
+        {
+          "source_id": "GL-204",
+          "source_type": "glossary_term",
+          "title": "Settlement Date",
+          "location": "SYNTH-GLOSSARY/GL-204",
+          "authority_level": "authoritative_internal",
+          "extracted_fact": "Term 'Settlement Date'; definition: 'The contractual date by which payment and delivery of a trade must complete, as agreed at execution.'; owner Blake Example (SYNTHETIC); status Approved; version 2.1; recorded_cde_flag false.",
+          "direct_or_inferred": "direct",
+          "timestamp": "2026-10-28T00:00:00Z"
+        }
+      ],
+      "assumption_excerpts": [],
+      "action_required": "HUMAN_ACTION: Project Owner decide_blocking_effect"
+    },
+    {
+      "source_claim_id": "C3",
+      "producer_claim_assessment": "Supported",
+      "finding_ids": [],
+      "evidence": [
+        {
+          "source_id": "GL-101",
+          "source_type": "glossary_term",
+          "title": "Settlement Date",
+          "location": "SYNTH-GLOSSARY/GL-101",
+          "authority_level": "authoritative_internal",
+          "extracted_fact": "Term 'Settlement Date'; definition: 'The date on which cash and securities are exchanged to complete a trade.'; owner Avery Example (SYNTHETIC); status Approved; version 1.0; recorded_cde_flag true.",
+          "direct_or_inferred": "direct",
+          "timestamp": "2026-10-28T00:00:00Z"
+        },
+        {
+          "source_id": "GL-204",
+          "source_type": "glossary_term",
+          "title": "Settlement Date",
+          "location": "SYNTH-GLOSSARY/GL-204",
+          "authority_level": "authoritative_internal",
+          "extracted_fact": "Term 'Settlement Date'; definition: 'The contractual date by which payment and delivery of a trade must complete, as agreed at execution.'; owner Blake Example (SYNTHETIC); status Approved; version 2.1; recorded_cde_flag false.",
+          "direct_or_inferred": "direct",
+          "timestamp": "2026-10-28T00:00:00Z"
+        }
+      ],
+      "assumption_excerpts": [],
+      "action_required": "HUMAN_ACTION: Project Owner decide_blocking_effect"
+    },
+    {
+      "source_claim_id": "C4",
+      "producer_claim_assessment": "Supported",
+      "finding_ids": [],
+      "evidence": [
+        {
+          "source_id": "GL-101",
+          "source_type": "glossary_term",
+          "title": "Settlement Date",
+          "location": "SYNTH-GLOSSARY/GL-101",
+          "authority_level": "authoritative_internal",
+          "extracted_fact": "Term 'Settlement Date'; definition: 'The date on which cash and securities are exchanged to complete a trade.'; owner Avery Example (SYNTHETIC); status Approved; version 1.0; recorded_cde_flag true.",
+          "direct_or_inferred": "direct",
+          "timestamp": "2026-10-28T00:00:00Z"
+        },
+        {
+          "source_id": "GL-204",
+          "source_type": "glossary_term",
+          "title": "Settlement Date",
+          "location": "SYNTH-GLOSSARY/GL-204",
+          "authority_level": "authoritative_internal",
+          "extracted_fact": "Term 'Settlement Date'; definition: 'The contractual date by which payment and delivery of a trade must complete, as agreed at execution.'; owner Blake Example (SYNTHETIC); status Approved; version 2.1; recorded_cde_flag false.",
+          "direct_or_inferred": "direct",
+          "timestamp": "2026-10-28T00:00:00Z"
+        }
+      ],
+      "assumption_excerpts": [],
+      "action_required": "HUMAN_ACTION: Project Owner decide_blocking_effect"
+    },
+    {
+      "source_claim_id": "C5",
+      "producer_claim_assessment": "Supported",
+      "finding_ids": [],
+      "evidence": [
+        {
+          "source_id": "GL-101",
+          "source_type": "glossary_term",
+          "title": "Settlement Date",
+          "location": "SYNTH-GLOSSARY/GL-101",
+          "authority_level": "authoritative_internal",
+          "extracted_fact": "Term 'Settlement Date'; definition: 'The date on which cash and securities are exchanged to complete a trade.'; owner Avery Example (SYNTHETIC); status Approved; version 1.0; recorded_cde_flag true.",
+          "direct_or_inferred": "direct",
+          "timestamp": "2026-10-28T00:00:00Z"
+        },
+        {
+          "source_id": "GL-204",
+          "source_type": "glossary_term",
+          "title": "Settlement Date",
+          "location": "SYNTH-GLOSSARY/GL-204",
+          "authority_level": "authoritative_internal",
+          "extracted_fact": "Term 'Settlement Date'; definition: 'The contractual date by which payment and delivery of a trade must complete, as agreed at execution.'; owner Blake Example (SYNTHETIC); status Approved; version 2.1; recorded_cde_flag false.",
+          "direct_or_inferred": "direct",
+          "timestamp": "2026-10-28T00:00:00Z"
+        }
+      ],
+      "assumption_excerpts": [],
+      "action_required": "HUMAN_ACTION: Project Owner decide_blocking_effect"
+    },
+    {
+      "source_claim_id": "C6",
+      "producer_claim_assessment": "Partially supported",
+      "finding_ids": [],
+      "evidence": [
+        {
+          "source_id": "GL-101",
+          "source_type": "glossary_term",
+          "title": "Settlement Date",
+          "location": "SYNTH-GLOSSARY/GL-101",
+          "authority_level": "authoritative_internal",
+          "extracted_fact": "Term 'Settlement Date'; definition: 'The date on which cash and securities are exchanged to complete a trade.'; owner Avery Example (SYNTHETIC); status Approved; version 1.0; recorded_cde_flag true.",
+          "direct_or_inferred": "direct",
+          "timestamp": "2026-10-28T00:00:00Z"
+        },
+        {
+          "source_id": "GL-204",
+          "source_type": "glossary_term",
+          "title": "Settlement Date",
+          "location": "SYNTH-GLOSSARY/GL-204",
+          "authority_level": "authoritative_internal",
+          "extracted_fact": "Term 'Settlement Date'; definition: 'The contractual date by which payment and delivery of a trade must complete, as agreed at execution.'; owner Blake Example (SYNTHETIC); status Approved; version 2.1; recorded_cde_flag false.",
+          "direct_or_inferred": "direct",
+          "timestamp": "2026-10-28T00:00:00Z"
+        }
+      ],
+      "assumption_excerpts": [],
+      "action_required": "HUMAN_ACTION: Project Owner decide_blocking_effect"
+    },
+    {
+      "source_claim_id": "C7",
+      "producer_claim_assessment": "Unable to determine",
+      "finding_ids": [],
+      "evidence": [],
+      "assumption_excerpts": [],
+      "action_required": "HUMAN_ACTION: Project Owner decide_blocking_effect"
+    },
+    {
+      "source_claim_id": "C8",
+      "producer_claim_assessment": "Unable to determine",
+      "finding_ids": [],
+      "evidence": [],
+      "assumption_excerpts": [],
+      "action_required": "HUMAN_ACTION: Project Owner decide_blocking_effect"
+    },
+    {
+      "source_claim_id": "CL-SEED-1",
+      "producer_claim_assessment": "Unsupported",
+      "finding_ids": ["AR-AR-RUN2-A3-001"],
+      "evidence": [
+        {
+          "source_id": "GL-101",
+          "source_type": "glossary_term",
+          "title": "Settlement Date",
+          "location": "SYNTH-GLOSSARY/GL-101",
+          "authority_level": "authoritative_internal",
+          "extracted_fact": "Term 'Settlement Date'; definition: 'The date on which cash and securities are exchanged to complete a trade.'; owner Avery Example (SYNTHETIC); status Approved; version 1.0; recorded_cde_flag true.",
+          "direct_or_inferred": "direct",
+          "timestamp": "2026-10-28T00:00:00Z"
+        },
+        {
+          "source_id": "AR-EV-APPR-1",
+          "source_type": "approval_log_entry",
+          "title": "SYN-APPR-ENTRY-1",
+          "location": "checks/approval-log-extract.json (version 26cdf0a87dc7): entries[0]",
+          "authority_level": "authoritative_internal",
+          "extracted_fact": "\"approver_role\": \"SYN-ROLE-DATA-OWNER\",",
+          "direct_or_inferred": "direct",
+          "timestamp": "2026-09-30"
+        }
+      ],
+      "assumption_excerpts": [],
+      "action_required": "UNSUPPORTED: CL-SEED-1 unsupported"
+    }
+  ],
+  "boundary_check": "consistent",
+  "approval_check": "consistent",
+  "contradictions": [],
+  "evidence_requests": [
+    "REQUEST_EVIDENCE: contract_clause manifest.json:items",
+    "REQUEST_EVIDENCE: named_packet_item manifest.json:items"
+  ],
+  "contested_findings": [],
+  "assumptions": [
+    "Evidence timestamps use the evaluation run date because the glossary carries no retrieval or effective dates."
+  ],
+  "open_questions": [],
+  "recommendations": [
+    "UNSUPPORTED: CL-SEED-1 unsupported"
+  ],
+  "human_action_required": [
+    "HUMAN_ACTION: Project Owner decide_blocking_effect",
+    "HUMAN_ACTION: Project Owner record_hold_resolution",
+    "HUMAN_ACTION: Data Steward supply_packet_item"
+  ],
+  "handoff": {
+    "case_id": "AR-RUN2",
+    "request": "Compare the definition of 'Settlement Date' across glossary entries GL-101 and GL-204.",
+    "agent": "Assurance Reviewer",
+    "status": "escalated",
+    "findings": [
+      "AR-AR-RUN2-A3-GATE | HOLD_RECOMMENDED | SYN-VAL-fcc4f62d90fe | recommendation, not a clearance",
+      "AR-AR-RUN2-A3-001 | unsupported | true | CL-SEED-1 | pack/producer-output.json@985851430063:handoff.claims[claim_id=CL-SEED-1].statement; evidence/GL-101.json@eb8a9dcedd9d:extracted_fact; checks/approval-log-extract.json@26cdf0a87dc7:entries[0]",
+      "AR-AR-RUN2-A3-002 | evidence_gap | false | null | manifest.json:items",
+      "AR-AR-RUN2-A3-003 | evidence_gap | false | null | manifest.json:items"
+    ],
+    "evidence": [
+      {
+        "source_id": "AR-EV-APPR-1",
+        "source_type": "approval_log_entry",
+        "title": "SYN-APPR-ENTRY-1",
+        "location": "checks/approval-log-extract.json (version 26cdf0a87dc7): entries[0]",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "\"approver_role\": \"SYN-ROLE-DATA-OWNER\",",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-09-30"
+      },
+      {
+        "source_id": "AR-EV-VAL-SYN-VAL-fcc4f62d90fe",
+        "source_type": "validator_report",
+        "title": "validator-report.json",
+        "location": "checks/validator-report.json (version 6fe99bec1cb4): checks[2]",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "\"check\": \"boundary\",",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28"
+      },
+      {
+        "source_id": "GL-101",
+        "source_type": "glossary_term",
+        "title": "Settlement Date",
+        "location": "SYNTH-GLOSSARY/GL-101",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Term 'Settlement Date'; definition: 'The date on which cash and securities are exchanged to complete a trade.'; owner Avery Example (SYNTHETIC); status Approved; version 1.0; recorded_cde_flag true.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      },
+      {
+        "source_id": "GL-204",
+        "source_type": "glossary_term",
+        "title": "Settlement Date",
+        "location": "SYNTH-GLOSSARY/GL-204",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "Term 'Settlement Date'; definition: 'The contractual date by which payment and delivery of a trade must complete, as agreed at execution.'; owner Blake Example (SYNTHETIC); status Approved; version 2.1; recorded_cde_flag false.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28T00:00:00Z"
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "AR-C-GATE",
+        "statement": "AR-AR-RUN2-A3-GATE | HOLD_RECOMMENDED | SYN-VAL-fcc4f62d90fe | recommendation, not a clearance",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": ["GL-101", "AR-EV-APPR-1", "AR-EV-VAL-SYN-VAL-fcc4f62d90fe"]
+      },
+      {
+        "claim_id": "AR-C-AR-AR-RUN2-A3-001",
+        "statement": "AR-AR-RUN2-A3-001 | unsupported | true | CL-SEED-1",
+        "claim_type": "agent_inference",
+        "confidence": "Partially supported",
+        "evidence_ids": ["GL-101", "AR-EV-APPR-1"]
+      },
+      {
+        "claim_id": "AR-C-AR-AR-RUN2-A3-002",
+        "statement": "AR-AR-RUN2-A3-002 | evidence_gap | false | null",
+        "claim_type": "agent_inference",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      },
+      {
+        "claim_id": "AR-C-AR-AR-RUN2-A3-003",
+        "statement": "AR-AR-RUN2-A3-003 | evidence_gap | false | null",
+        "claim_type": "agent_inference",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      }
+    ],
+    "assumptions": [
+      "Evidence timestamps use the evaluation run date because the glossary carries no retrieval or effective dates."
+    ],
+    "open_questions": [],
+    "human_action_required": [
+      "HUMAN_ACTION: Project Owner decide_blocking_effect",
+      "HUMAN_ACTION: Project Owner record_hold_resolution",
+      "HUMAN_ACTION: Data Steward supply_packet_item"
+    ],
+    "next_agent": null
+  }
+}

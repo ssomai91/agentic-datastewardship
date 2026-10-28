@@ -37,7 +37,7 @@ def score_one(pid, packet, output, expected):
         matches["boundary_check"] = output.get("boundary_check") == expected["expected_boundary_check"]
     for t in expected.get("expected_finding_types_include", []):
         matches[f"finding type {t}"] = t in types
-    if expected["expected_rank"] == 1:
+    if expected.get("expected_rank") == 1:
         matches["no claims reviewed (rank 1)"] = not output.get("reviewed_claims")
     return {"id": pid, "expected": (gates, expected.get("expected_status")), "got": (got["gate"], got["status"]), "matches": matches,
             "recorder_accepted": verdict.accepted, "problems": verdict.problems, "assessments": assess, "finding_types": types}
