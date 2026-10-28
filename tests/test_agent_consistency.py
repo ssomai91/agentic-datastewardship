@@ -3,6 +3,7 @@
 The Markdown contract is the source of truth (docs/AUTHORITY-CHAIN.md). A failure here names the
 lower-ranked artefact that has drifted.
 """
+import json
 import re
 from pathlib import Path
 
@@ -144,3 +145,11 @@ def test_json_and_markdown_returns_agree_on_fields(agent):
 def test_prompt_tells_the_agent_to_return_claims_with_evidence(agent):
     body = prompt(agent)["body"]
     assert "`claims`" in body and "material-claim.schema.json" in body, f"{agent}: prompt must instruct claims in the handoff"
+
+
+def test_definition_agent_confidence_label_rule_for_non_evidence_claims_is_in_all_three_forms():
+    agent = "definition-and-cde-agent"
+    md = read(ROOT / "agents" / TIERS[agent] / f"{agent}.md")
+    js = json.dumps(json_contract(agent))
+    for label, text in (("Markdown", md), ("JSON", js), ("prompt", prompt(agent)["body"])):
+        assert "human_decision_required" in text and "Unable to determine" in text, f"{label}: claim-label rule missing"
