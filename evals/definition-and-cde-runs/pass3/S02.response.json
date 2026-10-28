@@ -1,0 +1,99 @@
+{
+  "summary": "No definition drafted. The glossary content available in this run (SYNTH-GLOSSARY, 7 terms: GL-101, GL-204, GL-301, GL-302, GL-401, GL-501, GL-502) has no entry for 'Notional Adjustment Factor', and no synonym, near-match or term link points to it. A register exists but has no entry for this term, so this is escalated to a human Data Steward rather than answered from general knowledge. No CDE evidence, owner or approval exists for the term.",
+  "candidate_definitions": [],
+  "conflicts_identified": [],
+  "cde_evidence": [],
+  "ownership_gaps": [
+    "No owner can be identified for 'Notional Adjustment Factor' because the term has no glossary entry. No owner has been assumed or assigned."
+  ],
+  "assumptions": [
+    "The glossary file fixtures/definition-and-cde/glossary.json (SYNTH-GLOSSARY) is treated as the complete register for this run; absence is asserted only relative to that content.",
+    "No approved CDE-criteria policy document has been identified, so no CDE assessment of this term is possible."
+  ],
+  "open_questions": [
+    "Is 'Notional Adjustment Factor' intended to exist in the glossary under this name, or is it a synonym or alternate name for an existing term? No glossary term or term link suggests this.",
+    "Which business owner or source document should supply the definition, so a Data Steward can authorise creating an entry?",
+    "Which approved CDE-criteria policy document applies if the term is later assessed as a candidate CDE?"
+  ],
+  "human_action_required": [
+    "Data Steward to decide whether a glossary entry for 'Notional Adjustment Factor' should be created and to source an authoritative definition from the business. This agent has not drafted one and cannot create entries.",
+    "Data Steward to identify an owner if an entry is created; no owner is assigned by this agent.",
+    "Any CDE status decision and any definition approval remain human decisions."
+  ],
+  "handoff": {
+    "case_id": "EVAL-S02-P3",
+    "request": "Define 'Notional Adjustment Factor'.",
+    "agent": "Definition & CDE Agent",
+    "status": "escalated",
+    "findings": [
+      "The register (SYNTH-GLOSSARY) exists but contains no entry for 'Notional Adjustment Factor'; this is the 'register exists but has no entry for this term' case, not the 'no register exists' case.",
+      "The seven terms present are Settlement Date (GL-101, GL-204), Trade Date (GL-301, GL-302), Counterparty Tier (GL-401), Position (Trading) (GL-501) and Position (Employment/HR) (GL-502). None is a synonym of or links to the requested term.",
+      "No definition has been drafted: doing so would require inventing content not present in the authoritative source."
+    ],
+    "evidence": [
+      {
+        "source_id": "SYNTH-GLOSSARY",
+        "source_type": "glossary_file",
+        "title": "Synthetic glossary fixture (glossary.json)",
+        "location": "fixtures/definition-and-cde/glossary.json, terms[] and term_links[]",
+        "authority_level": "authoritative_internal",
+        "extracted_fact": "The glossary contains 7 term entries (GL-101, GL-204, GL-301, GL-302, GL-401, GL-501, GL-502) and 2 term links; none of the entries is titled or defined as 'Notional Adjustment Factor'.",
+        "direct_or_inferred": "direct",
+        "timestamp": "2026-10-28",
+        "notes": "Absence is relative to this supplied file, the only glossary content available in this run."
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "statement": "The available glossary has no entry for 'Notional Adjustment Factor'.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["SYNTH-GLOSSARY"],
+        "notes": "Scoped to the supplied glossary file."
+      },
+      {
+        "claim_id": "C2",
+        "statement": "No existing glossary term or term link is a synonym of or relates to 'Notional Adjustment Factor'.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["SYNTH-GLOSSARY"]
+      },
+      {
+        "claim_id": "C3",
+        "statement": "No owner, approval or CDE designation exists in the available evidence for this term.",
+        "claim_type": "authoritative_internal",
+        "confidence": "Supported",
+        "evidence_ids": ["SYNTH-GLOSSARY"],
+        "notes": "Follows from the absence of an entry; nothing has been assumed."
+      },
+      {
+        "claim_id": "C4",
+        "statement": "What 'Notional Adjustment Factor' means in this organisation cannot be determined from the available evidence.",
+        "claim_type": "open_question",
+        "confidence": "Unable to determine",
+        "evidence_ids": [],
+        "notes": "No definition is drafted from general knowledge."
+      },
+      {
+        "claim_id": "C5",
+        "statement": "Whether a glossary entry should be created, who owns it, and whether it is a CDE are decisions for a human Data Steward.",
+        "claim_type": "human_decision_required",
+        "confidence": "Unable to determine",
+        "evidence_ids": []
+      }
+    ],
+    "assumptions": [
+      "The supplied glossary fixture is treated as the complete register for this run.",
+      "No approved CDE-criteria policy document has been identified."
+    ],
+    "open_questions": [
+      "Is 'Notional Adjustment Factor' a synonym of an existing term or a genuinely new term?",
+      "Which source document or business owner can supply an authoritative definition?"
+    ],
+    "human_action_required": [
+      "Data Steward to decide whether to create a glossary entry and to source an authoritative definition; owner assignment, definition approval and any CDE designation remain human decisions."
+    ],
+    "next_agent": "Assurance Reviewer"
+  }
+}
