@@ -13,13 +13,30 @@
 | 3 Factory end to end | Three scenarios through the Architect | Two passed first time. Root-cause failed, was fixed in the contracts and passed on re-run (`evals/factory-runs/RESULTS.md`) |
 | 4 Definition & CDE Agent | Contract, JSON, prompt (v0.1.3), mock glossary, 10-scenario harness | Done, Draft. **Not connected to any real glossary** (GD-05 open) |
 | 5 Controlled evaluation | Real agent through the 10 scenarios, three passes | 8/10, 10/10, then 10/10 with frozen assertions. Synthetic data only; tool-call assertions skipped; human usefulness not assessed (`evals/definition-and-cde-runs/RESULTS.md`) |
-| 6 Assurance Reviewer | Contract v0.1.5, JSON, output schema, 66-case test spec, draft prompt | Done as Draft. **Cannot run:** eight build preconditions do not exist; no case has been run (`evals/factory-runs/p6-assurance-reviewer.RESULTS.md`) |
+| 6 Assurance Reviewer | Contract v0.1.5, JSON, output schema, 66-case test spec, draft prompt | Done as Draft (`evals/factory-runs/p6-assurance-reviewer.RESULTS.md`). **Not deployable:** the eight build preconditions exist only as stand-ins. A first slice of stand-ins was built and the agent was run twice on six packets (`evals/assurance-runs/RESULTS.md`) |
 | 7 Remaining producers | Context, Mapping & Lineage, Data Quality, Exception & Root-Cause | Not started |
 | 8 Orchestration | Routing and case state | Not started; depends on the case-store decision |
 
 ## Governance decisions (`GOVERNANCE-DECISIONS.md`)
 
 GD-01 approval and override roles (decided; names pending) · GD-02 evidence retention (synthetic only) · GD-03 DMBOK alignment in scope (done) · GD-04 data-quality taxonomy (proposed default) · GD-05 glossary system (**open**) · GD-06 14 DMBOK proposals (accepted, applied as drafts) · GD-07 Assurance Reviewer scope (full v0; hold semantics deferred).
+
+## Assurance Reviewer: deterministic slice and first runs (2026-10-28)
+
+**Built (`tools/assurance/`, stand-ins over synthetic data):** the step 9 gate function, checked against 32 cases of the evaluation spec; packet assembly and provenance flag (DC-1, DC-6); approval-log lookup (DC-4); validator and boundary checker (DC-3); the status recorder and output checker, checks (a) to (g), append-only with no approve, clear, update or delete (DC-8); and a packet-scoped read guard (DC-2). DC-5 and DC-7 are deferred, as the contract allows. `tools/assurance/README.md` lists what is a stand-in.
+
+**Run twice on six packets** (two real Definition & CDE packs, two seeded-defect packs, one provenance stop, one missing approval log):
+
+| | Gate and status match the frozen expectation | Recorder accepts |
+|---|---|---|
+| Pass 1 | 4 of 6 | 0 of 6 |
+| Pass 2 (fixture corrected, expectations re-frozen) | 5 of 6 | 5 of 6 |
+
+**What it shows:** the step 9 logic held on the hard cases in both passes: a seeded unsupported claim was blocking, an embedded instruction aimed at the reviewer was recorded and not obeyed, a missing provenance flag stopped the review, and an absent approval log was read as `Unable to determine`.
+
+**What it does not show:** reliability. It is six packets, one run each, with a stand-in call log and a Draft contract. Pass 1 failed partly because my stand-in case store was lossy; the recorder was relaxed after pass 1 for points the contract does not specify (both disclosed). The rank-3 open question (producer open-question claims) is **untested**, because the packets also omit the governing documents and the producer's contract that the contract lists as required inputs.
+
+**Not done:** DC-2 does not bind a subagent's Read tool, so packet scoping is by instruction only and unverified. Authentication of the human channel, a real case store and a real approval log do not exist. Three contract amendment proposals are written for the Project Owner and not applied (`evals/assurance-runs/PROPOSED-AMENDMENTS.md`).
 
 ## Documents added during the build
 
@@ -41,7 +58,7 @@ Schema registry and cross-reference checks; the Definition & CDE harness, mock r
 ## What is not true yet
 
 - No agent is approved, and none runs against real data or a real system.
-- The Assurance Reviewer has never run. The Definition & CDE Agent has run only against a synthetic glossary file, read as a file.
+- The Assurance Reviewer has run only twice on six synthetic packets, with stand-in components, a stand-in call log and unverified packet scoping. The Definition & CDE Agent has run only against a synthetic glossary file, read as a file.
 - The harness assertions were adjusted three times after seeing Phase 5 results (disclosed there); only the third pass is a clean measurement.
 
 ## Open items for the Project Owner
@@ -55,4 +72,4 @@ Schema registry and cross-reference checks; the Definition & CDE harness, mock r
 
 ## Next
 
-Build the minimal deterministic components the Assurance Reviewer needs (packet assembly, packet-scoped read, a contract validator, the status recorder) so it can run for the first time on the recorded Definition & CDE outputs. Further producer agents and orchestration wait on that result and on the owner decisions above.
+Package the governing documents and the producer's contract into the packets and make DC-1's manifest check flag them, then run a third pass that can answer the rank-3 question cleanly. In parallel, the Project Owner decides the three contract amendment proposals (`evals/assurance-runs/PROPOSED-AMENDMENTS.md`). Further producer agents and orchestration still wait on the owner decisions above.

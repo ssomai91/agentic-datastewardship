@@ -11,7 +11,7 @@
 | `evals/` | Evaluation scenario suites per agent (happy path, missing evidence, conflicting evidence, authority-boundary tests, etc.), plus recorded runs: `evals/factory-runs/` (Factory scenarios and design rounds) and `evals/definition-and-cde-runs/` (agent evaluation passes). |
 | `examples/` | Synthetic example inputs/outputs only. No confidential or production data. |
 | `prompts/` | Builder draft system prompts. A prompt promoted to `.claude/agents/` must stay identical to its draft here (checked by tests). |
-| `tools/` | Deterministic code: schema registry, cross-reference checks, the coverage-trace validator, the Definition & CDE harness and its mock glossary. |
+| `tools/` | Deterministic code: schema registry, cross-reference checks, the coverage-trace validator, the Definition & CDE harness and its mock glossary, and `tools/assurance/` (stand-ins for the Assurance Reviewer's build preconditions; see its README). |
 | `fixtures/` | Synthetic fixtures for evaluations (for example the mock glossary). |
 | `.claude/agents/` | The Claude subagent prompt for each agent, derived from its contract (`docs/AUTHORITY-CHAIN.md`). |
 | `.dmbok-work/` | Working files of the DMBOK2 alignment pipeline: reader and verifier outputs, merged rows. Reference only, no agent authority. |
