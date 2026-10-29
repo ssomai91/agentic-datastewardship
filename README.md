@@ -18,7 +18,7 @@ The project should favour trustworthy, auditable, explainable stewardship over m
 
 `agents/factory/`, `agents/operational/`, `contracts/`, and `schemas/` are fully populated on this branch, even though `docs/REPO-CONVENTIONS.md` and `docs/IMPLEMENTATION-SEQUENCE.md` both state that nothing should be written under those directories before Data Steward / project owner approval. This is a deliberate choice on this branch, not an oversight: it builds a proposed, draft solution end-to-end — every Agent Contract carries `status: Draft`, and none carry `status: Approved` — so that concrete, reviewable artefacts exist for the Data Steward to evaluate before committing to the full governance-approval cycle set out in `docs/IMPLEMENTATION-SEQUENCE.md`. Populating these directories here does **not** constitute Data Steward approval of any individual agent; each contract still requires its own Architect → Risk Reviewer → Eval Designer → Builder pass and its own human sign-off before it can move beyond `Draft`.
 
-For what has been built and tested so far, and what is open, see [docs/BUILD-STATUS.md](docs/BUILD-STATUS.md).
+For what has been built and tested so far, and what is open, see [docs/BUILD-STATUS.md](docs/BUILD-STATUS.md). For what the codes and acronyms mean, see [docs/GLOSSARY.md](docs/GLOSSARY.md).
 
 ---
 
